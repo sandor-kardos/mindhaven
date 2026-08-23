@@ -18,20 +18,17 @@ export function Navbar() {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-[#0D2E24]">
-            <Link href="/" className="hover:text-[#155D49] transition-colors">
-              Home
+            <Link href="/fees-and-booking" className="hover:text-[#155D49] transition-colors">
+              Contact
             </Link>
             <Link href="/about-erika-martin" className="hover:text-[#155D49] transition-colors">
-              About Erika
+              About
             </Link>
-            <Link href="/executive-burnout-therapy" className="hover:text-[#155D49] transition-colors">
-              Executive Therapy
-            </Link>
-            <Link href="/burnout-therapist-edinburgh" className="hover:text-[#155D49] transition-colors">
-              Edinburgh Practice
+            <Link href="/#faq" className="hover:text-[#155D49] transition-colors">
+              FAQs
             </Link>
             <Link href="/fees-and-booking" className="hover:text-[#155D49] transition-colors">
-              Fees & Investment
+              Book
             </Link>
           </nav>
 
@@ -60,41 +57,10 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white border-b border-[#155D49]/20 px-4 pt-4 pb-6 space-y-3">
-          <Link 
-            href="/" 
-            onClick={() => setIsOpen(false)}
-            className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]"
-          >
-            Home
-          </Link>
-          <Link 
-            href="/about-erika-martin" 
-            onClick={() => setIsOpen(false)}
-            className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]"
-          >
-            About Erika
-          </Link>
-          <Link 
-            href="/executive-burnout-therapy" 
-            onClick={() => setIsOpen(false)}
-            className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]"
-          >
-            Executive Therapy
-          </Link>
-          <Link 
-            href="/burnout-therapist-edinburgh" 
-            onClick={() => setIsOpen(false)}
-            className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]"
-          >
-            Edinburgh Practice
-          </Link>
-          <Link 
-            href="/fees-and-booking" 
-            onClick={() => setIsOpen(false)}
-            className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]"
-          >
-            Fees & Investment
-          </Link>
+          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">Contact</Link>
+          <Link href="/about-erika-martin" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">About</Link>
+          <Link href="/#faq" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">FAQs</Link>
+          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">Book</Link>
           <div className="pt-2">
             <Link 
               href="/fees-and-booking"

@@ -13,7 +13,7 @@ export function Footer() {
           <div className="space-y-4 md:col-span-1">
             <Logo variant="dark" />
             <p className="text-xs text-slate-300 leading-relaxed font-normal pt-2">
-              Specialized psychotherapeutic support for corporate executives, business owners, and senior leaders in Edinburgh and Online across the UK.
+              personal counselling for adults building something meaningful — career, relationships, or personal goals.
             </p>
             <div className="flex items-center gap-2 text-xs text-[#34D399] font-bold">
               <ShieldCheck className="w-4 h-4 text-[#34D399]" />
@@ -27,7 +27,7 @@ export function Footer() {
             <ul className="space-y-2 text-xs text-slate-300 font-medium">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/about-erika-martin" className="hover:text-white transition-colors">About Erika Martin</Link></li>
-              <li><Link href="/executive-burnout-therapy" className="hover:text-white transition-colors">Executive Burnout</Link></li>
+              
               <li><Link href="/burnout-therapist-edinburgh" className="hover:text-white transition-colors">Edinburgh Practice</Link></li>
               <li><Link href="/fees-and-booking" className="hover:text-white transition-colors">Fees & Investment</Link></li>
             </ul>
@@ -52,7 +52,7 @@ export function Footer() {
             <div className="text-xs text-slate-300 space-y-2 font-medium">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                <span>Mysa Therapy Rooms, 6A Newmills Road, Dalkeith, Midlothian, EH22 1DU</span>
+                <span>6 Newmills Rd, Dalkeith EH22 2LE</span>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#34D399] shrink-0" />
@@ -69,7 +69,7 @@ export function Footer() {
 
         {/* Bottom Copyright */}
         <div className="pt-8 border-t border-slate-800 text-center text-xs text-slate-400 font-medium">
-          <p>© {new Date().getFullYear()} MindHaven Executive Therapy. All rights reserved. MNCPS Accredited & PSA Registered.</p>
+          <p>© {new Date().getFullYear()} Mindhaven. All rights reserved. MNCPS Accredited & PSA Registered.</p>
         </div>
 
       </div>

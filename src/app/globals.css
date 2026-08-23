@@ -105,3 +105,13 @@
   border-color: rgba(21, 93, 73, 0.35);
   box-shadow: 0 10px 25px -5px rgba(21, 93, 73, 0.08);
 }
+@media (prefers-reduced-motion: reduce) {
+  .animate-breathe,
+  .animate-aura-drift,
+  .animate-calm-ring,
+  .animate-shimmer-border,
+  .bg-calm-gradient {
+    animation: none !important;
+    transform: none !important;
+  }
+}

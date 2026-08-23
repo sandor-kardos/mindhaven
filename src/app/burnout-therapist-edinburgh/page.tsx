@@ -2,8 +2,9 @@ import Link from "next/link";
 import { ShieldCheck, MapPin, Calendar, ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Burnout Therapist Edinburgh | Executive Stress Counselling",
-  description: "Discreet executive burnout therapy in Edinburgh and Midlothian. MNCPS accredited psychotherapeutic support for high performers.",
+  title: "Burnout Therapist Edinburgh | Stress Counselling",
+  alternates: { canonical: "https://mindhaven.uk/burnout-therapist-edinburgh" },
+  description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
 };
 
 export default function BurnoutTherapistEdinburgh() {
@@ -18,10 +19,10 @@ export default function BurnoutTherapistEdinburgh() {
             <span>Edinburgh & Midlothian Practice</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
-            Burnout Therapist for Edinburgh's Corporate Leaders
+            Counselling for Stress and Burnout in Edinburgh
           </h1>
           <p className="text-lg text-[#0D2E24]/90 font-medium leading-relaxed max-w-3xl mx-auto">
-            Discreet, evidence-based executive stress counselling designed for professionals navigating high-pressure environments across the Scottish capital.
+            Discreet, evidence-based stress and burnout counselling designed for professionals navigating high-pressure environments across the Scottish capital.
           </p>
         </div>
       </section>
@@ -32,7 +33,7 @@ export default function BurnoutTherapistEdinburgh() {
           
           <div className="space-y-6">
             <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
-              Tailored Psychotherapy for High Performers
+              Support Tailored to You
             </h2>
             <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
               Edinburgh's financial, legal, tech, and medical sectors demand relentless focus. When workload pressure crosses into physiological burnout, conventional rest is no longer sufficient. Our practice delivers targeted psychotherapeutic intervention to restore nervous system balance without compromising professional drive.

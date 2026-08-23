@@ -11,8 +11,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MindHaven Executive Therapy | Edinburgh & Online UK",
-  description: "Evidence-informed psychotherapeutic support for high-performing executives, business owners, and corporate leaders navigating burnout, chronic workplace stress, and decision fatigue.",
+  title: "Mindhaven | Personal Counselling with Erika Martin",
+  alternates: { canonical: "https://mindhaven.uk" },
+  verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
+  description: "Personal counselling that enhances mental clarity, emotional control, and decision-making performance for ambitious professionals.",
   icons: {
     icon: "/images/mindhaven-logo.png",
     shortcut: "/images/mindhaven-logo.png",
@@ -32,7 +34,8 @@ const jsonLd = {
       email: "mindhavenuk@gmail.com",
       priceRange: "£95 - £130",
       image: "https://mindhaven.uk/assets/erika-martin.jpg",
-      description: "Accredited Psychotherapeutic Counsellor specializing in executive burnout, professional stress, and nervous system regulation in Edinburgh, Dalkeith, and Online UK.",
+      description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
+      sameAs: [],
       memberOf: {
         "@type": "Organization",
         name: "National Counselling and Psychotherapy Society",
@@ -50,10 +53,10 @@ const jsonLd = {
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Mysa Therapy Rooms, 6A Newmills Road",
+        streetAddress: "6 Newmills Rd",
         addressLocality: "Dalkeith",
         addressRegion: "Midlothian",
-        postalCode: "EH22 1DU",
+        postalCode: "EH22 2LE",
         addressCountry: "GB"
       },
       areaServed: [
@@ -67,7 +70,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://mindhaven.uk/#website",
       url: "https://mindhaven.uk",
-      name: "MindHaven Executive Therapy",
+      name: "Mindhaven",
       publisher: {
         "@id": "https://mindhaven.uk/#therapist"
       }

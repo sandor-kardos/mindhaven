@@ -4,7 +4,8 @@ import { ShieldCheck, Award, GraduationCap, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "About Erika Martin | MNCPS Accredited Psychotherapist",
-  description: "Learn more about Erika Martin (MNCPS Acc.), an accredited psychotherapeutic counsellor specializing in executive burnout and nervous system regulation in Edinburgh.",
+  alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
+  description: "Learn more about Erika Martin (MNCPS Acc.), an accredited psychotherapeutic counsellor specializing in stress, burnout, and personal growth in Edinburgh.",
 };
 
 export default function AboutErikaMartin() {
@@ -22,7 +23,7 @@ export default function AboutErikaMartin() {
             Erika Martin
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Integrative Psychotherapist specializing in executive stress, high-functioning anxiety, and nervous system regulation.
+            Integrative Psychotherapist specializing in stress, anxiety, and nervous system regulation.
           </p>
         </div>
       </section>
@@ -55,10 +56,10 @@ export default function AboutErikaMartin() {
                 Clinical Philosophy & Approach
               </h2>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                High performers are often praised for their ability to push through stress, mask fatigue, and maintain flawless professional output. However, sustained activation of the nervous system inevitably leads to physiological exhaustion, decision fatigue, and emotional depletion.
+                Ambitious professionals are often praised for their ability to push through stress, mask fatigue, and maintain flawless professional output. However, sustained activation of the nervous system inevitably leads to physiological exhaustion, decision fatigue, and emotional depletion.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I provide an evidence-informed space tailored specifically for executives, founders, and leaders who require absolute discretion, therapeutic depth, and practical tools to restore psychological balance.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I provide an evidence-informed space tailored to adults navigating career, relationship, or personal growth challenges. who require absolute discretion, therapeutic depth, and practical tools to restore psychological balance.
               </p>
 
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">

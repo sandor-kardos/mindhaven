@@ -1,7 +1,7 @@
 import { ShieldCheck, Lock } from "lucide-react";
 
 export const metadata = {
-  title: "Privacy Policy & GDPR | MindHaven Executive Therapy",
+  title: "Privacy Policy & GDPR | Mindhaven",
   description: "Strict privacy and UK GDPR compliance documentation for MindHaven practice.",
 };
 
@@ -18,7 +18,7 @@ export default function PrivacyAndGDPR() {
             Privacy Policy & Data Protection
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Our commitment to protecting your personal data, clinical records, and absolute executive discretion.
+            Our commitment to protecting your personal data, clinical records, and absolute discretion.
           </p>
         </div>
       </section>
