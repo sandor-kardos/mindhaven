@@ -28,7 +28,7 @@ export default function LegalNotice() {
         <div className="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl border border-[#155D49]/20 shadow-md space-y-8 text-[#0D2E24]">
           {/* TODO: Legal Review Required */}
           <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 rounded mb-8">
-            <p className="font-bold text-sm">Draft Content — Pending Legal Review</p>
+            <p className="font-bold text-sm">Draft Content: Pending Legal Review</p>
             <p className="text-xs mt-1">This section contains placeholder information that must be verified by legal counsel to ensure compliance with UK law.</p>
           </div>
 

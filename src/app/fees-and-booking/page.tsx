@@ -15,13 +15,13 @@ export default function FeesAndBooking() {
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30">
-            100% Private Pay & Confidential
+            Confidential & Secure
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Transparent Investment
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium leading-relaxed max-w-2xl mx-auto">
-            Premium, private-pay psychotherapeutic support designed for maximum discretion and clinical efficacy.
+            Personal counselling designed for clarity, confidentiality, and real progress.
           </p>
         </div>
       </section>
@@ -79,9 +79,9 @@ export default function FeesAndBooking() {
           <div className="bg-[#E6F2ED] border-l-4 border-[#155D49] p-6 md:p-8 rounded-r-2xl flex items-start shadow-sm card-flow-effect">
             <ShieldAlert className="w-8 h-8 text-[#155D49] mr-4 shrink-0" />
             <div>
-              <h4 className="text-lg font-bold text-[#0D2E24] mb-2 font-heading">Private-Pay Discretion Guarantee</h4>
+              <h4 className="text-lg font-bold text-[#0D2E24] mb-2 font-heading">Confidentiality Guarantee</h4>
               <p className="text-[#0D2E24]/85 text-sm leading-relaxed font-medium">
-                MindHaven operates exclusively as a private-pay practice to protect client confidentiality and eliminate insurance-imposed session limits or required diagnostic reporting to employers. Superbill statements can be provided for self-claim policies upon request.
+                Your privacy is a priority. Session details are kept strictly confidential and are only shared with a third party, such as an insurer, with your explicit consent.
               </p>
             </div>
           </div>

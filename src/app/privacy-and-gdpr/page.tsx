@@ -33,9 +33,9 @@ export default function PrivacyAndGDPR() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">2. Private-Pay Confidentiality</h2>
+            <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">2. Confidentiality</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Because MindHaven is a 100% private-pay practice, no diagnostic codes, session summaries, or notes are shared with medical insurance providers, employers, or third parties unless mandated by law or explicit written request.
+              Session notes and diagnostic information are only shared with third parties, such as insurers where applicable, with your explicit consent, in line with GDPR and National Counselling Society guidelines.
             </p>
           </div>
 

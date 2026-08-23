@@ -15,11 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://mindhaven.uk" },
   verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
   description: "Personal counselling that enhances mental clarity, emotional control, and decision-making performance for ambitious professionals.",
-  icons: {
-    icon: "/images/mindhaven-logo.png",
-    shortcut: "/images/mindhaven-logo.png",
-    apple: "/images/mindhaven-logo.png",
-  },
+
 };
 
 const jsonLd = {
@@ -35,7 +31,10 @@ const jsonLd = {
       priceRange: "£95 - £130",
       image: "https://mindhaven.uk/assets/erika-martin.jpg",
       description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
-      sameAs: [],
+      sameAs: [
+        "https://www.search-ncps.com/search/FindaTherapist/NCS16-03808",
+        "https://www.linkedin.com/in/erika-martin-counselling"
+      ],
       memberOf: {
         "@type": "Organization",
         name: "National Counselling and Psychotherapy Society",
@@ -90,6 +89,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Global Ambient Background Animation */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-[#155D49] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" />
+          <div className="absolute -bottom-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#34D399] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" style={{ animationDelay: '-12s' }} />
+        </div>
+
         <Navbar />
         <main className="flex-grow">
           {children}

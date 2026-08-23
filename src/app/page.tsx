@@ -26,7 +26,7 @@ const faqSchema = {
       "name": "Is online counselling as effective as meeting in person?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, evidence indicates that online counselling—whether via video or phone—is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality."
+        "text": "Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality."
       }
     },
     {
@@ -39,7 +39,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Who can benefit from counselling (not just crisis — professionals too)?",
+      "name": "Who can benefit from counselling (not just crisis; professionals too)?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive."
@@ -170,7 +170,7 @@ export default function Home() {
               <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-[#0D2E24]">
                 <div className="flex items-center gap-2">
                   <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                  <span className="font-bold">100% Private Pay</span>
+                  <span className="font-bold">Confidential & Secure</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-5 h-5 text-[#155D49] shrink-0" />
@@ -416,7 +416,7 @@ export default function Home() {
                     <span>100% Private & Discreet</span>
                   </div>
                   <p className="text-[11px] text-slate-200 leading-relaxed">
-                    MindHaven is an exclusive private-pay practice. No medical insurance records and end-to-end encrypted consultations.
+                    Mindhaven prioritises complete confidentiality, with end-to-end encrypted consultations and information shared only with your consent.
                   </p>
                 </div>
               </div>
@@ -508,7 +508,7 @@ export default function Home() {
             <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
               <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Is online counselling as effective as meeting in person?</h3>
               <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, evidence indicates that online counselling—whether via video or phone—is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality.
+                Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality.
               </p>
             </div>
             
@@ -520,7 +520,7 @@ export default function Home() {
             </div>
             
             <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Who can benefit from counselling (not just crisis — professionals too)?</h3>
+              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Who can benefit from counselling (not just crisis; professionals too)?</h3>
               <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
                 Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive.
               </p>

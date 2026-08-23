@@ -13,7 +13,7 @@ export function Footer() {
           <div className="space-y-4 md:col-span-1">
             <Logo variant="dark" />
             <p className="text-xs text-slate-300 leading-relaxed font-normal pt-2">
-              personal counselling for adults building something meaningful — career, relationships, or personal goals.
+              personal counselling for adults building something meaningful, whether that's career, relationships, or personal goals.
             </p>
             <div className="flex items-center gap-2 text-xs text-[#34D399] font-bold">
               <ShieldCheck className="w-4 h-4 text-[#34D399]" />
@@ -29,7 +29,7 @@ export function Footer() {
               <li><Link href="/about-erika-martin" className="hover:text-white transition-colors">About Erika Martin</Link></li>
               
               <li><Link href="/burnout-therapist-edinburgh" className="hover:text-white transition-colors">Edinburgh Practice</Link></li>
-              <li><Link href="/fees-and-booking" className="hover:text-white transition-colors">Fees & Investment</Link></li>
+              <li><Link href="/fees-and-booking" className="hover:text-white transition-colors">Fees & Booking</Link></li>
             </ul>
           </div>
 
@@ -41,7 +41,7 @@ export function Footer() {
               <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
               <li className="flex items-center gap-1.5 text-slate-300 pt-1">
                 <Lock className="w-3.5 h-3.5 text-[#34D399]" />
-                <span>100% Private Pay Discretion</span>
+                <span>Confidential & Discreet</span>
               </li>
             </ul>
           </div>
@@ -56,11 +56,11 @@ export function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#34D399] shrink-0" />
-                <span>mindhavenuk@gmail.com</span>
+                <a href="mailto:mindhavenuk@gmail.com" className="hover:text-white transition-colors">mindhavenuk@gmail.com</a>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#34D399] shrink-0" />
-                <span>+44 7516 785823</span>
+                <a href="tel:+447516785823" className="hover:text-white transition-colors">+44 7516 785823</a>
               </p>
             </div>
           </div>
