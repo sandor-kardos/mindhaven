@@ -74,7 +74,7 @@ const faqSchema = {
       "name": "Do you see clients in person in Edinburgh?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, in addition to online sessions across the UK, I see clients in person at Mysa Therapy Rooms, located at 6 Newmills Rd in Dalkeith, just outside Edinburgh."
+        "text": "Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location."
       }
     },
     {
@@ -550,7 +550,7 @@ export default function Home() {
             <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
               <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Do you see clients in person in Edinburgh?</h3>
               <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, in addition to online sessions across the UK, I see clients in person at Mysa Therapy Rooms, located at 6 Newmills Rd in Dalkeith, just outside Edinburgh.
+                Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location.
               </p>
             </div>
 

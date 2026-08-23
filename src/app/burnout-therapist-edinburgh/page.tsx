@@ -47,7 +47,7 @@ export default function BurnoutTherapistEdinburgh() {
               <span>Location & Postcode Coverage</span>
             </h3>
             <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed">
-              In-person sessions take place at Mysa Therapy Rooms in Dalkeith, offering private, ground-floor consulting rooms away from Edinburgh city center busy corridors for complete confidentiality.
+              In-person sessions are available in Dalkeith and Edinburgh, offering a private, confidential space away from busy city-center corridors.
             </p>
             
             <div className="flex flex-wrap gap-3 pt-2">
