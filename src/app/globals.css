@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-[#0D2E24]: #0D2E24;
+  --color-brand-[#155D49]: #155D49;
+  --color-brand-[#0A4C3A]: #0A4C3A;
+  --color-brand-wash: #E6F2ED;
+  --color-brand-light: #F8FAF8;
+  --color-gold-accent: #B8860B;
+  
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply bg-[#F8FAF8] text-[#0D2E24] font-sans antialiased tracking-tight leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-jakarta), system-ui, sans-serif;
+    @apply text-[#0D2E24] font-extrabold tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed text-[#0D2E24]/90 font-medium;
+  }
+}
+
+/* 1. Calm Organic Breathing Scale */
+@keyframes breatheGentle {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 15px 30px rgba(21, 93, 73, 0.06)); }
+  50% { transform: scale(1.012) rotate(0.2deg); filter: drop-shadow(0 20px 35px rgba(21, 93, 73, 0.12)); }
+}
+
+/* 2. Soft Ambient Gradient Shift (Atmospheric Calm) */
+@keyframes calmAtmosphere {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 3. Slow Aura Sphere Drift (24s Cycle) */
+@keyframes auraDrift {
+  0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+  33% { transform: translate(20px, -15px) scale(1.05); opacity: 0.55; }
+  66% { transform: translate(-15px, 10px) scale(0.97); opacity: 0.45; }
+}
+
+/* 4. Serene Pacing Ring Animation for 4-7-8 Breath */
+@keyframes calmRingExpand {
+  0%, 100% { transform: scale(0.85); opacity: 0.3; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+/* 5. Subtle Border Shimmer Glow */
+@keyframes borderShimmer {
+  0%, 100% { border-color: rgba(21, 93, 73, 0.2); }
+  50% { border-color: rgba(21, 93, 73, 0.4); }
+}
+
+.animate-breathe {
+  animation: breatheGentle 10s ease-in-out infinite;
+}
+
+.animate-aura-drift {
+  animation: auraDrift 24s ease-in-out infinite;
+}
+
+.animate-calm-ring {
+  animation: calmRingExpand 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-shimmer-border {
+  animation: borderShimmer 6s ease-in-out infinite;
+}
+
+.bg-calm-gradient {
+  background-size: 200% 200%;
+  animation: calmAtmosphere 22s ease infinite;
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(21, 93, 73, 0.2);
+}
+
+/* --- CALM SUBTLE CARD HOVER --- */
+.card-flow-effect {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-flow-effect:hover {
+  border-color: rgba(21, 93, 73, 0.35);
+  box-shadow: 0 12px 28px -6px rgba(21, 93, 73, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-flow-glow {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-flow-glow:hover {
+  border-color: rgba(21, 93, 73, 0.35);
+  box-shadow: 0 10px 25px -5px rgba(21, 93, 73, 0.08);
+}
