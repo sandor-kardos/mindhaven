@@ -1,5 +1,6 @@
-import { ShieldAlert, Calendar, ArrowRight, Check, Sparkles } from "lucide-react";
+import { ShieldAlert, Calendar, Check, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { BookingForm } from "@/components/booking/BookingForm";
 
 export const metadata = {
   title: "Fees & Booking | Mindhaven",
@@ -101,55 +102,7 @@ export default function FeesAndBooking() {
           <div className="bg-[#F8FAF8] rounded-3xl border border-[#155D49]/20 overflow-hidden shadow-xl card-flow-effect flex flex-col md:flex-row">
             
             {/* Form Side */}
-            <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#155D49]/15 bg-white">
-              <h3 className="text-xl font-bold text-[#0D2E24] mb-6 flex items-center font-heading">
-                <Calendar className="w-5 h-5 mr-3 text-[#155D49]" />
-                Intake Form
-              </h3>
-              
-              <form className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Full Name</label>
-                  <input 
-                    type="text" 
-                    id="name"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-                    placeholder="Jane Doe"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Email</label>
-                  <input 
-                    type="email" 
-                    id="email"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-                    placeholder="jane@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="objective" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Primary Objective</label>
-                  <select 
-                    id="objective"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>Select an option...</option>
-                    <option value="burnout">Burnout Recovery</option>
-                    <option value="stress">Work Stress & Burnout</option>
-                    <option value="anxiety">High-Functioning Anxiety</option>
-                    <option value="career">Career Transition</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <button 
-                  type="button"
-                  className="w-full mt-4 inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-md"
-                >
-                  Proceed to Calendar <ArrowRight className="ml-2 w-4 h-4 text-[#34D399]" />
-                </button>
-              </form>
-            </div>
+            <BookingForm />
             
             {/* Calendar Widget Side */}
             <div className="w-full md:w-3/5 bg-[#E6F2ED]/50 flex items-center justify-center min-h-[400px] p-8 text-center">
