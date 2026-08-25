@@ -152,7 +152,7 @@ export default function PrivacyAndGDPR() {
               This website uses cookies only with your explicit consent, which is requested via a banner on your first visit. You may accept or decline analytics cookies at any time — declining does not affect your use of the site.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              If you accept, we use <strong>Google Analytics (GA4)</strong> with Measurement ID <strong>G-TRH51G2DNY</strong> to collect anonymised data about how visitors use this website (pages visited, session duration, device type). IP anonymisation is enabled. This data is processed by Google in accordance with their privacy policy. It is used solely to improve the site and is not shared with any third party for advertising or marketing purposes.
+              If you accept, we use <strong>Google Analytics (GA4)</strong> with Measurement ID <strong>G-72M599EYCP</strong> to collect anonymised data about how visitors use this website (pages visited, session duration, device type). IP anonymisation is enabled. This data is processed by Google in accordance with their privacy policy. It is used solely to improve the site and is not shared with any third party for advertising or marketing purposes.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Your cookie preference is stored as a first-party cookie on your device for up to 12 months. You can withdraw consent at any time by clearing your browser cookies.

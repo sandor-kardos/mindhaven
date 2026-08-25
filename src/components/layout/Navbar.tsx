@@ -44,9 +44,11 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-xl text-[#0D2E24] hover:bg-[#E6F2ED] transition-colors"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

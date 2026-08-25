@@ -3,6 +3,7 @@
 import { ArrowLeft, ArrowRight, Sparkles, BookOpen, ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -50,7 +51,7 @@ const mindhavenArticles: Gallery4Item[] = [
   {
     id: "imposter-syndrome",
     category: "Mindset & Anxiety",
-    categoryBg: "bg-[#B8860B]",
+    categoryBg: "bg-[#6B4B08]",
     title: "Overcoming Internal Imposter Dynamics",
     description: "How internalised perfectionism creates silent anxiety in leadership roles.",
     href: "/blog/imposter-syndrome-in-professionals",
@@ -59,7 +60,7 @@ const mindhavenArticles: Gallery4Item[] = [
   {
     id: "work-life-boundaries",
     category: "Work-Life Balance",
-    categoryBg: "bg-[#D97706]",
+    categoryBg: "bg-[#7A4C08]",
     title: "Setting Sustainable Boundaries Without Guilt",
     description: "Protecting your emotional bandwidth while continuing to excel at work.",
     href: "/blog/sustainable-boundaries",
@@ -133,26 +134,29 @@ const Gallery4 = ({
           }}
         >
           <CarouselContent className="ml-0 px-4 md:px-8">
-            {items.map((item) => (
+            {items.map((item, index) => (
               <CarouselItem
                 key={item.id}
                 className="basis-[285px] sm:basis-[290px] lg:basis-[310px] pl-3.5 sm:pl-4 shrink-0"
               >
-                <Link 
-                  href={item.href} 
+                <Link
+                  href={item.href}
                   className="group relative flex flex-col justify-between aspect-[3/4] h-[28rem] w-full overflow-hidden rounded-3xl border-2 border-white bg-slate-100 shadow-lg hover:shadow-2xl hover:shadow-[#155D49]/15 transition-all duration-500 transform group-hover:-translate-y-1.5"
                 >
                   {/* Bright Portrait Image */}
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 group-hover:scale-108 filter brightness-[1.03]"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 640px) 285px, (max-width: 1024px) 290px, 310px"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-108 brightness-[1.03]"
+                    priority={index === 0}
+                    loading={index === 0 ? undefined : "lazy"}
                   />
 
                   {/* Top Category Badge & Icon */}
                   <div className="relative z-10 p-3 sm:p-4 flex items-center justify-between">
-                    <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-white shadow-xs ${item.categoryBg}`}>
+                    <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-white shadow-xs ${item.categoryBg}`}>
                       {item.category}
                     </span>
                     <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-md border border-white/60 flex items-center justify-center text-[#0D2E24] shadow-xs group-hover:scale-110 transition-transform">
@@ -184,16 +188,18 @@ const Gallery4 = ({
         </Carousel>
 
         {/* Indicator Dots */}
-        <div className="mt-5 sm:mt-6 flex justify-center gap-1.5">
+        <div className="mt-5 sm:mt-6 flex justify-center">
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "w-5 sm:w-6 bg-[#155D49]" : "w-1.5 sm:w-2 bg-[#155D49]/20"
-              }`}
+              className="min-h-[48px] min-w-[24px] flex items-center justify-center px-1"
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
-            />
+            >
+              <span className={`block h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                currentSlide === index ? "w-5 sm:w-6 bg-[#155D49]" : "w-1.5 sm:w-2 bg-[#155D49]/20"
+              }`} />
+            </button>
           ))}
         </div>
       </div>

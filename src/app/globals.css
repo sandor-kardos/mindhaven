@@ -29,8 +29,8 @@
 
 /* 1. Calm Organic Breathing Scale */
 @keyframes breatheGentle {
-  0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 15px 30px rgba(21, 93, 73, 0.06)); }
-  50% { transform: scale(1.012) rotate(0.2deg); filter: drop-shadow(0 20px 35px rgba(21, 93, 73, 0.12)); }
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.012) rotate(0.2deg); }
 }
 
 /* 2. Soft Ambient Gradient Shift (Atmospheric Calm) */
@@ -60,6 +60,7 @@
 
 .animate-breathe {
   animation: breatheGentle 10s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-aura-drift {
