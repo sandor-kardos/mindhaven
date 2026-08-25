@@ -32,6 +32,10 @@ export function BookingForm() {
       });
 
       if (!res.ok) throw new Error("Request failed");
+      if (typeof window !== "undefined") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "generate_lead", form_name: "booking_form" });
+      }
       setStatus("unlocked");
     } catch {
       // Graceful fallback so user experience is never broken
