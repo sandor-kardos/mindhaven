@@ -12,7 +12,7 @@ Private counselling practice website for Erika Martin, MNCPS Accredited Psychoth
 | UI | React 19, Tailwind CSS 4 |
 | Components | Radix UI Slot, Lucide React, Embla Carousel, Motion |
 | Email | Resend (via `/api/book` route) |
-| Analytics | Google Analytics 4 — `G-72M599EYCP`, Consent Mode v2 |
+| Analytics | Google Analytics 4 via GTM (`GTM-TFD5W94G`), Consent Mode v2 |
 | Hosting | Coolify (self-hosted) |
 | Build | Node.js standalone (required — API route prevents static export) |
 | Repo | GitHub (private) |
@@ -143,16 +143,15 @@ Current articles:
 
 ## Analytics & Consent
 
-Google Analytics 4 (`G-72M599EYCP`) is implemented with **Consent Mode v2** for GDPR/EEA compliance:
+GA4 is loaded via GTM container `GTM-TFD5W94G` with **Consent Mode v2** for GDPR/EEA compliance:
 
-- GA script loads on every page but operates in cookieless/modelling mode by default
-- All consent signals default to `denied`
-- `wait_for_update: 500` gives the consent banner time to check stored preference
+- Consent defaults (all storage types denied) are set by a Consent Initialization tag in GTM (Simo Ahava template, `wait_for_update: 500`), firing before all other tags
+- The GA4 Configuration tag fires through GTM; no measurement ID is hardcoded in the codebase
 - User's choice is stored as a first-party cookie (`mindhaven_cookie_consent`) for 12 months
-- On accept: `gtag('consent', 'update', { analytics_storage: 'granted' })`
+- On accept: `gtag('consent', 'update', { analytics_storage: 'granted' })` is called from `CookieConsentBanner.tsx`
 - On decline or no action: signals remain denied
 
-See `src/components/ui/CookieConsentBanner.tsx`.
+See `src/components/ui/CookieConsentBanner.tsx` (banner UI + consent update logic) and GTM container `GTM-TFD5W94G` (Consent Init tag + GA4 Configuration tag).
 
 ---
 

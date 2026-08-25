@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Script from "next/script";
 import Link from "next/link";
 
-const GA_ID = "G-72M599EYCP";
 const CONSENT_KEY = "mindhaven_cookie_consent";
 
 declare global {
@@ -66,36 +64,6 @@ export function CookieConsentBanner() {
 
   return (
     <>
-      {/*
-        Google Analytics with Consent Mode v2.
-        The script always loads but operates in cookieless/modelling mode
-        until the user grants analytics_storage consent.
-        The 'wait_for_update: 500' gives the useEffect time to call
-        gtag('consent', 'update') before GA sends any measurement.
-      */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga-consent-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-
-          // Consent Mode v2: deny all by default (EEA / UK GDPR compliant)
-          gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'wait_for_update': 500
-          });
-
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', { anonymize_ip: true });
-        `}
-      </Script>
-
       {visible && (
         <div className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 sm:px-4 sm:pb-4">
           <div className="container mx-auto max-w-5xl">
