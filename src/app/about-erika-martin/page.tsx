@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Award, GraduationCap, ArrowRight } from "lucide-react";
+import { MindhavenGalleryCta } from "@/components/blocks/MindhavenGalleryCta";
 
 export const metadata = {
   title: "About Erika Martin | MNCPS Accredited Psychotherapist",
@@ -95,6 +96,9 @@ export default function AboutErikaMartin() {
           </div>
         </div>
       </section>
+
+      {/* Interactive Gallery CTA */}
+      <MindhavenGalleryCta />
 
     </div>
   );

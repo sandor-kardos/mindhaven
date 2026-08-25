@@ -90,6 +90,7 @@ const faqSchema = {
 
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
+import { MindhavenGalleryCta } from "@/components/blocks/MindhavenGalleryCta";
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -426,6 +427,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 5.5: Interactive CTA Section with People Gallery */}
+      <MindhavenGalleryCta />
 
       {/* SECTION 6: Consultation CTA & Process - Perfectly Aligned Flow Cards */}
       <section className="py-24 bg-white px-4 border-t border-[#155D49]/15 text-center">
