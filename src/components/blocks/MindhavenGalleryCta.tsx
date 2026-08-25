@@ -10,23 +10,23 @@ import {
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 
-// Royalty-free images of people representing peace, reflection, therapy conversation, and nature regulation
-const PEOPLE_IMAGES = [
+// Verified high-resolution royalty-free images of 30s+ mature professionals
+const MATURE_PEOPLE_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop",
-    alt: "Professional restoring peace and clarity in natural light",
+    url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+    alt: "Professional woman in 30s in a bright setting",
   },
   {
-    url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
-    alt: "Erika Martin in a tranquil therapy environment",
+    url: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+    alt: "Mature professional man 35+ with calm confidence",
   },
   {
-    url: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop",
-    alt: "Confidential therapeutic conversation and active listening",
+    url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
+    alt: "Adult professional experiencing clarity and peace",
   },
   {
-    url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
-    alt: "Mindful nature walk for nervous system regulation",
+    url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    alt: "Calm professional adult in 30s",
   },
 ];
 
@@ -37,21 +37,21 @@ export const MindhavenGalleryCta = () => {
         
         {/* Animated Content Column */}
         <ContainerStagger className="space-y-6">
-          <ContainerAnimated className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
+          <ContainerAnimated className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
             <ShieldCheck className="w-4 h-4 text-[#155D49]" />
             Restore Mental Clarity & Balance
           </ContainerAnimated>
           
           <ContainerAnimated className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold tracking-tight text-[#0D2E24] font-heading leading-[1.15]">
-            Transform High-Stakes Stress Into Sustainable Calm
+            Transform Stress Into Sustainable Calm
           </ContainerAnimated>
           
-          <ContainerAnimated className="text-base text-[#0D2E24]/85 leading-relaxed font-medium md:text-lg">
-            High performance shouldn&apos;t cost your health or peace of mind. Experience personalized psychotherapeutic support designed for professionals navigating burnout, anxiety, and demanding transitions.
+          <ContainerAnimated className="text-base text-[#0D2E24]/90 leading-relaxed font-semibold md:text-lg">
+            High performance shouldn&apos;t cost your health or peace of mind. Experience personalized psychotherapeutic support designed for adults navigating burnout, anxiety, and demanding life transitions.
           </ContainerAnimated>
 
           <ContainerAnimated className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#155D49] text-white font-bold px-8 shadow-lg shadow-[#0D2E24]/15 group">
+            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#155D49] text-white font-extrabold px-8 shadow-lg shadow-[#0D2E24]/15 group cursor-pointer">
               <Link href="/fees-and-booking" className="flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-[#34D399]" />
                 <span>Book Discovery Call</span>
@@ -61,16 +61,16 @@ export const MindhavenGalleryCta = () => {
             
             <Link 
               href="/about-erika-martin" 
-              className="inline-flex items-center justify-center text-sm font-bold text-[#155D49] hover:underline px-4 py-2"
+              className="inline-flex items-center justify-center text-sm font-extrabold text-[#155D49] hover:underline px-4 py-2"
             >
               Learn about Erika Martin →
             </Link>
           </ContainerAnimated>
         </ContainerStagger>
 
-        {/* Gallery Grid Column */}
+        {/* Gallery Grid Column with 30s+ People Images */}
         <GalleryGrid className="my-4">
-          {PEOPLE_IMAGES.map((img, index) => (
+          {MATURE_PEOPLE_IMAGES.map((img, index) => (
             <GalleryGridCell index={index} key={index}>
               <img
                 className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"

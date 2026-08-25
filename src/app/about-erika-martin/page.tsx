@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Award, GraduationCap, ArrowRight } from "lucide-react";
-import { MindhavenGalleryCta } from "@/components/blocks/MindhavenGalleryCta";
+import { Gallery4 } from "@/components/ui/gallery4";
 
 export const metadata = {
   title: "About Erika Martin | MNCPS Accredited Psychotherapist",
   alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
-  description: "Learn more about Erika Martin (MNCPS Acc.), an accredited psychotherapeutic counsellor specializing in stress, burnout, and personal growth in Edinburgh.",
+  description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
 };
 
 export default function AboutErikaMartin() {
@@ -16,15 +16,21 @@ export default function AboutErikaMartin() {
       {/* Header */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#155D49] border border-[#155D49]/30 text-xs font-bold uppercase tracking-wider">
+          <a 
+            href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#155D49] border border-[#155D49]/30 text-xs font-bold uppercase tracking-wider hover:bg-[#E6F2ED] transition-colors group"
+            title="Verify Erika Martin's Official NCPS Listing"
+          >
             <ShieldCheck className="w-4 h-4 text-[#155D49]" />
-            <span>MNCPS (Acc.) · PSA Registered Practitioner</span>
-          </div>
+            <span>NCPS Accredited · PSA Registered Practitioner</span>
+          </a>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Erika Martin
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Integrative Psychotherapist specializing in stress, anxiety, and nervous system regulation.
+            Integrative Psychotherapist specialising in stress, anxiety, and nervous system regulation.
           </p>
         </div>
       </section>
@@ -60,7 +66,7 @@ export default function AboutErikaMartin() {
                 Ambitious professionals are often praised for their ability to push through stress, mask fatigue, and maintain flawless professional output. However, sustained activation of the nervous system inevitably leads to physiological exhaustion, decision fatigue, and emotional depletion.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I provide an evidence-informed space tailored to adults navigating career, relationship, or personal growth challenges. who require absolute discretion, therapeutic depth, and practical tools to restore psychological balance.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I provide an evidence-informed space tailored to adults navigating career, relationship, or personal growth challenges, offering absolute discretion, therapeutic depth, and practical tools to restore psychological balance.
               </p>
 
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -97,8 +103,8 @@ export default function AboutErikaMartin() {
         </div>
       </section>
 
-      {/* Interactive Gallery CTA */}
-      <MindhavenGalleryCta />
+      {/* Clinical Insights Articles Carousel */}
+      <Gallery4 />
 
     </div>
   );

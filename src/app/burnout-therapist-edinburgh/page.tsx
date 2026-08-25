@@ -7,9 +7,31 @@ export const metadata = {
   description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Psychotherapy & Burnout Counselling",
+  provider: {
+    "@type": "Psychotherapist",
+    name: "Erika Martin",
+    url: "https://mindhaven.uk"
+  },
+  areaServed: [
+    { "@type": "City", name: "Edinburgh" },
+    { "@type": "City", name: "Dalkeith" },
+    { "@type": "AdministrativeArea", name: "Midlothian" },
+    { "@type": "Country", name: "United Kingdom" }
+  ],
+  description: "Targeted psychotherapeutic counselling for stress, burnout, and emotional regulation in Edinburgh, Dalkeith, and Online UK."
+};
+
 export default function BurnoutTherapistEdinburgh() {
   return (
     <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">

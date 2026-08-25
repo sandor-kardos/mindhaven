@@ -34,7 +34,7 @@ const faqSchema = {
       "name": "Do you help with stress and anxiety specifically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, as an MNCPS Accredited Counsellor, I specialize in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control."
+        "text": "Yes, as an MNCPS Accredited Counsellor, I specialise in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control."
       }
     },
     {
@@ -82,7 +82,7 @@ const faqSchema = {
       "name": "What therapeutic approach/methodology do you use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I utilize an integrative approach that includes person-centered therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques."
+        "text": "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques."
       }
     }
   ]
@@ -90,7 +90,8 @@ const faqSchema = {
 
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
-import { MindhavenGalleryCta } from "@/components/blocks/MindhavenGalleryCta";
+import { Gallery4 } from "@/components/ui/gallery4";
+import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -103,7 +104,8 @@ import {
   Calendar,
   Lock,
   Compass,
-  Zap
+  Zap,
+  ExternalLink
 } from "lucide-react";
 
 export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
@@ -126,15 +128,23 @@ export default function Home() {
             {/* Left Column: Headlines & CTA */}
             <div className="lg:col-span-7 space-y-8">
               
-              {/* Tagline Pill */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-xs font-bold uppercase tracking-wider text-[#155D49]">
-                <ShieldCheck className="w-4 h-4 text-[#155D49]" />
-                <span>What if you could thrive, not just survive?</span>
-              </div>
+              {/* Tagline & Trust Badges Row */}
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider text-[#155D49]">
+                  <ShieldCheck className="w-4 h-4 text-[#155D49]" />
+                  <span>What if you could thrive, not just survive?</span>
+                </div>
 
-              {/* Trust Badge Pill */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#E6F2ED] border border-[#155D49]/20 shadow-xs text-[10px] font-bold uppercase tracking-wider text-[#155D49] mt-2">
-                <span>MNCPS Accredited · PSA Registered</span>
+                <a 
+                  href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6F2ED] hover:bg-[#155D49] text-[#155D49] hover:text-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
+                  title="Verify Erika Martin's Official NCPS Accreditation"
+                >
+                  <span>MNCPS Accredited · PSA Registered</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+                </a>
               </div>
               
               {/* Main Headline */}
@@ -203,17 +213,29 @@ export default function Home() {
                     className="w-full h-auto object-cover aspect-[4/5] filter brightness-[1.02]"
                   />
                   
-                  {/* Floating Overlay Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl p-4 border border-[#155D49]/30 shadow-xl flex items-center gap-3">
-                    <Sparkles className="w-7 h-7 text-[#155D49] shrink-0 animate-pulse" />
-                    <div>
-                      <h4 className="font-bold text-sm text-[#0D2E24] font-heading flex items-center gap-1.5">
-                        Erika Martin 
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#E6F2ED] text-[#155D49] border border-[#155D49]/30 font-bold">MNCPS (Acc.)</span>
-                      </h4>
-                      <p className="text-xs text-[#0D2E24]/80 font-medium mt-0.5">Counsellor (MNCPS Acc.)</p>
+                  {/* Sharp Floating Overlay Badge with Direct NCPS Link */}
+                  <a 
+                    href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 border border-[#155D49]/40 shadow-2xl flex items-center justify-between group hover:border-[#155D49] transition-all cursor-pointer z-10"
+                    title="Verify Erika Martin's Official NCPS Register Listing"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#E6F2ED] flex items-center justify-center text-[#155D49] shrink-0 border border-[#155D49]/30">
+                        <ShieldCheck className="w-5 h-5 text-[#155D49]" />
+                      </div>
+                      <div>
+                        <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading group-hover:text-[#155D49] transition-colors">
+                          Erika Martin 
+                        </h4>
+                        <div className="text-xs text-[#155D49] font-extrabold mt-0.5">
+                          <span>Accredited Counsellor</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    <ExternalLink className="w-4 h-4 text-[#155D49]/60 group-hover:text-[#155D49] transition-colors shrink-0" />
+                  </a>
                 </div>
 
               </div>
@@ -222,6 +244,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 1.5: Clinical Insights Articles Carousel (Placed right after Hero) */}
+      <Gallery4 />
 
       {/* SECTION 2: Problem Validation - Perfectly Aligned Flow Cards */}
       <section className="py-24 bg-white px-4 border-b border-[#155D49]/15 relative">
@@ -274,71 +299,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: Coaching vs Therapy Table */}
+      {/* SECTION 3: Surface Advice vs Accredited Counselling */}
       <section className="py-24 bg-[#E6F2ED] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#155D49]/20">
         <div className="container mx-auto max-w-5xl relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30 shadow-xs">
-              Structural Differences
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30 shadow-xs">
+              Clinical Quality Standard
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
-              Coaching vs. Therapy
+              Informal Surface Advice vs. Accredited Counselling
             </h2>
-            <p className="text-[#0D2E24]/85 text-lg font-medium">
-              Coaching focuses on tactical output. Therapy resolves the underlying root-cause stress architecture.
+            <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
+              Informal tips offer occasional surface guidance. Professional clinical counselling delivers deep resolution for burnout, anxiety, and long-term emotional well-being.
             </p>
           </div>
 
           <div className="bg-white rounded-3xl border border-[#155D49]/30 overflow-hidden shadow-xl card-flow-effect">
             <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
               
-              {/* Coaching Column */}
-              <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#155D49]/15 space-y-6 flex flex-col justify-between h-full">
+              {/* Informal Surface Advice Column */}
+              <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#155D49]/15 space-y-6 flex flex-col justify-between h-full bg-[#F8FAF8]/50">
                 <div className="space-y-6">
-                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#F8FAF8] text-[#0D2E24]/80 border border-slate-300">
-                    Performance Coaching
+                  <div className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-slate-200/80 text-slate-700 border border-slate-300">
+                    Recommended for Occasional Use
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0D2E24] font-heading">Coaching</h3>
+                  <h3 className="text-2xl font-bold text-[#0D2E24] font-heading">Informal Surface Advice</h3>
                   <ul className="space-y-4 text-[#0D2E24]/80 text-sm font-medium">
                     <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-[#0D2E24]/50 shrink-0"></div>
-                      <span>Targets external goals, KPI metrics, and short-term tactical leadership strategies.</span>
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
+                      <span>Useful for occasional light stress management or short-term productivity tips.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-[#0D2E24]/50 shrink-0"></div>
-                      <span>Assumes healthy baseline nervous system regulation.</span>
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
+                      <span>Focuses on immediate tactical output without addressing deep emotional patterns.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-[#0D2E24]/50 shrink-0"></div>
-                      <span>Optimizes outward behavioral performance.</span>
+                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
+                      <span>Does not provide accredited clinical safety standards, regulation, or ethical governance.</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* MindHaven Therapy Column */}
+              {/* MindHaven Accredited Counselling Column */}
               <div className="p-8 md:p-12 bg-[#E6F2ED]/70 space-y-6 relative border-t md:border-t-0 border-[#155D49]/30 flex flex-col justify-between h-full">
                 <div className="space-y-6">
-                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#155D49] text-white shadow-xs font-bold">
-                    Root-Cause Psychology
+                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#155D49] text-white shadow-xs">
+                    MNCPS Accredited Care
                   </div>
                   <h3 className="text-2xl font-bold text-[#0D2E24] font-heading flex items-center justify-between">
-                    MindHaven Therapy
+                    MindHaven Counselling
                     <CheckCircle2 className="w-6 h-6 text-[#155D49]" />
                   </h3>
                   <ul className="space-y-4 text-[#0D2E24] text-sm font-semibold">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Targets underlying nervous system dysregulation, imposter dynamics, and perfectionism.</span>
+                      <span>Delivered by an MNCPS Accredited Counsellor bound by strict professional ethical standards.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Directly treats physiological chronic stress and fight/flight survival states.</span>
+                      <span>Treats root-cause stress, chronic burnout, anxiety, and emotional dysregulation.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Builds sustainable capacity, authentic boundaries, and deep psychological resilience.</span>
+                      <span>Restores authentic psychological well-being, nervous system balance, and long-term clarity.</span>
                     </li>
                   </ul>
                 </div>
@@ -428,8 +453,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5.5: Interactive CTA Section with People Gallery */}
-      <MindhavenGalleryCta />
+
 
       {/* SECTION 6: Consultation CTA & Process - Perfectly Aligned Flow Cards */}
       <section className="py-24 bg-white px-4 border-t border-[#155D49]/15 text-center">
@@ -484,87 +508,62 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* SECTION: FAQ */}
       <section id="faq" className="py-24 bg-[#E6F2ED]/40 px-4 border-t border-[#155D49]/15">
         <div className="container mx-auto max-w-3xl space-y-10">
           <div className="text-center space-y-4">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30">
+              Clear Answers
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
               Frequently Asked Questions
             </h2>
           </div>
           
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Can I try a free consultation before committing?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                You can book an initial consultation to discuss your needs and see if we are a good fit before committing to a broader course of therapy.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">How does online counselling work (video/phone)?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Online sessions are conducted securely via encrypted video calls or over the phone, allowing you to engage in therapy from the comfort and privacy of your own space, anywhere in the UK.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Is online counselling as effective as meeting in person?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Do you help with stress and anxiety specifically?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, as an MNCPS Accredited Counsellor, I specialize in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Who can benefit from counselling (not just crisis; professionals too)?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Are sessions confidential?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, all sessions are strictly confidential. We adhere to the ethical guidelines and data protection standards of the National Counselling and Psychotherapy Society (MNCPS) and GDPR, ensuring your privacy and clinical records are fully protected.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">How many sessions will I need?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                The number of sessions depends on your individual circumstances. Some clients find the structure of our 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">How do I book a session?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                You can book a session by visiting our Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">Do you see clients in person in Edinburgh?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect">
-              <h3 className="font-bold text-lg text-[#0D2E24] font-heading mb-2">What therapeutic approach/methodology do you use?</h3>
-              <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
-                I utilize an integrative approach that includes person-centered therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques.
-              </p>
-            </div>
-          </div>
+          <FaqAccordion 
+            faqs={[
+              {
+                question: "Can I try a free consultation before committing?",
+                answer: "You can book an initial consultation to discuss your needs and see if we are a good fit before committing to a broader course of therapy."
+              },
+              {
+                question: "How does online counselling work (video/phone)?",
+                answer: "Online sessions are conducted securely via encrypted video calls or over the phone, allowing you to engage in therapy from the comfort and privacy of your own space, anywhere in the UK."
+              },
+              {
+                question: "Is online counselling as effective as meeting in person?",
+                answer: "Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality."
+              },
+              {
+                question: "Do you help with stress and anxiety specifically?",
+                answer: "Yes, as an MNCPS Accredited Counsellor, I specialise in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control."
+              },
+              {
+                question: "Who can benefit from counselling (not just crisis; professionals too)?",
+                answer: "Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive."
+              },
+              {
+                question: "Are sessions confidential?",
+                answer: "Yes, all sessions are strictly confidential. We adhere to the ethical guidelines and data protection standards of the National Counselling and Psychotherapy Society (MNCPS) and GDPR, ensuring your privacy and clinical records are fully protected."
+              },
+              {
+                question: "How many sessions will I need?",
+                answer: "The number of sessions depends on your individual circumstances. Some clients find the structure of our 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
+              },
+              {
+                question: "How do I book a session?",
+                answer: "You can book a session by visiting our Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
+              },
+              {
+                question: "Do you see clients in person in Edinburgh?",
+                answer: "Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location."
+              },
+              {
+                question: "What therapeutic approach/methodology do you use?",
+                answer: "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques."
+              }
+            ]} 
+          />
         </div>
       </section>
 

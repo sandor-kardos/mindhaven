@@ -28,7 +28,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. Data Controller</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Erika Martin (MNCPS Acc.) is the sole Data Controller for MindHaven. All clinical documentation and contact details are processed in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+              Erika Martin is the sole Data Controller for MindHaven. All clinical documentation and contact details are processed in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
             </p>
           </div>
 

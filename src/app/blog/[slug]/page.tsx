@@ -2,20 +2,27 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const title = slug ? slug.replace(/-/g, ' ') : "Blog Post";
   return {
-    title: `${params.slug.replace(/-/g, ' ')} | Mindhaven Blog`,
-    alternates: { canonical: `https://mindhaven.uk/blog/${params.slug}` }
+    title: `${title} | Mindhaven Blog`,
+    alternates: { canonical: `https://mindhaven.uk/blog/${slug}` }
   };
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  // This is a scaffold for the MDX route.
-  // In a real implementation, you would load the MDX file based on params.slug.
+export default async function BlogPost({ params }: Props) {
+  const { slug } = await params;
   
-  if (!params.slug) {
+  if (!slug) {
     notFound();
   }
+
+  const formattedTitle = slug.replace(/-/g, ' ');
 
   return (
     <article className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] min-h-screen">
@@ -25,7 +32,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <ArrowLeft className="w-4 h-4 mr-1" /> Back to Blog
           </Link>
           <h1 className="text-4xl md:text-5xl font-extrabold font-heading capitalize">
-            {params.slug.replace(/-/g, ' ')}
+            {formattedTitle}
           </h1>
           <p className="text-sm text-[#0D2E24]/70 font-medium">Published on 2026-10-01</p>
         </div>
@@ -33,9 +40,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-3xl prose prose-lg prose-p:text-[#0D2E24]/85 prose-headings:text-[#0D2E24] prose-headings:font-heading">
-          {/* MDX Content would be rendered here */}
-          <p>This is a scaffolded MDX post route for: <strong>{params.slug}</strong>.</p>
-          <p>To fully support MDX compilation, you would integrate <code>next/mdx</code> or <code>next-mdx-remote</code> in the Next.js configuration.</p>
+          <p>This is a scaffolded MDX post route for: <strong>{formattedTitle}</strong>.</p>
+          <p>To publish full articles, content markdown files will be loaded dynamically via the content pipeline.</p>
         </div>
       </section>
     </article>

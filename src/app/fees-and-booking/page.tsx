@@ -99,21 +99,7 @@ export default function FeesAndBooking() {
             </p>
           </div>
           
-          <div className="bg-[#F8FAF8] rounded-3xl border border-[#155D49]/20 overflow-hidden shadow-xl card-flow-effect flex flex-col md:flex-row">
-            
-            {/* Form Side */}
-            <BookingForm />
-            
-            {/* Calendar Widget Side */}
-            <div className="w-full md:w-3/5 bg-[#E6F2ED]/50 flex items-center justify-center min-h-[400px] p-8 text-center">
-              <div className="text-[#0D2E24]/70">
-                <Calendar className="w-12 h-12 mx-auto mb-3 text-[#155D49]" />
-                <p className="font-bold text-lg text-[#0D2E24] mb-1 font-heading">Secure Calendar Availability</p>
-                <p className="text-xs font-medium text-[#0D2E24]/80">Completing the form unlocks available appointment slots.</p>
-              </div>
-            </div>
-            
-          </div>
+          <BookingForm />
         </div>
       </section>
 

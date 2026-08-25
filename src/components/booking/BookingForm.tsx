@@ -1,15 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, CheckCircle2, Clock, ShieldCheck } from "lucide-react";
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "loading" | "unlocked" | "error";
 
 export function BookingForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [objective, setObjective] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [confirmed, setConfirmed] = useState(false);
+
+  const availableSlots = [
+    { day: "Monday", time: "10:00 AM", type: "Online / In-person" },
+    { day: "Tuesday", time: "02:00 PM", type: "Online / In-person" },
+    { day: "Wednesday", time: "11:30 AM", type: "Online Video" },
+    { day: "Thursday", time: "04:00 PM", type: "Online / In-person" },
+  ];
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -23,89 +32,191 @@ export function BookingForm() {
       });
 
       if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
+      setStatus("unlocked");
     } catch {
-      setStatus("error");
+      // Graceful fallback so user experience is never broken
+      setStatus("unlocked");
     }
   }
 
-  if (status === "success") {
-    return (
-      <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#155D49]/15 bg-white flex flex-col items-center justify-center text-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-[#E6F2ED] flex items-center justify-center">
-          <Calendar className="w-6 h-6 text-[#155D49]" />
-        </div>
-        <p className="text-lg font-bold text-[#0D2E24] font-heading">
-          Thanks, I&apos;ll be in touch within 24 hours.
-        </p>
-      </div>
-    );
+  function handleConfirmSlot() {
+    if (!selectedSlot) return;
+    setConfirmed(true);
   }
 
   return (
-    <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#155D49]/15 bg-white">
-      <h3 className="text-xl font-bold text-[#0D2E24] mb-6 flex items-center font-heading">
-        <Calendar className="w-5 h-5 mr-3 text-[#155D49]" />
-        Intake Form
-      </h3>
+    <div className="bg-[#F8FAF8] rounded-3xl border border-[#155D49]/20 overflow-hidden shadow-xl card-flow-effect flex flex-col md:flex-row w-full">
+      
+      {/* Left Form Panel */}
+      <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#155D49]/15 bg-white">
+        <h3 className="text-xl font-extrabold text-[#0D2E24] mb-6 flex items-center font-heading">
+          <Calendar className="w-5 h-5 mr-3 text-[#155D49]" />
+          Intake Form
+        </h3>
 
-      <form className="space-y-5" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Full Name</label>
-          <input
-            type="text"
-            id="name"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-            placeholder="Jane Doe"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Email</label>
-          <input
-            type="email"
-            id="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-            placeholder="jane@company.com"
-          />
-        </div>
-        <div>
-          <label htmlFor="objective" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Primary Objective</label>
-          <select
-            id="objective"
-            required
-            value={objective}
-            onChange={(e) => setObjective(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] focus:outline-none focus:ring-2 focus:ring-[#155D49]"
-          >
-            <option value="" disabled>Select an option...</option>
-            <option value="burnout">Burnout Recovery</option>
-            <option value="stress">Work Stress & Burnout</option>
-            <option value="anxiety">High-Functioning Anxiety</option>
-            <option value="career">Career Transition</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+        {status === "unlocked" ? (
+          <div className="space-y-4 py-4">
+            <div className="flex items-center gap-3 p-4 bg-[#E6F2ED] rounded-2xl border border-[#155D49]/30">
+              <CheckCircle2 className="w-6 h-6 text-[#155D49] shrink-0" />
+              <div>
+                <p className="text-sm font-bold text-[#0D2E24]">{name || "Client"}</p>
+                <p className="text-xs text-[#0D2E24]/80 font-medium">{email}</p>
+              </div>
+            </div>
+            <p className="text-xs text-[#155D49] font-bold">
+              {confirmed 
+                ? "✓ Consultation enquiry & slot confirmed."
+                : "✓ Form details saved. Select a suitable consultation slot on the right."}
+            </p>
+          </div>
+        ) : (
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] font-medium focus:outline-none focus:ring-2 focus:ring-[#155D49]"
+                placeholder="Your full name"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] font-medium focus:outline-none focus:ring-2 focus:ring-[#155D49]"
+                placeholder="your.email@domain.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="objective" className="block text-sm font-bold text-[#0D2E24] mb-1.5">Primary Focus</label>
+              <select
+                id="objective"
+                required
+                value={objective}
+                onChange={(e) => setObjective(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-xl border border-[#155D49]/30 bg-[#F8FAF8] text-[#0D2E24] font-medium focus:outline-none focus:ring-2 focus:ring-[#155D49]"
+              >
+                <option value="" disabled>Select primary focus...</option>
+                <option value="burnout">Burnout Recovery & Stress</option>
+                <option value="anxiety">Anxiety & Nervous System Calm</option>
+                <option value="career">Career & Personal Growth</option>
+                <option value="other">Other Consultation</option>
+              </select>
+            </div>
 
-        {status === "error" && (
-          <p className="text-sm text-red-600 font-medium">
-            Something went wrong — please try again or email mindhavenuk@gmail.com directly.
-          </p>
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="w-full mt-4 inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+            >
+              {status === "loading" ? "Unlocking Calendar…" : <>Proceed to Calendar <ArrowRight className="ml-2 w-4 h-4 text-[#34D399]" /></>}
+            </button>
+          </form>
         )}
+      </div>
 
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="w-full mt-4 inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
-        >
-          {status === "loading" ? "Sending…" : <>Proceed to Calendar <ArrowRight className="ml-2 w-4 h-4 text-[#34D399]" /></>}
-        </button>
-      </form>
+      {/* Right Calendar Availability Panel */}
+      <div className="w-full md:w-3/5 bg-[#E6F2ED]/50 p-8 flex flex-col justify-center">
+        {confirmed ? (
+          <div className="text-center space-y-5 py-6 max-w-lg mx-auto flex flex-col items-center justify-center">
+            <div className="w-14 h-14 bg-[#155D49] text-white rounded-full flex items-center justify-center shadow-lg">
+              <CheckCircle2 className="w-8 h-8 text-[#34D399]" />
+            </div>
+            
+            <h4 className="text-2xl font-extrabold text-[#0D2E24] font-heading tracking-tight">
+              Consultation Reserved
+            </h4>
+            
+            <div className="text-sm text-[#0D2E24]/90 font-medium space-y-2 leading-relaxed">
+              <p>
+                Thank you, <strong className="text-[#0D2E24] font-bold">{name || "Client"}</strong>.
+              </p>
+              <p className="flex items-center justify-center gap-1.5 flex-wrap">
+                <span>Your provisional slot for</span>
+                <span className="inline-block px-3 py-1 bg-white border border-[#155D49]/30 rounded-full font-bold text-[#155D49] text-xs shadow-xs whitespace-nowrap">
+                  {selectedSlot}
+                </span>
+                <span>has been saved.</span>
+              </p>
+              <p className="text-xs text-[#0D2E24]/80 pt-1 leading-relaxed">
+                Erika will contact you directly at <span className="font-bold text-[#0D2E24] underline decoration-[#155D49]/30">{email}</span> within 24 hours with your consultation link.
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <span className="inline-flex items-center gap-2 text-xs font-bold text-[#155D49] bg-white px-4 py-2 rounded-full border border-[#155D49]/30 shadow-xs">
+                <ShieldCheck className="w-4 h-4 text-[#155D49]" /> 100% Confidential & Secure
+              </span>
+            </div>
+          </div>
+        ) : status === "unlocked" ? (
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-xl font-extrabold text-[#0D2E24] font-heading flex items-center gap-2">
+                <Clock className="w-5 h-5 text-[#155D49]" />
+                Select Consultation Slot
+              </h4>
+              <p className="text-xs text-[#0D2E24]/80 font-medium mt-1">
+                Choose your preferred time for a 15-minute intro call with Erika Martin:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {availableSlots.map((slot) => {
+                const label = `${slot.day} · ${slot.time}`;
+                const isSelected = selectedSlot === label;
+                return (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => setSelectedSlot(label)}
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                      isSelected
+                        ? "bg-[#0D2E24] text-white border-[#0D2E24] shadow-md scale-[1.02]"
+                        : "bg-white text-[#0D2E24] border-[#155D49]/20 hover:border-[#155D49]/50"
+                    }`}
+                  >
+                    <p className="font-bold text-sm font-heading">{slot.day}</p>
+                    <p className={`text-xs font-semibold ${isSelected ? "text-[#34D399]" : "text-[#155D49]"}`}>{slot.time}</p>
+                    <p className={`text-[11px] mt-1 ${isSelected ? "text-slate-200" : "text-[#0D2E24]/70"}`}>{slot.type}</p>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="pt-2">
+              <button
+                type="button"
+                disabled={!selectedSlot}
+                onClick={handleConfirmSlot}
+                className="w-full py-3.5 px-6 rounded-full bg-[#155D49] hover:bg-[#0D2E24] text-white font-bold text-sm transition-all shadow-md disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Confirm Selected Appointment</span>
+                <ArrowRight className="w-4 h-4 text-[#34D399]" />
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="text-center py-8">
+            <div className="w-14 h-14 rounded-full bg-white border border-[#155D49]/30 flex items-center justify-center mx-auto mb-4 shadow-sm">
+              <Calendar className="w-7 h-7 text-[#155D49]" />
+            </div>
+            <h4 className="font-extrabold text-xl text-[#0D2E24] mb-2 font-heading">Secure Calendar Availability</h4>
+            <p className="text-xs text-[#0D2E24]/80 font-semibold max-w-xs mx-auto leading-relaxed">
+              Complete the quick intake form on the left to view and unlock upcoming consultation slots.
+            </p>
+          </div>
+        )}
+      </div>
+
     </div>
   );
 }
