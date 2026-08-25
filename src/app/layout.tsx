@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CookieConsentBanner } from "@/components/ui/CookieConsentBanner";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -33,6 +34,7 @@ const jsonLd = {
       description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
       sameAs: [
         "https://www.search-ncps.com/search/FindaTherapist/NCS16-03808",
+        "https://www.facebook.com/ErikaMartinCounselling",
         "https://www.linkedin.com/in/erika-martin-counselling"
       ],
       memberOf: {
@@ -100,6 +102,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieConsentBanner />
       </body>
     </html>
   );

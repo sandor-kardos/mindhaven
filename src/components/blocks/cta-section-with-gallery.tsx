@@ -69,7 +69,7 @@ export const ContainerAnimated = React.forwardRef<
         ...SPRING_TRANSITION_CONFIG,
         duration: 0.3,
         ...transition,
-      }}
+      } as React.ComponentProps<typeof motion.div>["transition"]}
       {...props}
     />
   )

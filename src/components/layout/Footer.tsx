@@ -15,15 +15,29 @@ export function Footer() {
             <p className="text-sm text-slate-200 leading-relaxed font-medium pt-2">
               Personal counselling for adults building something meaningful, whether that's career, relationships, or personal goals.
             </p>
-            <a 
-              href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808" 
-              target="_blank" 
+            <a
+              href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
               title="Verify Erika Martin's official listing on the NCPS register"
             >
               <ShieldCheck className="w-4 h-4 text-[#34D399] shrink-0" />
               <span>NCPS Accredited Practitioner</span>
+              <ExternalLink className="w-3 h-3 text-[#34D399]/70 group-hover:text-[#34D399] transition-colors" />
+            </a>
+            <a
+              href="https://www.facebook.com/ErikaMartinCounselling"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
+              title="Erika Martin Counselling on Facebook"
+            >
+              {/* Facebook icon */}
+              <svg className="w-4 h-4 text-[#34D399] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+              </svg>
+              <span>Facebook</span>
               <ExternalLink className="w-3 h-3 text-[#34D399]/70 group-hover:text-[#34D399] transition-colors" />
             </a>
           </div>
@@ -45,6 +59,7 @@ export function Footer() {
             <ul className="space-y-2 text-xs sm:text-sm text-slate-200 font-medium">
               <li><Link href="/privacy-and-gdpr" className="hover:text-[#34D399] transition-colors">Privacy & GDPR Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-[#34D399] transition-colors">Terms of Service</Link></li>
+              <li><Link href="/legal-notice" className="hover:text-[#34D399] transition-colors">Legal Notice</Link></li>
               <li className="flex items-center gap-1.5 text-slate-200 pt-1">
                 <Lock className="w-3.5 h-3.5 text-[#34D399] shrink-0" />
                 <span>Confidential & Discreet</span>
@@ -58,7 +73,18 @@ export function Footer() {
             <div className="text-xs sm:text-sm text-slate-200 space-y-3 font-medium">
               <p className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                <span className="text-slate-100">6 Newmills Rd, Dalkeith EH22 2LE</span>
+                <span className="text-slate-100">
+                  <a
+                    href="https://mysatherapyrooms.co.uk/mysa-therapists"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#34D399] transition-colors underline underline-offset-2"
+                  >
+                    Mysa Therapy Rooms
+                  </a>
+                  <br />
+                  <span className="text-slate-300 text-xs">Dalkeith EH22 · Edinburgh</span>
+                </span>
               </p>
               <p className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#34D399] shrink-0" />

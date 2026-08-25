@@ -1,0 +1,135 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Script from "next/script";
+import Link from "next/link";
+
+const GA_ID = "G-72M599EYCP";
+const CONSENT_KEY = "mindhaven_cookie_consent";
+
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
+  }
+}
+
+function getStoredConsent(): "accepted" | "declined" | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(new RegExp(`(^| )${CONSENT_KEY}=([^;]+)`));
+  return (match?.[2] as "accepted" | "declined") ?? null;
+}
+
+function writeConsentCookie(value: "accepted" | "declined") {
+  const expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  document.cookie = `${CONSENT_KEY}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+}
+
+function updateGtag(granted: boolean) {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", {
+      analytics_storage: granted ? "granted" : "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+  }
+}
+
+export function CookieConsentBanner() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const stored = getStoredConsent();
+    if (stored === "accepted") {
+      // User previously accepted — grant consent as soon as gtag is ready
+      updateGtag(true);
+    } else if (!stored) {
+      // No decision yet — show banner
+      setVisible(true);
+    }
+    // If "declined" → consent stays denied by default; nothing to do
+  }, []);
+
+  function handleAccept() {
+    writeConsentCookie("accepted");
+    updateGtag(true);
+    setVisible(false);
+  }
+
+  function handleDecline() {
+    writeConsentCookie("declined");
+    updateGtag(false);
+    setVisible(false);
+  }
+
+  return (
+    <>
+      {/*
+        Google Analytics with Consent Mode v2.
+        The script always loads but operates in cookieless/modelling mode
+        until the user grants analytics_storage consent.
+        The 'wait_for_update: 500' gives the useEffect time to call
+        gtag('consent', 'update') before GA sends any measurement.
+      */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga-consent-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+
+          // Consent Mode v2: deny all by default (EEA / UK GDPR compliant)
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+          });
+
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', { anonymize_ip: true });
+        `}
+      </Script>
+
+      {visible && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 sm:px-4 sm:pb-4">
+          <div className="container mx-auto max-w-5xl">
+            <div className="bg-[#0D2E24] text-white rounded-2xl border border-[#155D49]/50 shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1 space-y-1.5">
+                <p className="text-sm font-bold text-white">Cookie preferences</p>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  This site uses Google Analytics to understand how visitors use it. No data is shared for advertising. You can decline and the site will work fully.{" "}
+                  <Link
+                    href="/privacy-and-gdpr"
+                    className="underline underline-offset-2 text-[#34D399] hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </p>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <button
+                  onClick={handleDecline}
+                  className="px-4 py-2 text-xs font-bold text-slate-300 hover:text-white border border-slate-600 hover:border-slate-400 rounded-full transition-colors"
+                >
+                  Decline
+                </button>
+                <button
+                  onClick={handleAccept}
+                  className="px-5 py-2.5 text-xs font-bold text-[#0D2E24] bg-[#34D399] hover:bg-white rounded-full transition-colors shadow-sm"
+                >
+                  Accept
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

@@ -1,54 +1,65 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { getAllArticles } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const articles = getAllArticles();
+
+  const blogEntries: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `https://mindhaven.uk/blog/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     {
-      url: 'https://mindhaven.uk',
+      url: "https://mindhaven.uk",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: 'https://mindhaven.uk/about-erika-martin',
+      url: "https://mindhaven.uk/about-erika-martin",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://mindhaven.uk/burnout-therapist-edinburgh',
+      url: "https://mindhaven.uk/burnout-therapist-edinburgh",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://mindhaven.uk/fees-and-booking',
+      url: "https://mindhaven.uk/fees-and-booking",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: 'https://mindhaven.uk/privacy-and-gdpr',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mindhaven.uk/terms-of-service',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mindhaven.uk/legal-notice',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mindhaven.uk/blog',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      url: "https://mindhaven.uk/blog",
+      lastModified: new Date(articles[0]?.date ?? new Date()),
+      changeFrequency: "weekly",
       priority: 0.7,
     },
-  ]
+    ...blogEntries,
+    {
+      url: "https://mindhaven.uk/privacy-and-gdpr",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: "https://mindhaven.uk/terms-of-service",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: "https://mindhaven.uk/legal-notice",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+  ];
 }

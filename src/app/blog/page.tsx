@@ -1,22 +1,16 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata = {
   title: "Blog | Mindhaven",
-  description: "Insights on stress management, burnout recovery, and emotional well-being.",
-  alternates: { canonical: "https://mindhaven.uk/blog" }
+  description:
+    "Articles on stress, burnout, anxiety, and emotional wellbeing — written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
+  alternates: { canonical: "https://mindhaven.uk/blog" },
 };
 
 export default function BlogIndex() {
-  // Scaffolded data for MDX posts
-  const posts = [
-    {
-      slug: "understanding-burnout-vs-stress",
-      title: "Understanding Burnout vs. Stress",
-      excerpt: "Learn the physiological and psychological differences between temporary stress and systemic burnout.",
-      date: "2026-10-01"
-    }
-  ];
+  const posts = getAllArticles();
 
   return (
     <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] min-h-screen">
@@ -30,20 +24,45 @@ export default function BlogIndex() {
             Mindhaven Blog
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Practical insights on navigating stress, career challenges, and emotional well-being.
+            Practical perspectives on stress, burnout, anxiety, and emotional wellbeing — written by Erika Martin.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl space-y-8">
+        <div className="container mx-auto max-w-4xl space-y-6">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="block bg-white p-8 rounded-3xl border border-[#155D49]/20 shadow-sm hover:shadow-md transition-shadow group card-flow-effect">
-              <p className="text-xs text-[#155D49] font-bold mb-2">{post.date}</p>
-              <h2 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#155D49] transition-colors">{post.title}</h2>
-              <p className="text-sm text-[#0D2E24]/80 font-medium mb-4">{post.excerpt}</p>
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="block bg-white p-8 rounded-3xl border border-[#155D49]/20 shadow-sm hover:shadow-md transition-all group card-flow-effect"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E6F2ED] text-[#155D49] text-xs font-bold border border-[#155D49]/20">
+                  <Tag className="w-3 h-3" />
+                  {post.category}
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-[#0D2E24]/50 font-medium">
+                  <Clock className="w-3 h-3" />
+                  {post.readTime}
+                </span>
+                <span className="text-xs text-[#0D2E24]/50 font-medium">
+                  {new Date(post.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#155D49] transition-colors">
+                {post.title}
+              </h2>
+              <p className="text-sm text-[#0D2E24]/80 font-medium mb-4 leading-relaxed">
+                {post.excerpt}
+              </p>
               <div className="flex items-center text-[#155D49] text-sm font-bold">
-                Read Article <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                Read Article{" "}
+                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           ))}
