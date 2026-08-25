@@ -44,7 +44,7 @@ export default function BurnoutTherapistEdinburgh() {
             Counselling for Stress and Burnout in Edinburgh
           </h1>
           <p className="text-lg text-[#0D2E24]/90 font-medium leading-relaxed max-w-3xl mx-auto">
-            Professional, confidential counselling for stress and burnout — available in person in Edinburgh and Dalkeith, or online across the UK.
+            Professional, confidential counselling for stress and burnout, available in person in Edinburgh and Dalkeith, or online across the UK.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function BurnoutTherapistEdinburgh() {
               Support Tailored to You
             </h2>
             <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-              Life in Edinburgh can bring real pressure — whether that's a demanding career, busy family responsibilities, or simply the weight of keeping everything going. When stress and burnout take hold, rest alone often isn't enough. Counselling offers a space to understand what's happening for you and to find a more sustainable way forward.
+              Life in Edinburgh can bring real pressure: a demanding career, busy family responsibilities, or simply the weight of keeping everything going. When stress and burnout take hold, rest alone often isn't enough. Counselling offers a space to understand what's happening for you and to find a more sustainable way forward.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function BurnoutTherapistEdinburgh() {
               >
                 Mysa Therapy Rooms
               </a>
-              {" "}— a professional, confidential therapy space in Dalkeith, convenient for clients across Edinburgh and Midlothian.
+              {" "}, a professional, confidential therapy space in Dalkeith, convenient for clients across Edinburgh and Midlothian.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -92,11 +92,11 @@ export default function BurnoutTherapistEdinburgh() {
 
           <div className="text-center pt-4">
             <Link 
-              href="/fees-and-booking"
+              href="/contact#book"
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#155D49] transition-all shadow-md"
             >
               <Calendar className="w-5 h-5 text-[#34D399]" />
-              <span>Book Confidential Edinburgh Consultation</span>
+              <span>Book a Free Introductory Call</span>
               <ArrowRight className="w-5 h-5 text-[#34D399]" />
             </Link>
           </div>

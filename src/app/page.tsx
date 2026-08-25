@@ -50,7 +50,7 @@ const faqSchema = {
       "name": "Are sessions confidential?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken — for example, if there is a serious risk of harm to yourself or others — and this would always be discussed with you first where possible."
+        "text": "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken, for example if there is a serious risk of harm to yourself or others, and this would always be discussed with you first where possible."
       }
     },
     {
@@ -154,26 +154,34 @@ export default function Home() {
               
               {/* Subheadline */}
               <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                Personal counselling that supports mental clarity, emotional wellbeing, and lasting resilience — for professionals navigating high-pressure lives.
+                Personal counselling that supports mental clarity, emotional balance, and sustainable change for adults navigating high-pressure lives.
               </p>
               
               {/* Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Link 
-                  href="/fees-and-booking"
+                <Link
+                  href="/contact#book"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
                 >
                   <Calendar className="w-5 h-5 text-[#34D399]" />
-                  <span>Book Confidential Discovery Call</span>
+                  <span>Book Free Introductory Call</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
                 </Link>
-                
-                <Link 
-                  href="#approach"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-bold text-[#0D2E24] bg-white hover:bg-[#E6F2ED] border border-[#155D49]/30 rounded-full shadow-xs transition-colors"
+
+                <a
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823"}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about a free introductory call.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Message Erika on WhatsApp"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-bold text-white bg-[#25D366] hover:bg-[#1da851] rounded-full shadow-xs transition-colors"
                 >
-                  <Compass className="w-5 h-5 text-[#155D49]" />
-                  <span>Explore Approach</span>
+                  <Compass className="w-5 h-5" />
+                  <span>Message on WhatsApp</span>
+                </a>
+              </div>
+              <div className="pt-1">
+                <Link href="#approach" className="text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-semibold underline underline-offset-4 transition-colors">
+                  Explore the approach
                 </Link>
               </div>
               
@@ -495,12 +503,12 @@ export default function Home() {
           </div>
           
           <div className="pt-4">
-            <Link 
-              href="/fees-and-booking"
+            <Link
+              href="/contact#book"
               className="inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-xl shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
             >
               <Calendar className="w-5 h-5 text-[#34D399]" />
-              <span>Book Your Confidential Consultation</span>
+              <span>Book a Free Introductory Call</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#34D399]" />
             </Link>
           </div>
@@ -544,7 +552,7 @@ export default function Home() {
               },
               {
                 question: "Are sessions confidential?",
-                answer: "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken — for example, if there is a serious risk of harm to yourself or others — and this would always be discussed with you first where possible."
+                answer: "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken, for example if there is a serious risk of harm to yourself or others, and this would always be discussed with you first where possible."
               },
               {
                 question: "How many sessions will I need?",

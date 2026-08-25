@@ -88,7 +88,7 @@ export default function LegalNotice() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">6. Copyright</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              All content on this website — including text, images, and design — is the property of Erika Martin / Mindhaven and is protected by copyright. You may not reproduce or redistribute any content without prior written permission.
+              All content on this website (including text, images, and design) is the property of Erika Martin / Mindhaven and is protected by copyright. You may not reproduce or redistribute any content without prior written permission.
             </p>
           </div>
 

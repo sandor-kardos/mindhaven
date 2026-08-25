@@ -61,7 +61,7 @@ export function Logo({ variant = "light", className = "" }: LogoProps) {
         <span className={`text-[10.5px] font-bold uppercase tracking-[0.18em] leading-none mt-1.5 ${
           isDarkBg ? "text-slate-300" : "text-[#155D49]"
         }`}>
-          Counselling & Wellbeing
+          Private Counselling
         </span>
       </div>
     </Link>

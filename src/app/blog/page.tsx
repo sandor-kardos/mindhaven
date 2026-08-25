@@ -5,7 +5,7 @@ import { getAllArticles } from "@/lib/articles";
 export const metadata = {
   title: "Blog | Mindhaven",
   description:
-    "Articles on stress, burnout, anxiety, and emotional wellbeing — written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
+    "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
   alternates: { canonical: "https://mindhaven.uk/blog" },
 };
 
@@ -24,7 +24,7 @@ export default function BlogIndex() {
             Mindhaven Blog
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Practical perspectives on stress, burnout, anxiety, and emotional wellbeing — written by Erika Martin.
+            Practical perspectives on stress, burnout, anxiety, and emotional health, written by Erika Martin.
           </p>
         </div>
       </section>

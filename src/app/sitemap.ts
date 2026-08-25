@@ -34,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://mindhaven.uk/fees-and-booking",
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://mindhaven.uk/contact",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {

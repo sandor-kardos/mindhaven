@@ -175,11 +175,10 @@ export default async function BlogPost({ params }: Props) {
           </h2>
           <p className="text-[#0D2E24]/80 font-medium leading-relaxed max-w-xl mx-auto">
             If you would like to explore what counselling might offer you, a free
-            15-minute introductory call is a good place to start — no obligation
-            to proceed.
+            15-minute introductory call is a good place to start, with no obligation to proceed.
           </p>
           <Link
-            href="/fees-and-booking"
+            href="/contact#book"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#155D49] transition-all shadow-md"
           >
             Book a Free Introductory Call

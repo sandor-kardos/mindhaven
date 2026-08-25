@@ -2,7 +2,7 @@ import { ShieldCheck, Lock } from "lucide-react";
 
 export const metadata = {
   title: "Privacy Policy & GDPR | Mindhaven",
-  description: "How Mindhaven collects, uses, and protects your personal data — UK GDPR compliant.",
+  description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
 };
 
 export default function PrivacyAndGDPR() {
@@ -47,7 +47,7 @@ export default function PrivacyAndGDPR() {
             <ul className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium space-y-2 list-disc pl-5">
               <li><strong>Contact details:</strong> name, email address, phone number</li>
               <li><strong>Booking information:</strong> preferred session times, how you heard about Mindhaven, and any brief description of what you are seeking support with</li>
-              <li><strong>Special category (health) data:</strong> session notes, information about your mental and physical health, and relevant personal history — collected only as part of the counselling relationship</li>
+              <li><strong>Special category (health) data:</strong> session notes, information about your mental and physical health, and relevant personal history, collected only as part of the counselling relationship</li>
               <li><strong>Technical data:</strong> anonymised website analytics (if applicable)</li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export default function PrivacyAndGDPR() {
               <li><strong>Contract:</strong> to deliver the counselling sessions you have booked and to manage your appointment</li>
               <li><strong>Legitimate interests:</strong> to respond to enquiries and to maintain accurate practice records</li>
               <li><strong>Legal obligation:</strong> where we are required by law to retain or share information (e.g. a court order or safeguarding duty)</li>
-              <li><strong>Special category health data</strong> is processed under Article 9(2)(h) of the UK GDPR — the provision of health or social care — and with your explicit consent where required</li>
+              <li><strong>Special category health data</strong> is processed under Article 9(2)(h) of the UK GDPR (the provision of health or social care) and with your explicit consent where required</li>
             </ul>
           </div>
 
@@ -104,8 +104,8 @@ export default function PrivacyAndGDPR() {
               We use a small number of third-party services to operate this website and manage communications. These providers are only given access to personal data where strictly necessary and are contractually required to process data in line with UK GDPR. This includes:
             </p>
             <ul className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium space-y-2 list-disc pl-5">
-              <li><strong>Email delivery provider</strong> — used to receive booking enquiries from this website</li>
-              <li><strong>Secure video platform</strong> — used to conduct online sessions</li>
+              <li><strong>Email delivery provider:</strong> used to receive booking enquiries from this website</li>
+              <li><strong>Secure video platform:</strong> used to conduct online sessions</li>
             </ul>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               We do not sell or share your personal data with any third party for marketing purposes.
@@ -141,7 +141,7 @@ export default function PrivacyAndGDPR() {
               ICO website: <strong>ico.org.uk</strong> &nbsp;|&nbsp; Helpline: <strong>0303 123 1113</strong>
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              We would, however, always welcome the chance to resolve any concern directly — please contact us first at{" "}
+              We would, however, always welcome the chance to resolve any concern directly. Please contact us first at{" "}
               <a href="mailto:mindhavenuk@gmail.com" className="text-[#155D49] underline underline-offset-2">mindhavenuk@gmail.com</a>.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">10. Cookies & Analytics</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              This website uses cookies only with your explicit consent, which is requested via a banner on your first visit. You may accept or decline analytics cookies at any time — declining does not affect your use of the site.
+              This website uses cookies only with your explicit consent, which is requested via a banner on your first visit. You may accept or decline analytics cookies at any time; declining does not affect your use of the site.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If you accept, we use <strong>Google Analytics (GA4)</strong> with Measurement ID <strong>G-72M599EYCP</strong> to collect anonymised data about how visitors use this website (pages visited, session duration, device type). IP anonymisation is enabled. This data is processed by Google in accordance with their privacy policy. It is used solely to improve the site and is not shared with any third party for advertising or marketing purposes.

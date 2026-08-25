@@ -30,7 +30,7 @@ export default function TermsOfService() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. The Counselling Relationship</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Mindhaven provides individual counselling delivered by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor. Counselling is a collaborative process — it is not a medical treatment or crisis intervention service. The therapeutic relationship is professional in nature and is bounded by the NCPS Code of Ethics.
+              Mindhaven provides individual counselling delivered by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor. Counselling is a collaborative process: it is not a medical treatment or crisis intervention service. The therapeutic relationship is professional in nature and is bounded by the NCPS Code of Ethics.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Counselling at Mindhaven is suitable for adults (18+) experiencing stress, anxiety, burnout, relationship difficulties, or life challenges. It is not a substitute for emergency medical or psychiatric care.

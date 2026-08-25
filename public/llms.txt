@@ -47,7 +47,8 @@ Sessions are tailored to the individual — no single model is applied rigidly.
 
 - Home: https://mindhaven.uk
 - About Erika Martin: https://mindhaven.uk/about-erika-martin
-- Fees & Booking: https://mindhaven.uk/fees-and-booking
+- Contact & Book: https://mindhaven.uk/contact
+- Fees & Pricing: https://mindhaven.uk/fees-and-booking
 - Edinburgh Practice: https://mindhaven.uk/burnout-therapist-edinburgh
 - Blog: https://mindhaven.uk/blog
 - Privacy Policy: https://mindhaven.uk/privacy-and-gdpr
