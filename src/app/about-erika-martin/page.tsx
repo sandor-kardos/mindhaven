@@ -4,7 +4,7 @@ import { ShieldCheck, Award, GraduationCap, ArrowRight } from "lucide-react";
 import { Gallery4 } from "@/components/ui/gallery4";
 
 export const metadata = {
-  title: "About Erika Martin | MNCPS Accredited Psychotherapist",
+  title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
   alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
   description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
 };
@@ -30,7 +30,7 @@ export default function AboutErikaMartin() {
             Erika Martin
           </h1>
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
-            Integrative Psychotherapist specialising in stress, anxiety, and nervous system regulation.
+            Psychotherapeutic Counsellor specialising in stress, anxiety, and burnout.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function AboutErikaMartin() {
                 <div className="relative rounded-[2.2rem] overflow-hidden border-4 border-white bg-white shadow-2xl animate-breathe animate-shimmer-border">
                   <Image 
                     src="/images/erika-portrait.png" 
-                    alt="Erika Martin Psychotherapist"
+                    alt="Erika Martin - MNCPS Accredited Psychotherapeutic Counsellor"
                     width={400}
                     height={500}
                     priority
@@ -60,13 +60,13 @@ export default function AboutErikaMartin() {
             {/* Right Bio Column */}
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
-                Clinical Philosophy & Approach
+                Therapeutic Philosophy & Approach
               </h2>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                Ambitious professionals are often praised for their ability to push through stress, mask fatigue, and maintain flawless professional output. However, sustained activation of the nervous system inevitably leads to physiological exhaustion, decision fatigue, and emotional depletion.
+                Many of the people I work with have been coping for a long time — managing high expectations at work, supporting others, or carrying worries they've never quite had space to address. Sometimes it takes a small thing to tip the balance, and you suddenly notice how exhausted, anxious, or disconnected you've become.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I provide an evidence-informed space tailored to adults navigating career, relationship, or personal growth challenges, offering absolute discretion, therapeutic depth, and practical tools to restore psychological balance.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you're going through, and work towards feeling better. I draw on a range of therapeutic approaches, tailoring each session to what will be most useful for you.
               </p>
 
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">

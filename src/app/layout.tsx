@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Mindhaven | Personal Counselling with Erika Martin",
   alternates: { canonical: "https://mindhaven.uk" },
   verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
-  description: "Personal counselling that enhances mental clarity, emotional control, and decision-making performance for ambitious professionals.",
+  description: "Personal counselling with Erika Martin — MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh & Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
 
 };
 

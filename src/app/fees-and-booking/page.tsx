@@ -41,7 +41,7 @@ export default function FeesAndBooking() {
                   <span className="text-4xl font-extrabold text-[#0D2E24]">£85</span>
                   <span className="text-[#0D2E24]/70 ml-2 font-semibold text-sm">/ 50 mins</span>
                 </div>
-                <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed mb-6 min-h-[40px]">Targeted therapeutic intervention and ongoing support.</p>
+                <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed mb-6 min-h-[40px]">Flexible individual sessions tailored to your needs and pace.</p>
                 <ul className="space-y-3 mb-8 text-[#0D2E24]">
                   <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#155D49] mr-2.5 shrink-0 mt-0.5" /><span>Flexible scheduling</span></li>
                   <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#155D49] mr-2.5 shrink-0 mt-0.5" /><span>Online or in-person</span></li>
@@ -95,7 +95,7 @@ export default function FeesAndBooking() {
           <div className="text-center mb-12 space-y-3">
             <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">Schedule Your Introduction</h2>
             <p className="text-[#0D2E24]/80 max-w-2xl mx-auto text-sm font-medium">
-              Book a complimentary 15-minute consultation to discuss your primary objectives and ensure clinical alignment before committing to a full assessment.
+              Book a free 15-minute introductory call to ask questions, discuss what you're looking for, and see whether working together feels like a good fit — with no obligation to proceed.
             </p>
           </div>
           

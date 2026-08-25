@@ -44,7 +44,7 @@ export default function BurnoutTherapistEdinburgh() {
             Counselling for Stress and Burnout in Edinburgh
           </h1>
           <p className="text-lg text-[#0D2E24]/90 font-medium leading-relaxed max-w-3xl mx-auto">
-            Discreet, evidence-based stress and burnout counselling designed for professionals navigating high-pressure environments across the Scottish capital.
+            Professional, confidential counselling for stress and burnout — available in person in Edinburgh and Dalkeith, or online across the UK.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function BurnoutTherapistEdinburgh() {
               Support Tailored to You
             </h2>
             <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-              Edinburgh's financial, legal, tech, and medical sectors demand relentless focus. When workload pressure crosses into physiological burnout, conventional rest is no longer sufficient. Our practice delivers targeted psychotherapeutic intervention to restore nervous system balance without compromising professional drive.
+              Life in Edinburgh can bring real pressure — whether that's a demanding career, busy family responsibilities, or simply the weight of keeping everything going. When stress and burnout take hold, rest alone often isn't enough. Counselling offers a space to understand what's happening for you and to find a more sustainable way forward.
             </p>
           </div>
 

@@ -34,7 +34,7 @@ const faqSchema = {
       "name": "Do you help with stress and anxiety specifically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, as an MNCPS Accredited Counsellor, I specialise in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control."
+        "text": "Yes, as an MNCPS Accredited Psychotherapeutic Counsellor, I specialise in stress, burnout, and anxiety. I work with clients to better understand what's driving these difficulties and to develop more effective ways of managing them."
       }
     },
     {
@@ -50,7 +50,7 @@ const faqSchema = {
       "name": "Are sessions confidential?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, all sessions are strictly confidential. We adhere to the ethical guidelines and data protection standards of the National Counselling and Psychotherapy Society (MNCPS) and GDPR, ensuring your privacy and clinical records are fully protected."
+        "text": "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken — for example, if there is a serious risk of harm to yourself or others — and this would always be discussed with you first where possible."
       }
     },
     {
@@ -154,7 +154,7 @@ export default function Home() {
               
               {/* Subheadline */}
               <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                Personal counselling that enhances mental clarity, emotional control, and decision-making performance for ambitious professionals.
+                Personal counselling that supports mental clarity, emotional wellbeing, and lasting resilience — for professionals navigating high-pressure lives.
               </p>
               
               {/* Action Buttons */}
@@ -206,7 +206,7 @@ export default function Home() {
                 <div className="relative rounded-[2rem] overflow-hidden border-4 border-white bg-white shadow-2xl animate-breathe">
                   <Image 
                     src="/images/erika-portrait.png"
-                    alt="Erika Martin - MNCPS Accredited Psychotherapist"
+                    alt="Erika Martin - MNCPS Accredited Psychotherapeutic Counsellor"
                     width={500}
                     height={625}
                     priority
@@ -305,13 +305,13 @@ export default function Home() {
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30 shadow-xs">
-              Clinical Quality Standard
+              Professional Standard
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
               Informal Surface Advice vs. Accredited Counselling
             </h2>
             <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-              Informal tips offer occasional surface guidance. Professional clinical counselling delivers deep resolution for burnout, anxiety, and long-term emotional well-being.
+              Informal support has its place, but some difficulties need the depth and structure of professional counselling to truly work through.
             </p>
           </div>
 
@@ -336,7 +336,7 @@ export default function Home() {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
-                      <span>Does not provide accredited clinical safety standards, regulation, or ethical governance.</span>
+                      <span>Does not involve professional accountability, regulatory oversight, or an ethical governance framework.</span>
                     </li>
                   </ul>
                 </div>
@@ -359,11 +359,11 @@ export default function Home() {
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Treats root-cause stress, chronic burnout, anxiety, and emotional dysregulation.</span>
+                      <span>Works with the underlying causes of stress, burnout, anxiety, and emotional difficulties.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Restores authentic psychological well-being, nervous system balance, and long-term clarity.</span>
+                      <span>Supports lasting wellbeing, emotional balance, and greater clarity in everyday life.</span>
                     </li>
                   </ul>
                 </div>
@@ -399,7 +399,7 @@ export default function Home() {
                   <div>
                     <Zap className="w-8 h-8 text-[#B8860B] mb-3" />
                     <h4 className="font-bold text-[#0D2E24] mb-2 font-heading">CBT & Psychodynamic</h4>
-                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Deconstructing perfectionism and historical drivers of over-functioning.</p>
+                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Exploring thought patterns and their deeper roots to create meaningful, lasting change.</p>
                   </div>
                 </div>
                 
@@ -407,7 +407,7 @@ export default function Home() {
                   <div>
                     <Activity className="w-8 h-8 text-[#155D49] mb-3" />
                     <h4 className="font-bold text-[#0D2E24] mb-2 font-heading">Somatic Regulation</h4>
-                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Shifting your autonomic system from sympathetic dominance to calm safety.</p>
+                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Bringing greater calm and steadiness to an overactivated nervous system.</p>
                   </div>
                 </div>
               </div>
@@ -431,7 +431,7 @@ export default function Home() {
                   />
                   <div>
                     <h3 className="text-lg font-bold text-[#0D2E24] font-heading">Erika Martin</h3>
-                    <p className="text-xs font-bold text-[#155D49]">MNCPS Accredited Psychotherapist</p>
+                    <p className="text-xs font-bold text-[#155D49]">MNCPS Accredited Psychotherapeutic Counsellor</p>
                     <p className="text-[11px] text-[#0D2E24]/70 font-medium mt-0.5">PSA Registered</p>
                   </div>
                 </div>
@@ -473,23 +473,23 @@ export default function Home() {
               <div>
                 <span className="text-2xl font-black text-[#155D49] font-heading">01</span>
                 <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Free 15-Min Intro Call</h4>
-                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">Confidential chemistry check to discuss your objectives and verify clinical fit.</p>
+                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">A free, informal call to talk about what's brought you here and whether working together feels right.</p>
               </div>
             </div>
             
             <div className="bg-[#E6F2ED]/60 p-6 rounded-2xl border border-[#155D49]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
               <div>
                 <span className="text-2xl font-black text-[#155D49] font-heading">02</span>
-                <h4 className="font-bold text-[#0D2E24] font-heading mt-1">75-Min Assessment</h4>
-                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">Deep-dive clinical evaluation and bespoke nervous system treatment roadmap.</p>
+                <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Initial Session (75 mins)</h4>
+                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">An in-depth first session to explore your situation together and agree the best approach for you.</p>
               </div>
             </div>
             
             <div className="bg-[#0D2E24] text-white p-6 rounded-2xl border border-[#155D49]/30 card-flow-effect space-y-3 shadow-md flex flex-col justify-between h-full">
               <div>
                 <span className="text-2xl font-black text-[#34D399] font-heading">03</span>
-                <h4 className="font-bold text-white font-heading mt-1">6-Week Program</h4>
-                <p className="text-xs text-slate-200 leading-relaxed font-normal mt-2">Structured therapeutic recovery course tailored to your individual circumstances.</p>
+                <h4 className="font-bold text-white font-heading mt-1">6-Session Programme</h4>
+                <p className="text-xs text-slate-200 leading-relaxed font-normal mt-2">A structured series of sessions, tailored to your individual needs and goals.</p>
               </div>
             </div>
           </div>
@@ -536,7 +536,7 @@ export default function Home() {
               },
               {
                 question: "Do you help with stress and anxiety specifically?",
-                answer: "Yes, as an MNCPS Accredited Counsellor, I specialise in nervous system regulation, stress, burnout, and anxiety, helping clients restore mental clarity and emotional control."
+                answer: "Yes, as an MNCPS Accredited Psychotherapeutic Counsellor, I specialise in stress, burnout, and anxiety. I work with clients to better understand what's driving these difficulties and to develop more effective ways of managing them."
               },
               {
                 question: "Who can benefit from counselling (not just crisis; professionals too)?",
@@ -544,7 +544,7 @@ export default function Home() {
               },
               {
                 question: "Are sessions confidential?",
-                answer: "Yes, all sessions are strictly confidential. We adhere to the ethical guidelines and data protection standards of the National Counselling and Psychotherapy Society (MNCPS) and GDPR, ensuring your privacy and clinical records are fully protected."
+                answer: "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken — for example, if there is a serious risk of harm to yourself or others — and this would always be discussed with you first where possible."
               },
               {
                 question: "How many sessions will I need?",
