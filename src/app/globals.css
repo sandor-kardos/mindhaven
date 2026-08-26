@@ -123,6 +123,7 @@
   .animate-aura-drift,
   .animate-calm-ring,
   .animate-shimmer-border,
+  .animate-calm-arrow,
   .bg-calm-gradient {
     animation: none !important;
     transform: none !important;
