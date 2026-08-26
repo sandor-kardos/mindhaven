@@ -42,10 +42,10 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with Erika on WhatsApp"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md hover:shadow-xl hover:border-[#25D366]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md hover:shadow-xl hover:border-[#155D49]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center mb-5 group-hover:bg-[#25D366]/15 transition-colors">
-                <MessageCircle className="w-6 h-6 text-[#25D366]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#E6F2ED] border border-[#155D49]/20 flex items-center justify-center mb-5 group-hover:bg-[#155D49]/15 transition-colors">
+                <MessageCircle className="w-6 h-6 text-[#155D49]" />
               </div>
               <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading mb-2">WhatsApp</h2>
               <p className="text-sm text-[#0D2E24]/75 font-medium leading-relaxed mb-4 flex-1">
@@ -55,8 +55,8 @@ export default function Contact() {
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>Usually replies within a few hours</span>
               </div>
-              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#25D366] group-hover:gap-3 transition-all">
-                Open WhatsApp
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#155D49] group-hover:gap-3 transition-all">
+                Message Me
                 <ExternalLink className="w-4 h-4" />
               </span>
             </a>

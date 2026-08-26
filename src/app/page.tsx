@@ -105,7 +105,8 @@ import {
   Lock,
   Compass,
   Zap,
-  ExternalLink
+  ExternalLink,
+  MessageCircle
 } from "lucide-react";
 
 export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
@@ -123,92 +124,78 @@ export default function Home() {
         <BackgroundParticles />
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-stretch">
             
             {/* Left Column: Headlines & CTA */}
-            <div className="lg:col-span-7 space-y-8">
-              
-              {/* Tagline & Trust Badges Row */}
-              <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider text-[#155D49]">
-                  <ShieldCheck className="w-4 h-4 text-[#155D49]" />
-                  <span>What if you could thrive, not just survive?</span>
-                </div>
+            <div className="md:col-span-7 flex flex-col justify-between py-4">
+              <div className="space-y-8">
+                
+                {/* Tagline & Trust Badges Row */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider text-[#155D49]">
+                    <ShieldCheck className="w-4 h-4 text-[#155D49]" />
+                    <span>What if you could thrive, not just survive?</span>
+                  </div>
 
-                <a 
-                  href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6F2ED] hover:bg-[#155D49] text-[#155D49] hover:text-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
-                  title="Verify Erika Martin's Official NCPS Accreditation"
-                >
-                  <span>MNCPS Accredited · PSA Registered</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
-                </a>
-              </div>
-              
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#0D2E24] font-heading">
-                Transform Stress Into Success
-              </h1>
-              
-              {/* Subheadline */}
-              <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                Personal counselling that supports mental clarity, emotional balance, and sustainable change for adults navigating high-pressure lives.
-              </p>
-              
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Link
-                  href="/contact#book"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
-                >
-                  <Calendar className="w-5 h-5 text-[#34D399]" />
-                  <span>Book Free Introductory Call</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
-                </Link>
+                  <a 
+                    href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6F2ED] hover:bg-[#155D49] text-[#155D49] hover:text-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
+                    title="Verify Erika Martin's Official NCPS Accreditation"
+                  >
+                    <span>MNCPS Accredited · PSA Registered</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+                  </a>
+                </div>
+                
+                {/* Main Headline */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#0D2E24] font-heading">
+                  Transform Stress Into Success
+                </h1>
+                
+                {/* Subheadline */}
+                <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
+                  Personal counselling that supports mental clarity, emotional balance, and sustainable change for adults navigating high-pressure lives.
+                </p>
 
-                <a
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823"}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about a free introductory call.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Message Erika on WhatsApp"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-bold text-white bg-[#25D366] hover:bg-[#1da851] rounded-full shadow-xs transition-colors"
-                >
-                  <Compass className="w-5 h-5" />
-                  <span>Message on WhatsApp</span>
-                </a>
-              </div>
-              <div className="pt-1">
-                <Link href="#approach" className="text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-semibold underline underline-offset-4 transition-colors">
-                  Explore the approach
-                </Link>
               </div>
               
-              {/* Key Bullet Highlights */}
-              <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-[#0D2E24]">
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                  <span className="font-bold">Confidential & Secure</span>
+              {/* Action Buttons (Aligned to bottom) */}
+              <div className="mt-10 md:mt-auto space-y-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                  <Link
+                    href="/contact#book"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+                  >
+                    <Calendar className="w-5 h-5 text-[#34D399]" />
+                    <span>Book Free Introductory Call</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+                  </Link>
+
+                  <a
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823"}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about a free introductory call.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Message Erika on WhatsApp"
+                    className="inline-flex items-center justify-center gap-3 px-7 py-4 text-base font-bold text-[#0D2E24] bg-white hover:bg-[#E6F2ED] border border-[#155D49]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
+                  >
+                    <MessageCircle className="w-5 h-5 text-[#155D49]" />
+                    <span>Message Me</span>
+                  </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                  <span className="font-bold">Encrypted Video</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                  <span className="font-bold">Edinburgh & Dalkeith</span>
+                <div className="pt-1">
+                  <Link href="#approach" className="text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-semibold underline underline-offset-4 transition-colors">
+                    Explore the approach
+                  </Link>
                 </div>
               </div>
-
+              
             </div>
             
             {/* Right Column: Erika Martin Card */}
-            <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative w-full max-w-md">
-                
-                {/* Dynamic Aura Glow Backdrop */}
-                
+            <div className="md:col-span-5 relative flex items-center justify-center">
+              <div className="relative w-full max-w-md mt-10 md:mt-0">
                 
                 {/* Image Container Card */}
                 <div className="relative rounded-[2rem] overflow-hidden border-4 border-white bg-white shadow-2xl animate-breathe">
@@ -245,10 +232,36 @@ export default function Home() {
                     <ExternalLink className="w-4 h-4 text-[#155D49]/60 group-hover:text-[#155D49] transition-colors shrink-0" />
                   </a>
                 </div>
-
               </div>
             </div>
+          </div>
 
+          {/* Full Width Key Bullet Highlights */}
+          <div className="mt-16 sm:mt-24 py-8 px-6 sm:px-12 bg-white/50 backdrop-blur-md rounded-3xl border border-[#155D49]/15 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4 w-full">
+            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
+              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
+                <Check className="w-5 h-5 text-[#155D49]" />
+              </div>
+              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Confidential & Secure</span>
+            </div>
+            
+            <div className="hidden sm:block w-px h-12 bg-[#155D49]/20"></div>
+            
+            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
+              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
+                <Check className="w-5 h-5 text-[#155D49]" />
+              </div>
+              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Encrypted Video</span>
+            </div>
+            
+            <div className="hidden sm:block w-px h-12 bg-[#155D49]/20"></div>
+            
+            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
+              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
+                <Check className="w-5 h-5 text-[#155D49]" />
+              </div>
+              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Edinburgh & Dalkeith</span>
+            </div>
           </div>
         </div>
       </section>
