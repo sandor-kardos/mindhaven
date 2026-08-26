@@ -24,12 +24,18 @@ function writeConsentCookie(value: "accepted" | "declined") {
 }
 
 const updateConsent = (granted: boolean) => {
-  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-    (window as any).gtag('consent', 'update', {
-      analytics_storage: granted ? 'granted' : 'denied',
-      ad_storage: granted ? 'granted' : 'denied',
-      ad_user_data: granted ? 'granted' : 'denied',
-      ad_personalization: granted ? 'granted' : 'denied',
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: granted ? 'granted' : 'denied',
+        ad_storage: granted ? 'granted' : 'denied',
+        ad_user_data: granted ? 'granted' : 'denied',
+        ad_personalization: granted ? 'granted' : 'denied',
+      });
+    }
+    window.dataLayer.push({
+      event: granted ? 'cookie_consent_granted' : 'cookie_consent_denied',
     });
   }
 };

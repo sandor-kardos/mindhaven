@@ -151,12 +151,12 @@ export default function Home() {
                 
                 {/* Main Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#0D2E24] font-heading">
-                  Counselling for the weight you carry.
+                  For when pushing through stops working.
                 </h1>
                 
                 {/* Subheadline */}
                 <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                  Confidential counselling for stress, burnout, and the demands that ambitious lives bring. Available in Edinburgh, Dalkeith, and online across the UK.
+                  Confidential counselling for stress, burnout, and the demands of high-pressure professional lives. Available in Edinburgh, Dalkeith, and online across the UK.
                 </p>
 
               </div>
@@ -278,13 +278,13 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-              When work takes its toll
+              Sustained Pressure Has a Cost
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
-              Burnout is more than feeling exhausted.
+              Burnout isn't just tiredness.
             </h2>
             <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-              Burnout affects how you think, how you feel about your work, and how much energy you have left for anything else. The three patterns I see most often are:
+              When it takes hold, it affects how you think, how you feel about your work, and how much energy you have left for anything else. The three most common patterns I see are:
             </p>
           </div>
 
