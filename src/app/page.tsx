@@ -106,7 +106,10 @@ import {
   Compass,
   Zap,
   ExternalLink,
-  MessageCircle
+  MessageCircle,
+  Video,
+  MapPin,
+  ChevronDown
 } from "lucide-react";
 
 export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
@@ -184,9 +187,10 @@ export default function Home() {
                     <span>Message Me</span>
                   </a>
                 </div>
-                <div className="pt-1">
-                  <Link href="#approach" className="text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-semibold underline underline-offset-4 transition-colors">
-                    Explore the approach
+                <div className="pt-2 flex justify-center sm:justify-start pl-0 sm:pl-4">
+                  <Link href="#approach" className="inline-flex items-center gap-2 text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-bold transition-colors group">
+                    <span className="underline underline-offset-4">Explore the approach</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -237,30 +241,32 @@ export default function Home() {
           </div>
 
           {/* Full Width Key Bullet Highlights */}
-          <div className="mt-16 sm:mt-24 py-8 px-6 sm:px-12 bg-white/50 backdrop-blur-md rounded-3xl border border-[#155D49]/15 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4 w-full">
-            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
-              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
-                <Check className="w-5 h-5 text-[#155D49]" />
+          <div className="mt-16 sm:mt-24 w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#155D49]" />
+                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Confidential & Secure</span>
               </div>
-              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Confidential & Secure</span>
+              
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#155D49]/30"></div>
+              
+              <div className="flex items-center gap-3">
+                <Video className="w-5 h-5 text-[#155D49]" />
+                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Encrypted Video</span>
+              </div>
+              
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#155D49]/30"></div>
+              
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[#155D49]" />
+                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Edinburgh & Dalkeith</span>
+              </div>
             </div>
             
-            <div className="hidden sm:block w-px h-12 bg-[#155D49]/20"></div>
-            
-            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
-              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
-                <Check className="w-5 h-5 text-[#155D49]" />
-              </div>
-              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Encrypted Video</span>
-            </div>
-            
-            <div className="hidden sm:block w-px h-12 bg-[#155D49]/20"></div>
-            
-            <div className="flex items-center gap-4 w-full sm:w-auto justify-center sm:justify-start">
-              <div className="w-10 h-10 rounded-full bg-[#E6F2ED] flex items-center justify-center shrink-0 border border-[#155D49]/20">
-                <Check className="w-5 h-5 text-[#155D49]" />
-              </div>
-              <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Edinburgh & Dalkeith</span>
+            <div className="mt-12 flex justify-center">
+              <Link href="#approach" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+                <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
+              </Link>
             </div>
           </div>
         </div>

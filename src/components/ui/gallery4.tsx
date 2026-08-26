@@ -154,14 +154,11 @@ const Gallery4 = ({
                     loading={index === 0 ? undefined : "lazy"}
                   />
 
-                  {/* Top Category Badge & Icon */}
-                  <div className="relative z-10 p-3 sm:p-4 flex items-center justify-between">
+                  {/* Top Category Badge */}
+                  <div className="relative z-10 p-3 sm:p-4 flex items-start">
                     <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-white shadow-xs ${item.categoryBg}`}>
                       {item.category}
                     </span>
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-md border border-white/60 flex items-center justify-center text-[#0D2E24] shadow-xs group-hover:scale-110 transition-transform">
-                      <BookOpen className="w-3.5 h-3.5 text-[#155D49]" />
-                    </div>
                   </div>
 
                   {/* Glassmorphism Frosted Bottom Banner */}

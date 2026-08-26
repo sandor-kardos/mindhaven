@@ -58,6 +58,14 @@
   50% { border-color: rgba(21, 93, 73, 0.4); }
 }
 
+/* 6. Extreme Calm Arrow Bounce (Every 10s) */
+@keyframes calmArrowDrop {
+  0%, 90%, 100% { transform: translateY(0); opacity: 0.5; }
+  93% { transform: translateY(8px); opacity: 1; }
+  96% { transform: translateY(-3px); opacity: 0.7; }
+  98% { transform: translateY(2px); opacity: 0.9; }
+}
+
 .animate-breathe {
   animation: breatheGentle 10s ease-in-out infinite;
   will-change: transform;
@@ -73,6 +81,10 @@
 
 .animate-shimmer-border {
   animation: borderShimmer 6s ease-in-out infinite;
+}
+
+.animate-calm-arrow {
+  animation: calmArrowDrop 10s ease-in-out infinite;
 }
 
 .bg-calm-gradient {
