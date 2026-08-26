@@ -111,7 +111,7 @@ export function CalmBreathingWidget() {
       </div>
 
       <div
-        className="relative w-36 h-36 mx-auto flex items-center justify-center transition-transform duration-300 ease-out"
+        className="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto flex items-center justify-center transition-transform duration-300 ease-out"
         style={{ transform: `scale(${scale})` }}
       >
         <div className="absolute inset-2 rounded-full border border-[#155D49]/20 animate-calm-ring pointer-events-none" />

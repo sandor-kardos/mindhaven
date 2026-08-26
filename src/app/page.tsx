@@ -132,7 +132,7 @@ export default function Home() {
               <div className="space-y-8">
                 
                 {/* Tagline & Trust Badges Row */}
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2">
                   <div className="inline-flex items-center justify-center p-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-[#155D49]">
                     <ShieldCheck className="w-4 h-4 text-[#155D49]" />
                   </div>
@@ -163,14 +163,15 @@ export default function Home() {
               
               {/* Action Buttons (Aligned to bottom) */}
               <div className="mt-10 md:mt-auto space-y-4">
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <div className="flex flex-row items-center gap-2 sm:gap-4">
                   <Link
                     href="/contact#book"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
                   >
-                    <Calendar className="w-5 h-5 text-[#34D399]" />
-                    <span>Book Free Introductory Call</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#34D399]" />
+                    <span className="sm:hidden">Book Free Call</span>
+                    <span className="hidden sm:inline">Book Free Introductory Call</span>
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
                   </Link>
 
                   <a
@@ -178,9 +179,9 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Message Erika on WhatsApp"
-                    className="inline-flex items-center justify-center gap-3 px-7 py-4 text-base font-bold text-[#0D2E24] bg-white hover:bg-[#E6F2ED] border border-[#155D49]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
+                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-[#0D2E24] bg-white hover:bg-[#E6F2ED] border border-[#155D49]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
                   >
-                    <MessageCircle className="w-5 h-5 text-[#155D49]" />
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#155D49]" />
                     <span>Message Me</span>
                   </a>
                 </div>
@@ -261,7 +262,7 @@ export default function Home() {
             </div>
             
             <div className="mt-12 flex justify-center">
-              <Link href="#approach" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+              <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
                 <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
               </Link>
             </div>
@@ -291,8 +292,10 @@ export default function Home() {
             
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
-                <Activity className="w-9 h-9 text-[#155D49] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Exhaustion that rest does not fix</h3>
+                <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
+                  <Activity className="w-9 h-9 text-[#155D49] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Exhaustion that rest does not fix</h3>
+                </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Persistent tiredness that sleep doesn't fix, Sunday dread, and a braced nervous system unable to down-regulate after high-stakes meetings.
                 </p>
@@ -301,8 +304,10 @@ export default function Home() {
             
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
-                <Brain className="w-9 h-9 text-[#155D49] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Disconnection from work you once valued</h3>
+                <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
+                  <Brain className="w-9 h-9 text-[#155D49] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Disconnection from work you once valued</h3>
+                </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Mental detachment from roles once enjoyed, rising cynicism, irritability with colleagues, and a loss of strategic clarity.
                 </p>
@@ -311,8 +316,10 @@ export default function Home() {
             
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
-                <Clock className="w-9 h-9 text-[#B8860B] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Doubting your own effectiveness</h3>
+                <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
+                  <Clock className="w-9 h-9 text-[#B8860B] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Doubting your own effectiveness</h3>
+                </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Rising imposter anxiety, decision fatigue, and over-working to overcompensate for diminished focus and emotional bandwidth.
                 </p>
@@ -352,7 +359,7 @@ export default function Home() {
           </div>
 
           <div className="pt-4 flex justify-center">
-            <Link href="#approach" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+            <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
               <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
             </Link>
           </div>
@@ -382,16 +389,20 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
                 <div className="p-6 bg-white rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
                   <div>
-                    <Zap className="w-8 h-8 text-[#B8860B] mb-3" />
-                    <h4 className="font-bold text-[#0D2E24] mb-2 font-heading">CBT & Psychodynamic</h4>
+                    <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
+                      <Zap className="w-8 h-8 text-[#B8860B] shrink-0 sm:mb-3" />
+                      <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">CBT & Psychodynamic</h4>
+                    </div>
                     <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Exploring thought patterns and their deeper roots to create meaningful, lasting change.</p>
                   </div>
                 </div>
                 
                 <div className="p-6 bg-white rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
                   <div>
-                    <Activity className="w-8 h-8 text-[#155D49] mb-3" />
-                    <h4 className="font-bold text-[#0D2E24] mb-2 font-heading">Somatic Regulation</h4>
+                    <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
+                      <Activity className="w-8 h-8 text-[#155D49] shrink-0 sm:mb-3" />
+                      <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">Somatic Regulation</h4>
+                    </div>
                     <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Bringing greater calm and steadiness to an overactivated nervous system.</p>
                   </div>
                 </div>
