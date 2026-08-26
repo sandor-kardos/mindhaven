@@ -23,15 +23,16 @@ function writeConsentCookie(value: "accepted" | "declined") {
   document.cookie = `${CONSENT_KEY}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
 }
 
-function pushConsentUpdate(granted: boolean) {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(["consent", "update", {
-    analytics_storage: granted ? "granted" : "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  }]);
-}
+const updateConsent = (granted: boolean) => {
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied',
+      ad_storage: granted ? 'granted' : 'denied',
+      ad_user_data: granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied',
+    });
+  }
+};
 
 export function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
@@ -40,7 +41,7 @@ export function CookieConsentBanner() {
     const stored = getStoredConsent();
     if (stored === "accepted") {
       // User previously accepted — grant consent as soon as gtag is ready
-      pushConsentUpdate(true);
+      updateConsent(true);
     } else if (!stored) {
       // No decision yet — show banner
       setVisible(true);
@@ -50,13 +51,13 @@ export function CookieConsentBanner() {
 
   function handleAccept() {
     writeConsentCookie("accepted");
-    pushConsentUpdate(true);
+    updateConsent(true);
     setVisible(false);
   }
 
   function handleDecline() {
     writeConsentCookie("declined");
-    pushConsentUpdate(false);
+    updateConsent(false);
     setVisible(false);
   }
 
