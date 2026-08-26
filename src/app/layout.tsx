@@ -87,6 +87,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full scroll-smooth`}>
+      <head>
+        <script
+          id="google-consent-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied'
+              });
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col antialiased bg-[#F8FAF8] text-[#0D2E24]">
         {/* Google Tag Manager (noscript) */}
         <noscript>
