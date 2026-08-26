@@ -118,7 +118,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* HERO SECTION */}
-      <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F2ED] via-[#EEF7F4] to-[#F8FAF8] text-[#0D2E24] overflow-hidden border-b border-[#155D49]/20 ">
+      <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F2ED] via-[#EEF7F4] to-[#F8FAF8] text-[#0D2E24] overflow-hidden border-b border-[#155D49]/20 ">
         
         {/* Ambient Floating Orbs & Background Particles */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#155D49]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-stretch">
             
             {/* Left Column: Headlines & CTA */}
-            <div className="md:col-span-7 flex flex-col justify-between py-4">
+            <div className="md:col-span-7 flex flex-col justify-between py-2 md:py-4">
               <div className="space-y-8">
                 
                 {/* Tagline & Trust Badges Row */}

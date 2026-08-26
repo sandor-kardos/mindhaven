@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
@@ -10,7 +12,7 @@ export function Logo({ variant = "light", className = "" }: LogoProps) {
   const isDarkBg = variant === "dark";
 
   return (
-    <Link href="/" className={`inline-flex items-center gap-3.5 group ${className}`}>
+    <Link href="/" className={`inline-flex items-center gap-3.5 group ${className}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
       {/* High-End Mindhaven Sanctuary Crest */}
       <div className="relative shrink-0 flex items-center justify-center">
         <svg 
