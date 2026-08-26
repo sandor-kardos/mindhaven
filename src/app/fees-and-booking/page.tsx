@@ -64,7 +64,7 @@ export default function FeesAndBooking() {
                   <span className="text-4xl font-extrabold text-white">£480</span>
                   <span className="text-slate-300 ml-2 text-sm font-semibold">(£80 per session)</span>
                 </div>
-                <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">A structured pathway with built-in progress tracking.</p>
+                <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">A structured six-session programme, reviewed and adjusted as you go.</p>
                 <ul className="space-y-3 mb-8 text-white font-medium">
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">Six sessions, prepaid</span></li>
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">Structured plan tailored for you</span></li>

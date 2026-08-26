@@ -39,10 +39,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Who can benefit from counselling (not just crisis; professionals too)?",
+      "name": "Do I need to be in crisis to seek counselling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive."
+        "text": "No. Counselling is not only for acute crisis. Many of the people I work with are managing well by most measures, but carrying something they have not had space to address. If something is getting in the way of how you want to feel or function, that is a reasonable place to start."
       }
     },
     {
@@ -58,7 +58,7 @@ const faqSchema = {
       "name": "How many sessions will I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The number of sessions depends on your individual circumstances. Some clients find the structure of our 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
+        "text": "The number of sessions depends on your individual circumstances. Some clients find the structure of the 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
       }
     },
     {
@@ -66,7 +66,7 @@ const faqSchema = {
       "name": "How do I book a session?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can book a session by visiting our Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
+        "text": "You can book a session by visiting the Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
       }
     },
     {
@@ -92,15 +92,13 @@ import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
 import { Gallery4 } from "@/components/ui/gallery4";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  ShieldCheck, 
-  Clock, 
-  Brain, 
-  Activity, 
-  Sparkles, 
-  Check, 
+import {
+  ArrowRight,
+  ShieldCheck,
+  Clock,
+  Brain,
+  Activity,
+  Sparkles,
   Calendar,
   Lock,
   Compass,
@@ -135,9 +133,8 @@ export default function Home() {
                 
                 {/* Tagline & Trust Badges Row */}
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider text-[#155D49]">
+                  <div className="inline-flex items-center justify-center p-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-[#155D49]">
                     <ShieldCheck className="w-4 h-4 text-[#155D49]" />
-                    <span>What if you could thrive, not just survive?</span>
                   </div>
 
                   <a 
@@ -154,12 +151,12 @@ export default function Home() {
                 
                 {/* Main Headline */}
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-[#0D2E24] font-heading">
-                  Transform Stress Into Success
+                  Counselling for the weight you carry.
                 </h1>
                 
                 {/* Subheadline */}
                 <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                  Personal counselling that supports mental clarity, emotional balance, and sustainable change for adults navigating high-pressure lives.
+                  Confidential counselling for stress, burnout, and the demands that ambitious lives bring. Available in Edinburgh, Dalkeith, and online across the UK.
                 </p>
 
               </div>
@@ -280,13 +277,13 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-              The Reality of High Performance
+              When work takes its toll
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
-              High Performance Should Not Require Systemic Self-Depletion
+              Burnout is more than feeling exhausted.
             </h2>
             <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-              Burnout is not simple fatigue. It is a profound neurological shift that compromises executive function. We target the three core dimensions of occupational burnout:
+              Burnout affects how you think, how you feel about your work, and how much energy you have left for anything else. The three patterns I see most often are:
             </p>
           </div>
 
@@ -295,7 +292,7 @@ export default function Home() {
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <Activity className="w-9 h-9 text-[#155D49] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">1. Physiological Exhaustion</h3>
+                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Exhaustion that rest does not fix</h3>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Persistent tiredness that sleep doesn't fix, Sunday dread, and a braced nervous system unable to down-regulate after high-stakes meetings.
                 </p>
@@ -305,7 +302,7 @@ export default function Home() {
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <Brain className="w-9 h-9 text-[#155D49] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">2. Cognitive Distance</h3>
+                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Disconnection from work you once valued</h3>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Mental detachment from roles once enjoyed, rising cynicism, irritability with colleagues, and a loss of strategic clarity.
                 </p>
@@ -315,7 +312,7 @@ export default function Home() {
             <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <Clock className="w-9 h-9 text-[#B8860B] mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">3. Reduced Efficacy</h3>
+                <h3 className="text-xl font-bold text-[#0D2E24] mb-3 font-heading">Doubting your own effectiveness</h3>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
                   Rising imposter anxiety, decision fatigue, and over-working to overcompensate for diminished focus and emotional bandwidth.
                 </p>
@@ -326,77 +323,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: Surface Advice vs Accredited Counselling */}
-      <section className="py-24 bg-[#E6F2ED] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#155D49]/20">
-        <div className="container mx-auto max-w-5xl relative z-10">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      {/* SECTION 3: When counselling helps */}
+      <section id="comparison" className="py-24 bg-[#E6F2ED] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#155D49]/20">
+        <div className="container mx-auto max-w-3xl relative z-10 text-center space-y-8">
+
+          <div className="space-y-4">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30 shadow-xs">
-              Professional Standard
+              When counselling helps
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
-              Informal Surface Advice vs. Accredited Counselling
+              When structured support makes a difference
             </h2>
-            <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-              Informal support has its place, but some difficulties need the depth and structure of professional counselling to truly work through.
-            </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-[#155D49]/30 overflow-hidden shadow-xl card-flow-effect">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
-              
-              {/* Informal Surface Advice Column */}
-              <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#155D49]/15 space-y-6 flex flex-col justify-between h-full bg-[#F8FAF8]/50">
-                <div className="space-y-6">
-                  <div className="inline-block px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-slate-200/80 text-slate-700 border border-slate-300">
-                    Recommended for Occasional Use
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#0D2E24] font-heading">Informal Surface Advice</h3>
-                  <ul className="space-y-4 text-[#0D2E24]/80 text-sm font-medium">
-                    <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
-                      <span>Useful for occasional light stress management or short-term productivity tips.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
-                      <span>Focuses on immediate tactical output without addressing deep emotional patterns.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-slate-400 shrink-0"></div>
-                      <span>Does not involve professional accountability, regulatory oversight, or an ethical governance framework.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed text-left">
+            Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. If you are not sure whether counselling is right for you, a free 15-minute call is available with no obligation to proceed.
+          </p>
 
-              {/* MindHaven Accredited Counselling Column */}
-              <div className="p-8 md:p-12 bg-[#E6F2ED]/70 space-y-6 relative border-t md:border-t-0 border-[#155D49]/30 flex flex-col justify-between h-full">
-                <div className="space-y-6">
-                  <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#155D49] text-white shadow-xs">
-                    MNCPS Accredited Care
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#0D2E24] font-heading flex items-center justify-between">
-                    MindHaven Counselling
-                    <CheckCircle2 className="w-6 h-6 text-[#155D49]" />
-                  </h3>
-                  <ul className="space-y-4 text-[#0D2E24] text-sm font-semibold">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Delivered by an MNCPS Accredited Counsellor bound by strict professional ethical standards.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Works with the underlying causes of stress, burnout, anxiety, and emotional difficulties.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#155D49] shrink-0" />
-                      <span>Supports lasting wellbeing, emotional balance, and greater clarity in everyday life.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <div>
+            <Link
+              href="/contact#book"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+            >
+              <Calendar className="w-5 h-5 text-[#34D399]" />
+              <span>Book a Free Introductory Call</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+            </Link>
+          </div>
 
-            </div>
+          <div className="pt-4 flex justify-center">
+            <Link href="#approach" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+              <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
+            </Link>
           </div>
 
         </div>
@@ -411,7 +369,7 @@ export default function Home() {
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
                 <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-                  Integrative Methodology
+                  How I work
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
                   An Evidence-Based Therapeutic Approach
@@ -466,10 +424,10 @@ export default function Home() {
                 <div className="p-4 bg-[#0D2E24] text-white rounded-2xl space-y-2 relative overflow-hidden shadow-md">
                   <div className="flex items-center gap-2 text-[#34D399] font-bold text-xs font-heading">
                     <Lock className="w-3.5 h-3.5 text-[#34D399]" />
-                    <span>100% Private & Discreet</span>
+                    <span>Strictly Private & Discreet</span>
                   </div>
                   <p className="text-[11px] text-slate-200 leading-relaxed">
-                    Mindhaven prioritises complete confidentiality, with end-to-end encrypted consultations and information shared only with your consent.
+                    I hold everything discussed in strict confidence. Sessions are conducted over encrypted video, and nothing is shared without your consent.
                   </p>
                 </div>
               </div>
@@ -491,7 +449,7 @@ export default function Home() {
               Simple 3-Step Process
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
-              Your Path to Recovery
+              A simple, structured start
             </h2>
           </div>
           
@@ -566,8 +524,8 @@ export default function Home() {
                 answer: "Yes, as an MNCPS Accredited Psychotherapeutic Counsellor, I specialise in stress, burnout, and anxiety. I work with clients to better understand what's driving these difficulties and to develop more effective ways of managing them."
               },
               {
-                question: "Who can benefit from counselling (not just crisis; professionals too)?",
-                answer: "Counselling is not solely for those in immediate crisis. It is highly beneficial for ambitious professionals and adults navigating career, relationship, or personal growth challenges who want to thrive, not just survive."
+                question: "Do I need to be in crisis to seek counselling?",
+                answer: "No. Counselling is not only for acute crisis. Many of the people I work with are managing well by most measures, but carrying something they have not had space to address. If something is getting in the way of how you want to feel or function, that is a reasonable place to start."
               },
               {
                 question: "Are sessions confidential?",
@@ -575,11 +533,11 @@ export default function Home() {
               },
               {
                 question: "How many sessions will I need?",
-                answer: "The number of sessions depends on your individual circumstances. Some clients find the structure of our 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
+                answer: "The number of sessions depends on your individual circumstances. Some clients find the structure of the 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
               },
               {
                 question: "How do I book a session?",
-                answer: "You can book a session by visiting our Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
+                answer: "You can book a session by visiting the Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
               },
               {
                 question: "Do you see clients in person in Edinburgh?",
