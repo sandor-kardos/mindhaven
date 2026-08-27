@@ -1,20 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-[#0D2E24]: #0D2E24;
-  --color-brand-[#155D49]: #155D49;
-  --color-brand-[#0A4C3A]: #0A4C3A;
-  --color-brand-wash: #E6F2ED;
-  --color-brand-light: #F8FAF8;
-  --color-gold-accent: #B8860B;
-  
+  --color-brand-evergreen: #0D2E24;
+  --color-brand-emerald: #34D399;
+  --color-brand-ivory: #FEFFF7;
+  --color-lime-cream: #F6FFA2;
+
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
   html, body {
-    @apply bg-[#F8FAF8] text-[#0D2E24] font-sans antialiased tracking-tight leading-relaxed;
+    @apply bg-[#FEFFF7] text-[#0D2E24] font-sans antialiased tracking-tight leading-relaxed;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -54,8 +52,8 @@
 
 /* 5. Subtle Border Shimmer Glow */
 @keyframes borderShimmer {
-  0%, 100% { border-color: rgba(21, 93, 73, 0.2); }
-  50% { border-color: rgba(21, 93, 73, 0.4); }
+  0%, 100% { border-color: rgba(52, 211, 153, 0.2); }
+  50% { border-color: rgba(52, 211, 153, 0.4); }
 }
 
 /* 6. Extreme Calm Arrow Bounce (Every 10s) */
@@ -64,6 +62,12 @@
   93% { transform: translateY(8px); opacity: 1; }
   96% { transform: translateY(-3px); opacity: 0.7; }
   98% { transform: translateY(2px); opacity: 0.9; }
+}
+
+/* 7. Organic Portrait Blob Morph */
+@keyframes blobMorph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%       { border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; }
 }
 
 .animate-breathe {
@@ -87,6 +91,11 @@
   animation: calmArrowDrop 10s ease-in-out infinite;
 }
 
+.animate-blob {
+  animation: breatheGentle 22.5s ease-in-out infinite, blobMorph 20.25s ease-in-out infinite;
+  will-change: transform, border-radius;
+}
+
 .bg-calm-gradient {
   background-size: 200% 200%;
   animation: calmAtmosphere 22s ease infinite;
@@ -96,7 +105,7 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(21, 93, 73, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.2);
 }
 
 /* --- CALM SUBTLE CARD HOVER --- */
@@ -105,8 +114,8 @@
 }
 
 .card-flow-effect:hover {
-  border-color: rgba(21, 93, 73, 0.35);
-  box-shadow: 0 12px 28px -6px rgba(21, 93, 73, 0.08);
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 12px 28px -6px rgba(13, 46, 36, 0.08);
   transform: translateY(-2px);
 }
 
@@ -115,8 +124,8 @@
 }
 
 .card-flow-glow:hover {
-  border-color: rgba(21, 93, 73, 0.35);
-  box-shadow: 0 10px 25px -5px rgba(21, 93, 73, 0.08);
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 10px 25px -5px rgba(13, 46, 36, 0.08);
 }
 @media (prefers-reduced-motion: reduce) {
   .animate-breathe,
@@ -124,8 +133,12 @@
   .animate-calm-ring,
   .animate-shimmer-border,
   .animate-calm-arrow,
+  .animate-blob,
   .bg-calm-gradient {
     animation: none !important;
     transform: none !important;
+  }
+  .animate-blob {
+    border-radius: 55% 45% 40% 60% / 60% 40% 55% 45% !important;
   }
 }

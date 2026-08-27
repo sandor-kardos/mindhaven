@@ -89,6 +89,7 @@ const faqSchema = {
 };
 
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
+import { HalftonePattern } from "@/components/ui/HalftonePattern";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
 import { Gallery4 } from "@/components/ui/gallery4";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -114,15 +115,14 @@ export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] overflow-hidden relative">
+    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] overflow-hidden relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* HERO SECTION */}
-      <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F2ED] via-[#EEF7F4] to-[#F8FAF8] text-[#0D2E24] overflow-hidden border-b border-[#155D49]/20 ">
+      <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FEFFF7] via-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] overflow-hidden border-b border-[#34D399]/20 ">
         
-        {/* Ambient Floating Orbs & Background Particles */}
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#155D49]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
-        <BackgroundParticles />
+        {/* Ambient Floating Orbs */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
         
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-stretch">
@@ -133,15 +133,15 @@ export default function Home() {
                 
                 {/* Tagline & Trust Badges Row */}
                 <div className="flex items-center gap-2">
-                  <div className="inline-flex items-center justify-center p-2 rounded-full bg-white border border-[#155D49]/30 shadow-xs text-[#155D49]">
-                    <ShieldCheck className="w-4 h-4 text-[#155D49]" />
+                  <div className="inline-flex items-center justify-center p-2 rounded-full bg-white border border-[#34D399]/30 shadow-xs text-[#0D2E24]">
+                    <ShieldCheck className="w-4 h-4 text-[#34D399]" />
                   </div>
 
                   <a 
                     href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6F2ED] hover:bg-[#155D49] text-[#155D49] hover:text-white border border-[#155D49]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FEFFF7] hover:bg-[#34D399] text-[#0D2E24] hover:text-white border border-[#34D399]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
                     title="Verify Erika Martin's Official NCPS Accreditation"
                   >
                     <span>MNCPS Accredited · PSA Registered</span>
@@ -166,7 +166,7 @@ export default function Home() {
                 <div className="flex flex-row items-center gap-2 sm:gap-4">
                   <Link
                     href="/contact#book"
-                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
                   >
                     <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#34D399]" />
                     <span className="sm:hidden">Book Free Call</span>
@@ -179,14 +179,14 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Message Erika on WhatsApp"
-                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-[#0D2E24] bg-white hover:bg-[#E6F2ED] border border-[#155D49]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
+                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-[#0D2E24] bg-white hover:bg-[#FEFFF7] border border-[#34D399]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
                   >
-                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#155D49]" />
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#34D399]" />
                     <span>Message Me</span>
                   </a>
                 </div>
                 <div className="pt-2 flex justify-center sm:justify-start pl-0 sm:pl-4">
-                  <Link href="#approach" className="inline-flex items-center gap-2 text-sm text-[#0D2E24]/60 hover:text-[#155D49] font-bold transition-colors group">
+                  <Link href="#approach" className="inline-flex items-center gap-2 text-sm text-[#0D2E24]/60 hover:text-[#0D2E24] font-bold transition-colors group">
                     <span className="underline underline-offset-4">Explore the approach</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -197,10 +197,10 @@ export default function Home() {
             
             {/* Right Column: Erika Martin Card */}
             <div className="md:col-span-5 relative flex items-center justify-center">
-              <div className="relative w-full max-w-md mt-10 md:mt-0">
+              <div className="relative w-full max-w-xl mt-10 md:mt-0">
                 
                 {/* Image Container Card */}
-                <div className="relative rounded-[2rem] overflow-hidden border-4 border-white bg-white shadow-2xl animate-breathe">
+                <div className="relative animate-blob overflow-hidden border-4 border-white bg-white shadow-2xl">
                   <Image 
                     src="/images/erika-portrait.png"
                     alt="Erika Martin - MNCPS Accredited Psychotherapeutic Counsellor"
@@ -209,31 +209,31 @@ export default function Home() {
                     priority
                     className="w-full h-auto object-cover aspect-[4/5] filter brightness-[1.02]"
                   />
+                </div>
                   
-                  {/* Sharp Floating Overlay Badge with Direct NCPS Link */}
-                  <a 
-                    href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 border border-[#155D49]/40 shadow-2xl flex items-center justify-between group hover:border-[#155D49] transition-all cursor-pointer z-10"
-                    title="Verify Erika Martin's Official NCPS Register Listing"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#E6F2ED] flex items-center justify-center text-[#155D49] shrink-0 border border-[#155D49]/30">
-                        <ShieldCheck className="w-5 h-5 text-[#155D49]" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading group-hover:text-[#155D49] transition-colors">
-                          Erika Martin 
-                        </h4>
-                        <div className="text-xs text-[#155D49] font-extrabold mt-0.5">
-                          <span>Accredited Counsellor</span>
-                        </div>
+                {/* Sharp Floating Overlay Badge with Direct NCPS Link */}
+                <a 
+                  href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 border border-[#34D399]/40 shadow-2xl flex items-center justify-between group hover:border-[#34D399] transition-all cursor-pointer z-10"
+                  title="Verify Erika Martin's Official NCPS Register Listing"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/30">
+                      <ShieldCheck className="w-5 h-5 text-[#34D399]" />
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading group-hover:text-[#0D2E24] transition-colors">
+                        Erika Martin 
+                      </h4>
+                      <div className="text-xs text-[#0D2E24] font-extrabold mt-0.5">
+                        <span>Accredited Counsellor</span>
                       </div>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-[#155D49]/60 group-hover:text-[#155D49] transition-colors shrink-0" />
-                  </a>
-                </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-[#34D399]/60 group-hover:text-[#0D2E24] transition-colors shrink-0" />
+                </a>
               </div>
             </div>
           </div>
@@ -242,27 +242,27 @@ export default function Home() {
           <div className="mt-16 sm:mt-24 w-full">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16">
               <div className="flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#155D49]" />
+                <ShieldCheck className="w-5 h-5 text-[#34D399]" />
                 <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Confidential & Secure</span>
               </div>
               
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#155D49]/30"></div>
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#34D399]/30"></div>
               
               <div className="flex items-center gap-3">
-                <Video className="w-5 h-5 text-[#155D49]" />
+                <Video className="w-5 h-5 text-[#34D399]" />
                 <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Encrypted Video</span>
               </div>
               
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#155D49]/30"></div>
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#34D399]/30"></div>
               
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-[#155D49]" />
+                <MapPin className="w-5 h-5 text-[#34D399]" />
                 <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Edinburgh & Dalkeith</span>
               </div>
             </div>
             
             <div className="mt-12 flex justify-center">
-              <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+              <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#0D2E24]/40 hover:text-[#0D2E24] transition-colors animate-calm-arrow cursor-pointer">
                 <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
               </Link>
             </div>
@@ -274,10 +274,11 @@ export default function Home() {
       <Gallery4 />
 
       {/* SECTION 2: Problem Validation - Perfectly Aligned Flow Cards */}
-      <section className="py-24 bg-white px-4 border-b border-[#155D49]/15 relative">
-        <div className="container mx-auto max-w-7xl">
+      <section className="py-24 bg-white px-4 border-b border-[#34D399]/15 relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.20} />
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
               Sustained Pressure Has a Cost
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -290,10 +291,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             
-            <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
-                  <Activity className="w-9 h-9 text-[#155D49] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <Activity className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
                   <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Exhaustion that rest does not fix</h3>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
@@ -302,10 +303,10 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
-                  <Brain className="w-9 h-9 text-[#155D49] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <Brain className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
                   <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Disconnection from work you once valued</h3>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
@@ -314,10 +315,10 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-[#F8FAF8] p-8 rounded-3xl border border-[#155D49]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
-                  <Clock className="w-9 h-9 text-[#B8860B] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
+                  <Clock className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
                   <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Doubting your own effectiveness</h3>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
@@ -331,11 +332,11 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: When counselling helps */}
-      <section id="comparison" className="py-24 bg-[#E6F2ED] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#155D49]/20">
+      <section id="comparison" className="py-24 bg-[#FEFFF7] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl relative z-10 text-center space-y-8">
 
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30 shadow-xs">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30 shadow-xs">
               When counselling helps
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -350,7 +351,7 @@ export default function Home() {
           <div>
             <Link
               href="/contact#book"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
             >
               <Calendar className="w-5 h-5 text-[#34D399]" />
               <span>Book a Free Introductory Call</span>
@@ -359,7 +360,7 @@ export default function Home() {
           </div>
 
           <div className="pt-4 flex justify-center">
-            <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#155D49]/40 hover:text-[#155D49] transition-colors animate-calm-arrow cursor-pointer">
+            <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#0D2E24]/40 hover:text-[#0D2E24] transition-colors animate-calm-arrow cursor-pointer">
               <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
             </Link>
           </div>
@@ -368,14 +369,15 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 & 5: Modalities, Calm Pacer Widget & Credentials - Perfectly Aligned Grids */}
-      <section id="approach" className="py-24 bg-[#F8FAF8] px-4 relative">
+      <section id="approach" className="py-24 bg-[#FEFFF7] px-4 relative overflow-hidden">
         <div className="container mx-auto max-w-6xl relative z-10">
+          <HalftonePattern color="#34D399" className="-bottom-8 left-0 w-[380px] h-[380px]" opacity={0.20} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             
             {/* Left: Approach */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
-                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
                   How I work
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
@@ -387,20 +389,20 @@ export default function Home() {
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
-                <div className="p-6 bg-white rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
+                <div className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
                   <div>
                     <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
-                      <Zap className="w-8 h-8 text-[#B8860B] shrink-0 sm:mb-3" />
+                      <Zap className="w-8 h-8 text-[#34D399] shrink-0 sm:mb-3" />
                       <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">CBT & Psychodynamic</h4>
                     </div>
                     <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Exploring thought patterns and their deeper roots to create meaningful, lasting change.</p>
                   </div>
                 </div>
                 
-                <div className="p-6 bg-white rounded-2xl border border-[#155D49]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
+                <div className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
                   <div>
                     <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
-                      <Activity className="w-8 h-8 text-[#155D49] shrink-0 sm:mb-3" />
+                      <Activity className="w-8 h-8 text-[#34D399] shrink-0 sm:mb-3" />
                       <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">Somatic Regulation</h4>
                     </div>
                     <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Bringing greater calm and steadiness to an overactivated nervous system.</p>
@@ -416,18 +418,18 @@ export default function Home() {
               <CalmBreathingWidget />
 
               {/* Bio & Credentials Box */}
-              <div className="bg-white p-6 rounded-3xl shadow-xl border border-[#155D49]/20 space-y-4 card-flow-effect">
+              <div className="bg-white p-6 rounded-3xl shadow-xl border border-[#34D399]/20 space-y-4 card-flow-effect">
                 <div className="flex items-center gap-4">
                   <Image 
                     src="/images/erika-portrait.png" 
                     alt="Erika Martin" 
                     width={60} 
                     height={60} 
-                    className="rounded-2xl object-cover aspect-square border-2 border-[#155D49]"
+                    className="rounded-2xl object-cover aspect-square border-2 border-[#34D399]"
                   />
                   <div>
                     <h3 className="text-lg font-bold text-[#0D2E24] font-heading">Erika Martin</h3>
-                    <p className="text-xs font-bold text-[#155D49]">MNCPS Accredited Psychotherapeutic Counsellor</p>
+                    <p className="text-xs font-bold text-[#0D2E24]">MNCPS Accredited Psychotherapeutic Counsellor</p>
                     <p className="text-[11px] text-[#0D2E24]/70 font-medium mt-0.5">PSA Registered</p>
                   </div>
                 </div>
@@ -452,11 +454,22 @@ export default function Home() {
 
 
       {/* SECTION 6: Consultation CTA & Process - Perfectly Aligned Flow Cards */}
-      <section className="py-24 bg-white px-4 border-t border-[#155D49]/15 text-center">
-        <div className="container mx-auto max-w-4xl space-y-12">
+      <section className="py-24 bg-[#FEFFF7] px-4 border-t border-[#34D399]/15 text-center relative overflow-hidden">
+        <div className="container mx-auto max-w-4xl space-y-12 relative z-10">
+          {/* Emerald Green Micro-Noise Grain Patches - Positioned close to cards */}
+          <HalftonePattern 
+            color="#34D399" 
+            className="-top-10 -left-6 w-[350px] h-[350px]" 
+            opacity={0.20} 
+          />
+          <HalftonePattern 
+            color="#059669" 
+            className="-bottom-12 -right-6 w-[320px] h-[320px]" 
+            opacity={0.20} 
+          />
           
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
               Simple 3-Step Process
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -465,23 +478,23 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left items-stretch">
-            <div className="bg-[#E6F2ED]/60 p-6 rounded-2xl border border-[#155D49]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
+            <div className="bg-[#FEFFF7] p-6 rounded-2xl border border-[#34D399]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
               <div>
-                <span className="text-2xl font-black text-[#155D49] font-heading">01</span>
+                <span className="text-2xl font-black text-[#0D2E24] font-heading">01</span>
                 <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Free 15-Min Intro Call</h4>
                 <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">A free, informal call to talk about what's brought you here and whether working together feels right.</p>
               </div>
             </div>
             
-            <div className="bg-[#E6F2ED]/60 p-6 rounded-2xl border border-[#155D49]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
+            <div className="bg-[#FEFFF7] p-6 rounded-2xl border border-[#34D399]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
               <div>
-                <span className="text-2xl font-black text-[#155D49] font-heading">02</span>
+                <span className="text-2xl font-black text-[#0D2E24] font-heading">02</span>
                 <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Initial Session (75 mins)</h4>
                 <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">An in-depth first session to explore your situation together and agree the best approach for you.</p>
               </div>
             </div>
             
-            <div className="bg-[#0D2E24] text-white p-6 rounded-2xl border border-[#155D49]/30 card-flow-effect space-y-3 shadow-md flex flex-col justify-between h-full">
+            <div className="bg-[#0D2E24] text-white p-6 rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 shadow-md flex flex-col justify-between h-full">
               <div>
                 <span className="text-2xl font-black text-[#34D399] font-heading">03</span>
                 <h4 className="font-bold text-white font-heading mt-1">6-Session Programme</h4>
@@ -493,7 +506,7 @@ export default function Home() {
           <div className="pt-4">
             <Link
               href="/contact#book"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-xl shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#155D49]/30 group"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-xl shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
             >
               <Calendar className="w-5 h-5 text-[#34D399]" />
               <span>Book a Free Introductory Call</span>
@@ -505,10 +518,10 @@ export default function Home() {
       </section>
 
       {/* SECTION: FAQ */}
-      <section id="faq" className="py-24 bg-[#E6F2ED]/40 px-4 border-t border-[#155D49]/15">
+      <section id="faq" className="py-24 bg-[#FEFFF7] px-4 border-t border-[#34D399]/15">
         <div className="container mx-auto max-w-3xl space-y-10">
           <div className="text-center space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
               Clear Answers
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">

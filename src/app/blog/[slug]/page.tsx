@@ -66,7 +66,7 @@ function renderBlock(block: ContentBlock, index: number) {
         <ul key={index} className="mb-5 space-y-2 pl-1">
           {block.items.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[#0D2E24]/85 font-medium leading-relaxed">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#155D49] shrink-0" />
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#34D399] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -76,7 +76,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <blockquote
           key={index}
-          className="my-6 px-6 py-5 bg-[#E6F2ED] border-l-4 border-[#155D49] rounded-r-2xl"
+          className="my-6 px-6 py-5 bg-[#FEFFF7] border-l-4 border-[#34D399] rounded-r-2xl"
         >
           <p className="text-[#0D2E24] font-semibold leading-relaxed italic">
             {block.text}
@@ -114,28 +114,28 @@ export default async function BlogPost({ params }: Props) {
   };
 
   return (
-    <article className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] min-h-screen">
+    <article className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
 
       {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-center border-b border-[#155D49]/20">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-6">
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-bold text-[#155D49] hover:underline"
+            className="inline-flex items-center text-sm font-bold text-[#0D2E24] hover:underline"
           >
             <ArrowLeft className="w-4 h-4 mr-1" /> Back to Blog
           </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#155D49] text-white">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#34D399] text-white">
               <Tag className="w-3 h-3" />
               {article.category}
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#155D49]/30 text-[#155D49]">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#34D399]/30 text-[#0D2E24]">
               <Clock className="w-3 h-3" />
               {article.readTime}
             </span>
@@ -168,7 +168,7 @@ export default async function BlogPost({ params }: Props) {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-16 px-4 bg-[#E6F2ED] border-t border-[#155D49]/20">
+      <section className="py-16 px-4 bg-[#FEFFF7] border-t border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl text-center space-y-4">
           <h2 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
             Recognise Something in This?
@@ -179,7 +179,7 @@ export default async function BlogPost({ params }: Props) {
           </p>
           <Link
             href="/contact#book"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#155D49] transition-all shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#34D399] transition-all shadow-md"
           >
             Book a Free Introductory Call
           </Link>

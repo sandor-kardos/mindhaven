@@ -13,11 +13,11 @@ export default function BlogIndex() {
   const posts = getAllArticles();
 
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] min-h-screen">
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-center border-b border-[#155D49]/20">
+    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#155D49] border border-[#155D49]/30 text-xs font-bold uppercase tracking-wider">
-            <BookOpen className="w-4 h-4 text-[#155D49]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#0D2E24] border border-[#34D399]/30 text-xs font-bold uppercase tracking-wider">
+            <BookOpen className="w-4 h-4 text-[#34D399]" />
             <span>Insights & Articles</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold font-heading">
@@ -35,10 +35,10 @@ export default function BlogIndex() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="block bg-white p-8 rounded-3xl border border-[#155D49]/20 shadow-sm hover:shadow-md transition-all group card-flow-effect"
+              className="block bg-white p-8 rounded-3xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all group card-flow-effect"
             >
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E6F2ED] text-[#155D49] text-xs font-bold border border-[#155D49]/20">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/20">
                   <Tag className="w-3 h-3" />
                   {post.category}
                 </span>
@@ -54,13 +54,13 @@ export default function BlogIndex() {
                   })}
                 </span>
               </div>
-              <h2 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#155D49] transition-colors">
+              <h2 className="text-2xl font-bold font-heading mb-3 group-hover:text-[#0D2E24] transition-colors">
                 {post.title}
               </h2>
               <p className="text-sm text-[#0D2E24]/80 font-medium mb-4 leading-relaxed">
                 {post.excerpt}
               </p>
-              <div className="flex items-center text-[#155D49] text-sm font-bold">
+              <div className="flex items-center text-[#0D2E24] text-sm font-bold">
                 Read Article{" "}
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </div>

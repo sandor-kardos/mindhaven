@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Sparkles, BookOpen, ArrowUpRight } from "lucide-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { HalftonePattern } from "@/components/ui/HalftonePattern";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,11 +17,12 @@ import {
 export interface Gallery4Item {
   id: string;
   category: string;
-  categoryBg: string;
+  categoryColor: string;
   title: string;
   description: string;
   href: string;
   image: string;
+  blobShape?: string;
 }
 
 export interface Gallery4Props {
@@ -33,47 +35,52 @@ const mindhavenArticles: Gallery4Item[] = [
   {
     id: "burnout-recovery",
     category: "Burnout Recovery",
-    categoryBg: "bg-[#155D49]",
+    categoryColor: "#457A5D", // 40% Brighter Pine
     title: "Understanding High-Functioning Burnout in Professionals",
     description: "Why high achievers ignore early warning signs of nervous system exhaustion.",
     href: "/blog/burnout-therapist-edinburgh",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    blobShape: "73% 27% 41% 59% / 34% 68% 32% 66%",
   },
   {
     id: "nervous-system-calm",
     category: "Nervous System",
-    categoryBg: "bg-[#0284C7]",
+    categoryColor: "#C06A33", // 40% Brighter Terracotta
     title: "Regulating the Nervous System Under Pressure",
     description: "Practical techniques to shift out of chronic fight-or-flight survival states.",
     href: "/blog/nervous-system-regulation",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    blobShape: "31% 69% 62% 38% / 65% 31% 69% 35%",
   },
   {
     id: "imposter-syndrome",
     category: "Mindset & Anxiety",
-    categoryBg: "bg-[#6B4B08]",
+    categoryColor: "#E06A17", // 40% Brighter Burnt Orange
     title: "Overcoming Internal Imposter Dynamics",
     description: "How internalised perfectionism creates silent anxiety in leadership roles.",
     href: "/blog/imposter-syndrome-in-professionals",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    blobShape: "68% 32% 25% 75% / 42% 64% 36% 58%",
   },
   {
     id: "work-life-boundaries",
     category: "Work-Life Balance",
-    categoryBg: "bg-[#7A4C08]",
+    categoryColor: "#34658C", // 40% Brighter Slate Navy
     title: "Setting Sustainable Boundaries Without Guilt",
     description: "Protecting your emotional bandwidth while continuing to excel at work.",
     href: "/blog/sustainable-boundaries",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    blobShape: "38% 62% 76% 24% / 28% 62% 38% 72%",
   },
   {
     id: "somatic-therapy",
     category: "Therapeutic Methods",
-    categoryBg: "bg-[#4F46E5]",
+    categoryColor: "#7A6F64", // 40% Brighter Warm Taupe
     title: "Somatic & Integrative Approaches to Stress",
     description: "Combining body-centred mindfulness and CBT to release stored tension.",
     href: "/blog/somatic-therapy-explained",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    blobShape: "62% 38% 54% 46% / 41% 65% 35% 59%",
   },
 ];
 
@@ -104,11 +111,24 @@ const Gallery4 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-12 sm:py-16 bg-[#F8FAF8] text-[#0D2E24] border-y border-[#155D49]/15 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="mb-8 max-w-3xl space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30 w-fit">
-            <Sparkles className="w-3.5 h-3.5 text-[#155D49]" />
+    <section className="py-12 sm:py-16 bg-transparent text-[#0D2E24] overflow-hidden relative">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        {/* Emerald Green Micro-Noise Grain Patches - Anchored close to content elements */}
+        <HalftonePattern 
+          color="#34D399" 
+          className="-top-8 right-4 w-[380px] h-[380px]" 
+          opacity={0.20} 
+        />
+        <HalftonePattern 
+          color="#059669" 
+          className="-bottom-8 left-4 w-[340px] h-[340px]" 
+          opacity={0.20} 
+        />
+
+        {/* Centered Gallery Header */}
+        <div className="mb-10 max-w-3xl mx-auto text-center flex flex-col items-center space-y-3 relative z-10">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white/50 border border-[#34D399]/30 w-fit">
+            <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
             <span>Wellbeing Insights</span>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -118,63 +138,75 @@ const Gallery4 = ({
             {description}
           </p>
         </div>
-      </div>
 
-      {/* Mobile-Optimized Bright Cards */}
-      <div className="w-full">
-        <Carousel
-          setApi={setCarouselApi}
-          opts={{
-            align: "start",
-            breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
-            },
-          }}
-        >
-          <CarouselContent className="ml-0 px-4 md:px-8">
+        {/* Mobile- & Ultrawide-Optimized Centered Carousel */}
+        <div className="w-full relative z-10">
+          <Carousel
+            setApi={setCarouselApi}
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+          >
+            <CarouselContent className="-ml-4">
             {items.map((item, index) => (
               <CarouselItem
                 key={item.id}
-                className="basis-[285px] sm:basis-[290px] lg:basis-[310px] pl-3.5 sm:pl-4 shrink-0"
+                className="basis-[78%] sm:basis-[260px] lg:basis-[20%] pl-4"
               >
                 <Link
                   href={item.href}
-                  className="group relative flex flex-col justify-between aspect-[3/4] h-[28rem] w-full overflow-hidden rounded-3xl border-2 border-white bg-slate-100 shadow-lg hover:shadow-2xl hover:shadow-[#155D49]/15 transition-all duration-500 transform group-hover:-translate-y-1.5"
+                  className="group relative block w-full pt-2 h-[25.5rem] sm:h-[25rem]"
                 >
-                  {/* Bright Portrait Image */}
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 640px) 285px, (max-width: 1024px) 290px, 310px"
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-108 brightness-[1.03]"
-                    priority={index === 0}
-                    loading={index === 0 ? undefined : "lazy"}
-                  />
-
-                  {/* Top Category Badge */}
-                  <div className="relative z-10 p-3 sm:p-4 flex items-start">
-                    <span className={`px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-white shadow-xs ${item.categoryBg}`}>
+                  {/* Floating Top Category Badge - In Front of Blob */}
+                  <div className="absolute top-0 left-0 z-20">
+                    <span 
+                      className="inline-block px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm border border-white/20"
+                      style={{ backgroundColor: item.categoryColor }}
+                    >
                       {item.category}
                     </span>
                   </div>
 
-                  {/* Glassmorphism Frosted Bottom Banner */}
-                  <div className="relative z-10 m-3 p-4 rounded-2xl bg-[#0D2E24]/85 backdrop-blur-md border border-white/30 text-white shadow-lg group-hover:bg-[#0D2E24]/95 transition-colors duration-300">
-                    <h3 className="text-sm sm:text-base font-extrabold font-heading leading-snug line-clamp-2 text-white group-hover:text-[#34D399] transition-colors">
+                  {/* Static Blob Image Container */}
+                  <div 
+                    className="relative w-full overflow-hidden border-[3px] border-white bg-slate-100 transition-all duration-500 z-0 mt-3 h-[19.5rem] sm:h-[19rem]"
+                    style={{ 
+                      borderRadius: item.blobShape || "60% 40% 30% 70% / 60% 30% 70% 40%", 
+                      transform: "translateZ(0)" 
+                    }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 640px) 260px, (max-width: 1024px) 260px, 240px"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110 brightness-105"
+                      priority={index === 0}
+                      loading={index === 0 ? undefined : "lazy"}
+                    />
+                  </div>
+
+                  {/* Floating Description Card - In Front of Blob */}
+                  <div 
+                    className="absolute bottom-2 left-1.5 right-1.5 z-20 p-3 sm:p-4 rounded-xl backdrop-blur-xl border border-white/30 text-white shadow-md transition-all duration-300"
+                    style={{ 
+                      backgroundColor: 'rgba(13, 46, 36, 0.90)',
+                      animation: `breatheGentle ${12 + (index % 4) * 2.5}s ease-in-out infinite` 
+                    }}
+                  >
+                    <h3 className="text-xs sm:text-sm font-extrabold font-heading leading-snug line-clamp-2 text-white group-hover:text-[#34D399] transition-colors">
                       {item.title}
                     </h3>
                     
-                    <p className="text-xs text-slate-200 font-medium line-clamp-2 mt-1 leading-relaxed opacity-95">
+                    <p className="text-[11px] sm:text-xs text-slate-200 font-medium line-clamp-2 mt-1 leading-relaxed opacity-95">
                       {item.description}
                     </p>
 
-                    <div className="mt-3 pt-2.5 border-t border-white/20 flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#34D399] group-hover:text-white transition-colors">
+                    <div className="mt-2 pt-2 border-t border-white/10 flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-[#34D399] group-hover:text-white transition-colors">
                         <span>Read Article</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform text-[#34D399] group-hover:text-white" />
                       </span>
                     </div>
                   </div>
@@ -194,14 +226,15 @@ const Gallery4 = ({
               aria-label={`Go to slide ${index + 1}`}
             >
               <span className={`block h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "w-5 sm:w-6 bg-[#155D49]" : "w-1.5 sm:w-2 bg-[#155D49]/20"
+                currentSlide === index ? "w-5 sm:w-6 bg-[#34D399]" : "w-1.5 sm:w-2 bg-[#34D399]/20"
               }`} />
             </button>
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
-};
+}
 
 export { Gallery4 };

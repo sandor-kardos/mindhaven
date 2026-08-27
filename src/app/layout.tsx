@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col antialiased bg-[#F8FAF8] text-[#0D2E24]">
+      <body className="min-h-full flex flex-col antialiased bg-[#FEFFF7] text-[#0D2E24]">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -131,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* Global Ambient Background Animation */}
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-[#155D49] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" />
+          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-[#34D399] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" />
           <div className="absolute -bottom-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#34D399] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" style={{ animationDelay: '-12s' }} />
         </div>
 

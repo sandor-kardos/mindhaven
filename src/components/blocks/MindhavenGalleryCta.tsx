@@ -32,13 +32,13 @@ const MATURE_PEOPLE_IMAGES = [
 
 export const MindhavenGalleryCta = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white via-[#E6F2ED]/40 to-[#F8FAF8] border-y border-[#155D49]/15 overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-b from-white via-[#FEFFF7]/40 to-[#FEFFF7] border-y border-[#34D399]/15 overflow-hidden">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 md:grid-cols-2">
         
         {/* Animated Content Column */}
         <ContainerStagger className="space-y-6">
-          <ContainerAnimated className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-            <ShieldCheck className="w-4 h-4 text-[#155D49]" />
+          <ContainerAnimated className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            <ShieldCheck className="w-4 h-4 text-[#34D399]" />
             Restore Mental Clarity & Balance
           </ContainerAnimated>
           
@@ -51,7 +51,7 @@ export const MindhavenGalleryCta = () => {
           </ContainerAnimated>
 
           <ContainerAnimated className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#155D49] text-white font-extrabold px-8 shadow-lg shadow-[#0D2E24]/15 group cursor-pointer">
+            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#34D399] text-white font-extrabold px-8 shadow-lg shadow-[#0D2E24]/15 group cursor-pointer">
               <Link href="/fees-and-booking" className="flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-[#34D399]" />
                 <span>Book Discovery Call</span>
@@ -61,9 +61,9 @@ export const MindhavenGalleryCta = () => {
             
             <Link 
               href="/about-erika-martin" 
-              className="inline-flex items-center justify-center text-sm font-extrabold text-[#155D49] hover:underline px-4 py-2"
+              className="inline-flex items-center justify-center text-sm font-extrabold text-[#0D2E24] hover:underline px-4 py-2"
             >
-              Learn about Erika Martin →
+              Learn about Erika Martin ?
             </Link>
           </ContainerAnimated>
         </ContainerStagger>

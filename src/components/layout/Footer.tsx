@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ShieldCheck, Lock, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0D2E24] text-white pt-16 pb-20 sm:pb-24 border-t border-[#155D49]/40 relative z-10">
+    <footer className="bg-[#0D2E24] text-white pt-16 pb-20 sm:pb-24 border-t border-[#34D399]/40 relative z-10">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -113,7 +113,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright - Clean Bright White Plain Text with NCPS Register Link */}
-        <div className="pt-8 border-t border-[#155D49]/50 text-center">
+        <div className="pt-8 border-t border-[#34D399]/50 text-center">
           <p className="text-white text-xs sm:text-sm font-semibold tracking-wide">
             © {new Date().getFullYear()} Mindhaven. All rights reserved.{" "}
             <a 

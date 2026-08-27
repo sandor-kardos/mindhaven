@@ -7,11 +7,11 @@ export const metadata = {
 
 export default function TermsOfService() {
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24]">
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">
+    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#155D49] border border-[#155D49]/30 text-xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-[#155D49]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#0D2E24] border border-[#34D399]/30 text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4 text-[#34D399]" />
             <span>Practice Agreement</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -25,7 +25,7 @@ export default function TermsOfService() {
       </section>
 
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl border border-[#155D49]/20 shadow-md space-y-10 text-[#0D2E24]">
+        <div className="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl border border-[#34D399]/20 shadow-md space-y-10 text-[#0D2E24]">
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. The Counselling Relationship</h2>
@@ -47,7 +47,7 @@ export default function TermsOfService() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">3. Fees & Payment</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Current fees are Â£85 per 50-minute individual session, or Â£480 for the 6-session Growth Package (Â£80 per session). Fees are subject to review and any changes will be communicated with at least four weeks' notice.
+              Current fees are £85 per 50-minute individual session, or £480 for the 6-session Growth Package (£80 per session). Fees are subject to review and any changes will be communicated with at least four weeks' notice.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Payment is due before or at the time of each session. Acceptable payment methods will be confirmed at the point of booking. The Growth Package fee is paid in advance and is non-refundable for sessions already attended.
@@ -123,7 +123,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">10. Complaints</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If you have a concern or complaint about the service you have received, please contact Erika Martin in the first instance at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#155D49] underline underline-offset-2">mindhavenuk@gmail.com</a>. If you are not satisfied with the outcome, you may refer your complaint to the NCPS, whose contact details are available at <strong>ncps.com/complaints</strong>.
+              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>. If you are not satisfied with the outcome, you may refer your complaint to the NCPS, whose contact details are available at <strong>ncps.com/complaints</strong>.
             </p>
           </div>
 

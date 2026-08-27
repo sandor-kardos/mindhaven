@@ -14,7 +14,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F8FAF8]/90 backdrop-blur-md border-b border-[#155D49]/20 transition-all">
+    <header className="sticky top-0 z-50 bg-[#FEFFF7]/90 backdrop-blur-md border-b border-[#34D399]/20 transition-all">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
@@ -22,16 +22,16 @@ export function Navbar() {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-[#0D2E24]">
-            <Link href="/contact" className="hover:text-[#155D49] transition-colors">
+            <Link href="/contact" className="hover:text-[#0D2E24] transition-colors">
               Contact
             </Link>
-            <Link href="/about-erika-martin" className="hover:text-[#155D49] transition-colors">
+            <Link href="/about-erika-martin" className="hover:text-[#0D2E24] transition-colors">
               About
             </Link>
-            <Link href="/#faq" className="hover:text-[#155D49] transition-colors">
+            <Link href="/#faq" className="hover:text-[#0D2E24] transition-colors">
               FAQs
             </Link>
-            <Link href="/fees-and-booking" className="hover:text-[#155D49] transition-colors">
+            <Link href="/fees-and-booking" className="hover:text-[#0D2E24] transition-colors">
               Fees
             </Link>
           </nav>
@@ -69,10 +69,10 @@ export function Navbar() {
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
-            <div className="w-px h-5 bg-[#155D49]/20 mx-1" />
+            <div className="w-px h-5 bg-[#34D399]/20 mx-1" />
             <Link
               href="/contact#book"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-md border border-[#155D49]/30"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md border border-[#34D399]/30"
             >
               <Calendar className="w-3.5 h-3.5 text-[#34D399]" />
               <span>Book Consultation</span>
@@ -82,7 +82,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-xl text-[#0D2E24] hover:bg-[#E6F2ED] transition-colors"
+            className="md:hidden p-2 rounded-xl text-[#0D2E24] hover:bg-[#FEFFF7] transition-colors"
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
@@ -94,13 +94,13 @@ export function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-[#155D49]/20 px-4 pt-4 pb-6 space-y-1">
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">Contact</Link>
-          <Link href="/about-erika-martin" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">About</Link>
-          <Link href="/#faq" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">FAQs</Link>
-          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#155D49]">Fees</Link>
+        <div className="md:hidden bg-white border-b border-[#34D399]/20 px-4 pt-4 pb-6 space-y-1">
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">Contact</Link>
+          <Link href="/about-erika-martin" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">About</Link>
+          <Link href="/#faq" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">FAQs</Link>
+          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">Fees</Link>
 
-          <div className="flex items-center gap-3 py-2 border-t border-[#155D49]/10 mt-2 pt-4">
+          <div className="flex items-center gap-3 py-2 border-t border-[#34D399]/10 mt-2 pt-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -112,7 +112,7 @@ export function Navbar() {
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
-            <span className="text-[#155D49]/30">·</span>
+            <span className="text-[#0D2E24]/30">&middot;</span>
             <a
               href={FACEBOOK_URL}
               target="_blank"
@@ -126,7 +126,7 @@ export function Navbar() {
               </svg>
               <span>Facebook</span>
             </a>
-            <span className="text-[#155D49]/30">·</span>
+            <span className="text-[#0D2E24]/30">&middot;</span>
             <a
               href={LINKEDIN_URL}
               target="_blank"

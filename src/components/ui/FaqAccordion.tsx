@@ -28,8 +28,8 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
             key={index}
             className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
               isOpen
-                ? "bg-white border-[#155D49]/40 shadow-md"
-                : "bg-white/80 hover:bg-white border-[#155D49]/20 shadow-xs"
+                ? "bg-white border-[#34D399]/40 shadow-md"
+                : "bg-white/80 hover:bg-white border-[#34D399]/20 shadow-xs"
             }`}
           >
             <button
@@ -42,14 +42,14 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
                 {faq.question}
               </h3>
               <div className={`p-1.5 rounded-full transition-transform duration-300 shrink-0 ${
-                isOpen ? "bg-[#155D49] text-white rotate-180" : "bg-[#E6F2ED] text-[#155D49]"
+                isOpen ? "bg-[#34D399] text-white rotate-180" : "bg-[#FEFFF7] text-[#0D2E24]"
               }`}>
                 <ChevronDown className="w-4 h-4" />
               </div>
             </button>
 
             {isOpen && (
-              <div className="px-6 pb-6 pt-1 text-sm text-[#0D2E24]/85 font-medium leading-relaxed border-t border-[#155D49]/10 mt-1">
+              <div className="px-6 pb-6 pt-1 text-sm text-[#0D2E24]/85 font-medium leading-relaxed border-t border-[#34D399]/10 mt-1">
                 {faq.answer}
               </div>
             )}

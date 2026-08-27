@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mindhaven Life Compass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PDF generáláshoz html2pdf.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f3ef;
+      color: #243024;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    h1, h2, h3 {
+      color: #1f3b32;
+    }
+    .brand {
+      font-size: 0.9rem;
+      color: #6b7b70;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    textarea, input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #c9d0c7;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      margin-bottom: 0.75rem;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 70px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .small-note {
+      font-size: 0.8rem;
+      color: #7b857b;
+      margin-top: -0.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background: #2f6b57;
+      color: #ffffff;
+    }
+    .btn-secondary {
+      background: #e3e7e1;
+      color: #243024;
+    }
+    .footer-note {
+      font-size: 0.75rem;
+      color: #7b857b;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="lifeCompassContent">
+      <h1>Mindhaven Life Compass</h1>
+      <div class="brand">
+        Personal Counselling · Mindhaven.uk · This worksheet stays on your device.
+      </div>
+
+      <div class="card">
+        <h2>1. Values – What truly matters to you?</h2>
+        <p>Write 3–5 keywords for each area.</p>
+        <div class="grid-2">
+          <div>
+            <label for="values_relationships">Relationships & Intimacy</label>
+            <textarea id="values_relationships" placeholder="e.g. honesty, safety, closeness, support"></textarea>
+          </div>
+          <div>
+            <label for="values_work">Work & Career</label>
+            <textarea id="values_work" placeholder="e.g. growth, stability, creativity, freedom"></textarea>
+          </div>
+          <div>
+            <label for="values_health">Health & Wellbeing</label>
+            <textarea id="values_health" placeholder="e.g. balance, movement, rest, awareness"></textarea>
+          </div>
+          <div>
+            <label for="values_growth">Personal Growth</label>
+            <textarea id="values_growth" placeholder="e.g. learning, confidence, resilience, authenticity"></textarea>
+          </div>
+          <div>
+            <label for="values_community">Community & Environment</label>
+            <textarea id="values_community" placeholder="e.g. contribution, responsibility, sustainability"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2. Current situation – Where are you now?</h2>
+        <p>On a scale from 1–10, how much does your life reflect these values right now?</p>
+        <div class="grid-2">
+          <div>
+            <label for="score_relationships">Relationships</label>
+            <input id="score_relationships" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+          <div>
+            <label for="score_work">Work</label>
+            <input id="score_work" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+          <div>
+            <label for="score_health">Health</label>
+            <input id="score_health" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+          <div>
+            <label for="score_growth">Growth</label>
+            <input id="score_growth" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+          <div>
+            <label for="score_community">Community</label>
+            <input id="score_community" type="number" min="1" max="10" placeholder="1–10">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>3. Directions – If you lived by your values…</h2>
+        <p>One sentence for each area: “If I lived more by my values here, my life would look like…”</p>
+        <label for="dir_relationships">Relationships</label>
+        <textarea id="dir_relationships" placeholder="e.g. I would spend more intentional time nurturing my close relationships."></textarea>
+
+        <label for="dir_work">Work</label>
+        <textarea id="dir_work" placeholder="e.g. I would move towards work that feels meaningful and aligned with my strengths."></textarea>
+
+        <label for="dir_health">Health</label>
+        <textarea id="dir_health" placeholder="e.g. I would listen more to my body and create space for rest and movement."></textarea>
+
+        <label for="dir_growth">Growth</label>
+        <textarea id="dir_growth" placeholder="e.g. I would allow myself to try, learn, and grow without harsh self-judgement."></textarea>
+
+        <label for="dir_community">Community</label>
+        <textarea id="dir_community" placeholder="e.g. I would connect with communities where I feel I can contribute and belong."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>4. Next steps – Small, realistic actions</h2>
+        <p>Choose one small, doable step for each area.</p>
+        <label for="step_relationships">Relationships – next step</label>
+        <textarea id="step_relationships" placeholder="e.g. One honest conversation this week with someone I care about."></textarea>
+
+        <label for="step_work">Work – next step</label>
+        <textarea id="step_work" placeholder="e.g. Spend 30 minutes exploring roles that feel more aligned."></textarea>
+
+        <label for="step_health">Health – next step</label>
+        <textarea id="step_health" placeholder="e.g. 10 minutes of gentle movement or stretching each day."></textarea>
+
+        <label for="step_growth">Growth – next step</label>
+        <textarea id="step_growth" placeholder="e.g. Try one new thing this month that feels slightly outside my comfort zone."></textarea>
+
+        <label for="step_community">Community – next step</label>
+        <textarea id="step_community" placeholder="e.g. Look up one local or online group that matches my interests or values."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>5. Possible obstacles & supports</h2>
+        <p>What might get in the way? And what could support you when that happens?</p>
+        <label for="obstacles">Obstacles</label>
+        <textarea id="obstacles" placeholder="e.g. fatigue, self-doubt, busy schedule, fear of change..."></textarea>
+
+        <label for="supports">Supports / coping strategies</label>
+        <textarea id="supports" placeholder="e.g. asking for support, planning smaller steps, self-compassion, scheduling time in advance..."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>6. Anchor sentence</h2>
+        <p>Write one short sentence that reminds you why this matters.</p>
+        <label for="anchor">Anchor sentence</label>
+        <input id="anchor" type="text" placeholder="e.g. I am doing this because living by my values matters more than staying stuck.">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" id="saveBtn">Save data on this device</button>
+      <button class="btn-secondary" id="clearBtn">Clear saved data</button>
+      <button class="btn-primary" id="pdfBtn">Download as PDF</button>
+    </div>
+
+    <div class="footer-note">
+      Your entries are stored only in your browser (localStorage). They are not sent to Mindhaven or any server.
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'mindhaven_life_compass_v1';
+
+    function getAllFields() {
+      const ids = [
+        'values_relationships','values_work','values_health','values_growth','values_community',
+        'score_relationships','score_work','score_health','score_growth','score_community',
+        'dir_relationships','dir_work','dir_health','dir_growth','dir_community',
+        'step_relationships','step_work','step_health','step_growth','step_community',
+        'obstacles','supports','anchor'
+      ];
+      const data = {};
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) data[id] = el.value;
+      });
+      return data;
+    }
+
+    function setAllFields(data) {
+      if (!data) return;
+      Object.keys(data).forEach(id => {
+        const el = document.getElementById(id);
+        if (el && typeof data[id] === 'string') {
+          el.value = data[id];
+        }
+      });
+    }
+
+    function saveToLocal() {
+      const data = getAllFields();
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        alert('Your Life Compass has been saved on this device.');
+      } catch (e) {
+        console.error('LocalStorage error', e);
+        alert('Could not save data (localStorage error).');
+      }
+    }
+
+    function loadFromLocal() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        setAllFields(data);
+      } catch (e) {
+        console.error('LocalStorage load error', e);
+      }
+    }
+
+    function clearLocal() {
+      if (confirm('Clear saved Life Compass data from this browser?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        // also clear fields
+        setAllFields({
+          values_relationships:'',values_work:'',values_health:'',values_growth:'',values_community:'',
+          score_relationships:'',score_work:'',score_health:'',score_growth:'',score_community:'',
+          dir_relationships:'',dir_work:'',dir_health:'',dir_growth:'',dir_community:'',
+          step_relationships:'',step_work:'',step_health:'',step_growth:'',step_community:'',
+          obstacles:'',supports:'',anchor:''
+        });
+      }
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById('lifeCompassContent');
+      const opt = {
+        margin:       10,
+        filename:     'mindhaven-life-compass.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+
+    document.getElementById('saveBtn').addEventListener('click', saveToLocal);
+    document.getElementById('clearBtn').addEventListener('click', clearLocal);
+    document.getElementById('pdfBtn').addEventListener('click', downloadPDF);
+
+    // load on start
+    window.addEventListener('DOMContentLoaded', loadFromLocal);
+  </script>
+</body>
+</html>

@@ -9,12 +9,12 @@ export const metadata = {
 
 export default function FeesAndBooking() {
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24]">
+    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
 
       {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30">
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
             No Hidden Costs
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -32,37 +32,37 @@ export default function FeesAndBooking() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
 
             {/* Individual session */}
-            <div className="bg-white p-8 rounded-3xl border border-[#155D49]/20 shadow-md card-flow-effect flex flex-col justify-between h-full">
+            <div className="bg-white p-8 rounded-3xl border border-[#34D399]/20 shadow-md card-flow-effect flex flex-col justify-between h-full">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#E6F2ED] text-[#155D49] text-xs font-bold rounded-full mb-4 border border-[#155D49]/30">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold rounded-full mb-4 border border-[#34D399]/30">
                   <span>Standard Session</span>
                 </div>
                 <p className="text-xl font-bold text-[#0D2E24] mb-2 font-heading min-h-[56px] flex items-center">Individual Session</p>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-extrabold text-[#0D2E24]">Â£85</span>
+                  <span className="text-4xl font-extrabold text-[#0D2E24]">£85</span>
                   <span className="text-[#0D2E24]/70 ml-2 font-semibold text-sm">/ 50 mins</span>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed mb-6 min-h-[40px]">Flexible individual sessions tailored to your needs and pace.</p>
                 <ul className="space-y-3 mb-8 text-[#0D2E24]">
-                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#155D49] mr-2.5 shrink-0 mt-0.5" /><span>Flexible scheduling</span></li>
-                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#155D49] mr-2.5 shrink-0 mt-0.5" /><span>Online or in-person</span></li>
-                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#155D49] mr-2.5 shrink-0 mt-0.5" /><span>Evidence-based therapeutic approaches</span></li>
+                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#0D2E24] mr-2.5 shrink-0 mt-0.5" /><span>Flexible scheduling</span></li>
+                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#0D2E24] mr-2.5 shrink-0 mt-0.5" /><span>Online or in-person</span></li>
+                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#0D2E24] mr-2.5 shrink-0 mt-0.5" /><span>Evidence-based therapeutic approaches</span></li>
                 </ul>
               </div>
-              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#E6F2ED] text-[#0D2E24] font-bold text-sm rounded-full border border-[#155D49]/30 hover:bg-[#155D49] hover:text-white transition-colors">Book a Session</Link>
+              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#FEFFF7] text-[#0D2E24] font-bold text-sm rounded-full border border-[#34D399]/30 hover:bg-[#34D399] hover:text-white transition-colors">Book a Session</Link>
             </div>
 
             {/* Growth Package */}
-            <div className="bg-[#0D2E24] text-white p-8 rounded-3xl border-2 border-[#155D49] shadow-2xl card-flow-effect flex flex-col justify-between h-full relative overflow-hidden">
+            <div className="bg-[#0D2E24] text-white p-8 rounded-3xl border-2 border-[#34D399] shadow-2xl card-flow-effect flex flex-col justify-between h-full relative overflow-hidden">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#155D49] text-white text-xs font-bold rounded-full mb-4">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#34D399] text-white text-xs font-bold rounded-full mb-4">
                   <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
                   <span>Growth Package</span>
                 </div>
                 <p className="text-xl font-bold font-heading text-white mb-2 min-h-[56px] flex items-center">Six-Session Programme</p>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-extrabold text-white">Â£480</span>
-                  <span className="text-slate-300 ml-2 text-sm font-semibold">(Â£80 per session)</span>
+                  <span className="text-4xl font-extrabold text-white">£480</span>
+                  <span className="text-slate-300 ml-2 text-sm font-semibold">(£80 per session)</span>
                 </div>
                 <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">A structured six-session programme, reviewed and adjusted as you go.</p>
                 <ul className="space-y-3 mb-8 text-white font-medium">
@@ -71,7 +71,7 @@ export default function FeesAndBooking() {
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">Ongoing progress review</span></li>
                 </ul>
               </div>
-              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#155D49] hover:bg-[#0A4C3A] text-white font-bold text-sm rounded-full transition-colors shadow-md relative z-10">Book This Programme</Link>
+              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#34D399] hover:bg-[#0D2E24] text-white font-bold text-sm rounded-full transition-colors shadow-md relative z-10">Book This Programme</Link>
             </div>
 
           </div>
@@ -81,8 +81,8 @@ export default function FeesAndBooking() {
       {/* Confidentiality notice */}
       <section className="pb-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-[#E6F2ED] border-l-4 border-[#155D49] p-6 md:p-8 rounded-r-2xl flex items-start shadow-sm card-flow-effect">
-            <ShieldAlert className="w-8 h-8 text-[#155D49] mr-4 shrink-0" />
+          <div className="bg-[#FEFFF7] border-l-4 border-[#34D399] p-6 md:p-8 rounded-r-2xl flex items-start shadow-sm card-flow-effect">
+            <ShieldAlert className="w-8 h-8 text-[#34D399] mr-4 shrink-0" />
             <div>
               <p className="text-lg font-bold text-[#0D2E24] mb-2 font-heading">Confidentiality Guarantee</p>
               <p className="text-[#0D2E24]/85 text-sm leading-relaxed font-medium">
@@ -94,10 +94,10 @@ export default function FeesAndBooking() {
       </section>
 
       {/* Free intro call CTA */}
-      <section className="py-20 px-4 bg-white border-t border-[#155D49]/15 text-center">
+      <section className="py-20 px-4 bg-white border-t border-[#34D399]/15 text-center">
         <div className="container mx-auto max-w-2xl space-y-6">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-            Free Â· No Commitment
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            Free · No Commitment
           </span>
           <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
             Not Sure Where to Start?
@@ -107,7 +107,7 @@ export default function FeesAndBooking() {
           </p>
           <Link
             href="/contact#book"
-            className="inline-flex items-center gap-3 px-10 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#155D49] rounded-full transition-all shadow-xl hover:-translate-y-0.5 border border-[#155D49]/30 group"
+            className="inline-flex items-center gap-3 px-10 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-xl hover:-translate-y-0.5 border border-[#34D399]/30 group"
           >
             <Calendar className="w-5 h-5 text-[#34D399]" />
             <span>Book a Free Introductory Call</span>

@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24]">
+    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
 
       {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-center border-b border-[#155D49]/20">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-white border border-[#155D49]/30">
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
             No Obligation
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -42,10 +42,10 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with Erika on WhatsApp"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md hover:shadow-xl hover:border-[#155D49]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#E6F2ED] border border-[#155D49]/20 flex items-center justify-center mb-5 group-hover:bg-[#155D49]/15 transition-colors">
-                <MessageCircle className="w-6 h-6 text-[#155D49]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
+                <MessageCircle className="w-6 h-6 text-[#34D399]" />
               </div>
               <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading mb-2">WhatsApp</h2>
               <p className="text-sm text-[#0D2E24]/75 font-medium leading-relaxed mb-4 flex-1">
@@ -55,7 +55,7 @@ export default function Contact() {
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>Usually replies within a few hours</span>
               </div>
-              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#155D49] group-hover:gap-3 transition-all">
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 Message Me
                 <ExternalLink className="w-4 h-4" />
               </span>
@@ -64,10 +64,10 @@ export default function Contact() {
             {/* Email Card */}
             <a
               href="mailto:mindhavenuk@gmail.com"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md hover:shadow-xl hover:border-[#155D49]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#E6F2ED] border border-[#155D49]/20 flex items-center justify-center mb-5 group-hover:bg-[#155D49]/15 transition-colors">
-                <Mail className="w-6 h-6 text-[#155D49]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
+                <Mail className="w-6 h-6 text-[#34D399]" />
               </div>
               <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading mb-2">Email</h2>
               <p className="text-sm text-[#0D2E24]/75 font-medium leading-relaxed mb-4 flex-1">
@@ -77,7 +77,7 @@ export default function Contact() {
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>Response within 1 working day</span>
               </div>
-              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#155D49] group-hover:gap-3 transition-all">
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 mindhavenuk@gmail.com
                 <ExternalLink className="w-4 h-4" />
               </span>
@@ -86,10 +86,10 @@ export default function Contact() {
             {/* Phone Card */}
             <a
               href="tel:+447516785823"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md hover:shadow-xl hover:border-[#155D49]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#E6F2ED] border border-[#155D49]/20 flex items-center justify-center mb-5 group-hover:bg-[#155D49]/15 transition-colors">
-                <Phone className="w-6 h-6 text-[#155D49]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
+                <Phone className="w-6 h-6 text-[#34D399]" />
               </div>
               <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading mb-2">Phone</h2>
               <p className="text-sm text-[#0D2E24]/75 font-medium leading-relaxed mb-4 flex-1">
@@ -99,7 +99,7 @@ export default function Contact() {
                 <Clock className="w-3.5 h-3.5 shrink-0" />
                 <span>Monday to Friday, 9am to 6pm</span>
               </div>
-              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#155D49] group-hover:gap-3 transition-all">
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 +44 7516 785823
                 <ExternalLink className="w-4 h-4" />
               </span>
@@ -115,10 +115,10 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* In-person */}
-            <div className="p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md card-flow-effect space-y-4">
+            <div className="p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md card-flow-effect space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E6F2ED] flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5 text-[#155D49]" />
+                <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-[#34D399]" />
                 </div>
                 <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading">In Person</h2>
               </div>
@@ -128,27 +128,27 @@ export default function Contact() {
                   href="https://mysatherapyrooms.co.uk/mysa-therapists"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#155D49] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors"
+                  className="text-[#0D2E24] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors"
                 >
                   Mysa Therapy Rooms
                 </a>
                 {" "}in Dalkeith, convenient for clients across Edinburgh and Midlothian.
               </p>
-              <p className="text-xs text-[#0D2E24]/60 font-medium">Dalkeith EH22 Â· Edinburgh area</p>
+              <p className="text-xs text-[#0D2E24]/60 font-medium">Dalkeith EH22 · Edinburgh area</p>
             </div>
 
             {/* Online */}
-            <div className="p-8 bg-white rounded-3xl border border-[#155D49]/20 shadow-md card-flow-effect space-y-4">
+            <div className="p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md card-flow-effect space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E6F2ED] flex items-center justify-center shrink-0">
-                  <Video className="w-5 h-5 text-[#155D49]" />
+                <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center shrink-0">
+                  <Video className="w-5 h-5 text-[#34D399]" />
                 </div>
                 <h2 className="text-lg font-extrabold text-[#0D2E24] font-heading">Online Across the UK</h2>
               </div>
               <p className="text-sm text-[#0D2E24]/80 font-medium leading-relaxed">
                 Secure, encrypted video sessions available to adults anywhere in the UK. Engage in therapy from the comfort and privacy of your own space.
               </p>
-              <div className="flex items-center gap-2 text-xs text-[#155D49] font-bold">
+              <div className="flex items-center gap-2 text-xs text-[#0D2E24] font-bold">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>End-to-end encrypted</span>
               </div>
@@ -159,11 +159,11 @@ export default function Contact() {
       </section>
 
       {/* Booking Form Section */}
-      <section id="book" className="py-20 px-4 bg-white border-t border-[#155D49]/15">
+      <section id="book" className="py-20 px-4 bg-white border-t border-[#34D399]/15">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#E6F2ED] border border-[#155D49]/30">
-              Free Â· 15 Minutes Â· No Commitment
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+              Free · 15 Minutes · No Commitment
             </span>
             <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">Book a Free Introductory Call</h2>
             <p className="text-[#0D2E24]/80 max-w-2xl mx-auto text-sm font-medium leading-relaxed">
@@ -175,21 +175,21 @@ export default function Contact() {
       </section>
 
       {/* Footer nudge */}
-      <section className="py-12 px-4 bg-[#E6F2ED]/50 border-t border-[#155D49]/10">
+      <section className="py-12 px-4 bg-[#FEFFF7]/50 border-t border-[#34D399]/10">
         <div className="container mx-auto max-w-3xl text-center space-y-3">
           <p className="text-sm text-[#0D2E24]/75 font-medium leading-relaxed">
             Not ready to book yet? That is completely fine. You are welcome to read about{" "}
-            <Link href="/about-erika-martin" className="text-[#155D49] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors">
+            <Link href="/about-erika-martin" className="text-[#0D2E24] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors">
               Erika's approach
             </Link>
             {" "}or browse{" "}
-            <Link href="/blog" className="text-[#155D49] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors">
+            <Link href="/blog" className="text-[#0D2E24] font-bold underline underline-offset-2 hover:text-[#0D2E24] transition-colors">
               the articles
             </Link>
             {" "}first.
           </p>
           <div className="flex items-center justify-center gap-2 text-xs text-[#0D2E24]/50 font-medium">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#155D49]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[#34D399]" />
             <span>All enquiries are treated with complete confidentiality</span>
           </div>
         </div>

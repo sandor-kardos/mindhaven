@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 export function BackgroundParticles() {
   return (
@@ -21,9 +21,9 @@ export function BackgroundParticles() {
         />
         <defs>
           <linearGradient id="auroraGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#155D49" stopOpacity="0.1" />
+            <stop offset="0%" stopColor="#34D399" stopOpacity="0.1" />
             <stop offset="50%" stopColor="#34D399" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#155D49" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#34D399" stopOpacity="0.1" />
           </linearGradient>
         </defs>
       </svg>
