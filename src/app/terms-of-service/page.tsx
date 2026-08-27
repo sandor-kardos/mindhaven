@@ -3,6 +3,9 @@ import { ShieldCheck } from "lucide-react";
 export const metadata = {
   title: "Terms of Service | Mindhaven",
   description: "Practice agreement, cancellation policy, and session terms for Mindhaven counselling.",
+  alternates: {
+    canonical: "https://mindhaven.uk/terms-of-service",
+  },
 };
 
 export default function TermsOfService() {

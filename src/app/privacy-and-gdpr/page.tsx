@@ -3,6 +3,9 @@ import { ShieldCheck, Lock } from "lucide-react";
 export const metadata = {
   title: "Privacy Policy & GDPR | Mindhaven",
   description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
+  alternates: {
+    canonical: "https://mindhaven.uk/privacy-and-gdpr",
+  },
 };
 
 export default function PrivacyAndGDPR() {

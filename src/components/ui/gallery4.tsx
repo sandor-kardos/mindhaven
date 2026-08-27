@@ -1,12 +1,11 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, Sparkles, BookOpen, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HalftonePattern } from "@/components/ui/HalftonePattern";
 
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselApi,
@@ -90,8 +89,6 @@ const Gallery4 = ({
   items = mindhavenArticles,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -99,8 +96,6 @@ const Gallery4 = ({
       return;
     }
     const updateSelection = () => {
-      setCanScrollPrev(carouselApi.canScrollPrev());
-      setCanScrollNext(carouselApi.canScrollNext());
       setCurrentSlide(carouselApi.selectedScrollSnap());
     };
     updateSelection();
