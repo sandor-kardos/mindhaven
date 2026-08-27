@@ -134,7 +134,7 @@ export default function Contact() {
                 </a>
                 {" "}in Dalkeith, convenient for clients across Edinburgh and Midlothian.
               </p>
-              <p className="text-xs text-[#0D2E24]/60 font-medium">Dalkeith EH22 · Edinburgh area</p>
+              <p className="text-xs text-[#0D2E24]/60 font-medium">Dalkeith EH22 Â· Edinburgh area</p>
             </div>
 
             {/* Online */}
@@ -163,7 +163,7 @@ export default function Contact() {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12 space-y-3">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
-              Free · 15 Minutes · No Commitment
+              Free â€¢ 15 Minutes â€¢ No Commitment
             </span>
             <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">Book a Free Introductory Call</h2>
             <p className="text-[#0D2E24]/80 max-w-2xl mx-auto text-sm font-medium leading-relaxed">

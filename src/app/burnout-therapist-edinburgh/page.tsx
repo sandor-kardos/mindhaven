@@ -82,11 +82,11 @@ export default function BurnoutTherapistEdinburgh() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH1 · City Centre</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH2 · West End</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH3 · New Town</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH12 · Parkgrove</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH22 · Dalkeith</span>
+              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH1 Â· City Centre</span>
+              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH2 Â· West End</span>
+              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH3 Â· New Town</span>
+              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH12 Â· Parkgrove</span>
+              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH22 Â· Dalkeith</span>
             </div>
           </div>
 

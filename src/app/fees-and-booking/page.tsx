@@ -39,7 +39,7 @@ export default function FeesAndBooking() {
                 </div>
                 <p className="text-xl font-bold text-[#0D2E24] mb-2 font-heading min-h-[56px] flex items-center">Individual Session</p>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-extrabold text-[#0D2E24]">£85</span>
+                  <span className="text-4xl font-extrabold text-[#0D2E24]">Â£85</span>
                   <span className="text-[#0D2E24]/70 ml-2 font-semibold text-sm">/ 50 mins</span>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed mb-6 min-h-[40px]">Flexible individual sessions tailored to your needs and pace.</p>
@@ -61,8 +61,8 @@ export default function FeesAndBooking() {
                 </div>
                 <p className="text-xl font-bold font-heading text-white mb-2 min-h-[56px] flex items-center">Six-Session Programme</p>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-extrabold text-white">£480</span>
-                  <span className="text-slate-300 ml-2 text-sm font-semibold">(£80 per session)</span>
+                  <span className="text-4xl font-extrabold text-white">Â£480</span>
+                  <span className="text-slate-300 ml-2 text-sm font-semibold">(Â£80 per session)</span>
                 </div>
                 <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">A structured six-session programme, reviewed and adjusted as you go.</p>
                 <ul className="space-y-3 mb-8 text-white font-medium">
@@ -97,7 +97,7 @@ export default function FeesAndBooking() {
       <section className="py-20 px-4 bg-white border-t border-[#34D399]/15 text-center">
         <div className="container mx-auto max-w-2xl space-y-6">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
-            Free · No Commitment
+            Free Â· No Commitment
           </span>
           <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
             Not Sure Where to Start?

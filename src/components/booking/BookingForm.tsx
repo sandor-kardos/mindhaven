@@ -121,7 +121,7 @@ export function BookingForm() {
               disabled={status === "loading"}
               className="w-full mt-4 inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
-              {status === "loading" ? "Unlocking Calendar…" : <>Proceed to Calendar <ArrowRight className="ml-2 w-4 h-4 text-[#34D399]" /></>}
+              {status === "loading" ? "Unlocking CalendarÂ…" : <>Proceed to Calendar <ArrowRight className="ml-2 w-4 h-4 text-[#34D399]" /></>}
             </button>
           </form>
         )}
@@ -175,7 +175,7 @@ export function BookingForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {availableSlots.map((slot) => {
-                const label = `${slot.day} · ${slot.time}`;
+                const label = `${slot.day} Â· ${slot.time}`;
                 const isSelected = selectedSlot === label;
                 return (
                   <button
