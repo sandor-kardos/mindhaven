@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { 
   ContainerAnimated,
   ContainerStagger,
@@ -13,19 +14,19 @@ import { Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 // Verified high-resolution royalty-free images of 30s+ mature professionals
 const MATURE_PEOPLE_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
     alt: "Professional woman in 30s in a bright setting",
   },
   {
-    url: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
     alt: "Mature professional man 35+ with calm confidence",
   },
   {
-    url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
     alt: "Adult professional experiencing clarity and peace",
   },
   {
-    url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
     alt: "Calm professional adult in 30s",
   },
 ];
@@ -72,12 +73,12 @@ export const MindhavenGalleryCta = () => {
         <GalleryGrid className="my-4">
           {MATURE_PEOPLE_IMAGES.map((img, index) => (
             <GalleryGridCell index={index} key={index}>
-              <img
-                className="size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                width="100%"
-                height="100%"
+              <Image
                 src={img.url}
                 alt={img.alt}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 300px"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E24]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

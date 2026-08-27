@@ -39,7 +39,7 @@ const mindhavenArticles: Gallery4Item[] = [
     title: "Understanding High-Functioning Burnout in Professionals",
     description: "Why high achievers ignore early warning signs of nervous system exhaustion.",
     href: "/blog/burnout-therapist-edinburgh",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "73% 27% 41% 59% / 34% 68% 32% 66%",
   },
   {
@@ -49,7 +49,7 @@ const mindhavenArticles: Gallery4Item[] = [
     title: "Regulating the Nervous System Under Pressure",
     description: "Practical techniques to shift out of chronic fight-or-flight survival states.",
     href: "/blog/nervous-system-regulation",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "31% 69% 62% 38% / 65% 31% 69% 35%",
   },
   {
@@ -59,7 +59,7 @@ const mindhavenArticles: Gallery4Item[] = [
     title: "Overcoming Internal Imposter Dynamics",
     description: "How internalised perfectionism creates silent anxiety in leadership roles.",
     href: "/blog/imposter-syndrome-in-professionals",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "68% 32% 25% 75% / 42% 64% 36% 58%",
   },
   {
@@ -69,7 +69,7 @@ const mindhavenArticles: Gallery4Item[] = [
     title: "Setting Sustainable Boundaries Without Guilt",
     description: "Protecting your emotional bandwidth while continuing to excel at work.",
     href: "/blog/sustainable-boundaries",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "38% 62% 76% 24% / 28% 62% 38% 72%",
   },
   {
@@ -79,7 +79,7 @@ const mindhavenArticles: Gallery4Item[] = [
     title: "Somatic & Integrative Approaches to Stress",
     description: "Combining body-centred mindfulness and CBT to release stored tension.",
     href: "/blog/somatic-therapy-explained",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&crop=faces",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "62% 38% 54% 46% / 41% 65% 35% 59%",
   },
 ];
