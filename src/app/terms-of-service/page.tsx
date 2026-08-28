@@ -1,4 +1,5 @@
 import { ShieldCheck } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Terms of Service | Mindhaven",
@@ -6,6 +7,15 @@ export const metadata = {
   alternates: {
     canonical: "https://mindhaven.uk/terms-of-service",
   },
+  openGraph: {
+    title: "Terms of Service | Mindhaven",
+    description: "Practice agreement, cancellation policy, and session terms for Mindhaven counselling.",
+    url: "https://mindhaven.uk/terms-of-service",
+  },
+  twitter: {
+    title: "Terms of Service | Mindhaven",
+    description: "Practice agreement, cancellation policy, and session terms for Mindhaven counselling.",
+  }
 };
 
 export default function TermsOfService() {
@@ -13,10 +23,10 @@ export default function TermsOfService() {
     <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#0D2E24] border border-[#34D399]/30 text-xs font-bold uppercase tracking-wider">
+          <Badge variant="white">
             <ShieldCheck className="w-4 h-4 text-[#34D399]" />
             <span>Practice Agreement</span>
-          </div>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Terms of Service & Practice Agreement
           </h1>

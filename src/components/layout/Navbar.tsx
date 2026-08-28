@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Calendar, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 
@@ -12,6 +12,21 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/erika-martin-counselling";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close the mobile menu on scroll/swipe so it feels natural
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const handleScroll = () => {
+      // Only close if we scroll down a bit to prevent accidental immediate closing
+      if (window.scrollY > 10) {
+        setIsOpen(false);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FEFFF7]/90 backdrop-blur-md border-b border-[#34D399]/20 transition-all">
@@ -27,6 +42,9 @@ export function Navbar() {
             </Link>
             <Link href="/about-erika-martin" className="hover:text-[#0D2E24] transition-colors">
               About
+            </Link>
+            <Link href="/blog" className="hover:text-[#0D2E24] transition-colors">
+              Blog
             </Link>
             <Link href="/#faq" className="hover:text-[#0D2E24] transition-colors">
               FAQs
@@ -72,9 +90,9 @@ export function Navbar() {
             <div className="w-px h-5 bg-[#34D399]/20 mx-1" />
             <Link
               href="/contact#book"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md border border-[#34D399]/30"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md border border-[#34D399]/30"
             >
-              <Calendar className="w-3.5 h-3.5 text-[#34D399]" />
+              <Calendar className="w-3.5 h-3.5 text-[#34D399] group-hover:text-white transition-colors" />
               <span>Book Consultation</span>
             </Link>
           </div>
@@ -94,13 +112,14 @@ export function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-[#34D399]/20 px-4 pt-4 pb-6 space-y-1">
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">Contact</Link>
-          <Link href="/about-erika-martin" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">About</Link>
-          <Link href="/#faq" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">FAQs</Link>
-          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block py-2 text-sm font-bold text-[#0D2E24] hover:text-[#0D2E24]">Fees</Link>
+        <div className="md:hidden bg-[#FEFFF7] border-b border-[#34D399]/20 px-4 pt-4 pb-6 space-y-2 shadow-2xl absolute w-full max-h-[calc(100vh-5rem)] overflow-y-auto z-40">
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="block px-4 py-3 bg-white hover:bg-white shadow-sm hover:shadow-md hover:border-[#34D399]/40 rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">Contact</Link>
+          <Link href="/about-erika-martin" onClick={() => setIsOpen(false)} className="block px-4 py-3 bg-white hover:bg-white shadow-sm hover:shadow-md hover:border-[#34D399]/40 rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">About</Link>
+          <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-4 py-3 bg-white hover:bg-white shadow-sm hover:shadow-md hover:border-[#34D399]/40 rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">Blog</Link>
+          <Link href="/#faq" onClick={() => setIsOpen(false)} className="block px-4 py-3 bg-white hover:bg-white shadow-sm hover:shadow-md hover:border-[#34D399]/40 rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">FAQs</Link>
+          <Link href="/fees-and-booking" onClick={() => setIsOpen(false)} className="block px-4 py-3 bg-white hover:bg-white shadow-sm hover:shadow-md hover:border-[#34D399]/40 rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">Fees</Link>
 
-          <div className="flex items-center gap-3 py-2 border-t border-[#34D399]/10 mt-2 pt-4">
+          <div className="flex items-center justify-center gap-4 py-3 border-t border-[#34D399]/10 mt-3 pt-5">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -146,9 +165,9 @@ export function Navbar() {
             <Link
               href="/contact#book"
               onClick={() => setIsOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold text-white bg-[#0D2E24] rounded-full"
+              className="group w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-colors"
             >
-              <Calendar className="w-4 h-4 text-[#34D399]" />
+              <Calendar className="w-4 h-4 text-[#34D399] group-hover:text-white transition-colors" />
               <span>Book Free Introductory Call</span>
             </Link>
           </div>

@@ -93,13 +93,13 @@ import { HalftonePattern } from "@/components/ui/HalftonePattern";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
 import { Gallery4 } from "@/components/ui/gallery4";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { Badge } from "@/components/ui/Badge";
 import {
   ArrowRight,
   ShieldCheck,
   Clock,
   Brain,
   Activity,
-  Sparkles,
   Calendar,
   Lock,
   Compass,
@@ -111,7 +111,19 @@ import {
   ChevronDown
 } from "lucide-react";
 
-export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
+export const metadata = { 
+  title: "Mindhaven | Personal Counselling for Stress & Burnout",
+  description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+  alternates: { canonical: "https://mindhaven.uk" },
+  openGraph: {
+    title: "Mindhaven | Personal Counselling for Stress & Burnout",
+    description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+  },
+  twitter: {
+    title: "Mindhaven | Personal Counselling for Stress & Burnout",
+    description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+  }
+};
 
 export default function Home() {
   return (
@@ -155,7 +167,7 @@ export default function Home() {
                 </h1>
                 
                 {/* Subheadline */}
-                <p className="text-lg sm:text-xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl lg:text-2xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
                   Confidential counselling for stress, burnout, and the demands that ambitious lives bring. Available in Edinburgh, Dalkeith, and online across the UK.
                 </p>
 
@@ -232,7 +244,6 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-[#34D399]/60 group-hover:text-[#0D2E24] transition-colors shrink-0" />
                 </a>
               </div>
             </div>
@@ -278,9 +289,9 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl relative z-10">
           <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.20} />
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            <Badge>
               When work takes its toll
-            </span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
               Burnout is more than feeling exhausted.
             </h2>
@@ -336,9 +347,9 @@ export default function Home() {
         <div className="container mx-auto max-w-3xl relative z-10 text-center space-y-8">
 
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30 shadow-xs">
+            <Badge variant="white" className="font-extrabold shadow-xs">
               When counselling helps
-            </span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
               When structured support makes a difference
             </h2>
@@ -377,9 +388,9 @@ export default function Home() {
             {/* Left: Approach */}
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
-                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+                <Badge>
                   How I work
-                </span>
+                </Badge>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
                   An Evidence-Based Therapeutic Approach
                 </h2>
@@ -469,9 +480,9 @@ export default function Home() {
           />
           
           <div className="space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            <Badge>
               Simple 3-Step Process
-            </span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
               A simple, structured start
             </h2>
@@ -521,9 +532,9 @@ export default function Home() {
       <section id="faq" className="py-24 bg-[#FEFFF7] px-4 border-t border-[#34D399]/15">
         <div className="container mx-auto max-w-3xl space-y-10">
           <div className="text-center space-y-4">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
+            <Badge variant="white" className="font-extrabold">
               Clear Answers
-            </span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
               Frequently Asked Questions
             </h2>

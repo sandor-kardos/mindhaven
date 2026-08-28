@@ -1,11 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Award, GraduationCap, ArrowRight, Heart, Brain, User, Activity } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
-  alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
   description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
+  alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
+  openGraph: {
+    title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
+    description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
+    url: "https://mindhaven.uk/about-erika-martin",
+  },
+  twitter: {
+    title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
+    description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
+  }
 };
 
 export default function AboutErikaMartin() {
@@ -46,16 +56,17 @@ export default function AboutErikaMartin() {
 
             {/* Bio content */}
             <div className="lg:col-span-7 space-y-6">
-              <a
-                href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#0D2E24] border border-[#34D399]/30 text-xs font-bold uppercase tracking-wider hover:bg-[#FEFFF7] transition-colors group"
-                title="Verify Erika Martin's Official NCPS Listing"
-              >
-                <ShieldCheck className="w-4 h-4 text-[#34D399]" />
-                <span>Verify NCPS Accreditation</span>
-              </a>
+              <Badge variant="white" asChild className="hover:bg-[#FEFFF7] transition-colors group">
+                <a
+                  href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Verify Erika Martin's Official NCPS Listing"
+                >
+                  <ShieldCheck className="w-4 h-4 text-[#34D399]" />
+                  <span>Verify NCPS Accreditation</span>
+                </a>
+              </Badge>
 
               <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
                 Therapeutic Philosophy & Approach
@@ -104,9 +115,9 @@ export default function AboutErikaMartin() {
       <section className="py-20 px-4 bg-white border-b border-[#34D399]/10">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            <Badge>
               Integrative Approach
-            </span>
+            </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
               How I Work
             </h2>

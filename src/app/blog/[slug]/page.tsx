@@ -1,11 +1,22 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, Tag } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, Clock, Tag } from "lucide-react";
 import { getArticle, getAllArticles, type ContentBlock } from "@/lib/articles";
+import { Badge } from "@/components/ui/Badge";
 import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
+};
+
+const articleImages: Record<string, { url: string; objectPosition: string }> = {
+  "burnout-therapist-edinburgh": { url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
+  "nervous-system-regulation": { url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 30%" },
+  "imposter-syndrome-in-professionals": { url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
+  "sustainable-boundaries": { url: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 15%" },
+  "somatic-therapy-explained": { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 25%" },
+  "understanding-burnout-vs-stress": { url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
 };
 
 export async function generateStaticParams() {
@@ -28,7 +39,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: article.date,
       authors: ["Erika Martin"],
+      images: [articleImages[slug]?.url || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [articleImages[slug]?.url || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"],
+    }
   };
 }
 
@@ -113,6 +131,26 @@ export default async function BlogPost({ params }: Props) {
     },
   };
 
+const articleTldrs: Record<string, string> = {
+  "burnout-therapist-edinburgh": "Burnout isn't just stress—it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
+  "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
+  "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
+  "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",
+  "somatic-therapy-explained": "Talk therapy engages the mind, but trauma and chronic stress live in the body. Somatic therapy bridges this gap by addressing the physical imprint of psychological pain."
+};
+
+  const allArticles = getAllArticles();
+  const currentIndex = allArticles.findIndex(a => a.slug === slug);
+  const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+  const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
+
+  const headerImageData = articleImages[slug] || { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" };
+
+  const shapeClass = 
+    currentIndex % 3 === 0 ? 'animate-blob' : 
+    currentIndex % 3 === 1 ? 'rounded-full' : 
+    'rounded-br-[4rem] rounded-tl-[4rem] rounded-tr-xl rounded-bl-xl rotate-1';
+
   return (
     <article className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
       <script
@@ -120,50 +158,107 @@ export default async function BlogPost({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
 
-      {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20">
-        <div className="container mx-auto max-w-3xl space-y-6">
+      {/* Header & Image Flex Section */}
+      <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] border-b border-[#34D399]/20 relative overflow-hidden">
+        
+        {/* Ambient Floating Orbs */}
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
+
+        <div className="container mx-auto max-w-5xl relative z-10">
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-bold text-[#0D2E24] hover:underline"
+            className="inline-flex items-center text-sm font-bold text-[#0D2E24] hover:text-[#34D399] transition-colors mb-12"
           >
-            <ArrowLeft className="w-4 h-4 mr-1" /> Back to Blog
+            <ArrowLeft className="w-4 h-4 mr-1.5" /> Back to Blog
           </Link>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#34D399] text-white">
-              <Tag className="w-3 h-3" />
-              {article.category}
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#34D399]/30 text-[#0D2E24]">
-              <Clock className="w-3 h-3" />
-              {article.readTime}
-            </span>
+          <div className={`flex flex-col md:flex-row gap-12 lg:gap-20 items-center ${currentIndex % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+            
+            {/* Text Content */}
+            <div className="flex-1 space-y-6">
+              <div className="flex flex-wrap items-center gap-3 text-xs font-bold">
+                <Badge className="gap-1.5 px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal shadow-sm">
+                  <Tag className="w-3 h-3" />
+                  {article.category}
+                </Badge>
+                <Badge variant="white" className="gap-1.5 px-3 py-1 normal-case tracking-normal shadow-sm">
+                  <Clock className="w-3 h-3 text-[#34D399]" />
+                  {article.readTime}
+                </Badge>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold font-heading text-[#0D2E24] leading-[1.1] tracking-tight">
+                {article.title}
+              </h1>
+
+              {/* The "TLDR" summary box without using the word TLDR */}
+              <div className="p-6 mt-8 bg-white border border-[#34D399]/30 rounded-2xl shadow-sm relative">
+                <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#FEFFF7] px-3 py-0.5 rounded-full border border-[#34D399]/30 text-[10px] font-extrabold text-[#34D399] uppercase tracking-widest shadow-sm">
+                  In a Nutshell
+                </div>
+                <p className="text-[#0D2E24]/85 font-semibold leading-relaxed">
+                  {articleTldrs[slug] || article.excerpt}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 pt-4 border-t border-[#34D399]/10 mt-6">
+                <div className="w-8 h-8 rounded-full bg-[#0D2E24] text-[#34D399] flex items-center justify-center font-bold font-heading text-xs">EM</div>
+                <p className="text-xs text-[#0D2E24]/70 font-bold">
+                  By Erika Martin &nbsp;·&nbsp;{" "}
+                  {new Date(article.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+
+            {/* Visual (1:1 Dynamic Shape) */}
+            <div className="w-full md:w-[40%] flex justify-center items-center">
+              <div className={`relative w-[280px] h-[280px] lg:w-[340px] lg:h-[340px] overflow-hidden border-[6px] border-white shadow-2xl ${shapeClass}`}>
+                <Image 
+                  src={headerImageData.url}
+                  alt={article.title}
+                  fill
+                  className="object-cover filter brightness-[1.02]"
+                  style={{ objectPosition: headerImageData.objectPosition }}
+                  priority
+                />
+              </div>
+            </div>
+            
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-extrabold font-heading text-[#0D2E24] leading-tight">
-            {article.title}
-          </h1>
-
-          <p className="text-lg text-[#0D2E24]/75 font-medium max-w-2xl mx-auto leading-relaxed">
-            {article.excerpt}
-          </p>
-
-          <p className="text-sm text-[#0D2E24]/50 font-medium">
-            By Erika Martin &nbsp;·&nbsp;{" "}
-            {new Date(article.date).toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </p>
         </div>
       </section>
 
       {/* Article Body */}
-      <section className="py-16 px-4">
+      <section className="py-8 px-4">
         <div className="container mx-auto max-w-3xl">
           {article.content.map((block, index) => renderBlock(block, index))}
+        </div>
+      </section>
+
+      {/* Post Navigation */}
+      <section className="py-12 px-4 bg-[#FEFFF7] border-t border-[#34D399]/10">
+        <div className="container mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-stretch gap-6">
+          {prevArticle ? (
+            <Link href={`/blog/${prevArticle.slug}`} className="flex-1 p-6 rounded-2xl bg-white border border-[#34D399]/20 hover:border-[#34D399] transition-all group flex flex-col items-start text-left">
+              <span className="text-xs font-bold text-[#34D399] uppercase tracking-wider mb-2 flex items-center gap-1">
+                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" /> Previous
+              </span>
+              <span className="text-[#0D2E24] font-extrabold font-heading line-clamp-2">{prevArticle.title}</span>
+            </Link>
+          ) : <div className="flex-1" />}
+          
+          {nextArticle ? (
+            <Link href={`/blog/${nextArticle.slug}`} className="flex-1 p-6 rounded-2xl bg-white border border-[#34D399]/20 hover:border-[#34D399] transition-all group flex flex-col items-end text-right">
+              <span className="text-xs font-bold text-[#34D399] uppercase tracking-wider mb-2 flex items-center gap-1">
+                Next <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="text-[#0D2E24] font-extrabold font-heading line-clamp-2">{nextArticle.title}</span>
+            </Link>
+          ) : <div className="flex-1" />}
         </div>
       </section>
 

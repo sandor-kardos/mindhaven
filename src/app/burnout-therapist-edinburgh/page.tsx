@@ -1,10 +1,20 @@
 import Link from "next/link";
 import { ShieldCheck, MapPin, Calendar, ArrowRight, Check } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Burnout Therapist Edinburgh | Stress Counselling",
-  alternates: { canonical: "https://mindhaven.uk/burnout-therapist-edinburgh" },
   description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
+  alternates: { canonical: "https://mindhaven.uk/burnout-therapist-edinburgh" },
+  openGraph: {
+    title: "Burnout Therapist Edinburgh | Stress Counselling",
+    description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
+    url: "https://mindhaven.uk/burnout-therapist-edinburgh",
+  },
+  twitter: {
+    title: "Burnout Therapist Edinburgh | Stress Counselling",
+    description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
+  }
 };
 
 const serviceSchema = {
@@ -36,10 +46,10 @@ export default function BurnoutTherapistEdinburgh() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-4xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#0D2E24] border border-[#34D399]/30 text-xs font-bold uppercase tracking-wider">
+          <Badge variant="white">
             <MapPin className="w-4 h-4 text-[#34D399]" />
             <span>Edinburgh & Midlothian Practice</span>
-          </div>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Counselling for Stress and Burnout in Edinburgh
           </h1>

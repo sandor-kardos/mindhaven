@@ -1,165 +1,45 @@
-# Mindhaven — mindhaven.uk
+# Mindhaven Counselling Platform
 
-Private counselling practice website for Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor. Built with Next.js App Router, deployed via Coolify.
+## 1. Project Overview
+Mindhaven is a psychotherapeutic counselling platform for adults navigating stress, burnout, and anxiety. It is built as a highly performant, statically optimized web application.
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (v4)
+- **Hosting:** Self-hosted on Coolify via GitHub auto-deploy pipeline
 
----
+## 2. Environment Variables
+To run this project locally or in production, the following environment variables are required (matching `.env.example`). Do not commit real keys to version control.
 
-## Tech Stack
+- `RESEND_API_KEY`: Server-side API key for sending booking enquiry emails securely.
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: (Optional) The business WhatsApp number used to construct direct messaging links across the site. Defaults to the hardcoded practice number if omitted.
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16.3.2 (App Router, TypeScript) |
-| UI | React 19, Tailwind CSS 4 |
-| Components | Radix UI Slot, Lucide React, Embla Carousel, Motion |
-| Email | Resend (via `/api/book` route) |
-| Analytics | Google Analytics 4 via GTM (`GTM-TFD5W94G`), Consent Mode v2 |
-| Hosting | Coolify (self-hosted) |
-| Build | Node.js standalone (required — API route prevents static export) |
-| Repo | GitHub (private) |
+## 3. Key Features
+- **Secure Booking Form:** Fully integrated with Resend to transmit secure, server-side booking enquiries directly to the practice.
+- **MDX-Free Blog Architecture:** A robust blog system powered entirely by a strictly typed `articles.ts` data file, avoiding the overhead of MDX parsers while maintaining rich data structures.
+- **Life Compass Tool (`/resources/life-compass`):** A client-side, interactive self-reflection tool. It utilizes `localStorage` for state persistence and `html2pdf.js` for exporting results. Zero user data is transmitted to or stored on the server.
+- **Analytics (GTM/GA4):** Fully integrated Google Tag Manager (Container ID: `GTM-TFD5W94G`) with Consent Mode v2. Features a custom `generate_lead` event upon successful booking form submission.
+- **Boutique Design System:** A meticulously crafted, high-contrast, nature-inspired palette tailored for calmness and trust:
+  - Ivory (`#FEFFF7`)
+  - Emerald (`#34D399`)
+  - Evergreen (`#0D2E24`)
+  - Lime Cream (`#F6FFA2`)
 
----
+## 4. SEO & GEO Setup
+- **Crawling:** Explicitly configured `robots.ts` granting access to major AI crawlers (`GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`) and a dynamically generated `sitemap.ts`.
+- **GEO (Generative Engine Optimization):** Includes a dedicated `public/llms.txt` exposing the site structure clearly for AI consumption.
+- **JSON-LD Schema:** Implements structured data across the site, including `ProfessionalService`, `Person`, and `FAQPage` schemas for enhanced SERP presence.
+- **Metadata:** Strict enforcement of canonical URLs across all routes to prevent duplicate indexing.
+- **Open Graph:** Features a static branding blob for root routes and dynamic, pure Unsplash themed images for individual blog posts (no branding overlay).
 
-## Project Structure
+## 5. Security Architecture
+- **Content Security Policy (CSP):** A strict CSP is enforced via `next.config.ts`, locking down allowed origins for scripts, styles, images, and connections.
+- **Security Headers:** Implements comprehensive protection including `Strict-Transport-Security` (HSTS), `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Cross-Origin-Opener-Policy`, and `Permissions-Policy`.
+- **Secrets Management:** Strict adherence to a "no hardcoded secrets" policy; all sensitive tokens are restricted to server-side execution via environment variables.
 
-```
-src/
-├── app/
-│   ├── page.tsx                          # Home
-│   ├── about-erika-martin/              # About page
-│   ├── burnout-therapist-edinburgh/     # Edinburgh SEO landing page
-│   ├── fees-and-booking/                # Pricing + booking form
-│   ├── blog/
-│   │   ├── page.tsx                     # Blog index (all articles)
-│   │   └── [slug]/page.tsx              # Article renderer
-│   ├── privacy-and-gdpr/                # UK GDPR privacy policy
-│   ├── terms-of-service/                # Practice agreement
-│   ├── legal-notice/                    # Statutory/regulatory info
-│   ├── api/book/route.ts                # Booking form email handler (Resend)
-│   ├── sitemap.ts                       # Dynamic sitemap (includes blog posts)
-│   └── robots.ts                        # Allows GPTBot, ClaudeBot, etc.
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   └── ui/
-│       ├── CookieConsentBanner.tsx      # GA Consent Mode v2 banner
-│       ├── CalmBreathingWidget.tsx
-│       ├── BackgroundParticles.tsx
-│       ├── FaqAccordion.tsx
-│       └── gallery4.tsx                 # Article carousel (home + about)
-└── lib/
-    └── articles.ts                      # All blog article content (data-driven, no CMS)
-public/
-    llms.txt                             # AI/LLM site description
-```
+## 6. Deployment
+- **Pipeline:** Automated deployment pipeline managed by Coolify, triggered via GitHub webhooks.
+- **Build Configuration:** `next.config.ts` is explicitly configured with `output: "standalone"` to bundle the application efficiently for containerized hosting.
+- **Routing Note:** The `Domains` field in Coolify requires the explicit `https://` prefix for proper routing and SSL termination.
 
----
-
-## Environment Variables
-
-Create a `.env.local` file at the project root:
-
-```env
-# Required — Resend API key for the booking form email
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
-```
-
-The booking form (`/api/book`) sends enquiries to `mindhavenuk@gmail.com` via Resend. No other env vars are required for local development.
-
----
-
-## Local Development
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-```bash
-npm run build   # Production build
-npm run start   # Start production server locally
-npm run lint    # ESLint
-```
-
----
-
-## Deployment — Coolify
-
-> **Important:** This project uses `/api/book` (a Node.js API route). It **cannot** be deployed as a static export. Use the Node.js standalone build.
-
-### Coolify settings
-
-| Field | Value |
-|---|---|
-| Build command | `npm run build` |
-| Start command | `node .next/standalone/server.js` |
-| Port | `3000` |
-| Node version | 20+ |
-
-**Domains field:** Always prefix with `https://` — e.g. `https://mindhaven.uk`. Without the scheme prefix, Traefik routing will not work.
-
-**Recommended deploy flow:**
-1. Deploy to a temporary Coolify subdomain first
-2. Test booking form end-to-end (check Resend dashboard for delivery)
-3. Test on mobile
-4. Point `mindhaven.uk` DNS to Coolify
-5. Switch Coolify domain to `https://mindhaven.uk`
-6. Confirm WordPress is shut down only after the new site is verified live
-
-### `next.config` — standalone output
-
-Ensure `next.config.ts` (or `.js`) includes:
-
-```ts
-const nextConfig = {
-  output: "standalone",
-};
-```
-
----
-
-## Blog Content
-
-Blog articles live in `src/lib/articles.ts` as structured TypeScript data — no CMS, no MDX, no external pipeline required. To add a new article:
-
-1. Add an `Article` object to the `articles` array in `src/lib/articles.ts`
-2. The blog index and sitemap update automatically on the next build
-3. Article slugs must be URL-safe (lowercase, hyphens)
-
-Current articles:
-
-| Slug | Title |
-|---|---|
-| `understanding-burnout-vs-stress` | Understanding Burnout vs. Stress |
-| `burnout-therapist-edinburgh` | Understanding High-Functioning Burnout in Professionals |
-| `nervous-system-regulation` | Regulating the Nervous System Under Pressure |
-| `imposter-syndrome-in-professionals` | Imposter Syndrome: When Success Feels Like a Lie |
-| `sustainable-boundaries` | Setting Sustainable Boundaries Without Guilt |
-| `somatic-therapy-explained` | Somatic Approaches to Stress: Working With the Body |
-
----
-
-## Analytics & Consent
-
-GA4 is loaded via GTM container `GTM-TFD5W94G` with **Consent Mode v2** for GDPR/EEA compliance:
-
-- Consent defaults (all storage types denied) are set by a Consent Initialization tag in GTM (Simo Ahava template, `wait_for_update: 500`), firing before all other tags
-- The GA4 Configuration tag fires through GTM; no measurement ID is hardcoded in the codebase
-- User's choice is stored as a first-party cookie (`mindhaven_cookie_consent`) for 12 months
-- On accept: `gtag('consent', 'update', { analytics_storage: 'granted' })` is called from `CookieConsentBanner.tsx`
-- On decline or no action: signals remain denied
-
-See `src/components/ui/CookieConsentBanner.tsx` (banner UI + consent update logic) and GTM container `GTM-TFD5W94G` (Consent Init tag + GA4 Configuration tag).
-
----
-
-## Key Constraints (from practice brief)
-
-- **No online payment** on the site — Erika's firm decision. Booking form sends an enquiry email only.
-- **No testimonials** — likely prohibited under NCPS accreditation ethics. Do not add.
-- **Insurance/EAP clients exist** — do not claim "100% private-pay" anywhere.
-- **In-person venue:** Mysa Therapy Rooms, Dalkeith — [mysatherapyrooms.co.uk/mysa-therapists](https://mysatherapyrooms.co.uk/mysa-therapists)
-- **Registered address:** 6 Newmills Rd, Dalkeith EH22 2LE (Erika's address, not a clinic address)
-- **Legal pages** (`/privacy-and-gdpr`, `/terms-of-service`, `/legal-notice`) were drafted for UK GDPR compliance — Erika or a solicitor should review before going live.
+## 7. Known Limitations / Not Yet Built
+- **Content Pipeline Automation:** The blog currently requires developers to add new entries to `articles.ts` manually. An automated bot-to-GitHub publishing pipeline is planned as a separate, future project and is not included in this repository's current scope.

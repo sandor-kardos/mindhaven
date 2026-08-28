@@ -1,10 +1,20 @@
-import { ShieldAlert, Check, Sparkles, ArrowRight, Calendar } from "lucide-react";
+import { ShieldAlert, Check, Sprout, ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Fees & Pricing | Mindhaven",
-  alternates: { canonical: "https://mindhaven.uk/fees-and-booking" },
   description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. Individual sessions and structured packages available.",
+  alternates: { canonical: "https://mindhaven.uk/fees-and-booking" },
+  openGraph: {
+    title: "Fees & Pricing | Mindhaven",
+    description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. Individual sessions and structured packages available.",
+    url: "https://mindhaven.uk/fees-and-booking",
+  },
+  twitter: {
+    title: "Fees & Pricing | Mindhaven",
+    description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. Individual sessions and structured packages available.",
+  }
 };
 
 export default function FeesAndBooking() {
@@ -14,9 +24,9 @@ export default function FeesAndBooking() {
       {/* Header */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
+          <Badge variant="white">
             No Hidden Costs
-          </span>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Transparent Pricing
           </h1>
@@ -56,7 +66,7 @@ export default function FeesAndBooking() {
             <div className="bg-[#0D2E24] text-white p-8 rounded-3xl border-2 border-[#34D399] shadow-2xl card-flow-effect flex flex-col justify-between h-full relative overflow-hidden">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#34D399] text-white text-xs font-bold rounded-full mb-4">
-                  <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
+                  <Sprout className="w-3.5 h-3.5 text-white" />
                   <span>Growth Package</span>
                 </div>
                 <p className="text-xl font-bold font-heading text-white mb-2 min-h-[56px] flex items-center">Six-Session Programme</p>
@@ -71,7 +81,7 @@ export default function FeesAndBooking() {
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">Ongoing progress review</span></li>
                 </ul>
               </div>
-              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#34D399] hover:bg-[#0D2E24] text-white font-bold text-sm rounded-full transition-colors shadow-md relative z-10">Book This Programme</Link>
+              <Link href="/contact#book" className="w-full text-center py-3.5 px-4 bg-[#34D399] hover:bg-white hover:text-[#0D2E24] text-white font-bold text-sm rounded-full transition-colors shadow-md relative z-10">Book This Programme</Link>
             </div>
 
           </div>
@@ -96,9 +106,9 @@ export default function FeesAndBooking() {
       {/* Free intro call CTA */}
       <section className="py-20 px-4 bg-white border-t border-[#34D399]/15 text-center">
         <div className="container mx-auto max-w-2xl space-y-6">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+          <Badge>
             Free · No Commitment
-          </span>
+          </Badge>
           <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">
             Not Sure Where to Start?
           </h2>
@@ -113,6 +123,12 @@ export default function FeesAndBooking() {
             <span>Book a Free Introductory Call</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#34D399]" />
           </Link>
+          
+          <div className="pt-4">
+            <Link href="/resources/life-compass" className="text-sm font-bold text-[#0D2E24] hover:text-[#34D399] underline underline-offset-4 transition-colors">
+              Try the free Life Compass Tool
+            </Link>
+          </div>
         </div>
       </section>
 

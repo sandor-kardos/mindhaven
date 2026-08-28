@@ -10,6 +10,7 @@ import {
 } from "@/components/blocks/cta-section-with-gallery";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, ShieldCheck } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 
 // Verified high-resolution royalty-free images of 30s+ mature professionals
 const MATURE_PEOPLE_IMAGES = [
@@ -38,9 +39,11 @@ export const MindhavenGalleryCta = () => {
         
         {/* Animated Content Column */}
         <ContainerStagger className="space-y-6">
-          <ContainerAnimated className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
-            <ShieldCheck className="w-4 h-4 text-[#34D399]" />
-            Restore Mental Clarity & Balance
+          <ContainerAnimated>
+            <Badge className="font-extrabold">
+              <ShieldCheck className="w-4 h-4 text-[#34D399]" />
+              Restore Mental Clarity & Balance
+            </Badge>
           </ContainerAnimated>
           
           <ContainerAnimated className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold tracking-tight text-[#0D2E24] font-heading leading-[1.15]">

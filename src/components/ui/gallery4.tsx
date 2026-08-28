@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Leaf } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HalftonePattern } from "@/components/ui/HalftonePattern";
+import { Badge } from "@/components/ui/Badge";
 
 import {
   Carousel,
@@ -22,6 +23,7 @@ export interface Gallery4Item {
   href: string;
   image: string;
   blobShape?: string;
+  objectPosition?: string;
 }
 
 export interface Gallery4Props {
@@ -40,6 +42,7 @@ const mindhavenArticles: Gallery4Item[] = [
     href: "/blog/burnout-therapist-edinburgh",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "73% 27% 41% 59% / 34% 68% 32% 66%",
+    objectPosition: "center 20%",
   },
   {
     id: "nervous-system-calm",
@@ -50,6 +53,7 @@ const mindhavenArticles: Gallery4Item[] = [
     href: "/blog/nervous-system-regulation",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "31% 69% 62% 38% / 65% 31% 69% 35%",
+    objectPosition: "center 30%",
   },
   {
     id: "imposter-syndrome",
@@ -60,6 +64,7 @@ const mindhavenArticles: Gallery4Item[] = [
     href: "/blog/imposter-syndrome-in-professionals",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "68% 32% 25% 75% / 42% 64% 36% 58%",
+    objectPosition: "center 20%",
   },
   {
     id: "work-life-boundaries",
@@ -70,6 +75,7 @@ const mindhavenArticles: Gallery4Item[] = [
     href: "/blog/sustainable-boundaries",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "38% 62% 76% 24% / 28% 62% 38% 72%",
+    objectPosition: "center 15%",
   },
   {
     id: "somatic-therapy",
@@ -80,6 +86,17 @@ const mindhavenArticles: Gallery4Item[] = [
     href: "/blog/somatic-therapy-explained",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop&crop=faces",
     blobShape: "62% 38% 54% 46% / 41% 65% 35% 59%",
+  },
+  {
+    id: "burnout-vs-stress",
+    category: "Stress & Burnout",
+    categoryColor: "#5E503F",
+    title: "Understanding Burnout vs. Stress",
+    description: "They are often used interchangeably, but they require entirely different recovery strategies.",
+    href: "/blog/understanding-burnout-vs-stress",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop&crop=faces",
+    blobShape: "48% 52% 24% 76% / 48% 64% 36% 52%",
+    objectPosition: "center 20%",
   },
 ];
 
@@ -122,10 +139,10 @@ const Gallery4 = ({
 
         {/* Centered Gallery Header */}
         <div className="mb-10 max-w-3xl mx-auto text-center flex flex-col items-center space-y-3 relative z-10">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider text-[#0D2E24] bg-white/50 border border-[#34D399]/30 w-fit">
-            <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
+          <Badge className="gap-1.5 px-3.5 py-1 bg-white/50 w-fit">
+            <Leaf className="w-3.5 h-3.5 text-[#34D399]" />
             <span>Wellbeing Insights</span>
-          </span>
+          </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
             {title}
           </h2>
@@ -135,7 +152,7 @@ const Gallery4 = ({
         </div>
 
         {/* Mobile- & Ultrawide-Optimized Centered Carousel */}
-        <div className="w-full relative z-10">
+        <div className="w-full relative z-10 -mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full">
           <Carousel
             setApi={setCarouselApi}
             opts={{
@@ -143,7 +160,7 @@ const Gallery4 = ({
               loop: false,
             }}
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="pr-4 sm:-ml-4 sm:pr-0">
             {items.map((item, index) => (
               <CarouselItem
                 key={item.id}
@@ -155,12 +172,12 @@ const Gallery4 = ({
                 >
                   {/* Floating Top Category Badge - In Front of Blob */}
                   <div className="absolute top-0 left-0 z-20">
-                    <span 
-                      className="inline-block px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm border border-white/20"
+                    <Badge 
+                      className="px-2 py-0.5 text-[9px] sm:text-[10px] border-white/20 text-white shadow-sm"
                       style={{ backgroundColor: item.categoryColor }}
                     >
                       {item.category}
-                    </span>
+                    </Badge>
                   </div>
 
                   {/* Static Blob Image Container */}
@@ -176,7 +193,8 @@ const Gallery4 = ({
                       alt={item.title}
                       fill
                       sizes="(max-width: 640px) 260px, (max-width: 1024px) 260px, 240px"
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110 brightness-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110 brightness-105"
+                      style={{ objectPosition: item.objectPosition || "center" }}
                       priority={index === 0}
                       loading={index === 0 ? undefined : "lazy"}
                     />
@@ -225,6 +243,17 @@ const Gallery4 = ({
               }`} />
             </button>
           ))}
+        </div>
+        
+        {/* View All Blog Link */}
+        <div className="mt-10 flex justify-center">
+          <Link 
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] hover:text-[#34D399] transition-colors group/link"
+          >
+            <span>Explore all articles</span>
+            <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </div>

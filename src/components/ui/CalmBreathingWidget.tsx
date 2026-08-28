@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Sparkles } from "lucide-react";
+import { Wind } from "lucide-react";
 
 export function CalmBreathingWidget() {
   const [reducedMotion] = useState(() =>
@@ -76,7 +76,7 @@ export function CalmBreathingWidget() {
     return (
       <div className="bg-[#FEFFF7] border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
         <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
-          <Sparkles className="w-4 h-4 text-[#34D399]" />
+          <Wind className="w-4 h-4 text-[#34D399]" />
           <span>Nervous System Pacer</span>
         </div>
         <div className="space-y-3 py-4">
@@ -106,7 +106,7 @@ export function CalmBreathingWidget() {
   return (
     <div className="bg-[#FEFFF7] border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
       <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
-        <Sparkles className="w-4 h-4 text-[#34D399]" />
+        <Wind className="w-4 h-4 text-[#34D399]" />
         <span>Nervous System Pacer</span>
       </div>
 

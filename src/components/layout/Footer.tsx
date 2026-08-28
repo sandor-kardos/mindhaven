@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { ShieldCheck, Lock, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 
@@ -24,35 +24,35 @@ export function Footer() {
             >
               <ShieldCheck className="w-4 h-4 text-[#34D399] shrink-0" />
               <span>NCPS Accredited Practitioner</span>
-              <ExternalLink className="w-3 h-3 text-[#34D399]/70 group-hover:text-[#34D399] transition-colors" />
             </a>
-            <a
-              href="https://www.facebook.com/ErikaMartinCounselling"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
-              title="Erika Martin Counselling on Facebook"
-            >
-              {/* Facebook icon */}
-              <svg className="w-4 h-4 text-[#34D399] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
-              </svg>
-              <span>Facebook</span>
-              <ExternalLink className="w-3 h-3 text-[#34D399]/70 group-hover:text-[#34D399] transition-colors" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/erika-martin-counselling"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
-              title="Erika Martin Counselling on LinkedIn"
-            >
-              <svg className="w-4 h-4 text-[#34D399] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              <span>LinkedIn</span>
-              <ExternalLink className="w-3 h-3 text-[#34D399]/70 group-hover:text-[#34D399] transition-colors" />
-            </a>
+            
+            <div className="flex items-center gap-4 pt-1">
+              <a
+                href="https://www.facebook.com/ErikaMartinCounselling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
+                title="Erika Martin Counselling on Facebook"
+              >
+                {/* Facebook icon */}
+                <svg className="w-4 h-4 text-[#34D399] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/erika-martin-counselling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs text-[#34D399] hover:underline font-extrabold group"
+                title="Erika Martin Counselling on LinkedIn"
+              >
+                <svg className="w-4 h-4 text-[#34D399] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -63,6 +63,7 @@ export function Footer() {
               <li><Link href="/about-erika-martin" className="hover:text-[#34D399] transition-colors">About Erika Martin</Link></li>
               <li><Link href="/burnout-therapist-edinburgh" className="hover:text-[#34D399] transition-colors">Edinburgh Practice</Link></li>
               <li><Link href="/fees-and-booking" className="hover:text-[#34D399] transition-colors">Fees & Booking</Link></li>
+              <li><Link href="/resources/life-compass" className="hover:text-[#34D399] transition-colors">Life Compass Tool</Link></li>
             </ul>
           </div>
 

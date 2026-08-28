@@ -49,10 +49,10 @@ export function BookingForm() {
   }
 
   return (
-    <div className="bg-[#FEFFF7] rounded-3xl border border-[#34D399]/20 overflow-hidden shadow-xl card-flow-effect flex flex-col md:flex-row w-full">
+    <div className="bg-white rounded-3xl border-2 border-[#34D399]/30 overflow-hidden shadow-2xl shadow-[#0D2E24]/10 card-flow-effect flex flex-col md:flex-row w-full relative z-10">
       
       {/* Left Form Panel */}
-      <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#34D399]/15 bg-white">
+      <div className="w-full md:w-2/5 p-8 border-b md:border-b-0 md:border-r border-[#34D399]/20 bg-white relative z-10">
         <h3 className="text-xl font-extrabold text-[#0D2E24] mb-6 flex items-center font-heading">
           <Calendar className="w-5 h-5 mr-3 text-[#34D399]" />
           Intake Form
@@ -128,7 +128,7 @@ export function BookingForm() {
       </div>
 
       {/* Right Calendar Availability Panel */}
-      <div className="w-full md:w-3/5 bg-[#FEFFF7]/50 p-8 flex flex-col justify-center">
+      <div className="w-full md:w-3/5 bg-[#0D2E24]/[0.02] p-8 flex flex-col justify-center relative z-0">
         {confirmed ? (
           <div className="text-center space-y-5 py-6 max-w-lg mx-auto flex flex-col items-center justify-center">
             <div className="w-14 h-14 bg-[#34D399] text-white rounded-full flex items-center justify-center shadow-lg">

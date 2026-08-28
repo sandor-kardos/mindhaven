@@ -2,14 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Phone, MapPin, MessageCircle, Clock, ShieldCheck, Video, ExternalLink, ArrowRight } from "lucide-react";
 import { BookingForm } from "@/components/booking/BookingForm";
+import { Badge } from "@/components/ui/Badge";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about a free introductory call.")}`;
 
 export const metadata: Metadata = {
   title: "Contact & Book | Mindhaven",
-  alternates: { canonical: "https://mindhaven.uk/contact" },
   description: "Get in touch with Erika Martin to book a free 15-minute introductory call or ask a question. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+  alternates: { canonical: "https://mindhaven.uk/contact" },
+  openGraph: {
+    title: "Contact & Book | Mindhaven",
+    description: "Get in touch with Erika Martin to book a free 15-minute introductory call or ask a question. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+    url: "https://mindhaven.uk/contact",
+  },
+  twitter: {
+    title: "Contact & Book | Mindhaven",
+    description: "Get in touch with Erika Martin to book a free 15-minute introductory call or ask a question. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+  }
 };
 
 export default function Contact() {
@@ -17,11 +27,14 @@ export default function Contact() {
     <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
 
       {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20">
-        <div className="container mx-auto max-w-3xl space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-white border border-[#34D399]/30">
+      <section className="relative pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20 overflow-hidden">
+        {/* Ambient Floating Orbs */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
+        
+        <div className="container mx-auto max-w-3xl space-y-4 relative z-10">
+          <Badge variant="white">
             No Obligation
-          </span>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Start the Conversation
           </h1>
@@ -42,7 +55,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with Erika on WhatsApp"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-r-3xl rounded-l-xl border-y border-r border-[#34D399]/20 border-l-4 border-l-[#34D399] shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
               <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
                 <MessageCircle className="w-6 h-6 text-[#34D399]" />
@@ -57,14 +70,13 @@ export default function Contact() {
               </div>
               <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 Message Me
-                <ExternalLink className="w-4 h-4" />
               </span>
             </a>
 
             {/* Email Card */}
             <a
               href="mailto:mindhavenuk@gmail.com"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-r-3xl rounded-l-xl border-y border-r border-[#34D399]/20 border-l-4 border-l-[#34D399] shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
               <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
                 <Mail className="w-6 h-6 text-[#34D399]" />
@@ -79,14 +91,13 @@ export default function Contact() {
               </div>
               <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 mindhavenuk@gmail.com
-                <ExternalLink className="w-4 h-4" />
               </span>
             </a>
 
             {/* Phone Card */}
             <a
               href="tel:+447516785823"
-              className="group flex flex-col p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
+              className="group flex flex-col p-8 bg-white rounded-r-3xl rounded-l-xl border-y border-r border-[#34D399]/20 border-l-4 border-l-[#34D399] shadow-md hover:shadow-xl hover:border-[#34D399]/40 transition-all hover:-translate-y-1 card-flow-effect"
             >
               <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-5 group-hover:bg-[#34D399]/15 transition-colors">
                 <Phone className="w-6 h-6 text-[#34D399]" />
@@ -101,7 +112,6 @@ export default function Contact() {
               </div>
               <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0D2E24] group-hover:gap-3 transition-all">
                 +44 7516 785823
-                <ExternalLink className="w-4 h-4" />
               </span>
             </a>
 
@@ -115,7 +125,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* In-person */}
-            <div className="p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md card-flow-effect space-y-4">
+            <div className="p-8 bg-white rounded-r-3xl rounded-l-xl border-y border-r border-[#34D399]/20 border-l-4 border-l-[#34D399] shadow-md card-flow-effect space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5 text-[#34D399]" />
@@ -138,7 +148,7 @@ export default function Contact() {
             </div>
 
             {/* Online */}
-            <div className="p-8 bg-white rounded-3xl border border-[#34D399]/20 shadow-md card-flow-effect space-y-4">
+            <div className="p-8 bg-white rounded-r-3xl rounded-l-xl border-y border-r border-[#34D399]/20 border-l-4 border-l-[#34D399] shadow-md card-flow-effect space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center shrink-0">
                   <Video className="w-5 h-5 text-[#34D399]" />
@@ -159,12 +169,15 @@ export default function Contact() {
       </section>
 
       {/* Booking Form Section */}
-      <section id="book" className="py-20 px-4 bg-white border-t border-[#34D399]/15">
-        <div className="container mx-auto max-w-5xl">
+      <section id="book" className="relative py-20 px-4 bg-white border-t border-[#34D399]/15 overflow-hidden">
+        {/* Ambient Floating Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
+
+        <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center mb-12 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0D2E24] bg-[#FEFFF7] border border-[#34D399]/30">
+            <Badge>
               Free • 15 Minutes • No Commitment
-            </span>
+            </Badge>
             <h2 className="text-3xl font-extrabold text-[#0D2E24] font-heading">Book a Free Introductory Call</h2>
             <p className="text-[#0D2E24]/80 max-w-2xl mx-auto text-sm font-medium leading-relaxed">
               A free, informal call to talk about what has brought you here and whether working together feels right. No obligation to proceed.
