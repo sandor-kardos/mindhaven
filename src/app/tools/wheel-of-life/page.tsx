@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     description: "Assess alignment across 8 key life categories with our interactive Wheel of Life tool. Private, client-side self-reflection by MNCPS counsellor Erika Martin.",
     url: "https://mindhaven.uk/tools/wheel-of-life",
     siteName: "Mindhaven Counselling",
-    images: [{ url: "https://mindhaven.uk/images/og-image.png", width: 1200, height: 630, alt: "Mindhaven Wheel of Life Tool" }],
+    images: [{ url: "https://mindhaven.uk/images/tools/wheel-preview.png", width: 1200, height: 630, alt: "Mindhaven Wheel of Life Tool" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Wheel of Life Interactive Self-Assessment Tool | Mindhaven",
     description: "Assess alignment across 8 key life categories with our interactive Wheel of Life tool.",
-    images: ["https://mindhaven.uk/images/og-image.png"],
+    images: ["https://mindhaven.uk/images/tools/wheel-preview.png"],
   },
 };
 

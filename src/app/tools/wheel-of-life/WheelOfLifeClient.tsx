@@ -275,14 +275,21 @@ export function WheelOfLifeClient() {
                 `;
 
                 const isFilled = level <= currentScore;
-                const isHovered =
-                  hoveredCell?.category === cat && level <= hoveredCell.level;
+                const isExactHovered = hoveredCell?.category === cat && hoveredCell?.level === level;
+                const isPreviewHovered = hoveredCell?.category === cat && level <= hoveredCell.level;
 
                 let fillColor = "transparent";
-                if (isFilled) {
-                  fillColor = "rgba(52, 211, 153, 0.35)"; // Soft emerald fill
-                } else if (isHovered) {
-                  fillColor = "rgba(52, 211, 153, 0.15)";
+                let strokeColor = isFilled ? "rgba(52, 211, 153, 0.6)" : "#E2E8F0";
+                let strokeWidth = "0.5";
+
+                if (isExactHovered) {
+                  fillColor = "#26433A"; // Distinct Pine Teal fill for hovered segment
+                  strokeColor = "#34D399"; // Bright Emerald border outline
+                  strokeWidth = "1.5";
+                } else if (isFilled) {
+                  fillColor = "rgba(52, 211, 153, 0.45)";
+                } else if (isPreviewHovered) {
+                  fillColor = "rgba(52, 211, 153, 0.25)";
                 }
 
                 return (
@@ -290,8 +297,8 @@ export function WheelOfLifeClient() {
                     key={`${cat}-${level}`}
                     d={d}
                     fill={fillColor}
-                    stroke={isFilled ? "rgba(52, 211, 153, 0.5)" : "#E2E8F0"}
-                    strokeWidth="0.5"
+                    stroke={strokeColor}
+                    strokeWidth={strokeWidth}
                     className="transition-colors duration-150 cursor-pointer"
                     onClick={() => handleScoreChange(cat, level)}
                     onMouseEnter={() => setHoveredCell({ category: cat, level })}
@@ -302,13 +309,6 @@ export function WheelOfLifeClient() {
                 );
               });
             })}
-
-            {/* Simplified Live Filled Polygon (NO DOTS, NO BOLD OUTLINE) */}
-            <polygon
-              points={polygonPoints}
-              fill="rgba(52, 211, 153, 0.45)"
-              stroke="none"
-            />
 
             {/* Outer Category Labels & Score Badges */}
             {CATEGORIES.map((cat, i) => {

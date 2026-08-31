@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description: "A simple 4-7-8 breathing exercise to help you slow down and feel steady when work or stress builds up.",
     url: "https://mindhaven.uk/tools/nervous-system-pacer",
     siteName: "Mindhaven Counselling",
-    images: [{ url: "https://mindhaven.uk/images/og-image.png", width: 1200, height: 630, alt: "Mindhaven Breathing Pacer Tool" }],
+    images: [{ url: "https://mindhaven.uk/images/tools/pacer-preview.png", width: 1200, height: 630, alt: "Mindhaven Breathing Pacer Tool" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nervous System Pacer: Guided 4-7-8 Breathing Tool",
     description: "A simple 4-7-8 breathing exercise to help you slow down and feel steady.",
-    images: ["https://mindhaven.uk/images/og-image.png"],
+    images: ["https://mindhaven.uk/images/tools/pacer-preview.png"],
   },
 };
 

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     description: "Assess alignment across key life areas with our interactive Life Compass tool. Private, client-side self-reflection by MNCPS counsellor Erika Martin.",
     url: "https://mindhaven.uk/resources/life-compass",
     siteName: "Mindhaven Counselling",
-    images: [{ url: "https://mindhaven.uk/images/og-image.png", width: 1200, height: 630, alt: "Mindhaven Life Compass Tool" }],
+    images: [{ url: "https://mindhaven.uk/images/tools/compass-preview.png", width: 1200, height: 630, alt: "Mindhaven Life Compass Tool" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Life Compass Interactive Self-Reflection Tool | Mindhaven",
     description: "Assess alignment across key life areas with our interactive Life Compass tool.",
-    images: ["https://mindhaven.uk/images/og-image.png"],
+    images: ["https://mindhaven.uk/images/tools/compass-preview.png"],
   },
 };
 

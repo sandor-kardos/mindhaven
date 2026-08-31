@@ -215,27 +215,28 @@ export default function Home() {
                   />
                 </div>
                   
-                {/* Sharp Floating Overlay Badge with Direct NCPS Link */}
+                {/* Sharp Floating Overlay Badge with Direct NCPS Link - Positioned prominently in front of portrait */}
                 <a 
                   href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-4 left-4 right-4 bg-white rounded-2xl p-4 border border-[#34D399]/40 shadow-2xl flex items-center justify-between group hover:border-[#34D399] transition-all cursor-pointer z-10"
+                  className="absolute -bottom-6 left-4 right-4 sm:-bottom-8 sm:left-8 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border-2 border-[#34D399]/60 shadow-[0_20px_40px_-10px_rgba(13,46,36,0.25)] flex items-center justify-between group hover:border-[#34D399] hover:scale-[1.02] transition-all cursor-pointer z-20"
                   title="Verify Erika Martin's Official NCPS Register Listing"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/30">
-                      <ShieldCheck className="w-5 h-5 text-[#34D399]" />
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-11 h-11 rounded-xl bg-[#ECFDF5] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/40 group-hover:scale-110 transition-transform">
+                      <ShieldCheck className="w-6 h-6 text-[#34D399]" />
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading group-hover:text-[#0D2E24] transition-colors">
+                      <h4 className="font-extrabold text-sm sm:text-base text-[#0D2E24] font-heading">
                         Erika Martin 
                       </h4>
-                      <div className="text-xs text-[#0D2E24] font-extrabold mt-0.5">
-                        <span>Accredited Counsellor</span>
+                      <div className="text-xs text-[#059669] font-extrabold mt-0.5">
+                        <span>Accredited Counsellor (MNCPS Acc.)</span>
                       </div>
                     </div>
                   </div>
+                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
                 </a>
               </div>
             </div>
@@ -253,8 +254,8 @@ export default function Home() {
       {/* SECTION 1.5: Clinical Insights Articles Carousel (Placed right after Hero) */}
       <Gallery4 />
 
-      {/* SECTION 2: Problem Validation - Rich Evergreen Background */}
-      <section className="py-24 bg-[#0D2E24] text-white px-4 border-b border-[#34D399]/30 relative overflow-hidden">
+      {/* SECTION 2: Problem Validation - Pine Teal Background for Tonal Variation */}
+      <section className="py-24 bg-[#26433A] text-white px-4 border-b border-[#34D399]/30 relative overflow-hidden">
         <div className="container mx-auto max-w-7xl relative z-10">
           <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.15} />
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

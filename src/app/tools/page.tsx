@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Wind, Compass, PieChart, Sparkles, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -31,6 +32,7 @@ export default function ToolsIndexPage() {
       title: "Nervous System Pacer",
       category: "Interactive Breathing",
       icon: Wind,
+      image: "/images/tools/pacer-preview.png",
       description:
         "Down-regulate your nervous system in real-time with our guided 4-7-8 breathing rhythm. Helps slow elevated heart rates, reduce acute anxiety, and restore physiological calm during demanding workdays.",
       badgeColor: "#059669",
@@ -41,6 +43,7 @@ export default function ToolsIndexPage() {
       title: "Life Compass",
       category: "Values Alignment",
       icon: Compass,
+      image: "/images/tools/compass-preview.png",
       description:
         "An interactive self-assessment tool to measure alignment across core life domains including Career, Health, Relationships, and Personal Growth. Private, client-side, with instant visual feedback.",
       badgeColor: "#047857",
@@ -51,6 +54,7 @@ export default function ToolsIndexPage() {
       title: "Wheel of Life",
       category: "Balance Assessment",
       icon: PieChart,
+      image: "/images/tools/wheel-preview.png",
       description:
         "Map your satisfaction across 8 core life domains with an interactive visual wheel. Gain instant clarity on your overall life balance, export PNG summaries, and track progress privately in your browser.",
       badgeColor: "#059669",
@@ -92,11 +96,12 @@ export default function ToolsIndexPage() {
             {tools.map((tool) => {
               const Icon = tool.icon;
               return (
-                <div
+                <Link
                   key={tool.slug}
-                  className="bg-white p-8 rounded-3xl border-2 border-[#34D399]/30 hover:border-[#34D399] shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group"
+                  href={tool.href}
+                  className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#34D399]/30 hover:border-[#34D399] shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"
                 >
-                  <div className="space-y-5">
+                  <div className="space-y-4">
                     {/* Header: Badge + Icon */}
                     <div className="flex items-center justify-between">
                       <span
@@ -105,13 +110,23 @@ export default function ToolsIndexPage() {
                       >
                         {tool.category}
                       </span>
-                      <div className="w-12 h-12 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
-                        <Icon className="w-6 h-6 text-[#34D399]" />
+                      <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
+                        <Icon className="w-5 h-5 text-[#34D399]" />
                       </div>
                     </div>
 
+                    {/* Interactive App Preview Image */}
+                    <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#34D399]/25 shadow-sm bg-[#0D2E24]/5 group-hover:border-[#34D399]/50 transition-colors">
+                      <Image
+                        src={tool.image}
+                        alt={`${tool.title} interactive tool preview`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
                     {/* Title */}
-                    <h2 className="text-2xl font-bold font-heading text-[#0D2E24] group-hover:text-[#059669] transition-colors">
+                    <h2 className="text-2xl font-bold font-heading text-[#0D2E24] group-hover:text-[#059669] transition-colors pt-1">
                       {tool.title}
                     </h2>
 
@@ -121,17 +136,14 @@ export default function ToolsIndexPage() {
                     </p>
                   </div>
 
-                  {/* Card Action Link */}
-                  <div className="mt-8 pt-6 border-t border-[#34D399]/20 flex items-center justify-between">
-                    <Link
-                      href={tool.href}
-                      className="inline-flex items-center gap-2 text-sm font-extrabold text-[#0D2E24] group-hover:text-[#059669] transition-colors"
-                    >
+                  {/* Card Action Indicator */}
+                  <div className="mt-6 pt-5 border-t border-[#34D399]/20 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-2 text-sm font-extrabold text-[#0D2E24] group-hover:text-[#059669] transition-colors">
                       <span>Try {tool.title}</span>
                       <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1.5 transition-transform" />
-                    </Link>
+                    </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

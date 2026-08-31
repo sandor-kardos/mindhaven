@@ -39,7 +39,7 @@ export function Gallery4({
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Header */}
-        <div className="mb-12 max-w-3xl mx-auto text-center flex flex-col items-center space-y-4">
+        <div className="mb-10 sm:mb-12 max-w-3xl mx-auto text-center flex flex-col items-center space-y-4">
           <Badge variant="white" className="gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-[#34D399]/40 text-[#34D399]">
             <Sparkles className="w-4 h-4 text-[#34D399]" />
             <span className="font-extrabold uppercase tracking-wider text-xs">Wellbeing Insights</span>
@@ -54,11 +54,11 @@ export function Gallery4({
           </p>
         </div>
 
-        {/* 2 Column Interactive Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* DESKTOP LAYOUT (lg: grid split left-list + right-preview) */}
+        <div className="hidden lg:grid grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Stacked List of 6 Plain Text Titles */}
-          <div className="lg:col-span-6 flex flex-col space-y-2.5">
+          <div className="col-span-6 flex flex-col space-y-2.5">
             {articles.map((article) => {
               const isActive = article.slug === activeArticle.slug;
               return (
@@ -68,8 +68,8 @@ export function Gallery4({
                   onMouseEnter={() => setActiveSlug(article.slug)}
                   className={`w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border ${
                     isActive
-                      ? "bg-white/15 border-[#34D399] text-white shadow-lg translate-x-1"
-                      : "bg-white/5 border-white/10 text-slate-200 hover:bg-white/10 hover:border-[#34D399]/50 hover:text-white"
+                      ? "bg-white/20 border-[#34D399] text-white shadow-lg translate-x-1"
+                      : "bg-[#26433A] border-[#34D399]/25 text-slate-100 hover:bg-[#26433A]/80 hover:border-[#34D399]/60 hover:text-white"
                   }`}
                 >
                   <span className={`text-base sm:text-lg font-bold font-heading leading-snug transition-colors ${
@@ -88,7 +88,7 @@ export function Gallery4({
           </div>
 
           {/* Right Column: Single Large AI Image + Excerpt Preview Card */}
-          <div className="lg:col-span-6">
+          <div className="col-span-6">
             <div className="bg-[#FEFFF7] text-[#0D2E24] p-6 sm:p-8 rounded-3xl border border-[#34D399]/40 shadow-2xl space-y-6 transition-all duration-300">
               
               {/* Category & Read time */}
@@ -142,14 +142,71 @@ export function Gallery4({
 
         </div>
 
-        {/* View All Articles Link */}
-        <div className="mt-12 flex justify-center">
+        {/* MOBILE & TABLET LAYOUT: Swipeable Carousel with 10% Peeking Next Card */}
+        <div className="lg:hidden">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 scrollbar-none -mx-4 px-4">
+            {articles.map((article) => (
+              <div
+                key={article.slug}
+                className="w-[85vw] sm:w-[380px] shrink-0 snap-start bg-[#FEFFF7] text-[#0D2E24] p-5 sm:p-6 rounded-3xl border border-[#34D399]/40 shadow-xl flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-4">
+                  {/* Category & Read time */}
+                  <div className="flex items-center justify-between gap-2">
+                    <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal text-xs">
+                      <Tag className="w-3 h-3 mr-1" />
+                      {article.category}
+                    </Badge>
+                    <span className="inline-flex items-center gap-1 text-xs text-[#0D2E24]/70 font-bold">
+                      <Clock className="w-3 h-3 text-[#34D399]" />
+                      {article.readTime}
+                    </span>
+                  </div>
+
+                  {/* AI Article Header Image */}
+                  <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xs border border-[#34D399]/20 bg-slate-100">
+                    <Image
+                      src={articleImages[article.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
+                      alt={article.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Title & Short Excerpt */}
+                  <div className="space-y-1.5">
+                    <h3 className="text-lg font-extrabold font-heading text-[#0D2E24] leading-snug line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed line-clamp-2">
+                      {article.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Read Article Link */}
+                <div className="pt-2 border-t border-[#34D399]/20">
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0D2E24] hover:text-[#059669] transition-colors group"
+                  >
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* View All Articles Plain Text Link (Refinement 1) */}
+        <div className="mt-10 sm:mt-12 flex justify-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-[#34D399]/40 text-white font-bold text-sm transition-all hover:-translate-y-0.5 group"
+            className="inline-flex items-center gap-2 text-sm font-extrabold text-[#34D399] hover:text-white transition-colors group py-2 px-4"
           >
             <span>Explore all articles</span>
-            <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1.5 transition-transform" />
           </Link>
         </div>
       </div>
