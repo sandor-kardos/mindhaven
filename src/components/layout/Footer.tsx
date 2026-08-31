@@ -63,7 +63,7 @@ export function Footer() {
               <li><Link href="/about-erika-martin" className="hover:text-[#34D399] transition-colors">About Erika Martin</Link></li>
               <li><Link href="/burnout-therapist-edinburgh" className="hover:text-[#34D399] transition-colors">Edinburgh Practice</Link></li>
               <li><Link href="/fees-and-booking" className="hover:text-[#34D399] transition-colors">Fees & Booking</Link></li>
-              <li><Link href="/resources/life-compass" className="hover:text-[#34D399] transition-colors">Life Compass Tool</Link></li>
+              <li><Link href="/resources" className="hover:text-[#34D399] transition-colors">Resources</Link></li>
             </ul>
           </div>
 

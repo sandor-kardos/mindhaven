@@ -24,6 +24,7 @@ interface ResourceItem {
   cta?: string;
   // Reading only
   author?: string;
+  cover?: string; // book cover image path
 }
 
 const resources: ResourceItem[] = [
@@ -67,25 +68,27 @@ const resources: ResourceItem[] = [
 
   // ── Reading ──
   {
-    id: "why-has-nobody-told-me-this-before",
+    id: "absent-father-effect-on-daughters",
     category: "reading",
-    title: "Why Has Nobody Told Me This Before?",
-    subcategory: "Self-understanding",
-    author: "Dr Julie Smith",
+    title: "The Absent Father Effect on Daughters",
+    subcategory: "Relational patterns",
+    author: "Susan E. Schwartz",
+    cover: "/images/books/absent-father-effect.png",
     description:
-      "I recommend this book often because it does something rare: it explains the mechanics of difficult emotions — anxiety, grief, low mood — with clinical clarity but without clinical distance. Dr Smith writes the way a good therapist speaks. If you have ever wanted to understand what is actually happening when you feel overwhelmed, this is an excellent place to start.",
-    href: "https://www.drjuliesmith.com/book",
+      "This book stayed with me for how gently it treats something that's often dismissed as 'not a big deal.' An absent father doesn't have to mean a father who left. Sometimes it's a father who was there in the room but never quite present, and the daughter learns to read that absence as something about her own worth. What I appreciated most is that the book doesn't stop at naming the wound. It follows daughters toward repair, toward becoming someone who isn't still waiting to be chosen. If this resonates with you, it might be worth exploring in a session, not because you need to read the book first, but because the pattern it describes is one I see often, and it rarely needs a name to be worth talking about.",
+    href: "https://www.routledge.com/The-Absent-Father-Effect-on-Daughters-Father-Desire-Father-Wounds/Schwartz/p/book/9780367360856",
     external: true,
   },
   {
-    id: "the-body-keeps-the-score",
+    id: "inherited-fate",
     category: "reading",
-    title: "The Body Keeps the Score",
-    subcategory: "Stress & the nervous system",
-    author: "Bessel van der Kolk",
+    title: "Inherited Fate: Family Trauma and the Ways of Healing",
+    subcategory: "Intergenerational trauma",
+    author: "Noémi Orvos-Tóth",
+    cover: "/images/books/inherited-fate.png",
     description:
-      "A thorough and accessible exploration of how sustained stress, trauma, and emotional experience become embedded in the body — not just as memory, but as physical sensation and pattern. I find it useful for clients who notice that what they carry shows up in tension, fatigue, or physical restlessness rather than thoughts alone. It is dense in places, but deeply worthwhile.",
-    href: "https://www.besselvanderkolk.com/resources/the-body-keeps-the-score",
+      "Our families shape who we are, often in ways we don't consciously choose. This book traces how the things we struggle with, our anxieties, our repeated patterns in relationships, sometimes even physical symptoms, can trace back further than our own lives: to a parent's or grandparent's unprocessed loss, a family secret that was never named. What I find most useful about this way of thinking is how much lighter it makes self-understanding feel. Not 'what's wrong with me,' but 'what did I inherit, and what can I now do differently.' That reframing alone is often the beginning of real change, and it's exactly the kind of exploration counselling can hold space for.",
+    href: "https://www.penguin.co.uk/books/462041/inherited-fate-by-orvos-toth-noemi",
     external: true,
   },
 ];
@@ -154,22 +157,30 @@ function ReadingCard({ item }: { item: ResourceItem }) {
       className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#34D399]/30 hover:border-[#34D399] shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"
     >
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
-            {item.subcategory}
-          </span>
-          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
-            <BookOpen className="w-5 h-5 text-[#34D399]" />
+        <div className="flex items-start gap-5">
+          {/* Book cover */}
+          {item.cover && (
+            <div className="shrink-0 w-20 rounded-lg overflow-hidden shadow-md border border-[#34D399]/15 group-hover:shadow-lg transition-shadow">
+              <Image
+                src={item.cover}
+                alt={`Cover of ${item.title}`}
+                width={80}
+                height={120}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857] mb-2">
+              {item.subcategory}
+            </span>
+            <h2 className="text-lg font-bold font-heading text-[#0D2E24] group-hover:text-[#059669] transition-colors leading-snug">
+              {item.title}
+            </h2>
+            <p className="text-xs font-bold text-[#0D2E24]/60 mt-1 uppercase tracking-wider">
+              {item.author}
+            </p>
           </div>
-        </div>
-
-        <div>
-          <h2 className="text-2xl font-bold font-heading text-[#0D2E24] group-hover:text-[#059669] transition-colors leading-snug">
-            {item.title}
-          </h2>
-          <p className="text-xs font-bold text-[#0D2E24]/60 mt-1 uppercase tracking-wider">
-            {item.author}
-          </p>
         </div>
 
         <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed">
