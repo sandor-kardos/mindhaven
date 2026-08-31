@@ -46,10 +46,10 @@ export function CookieConsentBanner() {
   useEffect(() => {
     const stored = getStoredConsent();
     if (stored === "accepted") {
-      // User previously accepted — grant consent as soon as gtag is ready
+      // User previously accepted: grant consent as soon as gtag is ready
       updateConsent(true);
     } else if (!stored) {
-      // No decision yet — show banner
+      // No decision yet: show banner
       setVisible(true);
     }
     // If "declined" → consent stays denied by default; nothing to do
@@ -72,7 +72,7 @@ export function CookieConsentBanner() {
       {visible && (
         <div className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 sm:px-4 sm:pb-4">
           <div className="container mx-auto max-w-5xl">
-            <div className="bg-[#0D2E24] text-white rounded-2xl border border-[#155D49]/50 shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="bg-[#0D2E24] text-white rounded-2xl border border-[#34D399]/50 shadow-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex-1 space-y-1.5">
                 <p className="text-sm font-bold text-white">Cookie preferences</p>
                 <p className="text-xs text-slate-300 leading-relaxed">

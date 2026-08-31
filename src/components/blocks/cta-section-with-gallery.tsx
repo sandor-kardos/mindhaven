@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import * as React from "react"
 import { HTMLMotionProps, Variants, motion } from "motion/react"
@@ -109,7 +109,7 @@ export const GalleryGridCell = React.forwardRef<
         delayChildren: transition?.delayChildren ?? 0.2,
       }}
       className={cn(
-        "relative overflow-hidden rounded-xl shadow-xl border border-[#155D49]/20 group hover:shadow-2xl transition-shadow duration-300",
+        "relative overflow-hidden rounded-xl shadow-xl border border-[#34D399]/20 group hover:shadow-2xl transition-shadow duration-300",
         areaClasses[index],
         className
       )}

@@ -1,19 +1,32 @@
 import { ShieldCheck, Lock } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Privacy Policy & GDPR | Mindhaven",
   description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
+  alternates: {
+    canonical: "https://mindhaven.uk/privacy-and-gdpr",
+  },
+  openGraph: {
+    title: "Privacy Policy & GDPR | Mindhaven",
+    description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
+    url: "https://mindhaven.uk/privacy-and-gdpr",
+  },
+  twitter: {
+    title: "Privacy Policy & GDPR | Mindhaven",
+    description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
+  }
 };
 
 export default function PrivacyAndGDPR() {
   return (
-    <div className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24]">
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-[#0D2E24] text-center border-b border-[#155D49]/20">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24]">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-white to-white text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#155D49] border border-[#155D49]/30 text-xs font-bold uppercase tracking-wider">
-            <Lock className="w-4 h-4 text-[#155D49]" />
+          <Badge variant="white">
+            <Lock className="w-4 h-4 text-[#34D399]" />
             <span>UK GDPR Compliant</span>
-          </div>
+          </Badge>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#0D2E24] font-heading">
             Privacy Policy
           </h1>
@@ -25,14 +38,14 @@ export default function PrivacyAndGDPR() {
       </section>
 
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl border border-[#155D49]/20 shadow-md space-y-10 text-[#0D2E24]">
+        <div className="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-3xl border border-[#34D399]/20 shadow-md space-y-10 text-[#0D2E24]">
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. Who We Are</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Erika Martin is the sole Data Controller for Mindhaven, operating as a sole trader from 6 Newmills Rd, Dalkeith EH22 2LE. You can contact her with any data-related query at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#155D49] underline underline-offset-2">mindhavenuk@gmail.com</a> or by calling{" "}
-              <a href="tel:+447516785823" className="text-[#155D49] underline underline-offset-2">+44 7516 785823</a>.
+              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a> or by calling{" "}
+              <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               All personal data is processed in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
@@ -128,7 +141,7 @@ export default function PrivacyAndGDPR() {
             </ul>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               To exercise any of these rights, please contact Erika Martin at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#155D49] underline underline-offset-2">mindhavenuk@gmail.com</a>. We will respond within one month.
+              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>. We will respond within one month.
             </p>
           </div>
 
@@ -142,7 +155,7 @@ export default function PrivacyAndGDPR() {
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               We would, however, always welcome the chance to resolve any concern directly. Please contact us first at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#155D49] underline underline-offset-2">mindhavenuk@gmail.com</a>.
+              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>.
             </p>
           </div>
 
@@ -152,7 +165,7 @@ export default function PrivacyAndGDPR() {
               This website uses cookies only with your explicit consent, which is requested via a banner on your first visit. You may accept or decline analytics cookies at any time; declining does not affect your use of the site.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              If you accept, we use <strong>Google Analytics</strong> (delivered via Google Tag Manager) to understand how visitors use this website — pages visited, session duration, and device type. No personal identifiers are collected. Data is processed by Google in accordance with their privacy policy and is used solely to improve this site; it is never shared for advertising or marketing purposes.
+              If you accept, we use <strong>Google Analytics</strong> (delivered via Google Tag Manager) to understand how visitors use this website  pages visited, session duration, and device type. No personal identifiers are collected. Data is processed by Google in accordance with their privacy policy and is used solely to improve this site; it is never shared for advertising or marketing purposes.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Your cookie preference is stored as a first-party cookie on your device for up to 12 months. You can withdraw consent at any time by clearing your browser cookies.

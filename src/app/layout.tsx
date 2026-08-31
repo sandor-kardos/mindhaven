@@ -13,11 +13,26 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mindhaven.uk'),
   title: "Mindhaven | Personal Counselling with Erika Martin",
   alternates: { canonical: "https://mindhaven.uk" },
   verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
   description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
-
+  openGraph: {
+    title: "Mindhaven | Personal Counselling with Erika Martin",
+    description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
+    url: "https://mindhaven.uk",
+    siteName: "Mindhaven",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mindhaven | Personal Counselling with Erika Martin",
+    description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
+    images: ["/og-image.png"],
+  },
 };
 
 const jsonLd = {
@@ -30,7 +45,7 @@ const jsonLd = {
       url: "https://mindhaven.uk",
       telephone: "+447516785823",
       email: "mindhavenuk@gmail.com",
-      priceRange: "£80 - £85",
+      priceRange: "£60",
       image: "https://mindhaven.uk/assets/erika-martin.jpg",
       description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
       sameAs: [
@@ -115,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col antialiased bg-[#F8FAF8] text-[#0D2E24]">
+      <body className="min-h-full flex flex-col antialiased bg-[#FFFFFF] text-[#0D2E24]">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -131,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* Global Ambient Background Animation */}
         <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-[#155D49] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" />
+          <div className="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-[#34D399] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" />
           <div className="absolute -bottom-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#34D399] mix-blend-multiply filter blur-[100px] sm:blur-[140px] opacity-[0.03] animate-aura-drift" style={{ animationDelay: '-12s' }} />
         </div>
 

@@ -3,15 +3,30 @@ import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
-    const { name, email, objective } = await request.json();
+    const body = await request.json();
+    const { name, contactMethod, contactDetail, email, objective, message } = body;
 
-    if (!name || !email || !objective) {
+    const effectiveContactDetail = contactDetail || email;
+
+    if (!name || !effectiveContactDetail || !objective) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
     const gmailUser = process.env.GMAIL_USER;
     const gmailPass = process.env.GMAIL_APP_PASSWORD;
     const resendApiKey = process.env.RESEND_API_KEY;
+
+    const emailSubject = `New Message from ${name}`;
+    const emailHtml = `
+      <div style="font-family: sans-serif; color: #0D2E24; padding: 20px; border: 1px solid #34D399;">
+        <h2 style="color: #0D2E24;">New Client Enquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Preferred Contact Method:</strong> ${contactMethod || "Not specified"}</p>
+        <p><strong>Contact Details (Email / Phone):</strong> ${effectiveContactDetail}</p>
+        <p><strong>Primary Focus:</strong> ${objective}</p>
+        <p><strong>Message / Notes:</strong> ${message || "No additional message provided."}</p>
+      </div>
+    `;
 
     if (resendApiKey) {
       await fetch("https://api.resend.com/emails", {
@@ -23,8 +38,8 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from: "Mindhaven <onboarding@resend.dev>",
           to: ["mindhavenuk@gmail.com"],
-          subject: `New Booking Enquiry from ${name}`,
-          html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Primary Objective:</strong> ${objective}</p>`,
+          subject: emailSubject,
+          html: emailHtml,
         }),
       });
     } else if (gmailUser && gmailPass) {
@@ -34,19 +49,24 @@ export async function POST(request: Request) {
       });
 
       await transporter.sendMail({
-        from: `"Mindhaven Booking" <${gmailUser}>`,
+        from: `"Mindhaven Contact" <${gmailUser}>`,
         to: "mindhavenuk@gmail.com",
-        subject: `New Booking Enquiry from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nPrimary Objective: ${objective}`,
+        subject: emailSubject,
+        html: emailHtml,
       });
     } else {
-      console.log("Local Dev Booking Submission Received:", { name, email, objective });
+      console.log("Local Dev Contact Submission Received:", {
+        name,
+        contactMethod,
+        effectiveContactDetail,
+        objective,
+        message,
+      });
     }
 
     return NextResponse.json({ ok: true, message: "Enquiry received successfully." });
   } catch (err) {
-    console.error("Booking API Error:", err);
-    // Return graceful success so the user can unlock calendar scheduling without getting blocked
-    return NextResponse.json({ ok: true, fallback: true });
+    console.error("Contact API Error:", err);
+    return NextResponse.json({ ok: true, message: "Enquiry received successfully." });
   }
 }

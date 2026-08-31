@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Sparkles } from "lucide-react";
+import { Wind } from "lucide-react";
 
 export function CalmBreathingWidget() {
   const [reducedMotion] = useState(() =>
@@ -74,24 +74,24 @@ export function CalmBreathingWidget() {
 
   if (reducedMotion) {
     return (
-      <div className="bg-[#E6F2ED] border border-[#155D49]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
-        <div className="flex items-center justify-center gap-2 text-[#155D49] font-bold text-xs uppercase tracking-wider font-heading">
-          <Sparkles className="w-4 h-4 text-[#155D49]" />
+      <div className="bg-white border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
+        <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
+          <Wind className="w-4 h-4 text-[#34D399]" />
           <span>Nervous System Pacer</span>
         </div>
         <div className="space-y-3 py-4">
           <p className="text-sm font-bold text-[#0D2E24] font-heading">4-7-8 Breathing</p>
           <div className="flex justify-center gap-6 text-xs font-semibold text-[#0D2E24]/80">
             <div className="text-center">
-              <div className="text-2xl font-extrabold text-[#155D49] font-heading">4s</div>
+              <div className="text-2xl font-extrabold text-[#0D2E24] font-heading">4s</div>
               <div className="uppercase tracking-wider mt-0.5">Inhale</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-extrabold text-[#155D49] font-heading">7s</div>
+              <div className="text-2xl font-extrabold text-[#0D2E24] font-heading">7s</div>
               <div className="uppercase tracking-wider mt-0.5">Hold</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-extrabold text-[#155D49] font-heading">8s</div>
+              <div className="text-2xl font-extrabold text-[#0D2E24] font-heading">8s</div>
               <div className="uppercase tracking-wider mt-0.5">Exhale</div>
             </div>
           </div>
@@ -104,9 +104,9 @@ export function CalmBreathingWidget() {
   }
 
   return (
-    <div className="bg-[#E6F2ED] border border-[#155D49]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
-      <div className="flex items-center justify-center gap-2 text-[#155D49] font-bold text-xs uppercase tracking-wider font-heading">
-        <Sparkles className="w-4 h-4 text-[#155D49]" />
+    <div className="bg-white border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
+      <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
+        <Wind className="w-4 h-4 text-[#34D399]" />
         <span>Nervous System Pacer</span>
       </div>
 
@@ -114,15 +114,15 @@ export function CalmBreathingWidget() {
         className="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto flex items-center justify-center transition-transform duration-300 ease-out"
         style={{ transform: `scale(${scale})` }}
       >
-        <div className="absolute inset-2 rounded-full border border-[#155D49]/20 animate-calm-ring pointer-events-none" />
-        <svg className="w-full h-full transform -rotate-90 filter drop-shadow-[0_0_8px_rgba(21,93,73,0.25)]" viewBox="0 0 120 120">
+        <div className="absolute inset-2 rounded-full border border-[#34D399]/20 animate-calm-ring pointer-events-none" />
+        <svg className="w-full h-full transform -rotate-90 filter drop-shadow-[0_0_8px_rgba(52,211,153,0.25)]" viewBox="0 0 120 120">
           <defs>
             <linearGradient id="pacerRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#155D49" />
+              <stop offset="0%" stopColor="#34D399" />
               <stop offset="100%" stopColor="#34D399" />
             </linearGradient>
           </defs>
-          <circle cx="60" cy="60" r={radius} className="stroke-[#155D49]/15" strokeWidth="3" fill="none" />
+          <circle cx="60" cy="60" r={radius} className="stroke-[#34D399]/15" strokeWidth="3" fill="none" />
           <circle
             cx="60"
             cy="60"
@@ -139,7 +139,7 @@ export function CalmBreathingWidget() {
           <span className="text-3xl font-extrabold text-[#0D2E24] font-heading tracking-tight">
             {displaySeconds}s
           </span>
-          <span className="text-xs font-bold text-[#155D49] uppercase tracking-wider mt-0.5 font-heading">
+          <span className="text-xs font-bold text-[#0D2E24] uppercase tracking-wider mt-0.5 font-heading">
             {phase}
           </span>
         </div>

@@ -1,11 +1,22 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, Tag } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, Clock, Tag } from "lucide-react";
 import { getArticle, getAllArticles, type ContentBlock } from "@/lib/articles";
+import { Badge } from "@/components/ui/Badge";
 import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
+};
+
+const articleImages: Record<string, string> = {
+  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.png",
+  "nervous-system-regulation": "/images/blog/nervous-system-regulation.png",
+  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.png",
+  "sustainable-boundaries": "/images/blog/sustainable-boundaries.png",
+  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.png",
+  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.png",
 };
 
 export async function generateStaticParams() {
@@ -16,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return { title: "Not Found | Mindhaven" };
+  const imageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
   return {
     title: `${article.title} | Mindhaven`,
     description: article.excerpt,
@@ -28,7 +40,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: article.date,
       authors: ["Erika Martin"],
+      images: [imageUrl],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [imageUrl],
+    }
   };
 }
 
@@ -66,7 +85,7 @@ function renderBlock(block: ContentBlock, index: number) {
         <ul key={index} className="mb-5 space-y-2 pl-1">
           {block.items.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[#0D2E24]/85 font-medium leading-relaxed">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#155D49] shrink-0" />
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#34D399] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -76,7 +95,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <blockquote
           key={index}
-          className="my-6 px-6 py-5 bg-[#E6F2ED] border-l-4 border-[#155D49] rounded-r-2xl"
+          className="my-6 px-6 py-5 bg-slate-50 border-l-4 border-[#34D399] rounded-r-2xl"
         >
           <p className="text-[#0D2E24] font-semibold leading-relaxed italic">
             {block.text}
@@ -113,62 +132,135 @@ export default async function BlogPost({ params }: Props) {
     },
   };
 
+const articleTldrs: Record<string, string> = {
+  "burnout-therapist-edinburgh": "Burnout isn't just stress: it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
+  "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
+  "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
+  "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",
+  "somatic-therapy-explained": "Talk therapy engages the mind, but trauma and chronic stress live in the body. Somatic therapy bridges this gap by addressing the physical imprint of psychological pain."
+};
+
+  const allArticles = getAllArticles();
+  const currentIndex = allArticles.findIndex(a => a.slug === slug);
+  const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+  const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
+
+  const headerImageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
+
   return (
-    <article className="flex flex-col w-full bg-[#F8FAF8] text-[#0D2E24] min-h-screen">
+    <article className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
 
-      {/* Header */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#E6F2ED] to-[#F8FAF8] text-center border-b border-[#155D49]/20">
-        <div className="container mx-auto max-w-3xl space-y-6">
+      {/* Header & Floating Image Hero Section */}
+      <section className="pt-20 pb-12 px-4 bg-white border-b border-[#34D399]/20 relative overflow-hidden">
+        
+        {/* Ambient Floating Orbs */}
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
+
+        <div className="container mx-auto max-w-4xl relative z-10">
           <Link
             href="/blog"
-            className="inline-flex items-center text-sm font-bold text-[#155D49] hover:underline"
+            className="inline-flex items-center text-sm font-bold text-[#0D2E24] hover:text-[#34D399] transition-colors mb-8"
           >
-            <ArrowLeft className="w-4 h-4 mr-1" /> Back to Blog
+            <ArrowLeft className="w-4 h-4 mr-1.5" /> Back to Blog
           </Link>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#155D49] text-white">
-              <Tag className="w-3 h-3" />
-              {article.category}
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#155D49]/30 text-[#155D49]">
-              <Clock className="w-3 h-3" />
-              {article.readTime}
-            </span>
+          {/* Floating Squared Image Hero Container with Title & In A Nutshell Floating In Front */}
+          <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-[#34D399]/30 bg-[#0D2E24] text-white p-6 sm:p-10 md:p-14">
+            
+            {/* Background Floating Image Backdrop */}
+            <div className="absolute inset-0 z-0">
+              <Image 
+                src={headerImageUrl}
+                alt={article.title}
+                fill
+                className="object-cover filter brightness-[0.75]"
+                priority
+              />
+              {/* Gradient Overlay for Perfect Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D2E24] via-[#0D2E24]/85 to-[#0D2E24]/60" />
+            </div>
+
+            {/* Content Floating in Front of Image */}
+            <div className="relative z-10 space-y-6 max-w-3xl">
+              <div className="flex flex-wrap items-center gap-3 text-xs font-bold">
+                <Badge className="gap-1.5 px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal shadow-sm">
+                  <Tag className="w-3 h-3" />
+                  {article.category}
+                </Badge>
+                <Badge variant="white" className="gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-md text-white border border-white/30 normal-case tracking-normal shadow-sm">
+                  <Clock className="w-3.5 h-3.5 text-[#34D399]" />
+                  {article.readTime}
+                </Badge>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold font-heading text-white leading-[1.15] tracking-tight">
+                {article.title}
+              </h1>
+
+              {/* "In a Nutshell" Floating Card in Front of Background Image */}
+              <div className="p-6 bg-white/95 backdrop-blur-md border border-white/40 rounded-2xl shadow-xl relative text-[#0D2E24] mt-6">
+                <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#34D399] px-3.5 py-0.5 rounded-full text-[10px] font-extrabold text-[#0D2E24] uppercase tracking-widest shadow-xs">
+                  In a Nutshell
+                </div>
+                <p className="text-[#0D2E24]/90 font-semibold text-sm sm:text-base leading-relaxed">
+                  {articleTldrs[slug] || article.excerpt}
+                </p>
+              </div>
+
+              {/* Author & Date Footer inside Hero */}
+              <div className="flex items-center gap-3 pt-4 border-t border-white/20 mt-6 text-slate-200">
+                <div className="w-8 h-8 rounded-full bg-[#34D399] text-[#0D2E24] flex items-center justify-center font-extrabold font-heading text-xs">EM</div>
+                <p className="text-xs text-slate-200 font-bold">
+                  By Erika Martin &nbsp;·&nbsp;{" "}
+                  {new Date(article.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+            </div>
+
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-extrabold font-heading text-[#0D2E24] leading-tight">
-            {article.title}
-          </h1>
-
-          <p className="text-lg text-[#0D2E24]/75 font-medium max-w-2xl mx-auto leading-relaxed">
-            {article.excerpt}
-          </p>
-
-          <p className="text-sm text-[#0D2E24]/50 font-medium">
-            By Erika Martin &nbsp;·&nbsp;{" "}
-            {new Date(article.date).toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </p>
         </div>
       </section>
 
       {/* Article Body */}
-      <section className="py-16 px-4">
+      <section className="py-8 px-4">
         <div className="container mx-auto max-w-3xl">
           {article.content.map((block, index) => renderBlock(block, index))}
         </div>
       </section>
 
+      {/* Post Navigation */}
+      <section className="py-12 px-4 bg-white border-t border-[#34D399]/10">
+        <div className="container mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-stretch gap-6">
+          {prevArticle ? (
+            <Link href={`/blog/${prevArticle.slug}`} className="flex-1 p-6 rounded-2xl bg-white border border-[#34D399]/20 hover:border-[#34D399] transition-all group flex flex-col items-start text-left">
+              <span className="text-xs font-bold text-[#34D399] uppercase tracking-wider mb-2 flex items-center gap-1">
+                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" /> Previous
+              </span>
+              <span className="text-[#0D2E24] font-extrabold font-heading line-clamp-2">{prevArticle.title}</span>
+            </Link>
+          ) : <div className="flex-1" />}
+          
+          {nextArticle ? (
+            <Link href={`/blog/${nextArticle.slug}`} className="flex-1 p-6 rounded-2xl bg-white border border-[#34D399]/20 hover:border-[#34D399] transition-all group flex flex-col items-end text-right">
+              <span className="text-xs font-bold text-[#34D399] uppercase tracking-wider mb-2 flex items-center gap-1">
+                Next <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="text-[#0D2E24] font-extrabold font-heading line-clamp-2">{nextArticle.title}</span>
+            </Link>
+          ) : <div className="flex-1" />}
+        </div>
+      </section>
+
       {/* Footer CTA */}
-      <section className="py-16 px-4 bg-[#E6F2ED] border-t border-[#155D49]/20">
+      <section className="py-16 px-4 bg-white border-t border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl text-center space-y-4">
           <h2 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
             Recognise Something in This?
@@ -179,7 +271,7 @@ export default async function BlogPost({ params }: Props) {
           </p>
           <Link
             href="/contact#book"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#155D49] transition-all shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white hover:bg-[#34D399] hover:text-[#0D2E24] font-bold text-base rounded-full transition-all shadow-md"
           >
             Book a Free Introductory Call
           </Link>

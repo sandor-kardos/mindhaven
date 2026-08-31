@@ -50,6 +50,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogEntries,
     {
+      url: "https://mindhaven.uk/tools",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://mindhaven.uk/tools/wheel-of-life",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://mindhaven.uk/tools/nervous-system-pacer",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://mindhaven.uk/resources/life-compass",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://mindhaven.uk/privacy-and-gdpr",
       lastModified: new Date(),
       changeFrequency: "yearly",
