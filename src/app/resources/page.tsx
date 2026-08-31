@@ -145,11 +145,11 @@ function ReadingCard({ item }: { item: ResourceItem }) {
   return (
     <div className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#34D399]/30 shadow-xl flex flex-col h-full">
       <div className="space-y-4 flex-1">
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between min-h-[44px]">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
             {item.subcategory}
           </span>
-          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center shrink-0 ml-2">
             <BookOpen className="w-5 h-5 text-[#34D399]" />
           </div>
         </div>
