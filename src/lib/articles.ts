@@ -178,11 +178,11 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "In practice, this includes noticing where you hold stress, using simple breathwork to anchor yourself, and recognising physical warning signals before burnout sets in.",
+        text: "In practice, this means learning to notice where tension gathers in the body — a clenched jaw, a tight chest, a shallow breath — and using that awareness as an early signal rather than waiting for depletion. Like a ripple expanding from a single point of contact, one small moment of recognition can shift your entire physiological state.",
       },
       {
         type: "callout",
-        text: "Combining body awareness with traditional counselling offers a comprehensive, balanced path to emotional calm.",
+        text: "Somatic-informed counselling works with both what you think and what you feel in your body — because lasting calm often begins not in the mind, but in the breath, the posture, the quiet signals you have learned to ignore.",
       },
     ],
   },

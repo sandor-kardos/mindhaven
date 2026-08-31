@@ -11,12 +11,12 @@ type Props = {
 };
 
 const articleImages: Record<string, string> = {
-  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.png",
-  "nervous-system-regulation": "/images/blog/nervous-system-regulation.png",
-  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.png",
-  "sustainable-boundaries": "/images/blog/sustainable-boundaries.png",
-  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.png",
-  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.png",
+  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.webp",
+  "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
+  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
+  "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
+  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.webp",
+  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 
 export async function generateStaticParams() {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return { title: "Not Found | Mindhaven" };
-  const imageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
+  const imageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.webp";
   return {
     title: `${article.title} | Mindhaven`,
     description: article.excerpt,
@@ -145,7 +145,7 @@ const articleTldrs: Record<string, string> = {
   const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
   const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
 
-  const headerImageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
+  const headerImageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.webp";
 
   return (
     <article className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
