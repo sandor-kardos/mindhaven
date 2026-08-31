@@ -74,19 +74,19 @@ export function BookingForm() {
   }
 
   return (
-    <div className="bg-white rounded-3xl border-2 border-[#34D399]/30 overflow-hidden shadow-2xl shadow-[#0D2E24]/10 card-flow-effect p-6 sm:p-10 max-w-2xl mx-auto relative z-10">
+    <div className="bg-white rounded-3xl border-2 border-[#34D399]/30 overflow-hidden shadow-2xl shadow-[#0D2E24]/10 card-flow-effect p-4 sm:p-8 max-w-2xl mx-auto relative z-10">
       
       {/* Header Info */}
-      <div className="mb-8 space-y-2 text-center sm:text-left">
-        <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-extrabold text-[#059669] uppercase tracking-wider font-heading">
-          <MessageCircle className="w-4 h-4 text-[#34D399]" />
-          <span>Direct Contact Form</span>
-        </div>
-        <h3 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
-          Send a Message to Erika
+      <div className="mb-5 space-y-2 text-center sm:text-left">
+        <h3 className="text-xl sm:text-2xl font-extrabold text-[#0D2E24] font-heading">
+          Message Erika
         </h3>
-        <p className="text-xs text-[#0D2E24]/75 font-medium">
-          Fill out as much or as little as you feel comfortable sharing. Erika replies the same day.
+        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ECFDF5] border border-[#34D399]/40 text-[#059669] text-xs font-bold">
+          <Clock className="w-3.5 h-3.5" />
+          <span>Erika replies the same day, usually within a few hours</span>
+        </div>
+        <p className="text-xs text-[#0D2E24]/60 font-medium pt-1">
+          Share as little or as much as you like.
         </p>
       </div>
 
@@ -187,7 +187,7 @@ export function BookingForm() {
             className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold text-white hover:text-[#0D2E24] bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg hover:-translate-y-0.5 border border-[#34D399]/30 disabled:opacity-60 cursor-pointer group"
           >
             <Send className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
-            <span>{status === "loading" ? "Sending Message..." : "Send Message to Erika"}</span>
+            <span>{status === "loading" ? "Sending..." : "Send Message"}</span>
           </button>
 
           <div className="flex items-center justify-center gap-2 text-xs font-semibold text-[#0D2E24]/60 pt-1">

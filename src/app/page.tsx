@@ -216,22 +216,22 @@ export default function Home() {
                 </div>
                   
                 {/* Sharp Floating Overlay Badge with Direct NCPS Link - Positioned prominently in front of portrait */}
-                <a 
+                <a
                   href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute -bottom-6 left-2 right-2 sm:-bottom-8 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 md:p-3 lg:p-5 border-2 border-[#34D399]/60 shadow-[0_20px_40px_-10px_rgba(13,46,36,0.25)] flex items-center justify-between group hover:border-[#34D399] hover:scale-[1.02] transition-all cursor-pointer z-20"
+                  className="absolute -bottom-6 left-2 right-2 sm:-bottom-8 sm:left-6 sm:right-6 max-w-xs bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 md:p-3 lg:p-5 border-2 border-[#34D399]/60 shadow-[0_20px_40px_-10px_rgba(13,46,36,0.25)] flex items-center justify-between group hover:border-[#34D399] hover:scale-[1.02] transition-all cursor-pointer z-20"
                   title="Verify Erika Martin's Official NCPS Register Listing"
                 >
                   <div className="flex items-center gap-2.5 sm:gap-3.5">
                     <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#ECFDF5] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/40 group-hover:scale-110 transition-transform">
                       <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#34D399]" />
                     </div>
-                    <div>
-                      <h4 className="font-extrabold text-xs sm:text-base text-[#0D2E24] font-heading">
-                        Erika Martin 
+                    <div className="flex flex-col text-center">
+                      <h4 className="font-extrabold text-xs sm:text-sm text-[#0D2E24] font-heading whitespace-normal">
+                        Erika Martin
                       </h4>
-                      <div className="text-[10px] sm:text-xs text-[#059669] font-extrabold mt-0.5 whitespace-nowrap">
+                      <div className="text-[10px] sm:text-xs text-[#059669] font-extrabold mt-0.5">
                         <span>Accredited Counsellor (MNCPS Acc.)</span>
                       </div>
                     </div>

@@ -27,14 +27,23 @@ export const metadata: Metadata = {
 export default function ToolsIndexPage() {
   const tools = [
     {
+      slug: "wheel-of-life",
+      href: "/tools/wheel-of-life",
+      title: "Wheel of Life",
+      category: "Balance Assessment",
+      icon: PieChart,
+      image: "/images/tools/wheel-preview.png",
+      description: "Map your satisfaction across 8 core life domains with an interactive visual wheel. Gain instant clarity on your overall life balance, export PNG summaries, and track progress privately in your browser.",
+      badgeColor: "#059669",
+    },
+    {
       slug: "nervous-system-pacer",
       href: "/tools/nervous-system-pacer",
       title: "Nervous System Pacer",
       category: "Interactive Breathing",
       icon: Wind,
       image: "/images/tools/pacer-preview.png",
-      description:
-        "Down-regulate your nervous system in real-time with our guided 4-7-8 breathing rhythm. Helps slow elevated heart rates, reduce acute anxiety, and restore physiological calm during demanding workdays.",
+      description: "Down-regulate your nervous system in real-time with our guided 4-7-8 breathing rhythm. Helps slow elevated heart rates, reduce acute anxiety, and restore physiological calm during demanding workdays.",
       badgeColor: "#059669",
     },
     {
@@ -44,20 +53,8 @@ export default function ToolsIndexPage() {
       category: "Values Alignment",
       icon: Compass,
       image: "/images/tools/compass-preview.png",
-      description:
-        "An interactive self-assessment tool to measure alignment across core life domains including Career, Health, Relationships, and Personal Growth. Private, client-side, with instant visual feedback.",
+      description: "An interactive self-assessment tool to measure alignment across core life domains including Career, Health, Relationships, and Personal Growth. Private, client-side, with instant visual feedback.",
       badgeColor: "#047857",
-    },
-    {
-      slug: "wheel-of-life",
-      href: "/tools/wheel-of-life",
-      title: "Wheel of Life",
-      category: "Balance Assessment",
-      icon: PieChart,
-      image: "/images/tools/wheel-preview.png",
-      description:
-        "Map your satisfaction across 8 core life domains with an interactive visual wheel. Gain instant clarity on your overall life balance, export PNG summaries, and track progress privately in your browser.",
-      badgeColor: "#059669",
     },
   ];
 

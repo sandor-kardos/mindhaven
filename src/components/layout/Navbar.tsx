@@ -155,130 +155,142 @@ export function Navbar() {
 
       {/* 3-Option "Message Me" Contact Modal */}
       {isContactModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0D2E24]/75 backdrop-blur-sm animate-fadeIn overflow-y-auto">
-          <div className="bg-white border-2 border-[#34D399]/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl space-y-6 relative card-flow-glow my-8">
-            
-            {/* Close Button */}
-            <button
-              type="button"
-              onClick={() => {
-                setIsContactModalOpen(false);
-                setModalView('options');
-              }}
-              className="absolute top-5 right-5 p-2 rounded-full text-[#0D2E24]/60 hover:text-[#0D2E24] hover:bg-slate-100 transition-colors"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        <div
+          className="fixed inset-0 z-50 bg-[#0D2E24]/75 backdrop-blur-sm animate-fadeIn"
+          onClick={(e) => { if (e.target === e.currentTarget) { setIsContactModalOpen(false); setModalView('options'); } }}
+        >
+          {/* Scroll container: full height, scrollable on mobile */}
+          <div className="h-full overflow-y-auto overscroll-contain flex sm:items-center sm:justify-center sm:p-4 pb-safe">
+            <div className="bg-white border-2 border-[#34D399]/40 rounded-t-3xl sm:rounded-3xl max-w-lg w-full p-5 sm:p-8 shadow-2xl space-y-5 relative card-flow-glow mt-auto sm:my-8 sm:mx-auto">
 
-            {modalView === 'options' ? (
-              <>
-                {/* Modal Title & Reassurance Note */}
-                <div className="space-y-2 pr-8">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-[#34D399]/30 text-xs font-bold text-[#059669]">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>Erika replies the same day.</span>
+              {/* Drag handle (mobile only) */}
+              <div className="flex justify-center sm:hidden -mt-1 mb-1">
+                <div className="w-10 h-1 rounded-full bg-slate-200" />
+              </div>
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setIsContactModalOpen(false);
+                  setModalView('options');
+                }}
+                className="absolute top-4 right-4 p-2 rounded-full text-[#0D2E24]/60 hover:text-[#0D2E24] hover:bg-slate-100 transition-colors z-10"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {modalView === 'options' ? (
+                <>
+                  {/* Modal Title & Reassurance Note */}
+                  <div className="space-y-2 pr-8">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ECFDF5] border border-[#34D399]/30 text-xs font-bold text-[#059669]">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>Erika replies the same day.</span>
+                    </div>
+
+                    <h3 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
+                      Message Erika
+                    </h3>
+
+                    <p className="text-xs text-[#0D2E24]/80 font-medium">
+                      Select your preferred way to get in touch. No pressure or commitment.
+                    </p>
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
-                    Message Erika
-                  </h3>
-
-                  <p className="text-xs text-[#0D2E24]/80 font-medium">
-                    Select your preferred way to get in touch. No pressure or commitment.
-                  </p>
-                </div>
-
-                {/* 3 Contact Options Grid */}
-                <div className="space-y-3">
-                  {/* Option 1: WhatsApp */}
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => {
-                      setIsContactModalOpen(false);
-                      setModalView('options');
-                    }}
-                    className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
-                        <MessageCircle className="w-5 h-5" />
+                  {/* 3 Contact Options Grid */}
+                  <div className="space-y-3">
+                    {/* Option 1: WhatsApp */}
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        setIsContactModalOpen(false);
+                        setModalView('options');
+                      }}
+                      className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+                          <MessageCircle className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">WhatsApp</h4>
+                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Quick, informal messaging</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">WhatsApp</h4>
-                        <p className="text-[11px] text-[#0D2E24]/70 font-medium">Quick, informal messaging</p>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                  </a>
+                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                    </a>
 
-                  {/* Option 2: Email Form Option */}
+                    {/* Option 2: Email Form Option */}
+                    <button
+                      type="button"
+                      onClick={() => setModalView('form')}
+                      className="w-full text-left group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center text-[#059669]">
+                          <Mail className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Email Form</h4>
+                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Send a quick note with your details</p>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                    </button>
+
+                    {/* Option 3: Messenger */}
+                    <a
+                      href={MESSENGER_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        setIsContactModalOpen(false);
+                        setModalView('options');
+                      }}
+                      className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2]">
+                          <Send className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Messenger</h4>
+                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Facebook Messenger</p>
+                        </div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+
+                  {/* Direct Link to Email client */}
+                  <div className="pt-2 text-center border-t border-[#34D399]/20">
+                    <a
+                      href="mailto:mindhavenuk@gmail.com"
+                      className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
+                    >
+                      Or open email app directly (mindhavenuk@gmail.com) &rarr;
+                    </a>
+                  </div>
+                </>
+              ) : (
+                <div>
+                  {/* Sticky back button */}
                   <button
                     type="button"
-                    onClick={() => setModalView('form')}
-                    className="w-full text-left group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
+                    onClick={() => setModalView('options')}
+                    className="sticky top-0 z-10 inline-flex items-center gap-1.5 text-xs font-bold text-[#059669] hover:underline mb-4 cursor-pointer bg-white py-1"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center text-[#059669]">
-                        <Mail className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Email Message Form</h4>
-                        <p className="text-[11px] text-[#0D2E24]/70 font-medium">Send a quick note with contact details</p>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                    &larr; Back
                   </button>
-
-                  {/* Option 3: Messenger */}
-                  <a
-                    href={MESSENGER_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => {
-                      setIsContactModalOpen(false);
-                      setModalView('options');
-                    }}
-                    className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2]">
-                        <Send className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Messenger</h4>
-                        <p className="text-[11px] text-[#0D2E24]/70 font-medium">Facebook Messenger</p>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  <BookingForm />
                 </div>
+              )}
 
-                {/* Direct Link to Email client */}
-                <div className="pt-2 text-center border-t border-[#34D399]/20">
-                  <a
-                    href="mailto:mindhavenuk@gmail.com"
-                    className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
-                  >
-                    Or open email app directly (mindhavenuk@gmail.com) &rarr;
-                  </a>
-                </div>
-              </>
-            ) : (
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setModalView('options')}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#059669] hover:underline mb-4 cursor-pointer"
-                >
-                  &larr; Back to contact options
-                </button>
-                <BookingForm />
-              </div>
-            )}
-
+            </div>
           </div>
         </div>
       )}
