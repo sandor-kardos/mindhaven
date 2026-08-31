@@ -10,23 +10,30 @@ import { Badge } from "@/components/ui/Badge";
 
 type Category = "all" | "tools" | "reading";
 
-interface ResourceItem {
+interface BaseResourceItem {
   id: string;
-  category: Exclude<Category, "all">;
   title: string;
   subcategory: string;
   description: string;
-  href?: string;
-  external?: boolean;
-  // Tools only
-  icon?: React.ElementType;
-  image?: string;
-  cta?: string;
-  // Reading only
-  author?: string;
-  excerpt?: string; // short preview shown on the card
-  cover?: string;  // real cover image — only shown when expanded, never fabricated
 }
+
+interface ToolResourceItem extends BaseResourceItem {
+  category: "tools";
+  href: string;
+  icon: React.ElementType;
+  image: string;
+  cta: string;
+}
+
+interface ReadingResourceItem extends BaseResourceItem {
+  category: "reading";
+  author: string;
+  excerpt: string;
+  cover?: string;
+}
+
+type ResourceItem = ToolResourceItem | ReadingResourceItem;
+
 
 const resources: ResourceItem[] = [
   // ── Interactive Tools ──
@@ -102,8 +109,8 @@ const filters: { id: Category; label: string }[] = [
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function ToolCard({ item }: { item: ResourceItem }) {
-  const Icon = item.icon!;
+function ToolCard({ item }: { item: ToolResourceItem }) {
+  const Icon = item.icon;
   return (
     <Link
       href={item.href}
@@ -121,7 +128,7 @@ function ToolCard({ item }: { item: ResourceItem }) {
 
         <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#0D2E24]/5">
           <Image
-            src={item.image!}
+            src={item.image}
             alt={`${item.title} interactive tool preview`}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -147,7 +154,7 @@ function ToolCard({ item }: { item: ResourceItem }) {
   );
 }
 
-function ReadingCard({ item }: { item: ResourceItem }) {
+function ReadingCard({ item }: { item: ReadingResourceItem }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
