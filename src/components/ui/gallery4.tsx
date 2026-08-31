@@ -52,10 +52,21 @@ export function Gallery4({
 
   return (
     <section className="py-16 sm:py-20 bg-[#0D2E24] text-white relative overflow-hidden border-y border-[#34D399]/30">
-      {/* Ambient background decoration */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-32 -left-20 w-[600px] h-[600px] bg-[#34D399]/15 rounded-full blur-[140px] animate-aura-drift" />
-        <div className="absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[#059669]/20 rounded-full blur-[130px] animate-aura-drift" />
+      {/* Active article image: blurred full-bg, cross-fades on article change */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <Image
+          key={activeArticle.slug}
+          src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
+          alt=""
+          fill
+          className="object-cover opacity-[0.18] blur-sm scale-110 transition-all duration-700"
+          priority
+        />
+        {/* Dark gradient overlay to keep text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0D2E24]/85 via-[#0D2E24]/70 to-[#0D2E24]/60" />
+        {/* Ambient orbs on top for extra depth */}
+        <div className="absolute -top-32 -left-20 w-[600px] h-[600px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift" />
+        <div className="absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[#059669]/15 rounded-full blur-[130px] animate-aura-drift" />
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
