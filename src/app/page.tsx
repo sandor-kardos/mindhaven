@@ -82,7 +82,7 @@ const faqSchema = {
       "name": "What therapeutic approach/methodology do you use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques."
+        "text": "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside body-based and nervous system regulation techniques."
       }
     }
   ]
@@ -522,7 +522,7 @@ export default function Home() {
               },
               {
                 question: "What therapeutic approach/methodology do you use?",
-                answer: "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside somatic and nervous system regulation techniques."
+                answer: "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside body-based and nervous system regulation techniques."
               }
             ]} 
           />

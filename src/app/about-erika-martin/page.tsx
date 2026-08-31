@@ -80,7 +80,7 @@ export default function AboutErikaMartin() {
                   <GraduationCap className="w-6 h-6 text-[#155D49] shrink-0 mt-1" />
                   <div>
                     <p className="font-bold text-sm text-[#0D2E24] font-heading">Integrative Training</p>
-                    <p className="text-xs text-[#0D2E24]/75 font-medium">CBT, Psychodynamic, Person-centred &amp; Somatic approaches</p>
+                    <p className="text-xs text-[#0D2E24]/75 font-medium">CBT, Psychodynamic, Person-centred & Body-aware approaches</p>
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function AboutErikaMartin() {
               <div className="w-10 h-10 rounded-xl bg-[#E6F2ED] flex items-center justify-center">
                 <Activity className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">Somatic &amp; Body-Based</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">Body-Aware &amp; Nervous System</p>
               <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Working with the body's signals and the nervous system to release accumulated stress.</p>
             </div>
 

@@ -5,13 +5,14 @@ import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
 
 const articleImages: Record<string, string> = {
-  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.png",
-  "nervous-system-regulation": "/images/blog/nervous-system-regulation.png",
-  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.png",
-  "sustainable-boundaries": "/images/blog/sustainable-boundaries.png",
-  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.png",
-  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.png",
+  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.webp",
+  "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
+  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
+  "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
+  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.webp",
+  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
+
 
 export const metadata = {
   title: "Blog | Mindhaven",

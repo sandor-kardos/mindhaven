@@ -137,7 +137,7 @@ const articleTldrs: Record<string, string> = {
   "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
   "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
   "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",
-  "somatic-therapy-explained": "Talk therapy engages the mind, but trauma and chronic stress live in the body. Somatic therapy bridges this gap by addressing the physical imprint of psychological pain."
+  "somatic-therapy-explained": "Talk therapy engages the mind, but stress and tension also live in the body. Learning to notice and work with physical signals bridges that gap, offering a more complete path to recovery.",
 };
 
   const allArticles = getAllArticles();

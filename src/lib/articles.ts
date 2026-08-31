@@ -161,9 +161,9 @@ export const articles: Article[] = [
   },
   {
     slug: "somatic-therapy-explained",
-    title: "Somatic Approaches to Stress: Working With the Body",
+    title: "Working With the Body: How Physical Awareness Supports Stress Recovery",
     excerpt:
-      "Stress lives in the body as well as the mind. Somatic awareness helps release physical tension.",
+      "Stress lives in the body as well as the mind. Learning to notice physical tension is a powerful part of recovery.",
     date: "2026-08-22",
     category: "Therapeutic Methods",
     readTime: "1 min read",
@@ -174,7 +174,7 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "'Somatic' refers to the physical body. Incorporating somatic awareness means paying attention to physical sensations alongside thoughts, helping release stored tension.",
+        text: "Stress doesn't only live in thoughts and emotions — it also shows up in the body. Paying attention to physical sensations alongside thoughts can help release stored tension and interrupt the cycle of chronic stress.",
       },
       {
         type: "paragraph",
@@ -182,7 +182,7 @@ export const articles: Article[] = [
       },
       {
         type: "callout",
-        text: "Somatic-informed counselling works with both what you think and what you feel in your body — because lasting calm often begins not in the mind, but in the breath, the posture, the quiet signals you have learned to ignore.",
+        text: "Counselling that attends to both mind and body works with what you think and what you carry physically — because lasting calm often begins not in analysis, but in the breath, the posture, the quiet signals you have learned to ignore.",
       },
     ],
   },
