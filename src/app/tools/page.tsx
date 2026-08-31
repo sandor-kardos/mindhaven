@@ -68,7 +68,7 @@ export default function ToolsIndexPage() {
 
           <div className="pt-2 flex items-center justify-center gap-2 text-xs font-semibold text-slate-300">
             <ShieldCheck className="w-4 h-4 text-[#34D399]" />
-            <span>100% Private & Client-Side — No Personal Data Recorded</span>
+            <span>100% Private & Client-Side: No Personal Data Recorded</span>
           </div>
 
         </div>

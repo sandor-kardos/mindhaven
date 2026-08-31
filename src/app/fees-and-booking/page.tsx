@@ -75,7 +75,7 @@ export default function FeesAndBooking() {
                   <span className="text-4xl font-extrabold text-white">£300</span>
                   <span className="text-slate-300 ml-2 text-sm font-semibold">total (Save £60)</span>
                 </div>
-                <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">Pay £300 in advance for a 6-session package — saving £60 compared to paying £60 individually per session (£360 total).</p>
+                <p className="text-slate-200 text-sm font-normal leading-relaxed mb-6 min-h-[40px]">Pay £300 in advance for a 6-session package, saving £60 compared to paying £60 individually per session (£360 total).</p>
                 <ul className="space-y-3 mb-8 text-white font-medium">
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">£300 total prepaid in advance (saving £60)</span></li>
                   <li className="flex items-start text-sm text-slate-100"><Check className="w-5 h-5 text-[#34D399] mr-2.5 shrink-0 mt-0.5" /><span className="font-semibold text-white">Equivalent to £50 per session</span></li>

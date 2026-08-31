@@ -1,9 +1,20 @@
 "use client";
 
-import { ArrowRight, Leaf, Sparkles, BookOpen } from "lucide-react";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, Sparkles, BookOpen, Clock, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { articles, Article } from "@/lib/articles";
+import { articles } from "@/lib/articles";
+
+const articleImages: Record<string, string> = {
+  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.png",
+  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.png",
+  "nervous-system-regulation": "/images/blog/nervous-system-regulation.png",
+  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.png",
+  "sustainable-boundaries": "/images/blog/sustainable-boundaries.png",
+  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.png",
+};
 
 export interface Gallery4Props {
   title?: string;
@@ -12,77 +23,21 @@ export interface Gallery4Props {
 
 export function Gallery4({
   title = "Insights on Resilience & Clarity",
-  description = "Evidence-based perspectives on burnout, stress, and nervous system resilience by Erika Martin.",
+  description = "Evidence-based perspectives on burnout, stress, and nervous system resilience by Erika\u00A0Martin.",
 }: Gallery4Props) {
-  // Select top 5 articles for the homepage display
-  const featuredArticles: Article[] = articles.slice(0, 5);
+  const [activeSlug, setActiveSlug] = useState<string>(articles[0]?.slug || "");
 
-  const categoryColors: Record<string, string> = {
-    "Stress & Burnout": "#0D2E24",
-    "Burnout Recovery": "#059669",
-    "Nervous System": "#047857",
-    "Mindset & Anxiety": "#065F46",
-    "Work-Life Balance": "#0D2E24",
-    "Therapeutic Methods": "#047857",
-  };
+  const activeArticle = articles.find((a) => a.slug === activeSlug) || articles[0];
 
   return (
     <section className="py-16 sm:py-20 bg-[#0D2E24] text-white relative overflow-hidden border-y border-[#34D399]/30">
-      {/* Decorative Abstract Nature & Crystal SVG Background */}
+      {/* Ambient background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Soft Glowing Ambient Orbs */}
         <div className="absolute -top-32 -left-20 w-[600px] h-[600px] bg-[#34D399]/15 rounded-full blur-[140px] animate-aura-drift" />
         <div className="absolute -bottom-32 -right-20 w-[550px] h-[550px] bg-[#059669]/20 rounded-full blur-[130px] animate-aura-drift" />
-
-        {/* Abstract Geometric Crystal & Organic Nature Vector Art */}
-        <svg
-          className="absolute w-full h-full opacity-25 mix-blend-screen"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 800"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <linearGradient id="crystalGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#34D399" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#059669" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#0D2E24" stopOpacity="0.1" />
-            </linearGradient>
-            <linearGradient id="crystalGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#A7F3D0" stopOpacity="0.7" />
-              <stop offset="70%" stopColor="#10B981" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#064E3B" stopOpacity="0.0" />
-            </linearGradient>
-            <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#34D399" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#6EE7B7" stopOpacity="0.9" />
-            </linearGradient>
-          </defs>
-
-          {/* Faceted Crystal Gemstone Polygons */}
-          <polygon points="150,50 320,120 280,300 110,240" fill="url(#crystalGrad1)" />
-          <polygon points="320,120 450,40 420,220 280,300" fill="url(#crystalGrad2)" />
-          <polygon points="280,300 420,220 380,420 210,380" fill="url(#crystalGrad1)" opacity="0.6" />
-          
-          {/* Right Crystal Array */}
-          <polygon points="900,100 1080,180 1020,400 860,320" fill="url(#crystalGrad2)" />
-          <polygon points="1080,180 1180,90 1150,310 1020,400" fill="url(#crystalGrad1)" />
-          <polygon points="860,320 1020,400 950,580 790,480" fill="url(#crystalGrad2)" opacity="0.5" />
-
-          {/* Organic Leaf / Wave Curves */}
-          <path
-            d="M -100,500 Q 250,350 600,550 T 1300,450 L 1300,900 L -100,900 Z"
-            fill="url(#crystalGrad1)"
-            opacity="0.25"
-          />
-          <path
-            d="M -100,600 Q 350,480 750,620 T 1300,520 L 1300,900 L -100,900 Z"
-            fill="url(#leafGrad)"
-            opacity="0.15"
-          />
-        </svg>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         {/* Header */}
         <div className="mb-12 max-w-3xl mx-auto text-center flex flex-col items-center space-y-4">
           <Badge variant="white" className="gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-[#34D399]/40 text-[#34D399]">
@@ -94,56 +49,97 @@ export function Gallery4({
             {title}
           </h2>
           
-          <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed [text-wrap:balance]">
             {description}
           </p>
         </div>
 
-        {/* 5 Plain Text Cards Grid (No photos of people) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredArticles.map((article, index) => (
-            <Link
-              key={article.slug}
-              href={`/blog/${article.slug}`}
-              className={`group relative p-7 rounded-2xl bg-[#FEFFF7] text-[#0D2E24] border border-[#34D399]/30 hover:border-[#34D399] shadow-xl hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between ${
-                index === 0 ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
-            >
-              <div className="space-y-4">
-                {/* Header Row: Category Badge + Read Time */}
-                <div className="flex items-center justify-between gap-2">
-                  <span
-                    className="inline-block px-3 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider"
-                    style={{ backgroundColor: categoryColors[article.category] || "#0D2E24" }}
-                  >
-                    {article.category}
+        {/* 2 Column Interactive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column: Stacked List of 6 Plain Text Titles */}
+          <div className="lg:col-span-6 flex flex-col space-y-2.5">
+            {articles.map((article) => {
+              const isActive = article.slug === activeArticle.slug;
+              return (
+                <button
+                  key={article.slug}
+                  onClick={() => setActiveSlug(article.slug)}
+                  onMouseEnter={() => setActiveSlug(article.slug)}
+                  className={`w-full text-left px-5 py-4 rounded-2xl transition-all duration-300 flex items-center justify-between group border ${
+                    isActive
+                      ? "bg-white/15 border-[#34D399] text-white shadow-lg translate-x-1"
+                      : "bg-white/5 border-white/10 text-slate-200 hover:bg-white/10 hover:border-[#34D399]/50 hover:text-white"
+                  }`}
+                >
+                  <span className={`text-base sm:text-lg font-bold font-heading leading-snug transition-colors ${
+                    isActive ? "text-[#34D399]" : "group-hover:text-[#34D399]"
+                  }`}>
+                    {article.title}
                   </span>
-                  <span className="text-xs font-semibold text-[#0D2E24]/60">
-                    {article.readTime}
-                  </span>
-                </div>
+                  <ArrowRight className={`w-5 h-5 shrink-0 ml-3 transition-transform duration-300 ${
+                    isActive
+                      ? "text-[#34D399] translate-x-1 opacity-100"
+                      : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5"
+                  }`} />
+                </button>
+              );
+            })}
+          </div>
 
-                {/* Article Title */}
-                <h3 className="text-lg sm:text-xl font-bold font-heading leading-snug text-[#0D2E24] group-hover:text-[#059669] transition-colors">
-                  {article.title}
+          {/* Right Column: Single Large AI Image + Excerpt Preview Card */}
+          <div className="lg:col-span-6">
+            <div className="bg-[#FEFFF7] text-[#0D2E24] p-6 sm:p-8 rounded-3xl border border-[#34D399]/40 shadow-2xl space-y-6 transition-all duration-300">
+              
+              {/* Category & Read time */}
+              <div className="flex items-center justify-between gap-2">
+                <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal shadow-xs">
+                  <Tag className="w-3.5 h-3.5 mr-1" />
+                  {activeArticle.category}
+                </Badge>
+                <span className="inline-flex items-center gap-1.5 text-xs text-[#0D2E24]/70 font-bold">
+                  <Clock className="w-3.5 h-3.5 text-[#34D399]" />
+                  {activeArticle.readTime}
+                </span>
+              </div>
+
+              {/* Large Image Container */}
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md border border-[#34D399]/20 bg-slate-100">
+                <Image
+                  key={activeArticle.slug}
+                  src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
+                  alt={activeArticle.title}
+                  fill
+                  className="object-cover transition-all duration-500"
+                  priority
+                />
+              </div>
+
+              {/* Title & Short Excerpt */}
+              <div className="space-y-2">
+                <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-[#0D2E24] leading-tight">
+                  {activeArticle.title}
                 </h3>
-
-                {/* Plain 1-Line Excerpt */}
-                <p className="text-xs sm:text-sm text-[#0D2E24]/80 font-medium line-clamp-2 leading-relaxed">
-                  {article.excerpt}
+                <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed line-clamp-2">
+                  {activeArticle.excerpt}
                 </p>
               </div>
 
-              {/* Card Footer Link */}
-              <div className="mt-6 pt-4 border-t border-[#34D399]/20 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0D2E24] group-hover:text-[#059669] transition-colors">
-                  <BookOpen className="w-3.5 h-3.5 text-[#34D399]" />
+              {/* Read Article Button */}
+              <div className="pt-2">
+                <Link
+                  href={`/blog/${activeArticle.slug}`}
+                  className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#0D2E24] text-white font-bold text-sm hover:bg-[#34D399] hover:text-[#0D2E24] transition-all shadow-md group"
+                >
+                  <BookOpen className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                   <span>Read Article</span>
-                </span>
-                <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
-            </Link>
-          ))}
+
+            </div>
+          </div>
+
         </div>
 
         {/* View All Articles Link */}

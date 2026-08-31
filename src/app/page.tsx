@@ -189,9 +189,9 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Message Erika on WhatsApp"
-                    className="hidden sm:inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold text-[#0D2E24] bg-white hover:bg-[#FEFFF7] border border-[#34D399]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
+                    className="hidden sm:inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold text-[#0D2E24] bg-white hover:bg-[#ECFDF5] border border-[#34D399]/30 hover:border-[#25D366] rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                    <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform" />
                     <span>WhatsApp</span>
                   </a>
                 </div>
@@ -265,7 +265,7 @@ export default function Home() {
               Burnout is more than feeling exhausted.
             </h2>
             <p className="text-slate-200 text-lg font-medium leading-relaxed">
-              Burnout affects how you think, how you feel about your work, and how much energy you have left for anything else. The three patterns I see most often are:
+              Burnout affects how you think, how you feel about your work, and your energy for everything else. The three patterns seen most often:
             </p>
           </div>
 
@@ -278,7 +278,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white font-heading md:mb-3">Exhaustion that rest does not fix</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Persistent tiredness that sleep doesn't fix, Sunday dread, and a braced nervous system unable to down-regulate after high-stakes meetings.
+                  Persistent tiredness that sleep doesn't resolve, paired with an inability to down-regulate and unwind.
                 </p>
               </div>
             </div>
@@ -290,7 +290,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white font-heading md:mb-3">Disconnection from work you once valued</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Mental detachment from roles once enjoyed, rising cynicism, irritability with colleagues, and a loss of strategic clarity.
+                  Growing mental detachment from your role, rising cynicism, and a loss of strategic clarity.
                 </p>
               </div>
             </div>
@@ -302,7 +302,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white font-heading md:mb-3">Doubting your own effectiveness</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Rising imposter anxiety, decision fatigue, and over-working to overcompensate for diminished focus and emotional bandwidth.
+                  Rising imposter anxiety and over-working to overcompensate for diminished focus.
                 </p>
               </div>
             </div>
@@ -325,19 +325,19 @@ export default function Home() {
           </div>
 
           <p className="text-[#0D2E24]/90 text-lg font-medium leading-relaxed text-left">
-            Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. If you are not sure whether counselling is right for you, a free 15-minute call is available with no obligation to proceed.
+            Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. If you are not sure whether counselling is right for you, a free 20-minute call is available with no obligation to proceed.
           </p>
 
-          <div>
-            <Link
-              href="/contact#book"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
-            >
-              <Calendar className="w-5 h-5 text-[#34D399]" />
-              <span>Book a Free Introductory Call</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
-            </Link>
-          </div>
+            <div>
+              <Link
+                href="/contact#book"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] hover:text-[#0D2E24] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
+              >
+                <Calendar className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
+                <span>Book a Free 20-Min Initial Call</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
+              </Link>
+            </div>
 
           <div className="pt-4 flex justify-center">
             <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#0D2E24]/40 hover:text-[#0D2E24] transition-colors animate-calm-arrow cursor-pointer">
@@ -399,16 +399,6 @@ export default function Home() {
                     <p className="text-xs font-bold text-[#0D2E24]">MNCPS Accredited Psychotherapeutic Counsellor</p>
                     <p className="text-[11px] text-[#0D2E24]/70 font-medium mt-0.5">PSA Registered</p>
                   </div>
-                </div>
-                
-                <div className="p-4 bg-[#0D2E24] text-white rounded-2xl space-y-2 relative overflow-hidden shadow-md">
-                  <div className="flex items-center gap-2 text-[#34D399] font-bold text-xs font-heading">
-                    <Lock className="w-3.5 h-3.5 text-[#34D399]" />
-                    <span>Strictly Private & Discreet</span>
-                  </div>
-                  <p className="text-[11px] text-slate-200 leading-relaxed">
-                    I hold everything discussed in strict confidence. Sessions are conducted over encrypted video, and nothing is shared without your consent.
-                  </p>
                 </div>
               </div>
 
@@ -521,7 +511,7 @@ export default function Home() {
               },
               {
                 question: "How much does counselling cost and what options are available?",
-                answer: "Single sessions are £60 per 50-minute session (pay as you go). Alternatively, a 6-session package paid in advance is available for £300 total — saving £60 (the cost of one full session) compared to paying £60 x 6 = £360 individually. Please note that the discount applies exclusively when the 6 sessions are paid upfront as a package."
+                answer: "Single sessions are £60 per 50-minute session (pay as you go). Alternatively, a 6-session package paid in advance is available for £300 total, saving £60 (the cost of one full session) compared to paying £60 x 6 = £360 individually. Please note that the discount applies exclusively when the 6 sessions are paid upfront as a package."
               },
               {
                 question: "How do I book a session?",

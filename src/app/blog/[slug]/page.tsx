@@ -10,13 +10,13 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-const articleImages: Record<string, { url: string; objectPosition: string }> = {
-  "burnout-therapist-edinburgh": { url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
-  "nervous-system-regulation": { url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 30%" },
-  "imposter-syndrome-in-professionals": { url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
-  "sustainable-boundaries": { url: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 15%" },
-  "somatic-therapy-explained": { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 25%" },
-  "understanding-burnout-vs-stress": { url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" },
+const articleImages: Record<string, string> = {
+  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.png",
+  "nervous-system-regulation": "/images/blog/nervous-system-regulation.png",
+  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.png",
+  "sustainable-boundaries": "/images/blog/sustainable-boundaries.png",
+  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.png",
+  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.png",
 };
 
 export async function generateStaticParams() {
@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return { title: "Not Found | Mindhaven" };
+  const imageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
   return {
     title: `${article.title} | Mindhaven`,
     description: article.excerpt,
@@ -39,13 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: article.date,
       authors: ["Erika Martin"],
-      images: [articleImages[slug]?.url || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"],
+      images: [imageUrl],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [articleImages[slug]?.url || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop"],
+      images: [imageUrl],
     }
   };
 }
@@ -132,7 +133,7 @@ export default async function BlogPost({ params }: Props) {
   };
 
 const articleTldrs: Record<string, string> = {
-  "burnout-therapist-edinburgh": "Burnout isn't just stress—it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
+  "burnout-therapist-edinburgh": "Burnout isn't just stress: it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
   "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
   "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
   "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",
@@ -144,7 +145,7 @@ const articleTldrs: Record<string, string> = {
   const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
   const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
 
-  const headerImageData = articleImages[slug] || { url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop", objectPosition: "center 20%" };
+  const headerImageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.png";
 
   const shapeClass = 
     currentIndex % 3 === 0 ? 'animate-blob' : 
@@ -218,11 +219,10 @@ const articleTldrs: Record<string, string> = {
             <div className="w-full md:w-[40%] flex justify-center items-center">
               <div className={`relative w-[280px] h-[280px] lg:w-[340px] lg:h-[340px] overflow-hidden border-[6px] border-white shadow-2xl ${shapeClass}`}>
                 <Image 
-                  src={headerImageData.url}
+                  src={headerImageUrl}
                   alt={article.title}
                   fill
                   className="object-cover filter brightness-[1.02]"
-                  style={{ objectPosition: headerImageData.objectPosition }}
                   priority
                 />
               </div>

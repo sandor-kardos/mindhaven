@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -46,10 +46,10 @@ export function CookieConsentBanner() {
   useEffect(() => {
     const stored = getStoredConsent();
     if (stored === "accepted") {
-      // User previously accepted — grant consent as soon as gtag is ready
+      // User previously accepted: grant consent as soon as gtag is ready
       updateConsent(true);
     } else if (!stored) {
-      // No decision yet — show banner
+      // No decision yet: show banner
       setVisible(true);
     }
     // If "declined" → consent stays denied by default; nothing to do

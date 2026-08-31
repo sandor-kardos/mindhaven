@@ -18,55 +18,55 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "understanding-burnout-vs-stress",
-    title: "Understanding Burnout vs. Stress: Why the Difference Matters",
+    title: "Burnout vs. Stress: Why the Difference Matters",
     excerpt:
-      "Stress feels like having too much to do; burnout feels like having nothing left to give. Understanding the distinction helps you find the right support.",
+      "Stress is having too much to do; burnout is having nothing left to give. Recognising the difference helps you find appropriate support.",
     date: "2026-08-01",
     category: "Stress & Burnout",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "Stress and burnout are often confused, but they require very different responses. Stress is usually a temporary reaction to high demands. Your heart rate rises, focus sharpens, and once the task is finished, your body returns to normal. In short bursts, stress can even be helpful.",
+        text: "Stress is typically a short-term response to pressing demands. Your heart rate rises, focus sharpens, and once the deadline passes, your body recovers. In brief periods, stress can even be functional.",
       },
       {
         type: "paragraph",
-        text: "Burnout is different. It happens when stress continues for months without adequate recovery. Instead of feeling overwhelmed by a single task, burnout feels like emptiness, detachment, and persistent exhaustion that a weekend off cannot fix. You might notice growing cynicism, difficulty concentrating, or feeling like you are simply going through the motions.",
+        text: "Burnout is fundamentally different. It occurs when pressure continues for months without sufficient rest. Rather than feeling temporarily overwhelmed, burnout feels like emotional depletion, detachment, and persistent fatigue that a quick break cannot resolve.",
       },
       {
         type: "paragraph",
-        text: "Approaching burnout with standard stress-relief tools often leads to frustration. Rest is essential, but recovering from burnout also requires examining the underlying pressures, workload, and personal expectations that got you here.",
+        text: "Recovering from burnout requires looking beyond quick fixes to explore the workload, boundaries, and personal expectations driving your exhaustion.",
       },
       {
         type: "callout",
-        text: "Counselling offers a quiet, supportive space to step back, understand what is driving your exhaustion, and build a more sustainable way forward.",
+        text: "Counselling provides a calm, reflective space to understand what is driving your fatigue and re-establish clarity.",
       },
     ],
   },
   {
     slug: "burnout-therapist-edinburgh",
-    title: "Understanding High-Functioning Burnout in Professionals",
+    title: "High-Functioning Burnout: The Cost of Looking Fine",
     excerpt:
-      "High-functioning burnout is easy to miss because you keep performing well on the outside while depleting quietly on the inside.",
+      "High-functioning burnout is easy to miss because you keep performing on the outside while depleting quietly on the inside.",
     date: "2026-08-05",
     category: "Burnout Recovery",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "High-functioning burnout is one of the easiest forms of exhaustion to miss. On the outside, everything looks fine. You meet deadlines, attend meetings, and stay reliable. But internally, your energy is steadily draining, and everyday tasks require far more effort than they used to.",
+        text: "High-functioning burnout is easy to overlook. Externally, you remain reliable, meet deadlines, and perform well. Internally, your energy is steadily draining, making daily responsibilities feel unusually heavy.",
       },
       {
         type: "paragraph",
-        text: "High achievers are particularly vulnerable because they often set demanding standards for themselves and view rest as something that must be earned. Common signs include persistent Sunday dread, a sense of disconnect from work you once enjoyed, and rest that no longer feels refreshing.",
+        text: "Ambitious professionals often set demanding standards and view rest as something that must be earned. Signs include persistent anticipatory dread, emotional detachment from work, and rest that fails to restore you.",
       },
       {
         type: "paragraph",
-        text: "Because you continue to deliver results, friends and colleagues may not notice you are struggling—and you might convince yourself that you just need to work harder to overcome it.",
+        text: "Because output remains high, others rarely notice your struggle, making it easy to convince yourself to simply push harder.",
       },
       {
         type: "callout",
-        text: "You do not need to wait for a total collapse to ask for help. Professional counselling lets you drop the performance mask, explore the pressures you carry, and protect your long-term wellbeing.",
+        text: "You do not need to reach crisis before seeking support. Counselling offers space to set down the performance mask and protect your health.",
       },
     ],
   },
@@ -74,34 +74,34 @@ export const articles: Article[] = [
     slug: "nervous-system-regulation",
     title: "Regulating the Nervous System Under Pressure",
     excerpt:
-      "Learn how your body responds to sustained pressure and practical ways to return to a calm, steady baseline.",
+      "Learn how your body responds to sustained pressure and practical ways to return to a steady baseline.",
     date: "2026-08-10",
     category: "Nervous System",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "When you face high pressure, your nervous system naturally shifts into high alert. Heart rate quickens, muscles tense, and attention sharpens to meet the demand. This alert state is helpful during a crisis, but when it remains active for days or weeks, it leads to chronic physical and mental fatigue.",
+        text: "Under high pressure, your nervous system shifts into alert mode, quickening heart rate and sharpening attention. While helpful in short bursts, staying in high alert for extended periods causes physical and mental fatigue.",
       },
       {
         type: "paragraph",
-        text: "A dysregulated nervous system can make you feel constantly on edge, unable to unwind after work, or emotionally flat. Simple physical practices can help signal safety back to your body:",
+        text: "A dysregulated system can leave you feeling tense or unable to unwind. Simple grounding practices can signal safety back to the body:",
       },
       {
         type: "list",
         items: [
-          "Slow exhalations where the out-breath is longer than the in-breath",
+          "Slow exhalations with out-breaths longer than in-breaths",
           "Sensory grounding by focusing on physical surroundings",
-          "Short daily walks to release accumulated tension",
+          "Brief daily walks to release accumulated tension",
         ],
       },
       {
         type: "paragraph",
-        text: "While these quick practices provide immediate relief, long-term calm comes from understanding what keeps your body in high alert.",
+        text: "While quick techniques provide temporary ease, integrative counselling helps you explore the underlying habits keeping your system on edge.",
       },
       {
         type: "callout",
-        text: "Counselling helps you identify chronic stress triggers and rebuild lasting emotional resilience.",
+        text: "Counselling combines reflective dialogue with body awareness to support a calmer, more resilient baseline.",
       },
     ],
   },
@@ -109,26 +109,26 @@ export const articles: Article[] = [
     slug: "imposter-syndrome-in-professionals",
     title: "Imposter Syndrome: When Success Feels Like a Lie",
     excerpt:
-      "Feeling like a fraud despite your achievements is common. Understanding where imposter feelings come from helps diminish their power.",
+      "Feeling like a fraud despite achievements is common. Understanding imposter feelings helps diminish their power.",
     date: "2026-08-12",
     category: "Mindset & Anxiety",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "If you have ever worried that your achievements are just luck and that others will eventually find you out, you have experienced imposter syndrome. Paradoxically, these feelings often grow stronger as you take on more senior roles or greater responsibility.",
+        text: "Worrying that your achievements stem from luck rather than capability is the hallmark of imposter syndrome. Paradoxically, these doubts often intensify as you step into more senior roles.",
       },
       {
         type: "paragraph",
-        text: "Imposter feelings usually stem from high personal standards, early environments where approval depended on performance, or workplace cultures driven by comparison. Typical patterns include overpreparing for routine tasks, downplaying compliments, and fearing that any mistake will expose you.",
+        text: "Imposter feelings typically arise from perfectionism, high expectations, or competitive environments. Common patterns include overpreparing, dismissing praise, and fearing that mistakes will reveal inadequacy.",
       },
       {
         type: "paragraph",
-        text: "Recognising these patterns is the first step toward changing them. Imposter syndrome is not a reflection of your actual ability; it is a sign that you care deeply about your work but are carrying unrealistic expectations.",
+        text: "Recognising these patterns is essential. Imposter anxiety does not reflect capability; it indicates high personal standards paired with self-critical habits.",
       },
       {
         type: "callout",
-        text: "Therapy provides a confidential space to challenge self-doubt, internalise your real achievements, and lead with quiet confidence.",
+        text: "Counselling offers a private space to unpack self-doubt, internalise achievements, and cultivate grounded confidence.",
       },
     ],
   },
@@ -136,26 +136,26 @@ export const articles: Article[] = [
     slug: "sustainable-boundaries",
     title: "Setting Sustainable Boundaries Without Guilt",
     excerpt:
-      "Boundaries are not harsh barriers; they are clear choices about how you protect your energy and time.",
+      "Boundaries are not barriers; they are clear choices about how you protect your energy and time.",
     date: "2026-08-18",
     category: "Work-Life Balance",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "Setting boundaries can feel uncomfortable, especially if you associate saying 'no' with letting people down. However, clear limits are essential for protecting your energy and preventing resentment.",
+        text: "Setting boundaries can feel difficult if you equate saying no with letting others down. Yet clear limits are necessary to protect your focus and prevent resentment.",
       },
       {
         type: "paragraph",
-        text: "A boundary is simply a decision about what you will accept and how you manage your time. It does not require drama or confrontation. It might mean turning off work emails after dinner, declining an extra project when your workload is full, or taking time to rest without apologizing.",
+        text: "A boundary is simply a clear decision about your time and capacity. It requires no drama, just practical choices like stepping away from email after hours or declining non-essential tasks.",
       },
       {
         type: "paragraph",
-        text: "Guilt often arises when you start setting boundaries because you are breaking old habits of pleasing others. Examining where that guilt comes from helps you see that protecting your wellbeing is necessary for long-term health and better relationships.",
+        text: "Initial guilt is normal as you alter people-pleasing habits. Over time, establishing boundaries protects your health and improves workplace relationships.",
       },
       {
         type: "callout",
-        text: "In counselling, you can explore healthier boundaries and gain confidence in communicating your limits clearly.",
+        text: "Counselling provides guidance to explore healthier limits and communicate them with clarity and calm.",
       },
     ],
   },
@@ -163,26 +163,26 @@ export const articles: Article[] = [
     slug: "somatic-therapy-explained",
     title: "Somatic Approaches to Stress: Working With the Body",
     excerpt:
-      "Stress lives in the body as well as the mind. Somatic approaches help release physical tension and restore ease.",
+      "Stress lives in the body as well as the mind. Somatic awareness helps release physical tension.",
     date: "2026-08-22",
     category: "Therapeutic Methods",
-    readTime: "2 min read",
+    readTime: "1 min read",
     content: [
       {
         type: "paragraph",
-        text: "Traditional counselling often focuses on thoughts and words. While talking is valuable, stress and tension are also stored physically in muscle tightness, shallow breathing, and posture.",
+        text: "Talking therapy engages thoughts and emotions, but chronic stress also leaves a physical mark, manifesting as shoulder tightness, shallow breathing, or persistent restlessness.",
       },
       {
         type: "paragraph",
-        text: "'Somatic' simply means relating to the body. Somatic techniques involve paying attention to how stress manifests physically and using gentle body-awareness methods to release stored pressure.",
+        text: "'Somatic' refers to the physical body. Incorporating somatic awareness means paying attention to physical sensations alongside thoughts, helping release stored tension.",
       },
       {
         type: "paragraph",
-        text: "In practice, this might include noticing physical sensations during difficult topics, using focused breathing to ground yourself, or recognizing tension patterns before they turn into exhaustion.",
+        text: "In practice, this includes noticing where you hold stress, using simple breathwork to anchor yourself, and recognising physical warning signals before burnout sets in.",
       },
       {
         type: "callout",
-        text: "By combining body awareness with traditional talking therapy, you can achieve deeper, more lasting calm for both mind and body.",
+        text: "Combining body awareness with traditional counselling offers a comprehensive, balanced path to emotional calm.",
       },
     ],
   },

@@ -52,9 +52,9 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message Erika on WhatsApp"
-                className="flex items-center justify-center gap-2 p-3.5 bg-white rounded-2xl border border-[#34D399]/30 shadow-md hover:shadow-lg hover:border-[#34D399] transition-all text-[#0D2E24] font-extrabold text-sm group"
+                className="flex items-center justify-center gap-2 p-3.5 bg-white hover:bg-[#ECFDF5] rounded-2xl border border-[#34D399]/30 hover:border-[#25D366] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-[#0D2E24] font-extrabold text-sm group"
               >
-                <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0" />
+                <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>WhatsApp</span>
               </a>
 
@@ -64,9 +64,9 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message Erika on Messenger"
-                className="flex items-center justify-center gap-2 p-3.5 bg-white rounded-2xl border border-[#34D399]/30 shadow-md hover:shadow-lg hover:border-[#34D399] transition-all text-[#0D2E24] font-extrabold text-sm group"
+                className="flex items-center justify-center gap-2 p-3.5 bg-white hover:bg-[#F0F7FF] rounded-2xl border border-[#34D399]/30 hover:border-[#0084FF] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-[#0D2E24] font-extrabold text-sm group"
               >
-                <MessageCircle className="w-5 h-5 text-[#0084FF] shrink-0" />
+                <MessageCircle className="w-5 h-5 text-[#0084FF] shrink-0 group-hover:scale-110 transition-transform" />
                 <span>Messenger</span>
               </a>
             </div>
