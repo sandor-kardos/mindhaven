@@ -23,13 +23,13 @@ export const metadata: Metadata = {
 
 export default function LifeCompassPage() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
+    <div className="flex flex-col w-full bg-[#F4F7F6] text-[#0D2E24] min-h-screen">
       <section className="pt-20 pb-12 px-4 bg-[#0D2E24] text-white text-center border-b border-[#34D399]/30">
         <div className="container mx-auto max-w-3xl space-y-4">
           <h1 className="text-4xl md:text-5xl font-extrabold font-heading text-white">
             Mindhaven Life Compass
           </h1>
-          <p className="text-lg text-slate-200 font-medium max-w-2xl mx-auto">
+          <p className="text-lg text-slate-200 font-medium max-w-2xl mx-auto [text-wrap:balance]">
             A private self-reflection tool to explore your core values and current alignment.
             This interactive worksheet runs entirely on your device with no data stored.
           </p>

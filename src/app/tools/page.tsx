@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Wind, Compass, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Wind, Compass, PieChart, Sparkles, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
   title: "Self-Reflection & Regulation Tools | Mindhaven",
-  description: "Explore free interactive wellness tools including the Nervous System Pacer and Life Compass assessment. Private, client-side tools by MNCPS counsellor Erika Martin.",
+  description: "Explore free interactive wellness tools including the Nervous System Pacer, Life Compass assessment, and Wheel of Life balance tool. Private, client-side tools by MNCPS counsellor Erika Martin.",
   alternates: { canonical: "https://mindhaven.uk/tools" },
   openGraph: {
     title: "Self-Reflection & Regulation Tools | Mindhaven",
-    description: "Explore free interactive wellness tools including the Nervous System Pacer and Life Compass assessment.",
+    description: "Explore free interactive wellness tools including the Nervous System Pacer, Life Compass, and Wheel of Life balance tool.",
     url: "https://mindhaven.uk/tools",
     siteName: "Mindhaven Counselling",
     images: [{ url: "https://mindhaven.uk/images/og-image.png", width: 1200, height: 630, alt: "Mindhaven Interactive Tools" }],
@@ -45,6 +45,16 @@ export default function ToolsIndexPage() {
         "An interactive self-assessment tool to measure alignment across core life domains including Career, Health, Relationships, and Personal Growth. Private, client-side, with instant visual feedback.",
       badgeColor: "#047857",
     },
+    {
+      slug: "wheel-of-life",
+      href: "/tools/wheel-of-life",
+      title: "Wheel of Life",
+      category: "Balance Assessment",
+      icon: PieChart,
+      description:
+        "Map your satisfaction across 8 core life domains with an interactive visual wheel. Gain instant clarity on your overall life balance, export PNG summaries, and track progress privately in your browser.",
+      badgeColor: "#059669",
+    },
   ];
 
   return (
@@ -62,7 +72,7 @@ export default function ToolsIndexPage() {
             Interactive Tools
           </h1>
 
-          <p className="text-slate-200 text-lg sm:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg sm:text-xl font-medium max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
             Free, client-side tools designed to help you regulate stress, assess values alignment, and gain clarity in demanding professional environments.
           </p>
 
@@ -76,9 +86,9 @@ export default function ToolsIndexPage() {
 
       {/* Tools Grid Section */}
       <section className="py-20 px-4 bg-[#FEFFF7]">
-        <div className="container mx-auto max-w-5xl space-y-12">
+        <div className="container mx-auto max-w-6xl space-y-12">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {tools.map((tool) => {
               const Icon = tool.icon;
               return (

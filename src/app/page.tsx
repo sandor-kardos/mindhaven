@@ -358,7 +358,7 @@ export default function Home() {
             <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               <div className="space-y-6">
                 <Badge>
-                  How I work
+                  Therapeutic Approach
                 </Badge>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
                   An Evidence-Based Therapeutic Approach
@@ -368,16 +368,14 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 gap-4 items-stretch">
-                <div className="p-6 bg-white rounded-2xl border-2 border-[#34D399]/40 shadow-md card-flow-effect flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <Zap className="w-8 h-8 text-[#34D399] shrink-0" />
-                      <h4 className="font-bold text-lg text-[#0D2E24] font-heading">CBT & Psychodynamic</h4>
-                    </div>
-                    <p className="text-[#0D2E24]/85 text-sm font-medium leading-relaxed mt-2">Exploring thought patterns, emotional triggers, and their deeper roots to create meaningful, lasting change.</p>
-                  </div>
-                </div>
+              <div className="pt-2">
+                <Link
+                  href="/about-erika-martin#approach"
+                  className="inline-flex items-center gap-2 text-sm font-extrabold text-[#0D2E24] hover:text-[#059669] transition-colors group"
+                >
+                  <span>Read more about Erika&apos;s therapeutic approach</span>
+                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1.5 transition-transform" />
+                </Link>
               </div>
             </div>
             

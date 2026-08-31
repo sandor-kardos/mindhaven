@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Save, Trash2, Download, CheckCircle2, ChevronDown } from "lucide-react";
+import { Save, Trash2, Download, CheckCircle2, Info } from "lucide-react";
 
 // Radar chart geometry for 5 axes
 const RADAR_SIZE = 300;
@@ -19,6 +19,7 @@ type CompassData = {
   obstacles: string;
   supports: string;
   anchor: string;
+  hasSliderInteracted?: boolean;
 };
 
 const DEFAULT_DATA: CompassData = {
@@ -29,6 +30,7 @@ const DEFAULT_DATA: CompassData = {
   obstacles: "",
   supports: "",
   anchor: "",
+  hasSliderInteracted: false,
 };
 
 export function LifeCompassClient() {
@@ -49,19 +51,20 @@ export function LifeCompassClient() {
     const saved = localStorage.getItem("mindhaven_life_compass_v2");
     if (saved) {
       try {
-        setData(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        setData(parsed);
       } catch (e) {}
     }
     setIsLoaded(true);
   }, []);
 
-  // Calculate section completions (1 to 6)
-  const isSection1Complete = data.values.some(v => v.trim().length > 0);
-  const isSection2Complete = true; // sliders defaulted to 5
-  const isSection3Complete = data.directions.some(d => d.trim().length > 0);
-  const isSection4Complete = data.steps.some(s => s.trim().length > 0);
-  const isSection5Complete = data.obstacles.trim().length > 0 || data.supports.trim().length > 0;
-  const isSection6Complete = data.anchor.trim().length > 0;
+  // Strict non-empty section completion checks (reverts when cleared)
+  const isSection1Complete = data.values.some(v => typeof v === "string" && v.trim().length > 0);
+  const isSection2Complete = Boolean(data.hasSliderInteracted);
+  const isSection3Complete = data.directions.some(d => typeof d === "string" && d.trim().length > 0);
+  const isSection4Complete = data.steps.some(s => typeof s === "string" && s.trim().length > 0);
+  const isSection5Complete = (typeof data.obstacles === "string" && data.obstacles.trim().length > 0) || (typeof data.supports === "string" && data.supports.trim().length > 0);
+  const isSection6Complete = typeof data.anchor === "string" && data.anchor.trim().length > 0;
 
   const sectionCompletions = [
     isSection1Complete,
@@ -121,6 +124,14 @@ export function LifeCompassClient() {
     });
   };
 
+  const updateSlider = (index: number, val: number) => {
+    setData(prev => {
+      const arr = [...prev.scores];
+      arr[index] = val;
+      return { ...prev, scores: arr, hasSliderInteracted: true };
+    });
+  };
+
   // Radar chart points
   const points = data.scores.map((score, i) => {
     const r = (score / 10) * MAX_RADIUS;
@@ -131,8 +142,8 @@ export function LifeCompassClient() {
 
   return (
     <div className="space-y-10">
-      {/* Calm Gamification & Progress Indicator Header */}
-      <div className="sticky top-20 z-30 bg-[#FEFFF7]/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#34D399]/30 shadow-lg shadow-[#0D2E24]/5 space-y-3">
+      {/* Sticky Progress Bar & Section Navigator (Crisp Mint-Grey Background) */}
+      <div className="sticky top-20 z-30 bg-[#F4F7F6]/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#0D2E24]/12 shadow-lg shadow-[#0D2E24]/5 space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">Self-Reflection Progress</span>
@@ -140,13 +151,13 @@ export function LifeCompassClient() {
               {completedCount} of 6 Sections Explored
             </h3>
           </div>
-          <span className="text-sm font-black text-[#0D2E24] bg-[#ECFDF5] px-3.5 py-1.5 rounded-full border border-[#34D399]/40 self-start sm:self-auto">
+          <span className="text-sm font-black text-[#0D2E24] bg-white px-3.5 py-1.5 rounded-full border border-[#34D399]/40 shadow-xs self-start sm:self-auto">
             {progressPercentage}% Completed
           </span>
         </div>
 
         {/* Smooth Emerald Progress Bar */}
-        <div className="w-full bg-[#ECFDF5] h-2.5 rounded-full overflow-hidden border border-[#34D399]/20">
+        <div className="w-full bg-white h-2.5 rounded-full overflow-hidden border border-[#34D399]/30">
           <div
             className="bg-[#34D399] h-full transition-all duration-500 rounded-full"
             style={{ width: `${progressPercentage}%` }}
@@ -165,12 +176,12 @@ export function LifeCompassClient() {
                   activeStep === stepNum
                     ? "bg-[#0D2E24] text-white border-[#0D2E24] shadow-xs"
                     : isDone
-                    ? "bg-[#ECFDF5] text-[#0D2E24] border-[#34D399]/50"
-                    : "bg-white text-[#0D2E24]/50 border-slate-200 hover:border-[#34D399]/40"
+                    ? "bg-white text-[#0D2E24] border-[#34D399]/60 shadow-2xs"
+                    : "bg-white/60 text-[#0D2E24]/50 border-slate-200 hover:border-[#34D399]/40"
                 }`}
               >
                 <span>Step {stepNum}</span>
-                {isDone && <CheckCircle2 className="w-3 h-3 text-[#34D399] shrink-0 hidden sm:inline" />}
+                {isDone && <CheckCircle2 className="w-3 h-3 text-[#059669] shrink-0 hidden sm:inline" />}
               </button>
             );
           })}
@@ -184,7 +195,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[0]}
           onClick={() => setActiveStep(1)}
-          className={`relative bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-6px_20px_-4px_rgba(13,46,36,0.08)] transition-all ${
+          className={`relative bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-6px_22px_-4px_rgba(13,46,36,0.08)] transition-all ${
             activeStep === 1 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -192,21 +203,33 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 01
             </span>
-            {isSection1Complete && (
+            {isSection1Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
               </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             1. Core Values – What matters most?
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Identify 2 to 4 words or principles that represent what you value in each domain of your life.
           </p>
+
+          {/* Concrete Example Box (Item 8 Guidance) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Guidance & Examples:</strong>
+              <p>Relationships: <em>"mutual trust, unhurried presence, warmth"</em> | Work: <em>"autonomy, creative impact, fair compensation"</em> | Health: <em>"vitality, restful sleep, physical resilience"</em>.</p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {LABELS.map((label, i) => (
-              <div key={label} className="bg-[#FEFFF7] p-4 rounded-2xl border border-[#34D399]/20">
+              <div key={label} className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
                 <label className="block text-sm font-bold text-[#0D2E24] mb-2">{label}</label>
                 <textarea
                   className="w-full p-3 rounded-xl border border-[#34D399]/30 focus:outline-none focus:ring-2 focus:ring-[#34D399] bg-white text-[#0D2E24] resize-y min-h-[75px] text-sm font-medium"
@@ -223,7 +246,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[1]}
           onClick={() => setActiveStep(2)}
-          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
+          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
             activeStep === 2 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -231,18 +254,33 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 02
             </span>
-            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
-              <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Active Assessment
-            </span>
+            {isSection2Complete ? (
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
+                <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Assessed
+              </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Move sliders to set score</span>
+            )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             2. Current Alignment – Where are you now?
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
-            On a scale from 1 (completely misaligned) to 10 (fully aligned), rate how closely your daily reality reflects these values.
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+            On a scale from 1 to 10, rate how closely your current daily reality reflects these values.
           </p>
-          
-          <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start bg-[#FEFFF7] p-6 rounded-2xl border border-[#34D399]/20">
+
+          {/* Concrete Example Box (Item 8 Guidance for Sliders) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Scale Guidance & Practical Meaning:</strong>
+              <p><strong>1–3 (Low Alignment):</strong> Chronic tension or neglect (e.g. severe Health neglect, skipped meals, burnout).<br />
+              <strong>4–6 (Moderate):</strong> Functional but routine or uninspired.<br />
+              <strong>7–10 (High Alignment):</strong> Deep fulfillment, flow, and daily living in sync with your values.</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start bg-[#F9FBF9] p-6 rounded-2xl border border-[#34D399]/20">
             <div className="flex-1 w-full space-y-5">
               {LABELS.map((label, i) => (
                 <div key={label} className="bg-white p-3.5 rounded-xl border border-[#34D399]/25 shadow-xs">
@@ -257,7 +295,7 @@ export function LifeCompassClient() {
                     min="1"
                     max="10"
                     value={data.scores[i]}
-                    onChange={e => updateArray("scores", i, parseInt(e.target.value))}
+                    onChange={e => updateSlider(i, parseInt(e.target.value))}
                     className="w-full accent-[#34D399] cursor-pointer"
                   />
                 </div>
@@ -302,7 +340,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[2]}
           onClick={() => setActiveStep(3)}
-          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
+          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
             activeStep === 3 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -310,21 +348,33 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 03
             </span>
-            {isSection3Complete && (
+            {isSection3Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
               </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             3. Future Intentions – What would alignment look like?
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Describe in 1 sentence for each area: "If I lived fully by my values here, my daily experience would look like..."
           </p>
+
+          {/* Concrete Example Box (Item 8 Guidance) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+              <p><em>"If I lived by my values in Health, I would step away from my desk for a 20-minute walk every lunch hour and protect 8 hours of sleep."</em></p>
+            </div>
+          </div>
+
           <div className="space-y-4">
             {LABELS.map((label, i) => (
-              <div key={label} className="bg-[#FEFFF7] p-4 rounded-2xl border border-[#34D399]/20">
+              <div key={label} className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
                 <label className="block text-sm font-bold text-[#0D2E24] mb-2">{label}</label>
                 <input
                   type="text"
@@ -342,7 +392,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[3]}
           onClick={() => setActiveStep(4)}
-          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
+          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
             activeStep === 4 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -350,21 +400,33 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 04
             </span>
-            {isSection4Complete && (
+            {isSection4Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
               </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             4. Practical Micro-Steps – Small, doable shifts
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Commit to one realistic action for each area that takes less than 15 minutes to initiate.
           </p>
+
+          {/* Concrete Example Box (Item 8 Guidance) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+              <p><em>"For Relationships: Send a message to a friend right now to confirm a catch-up coffee this Thursday."</em></p>
+            </div>
+          </div>
+
           <div className="space-y-4">
             {LABELS.map((label, i) => (
-              <div key={label} className="bg-[#FEFFF7] p-4 rounded-2xl border border-[#34D399]/20">
+              <div key={label} className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
                 <label className="block text-sm font-bold text-[#0D2E24] mb-2">{label}</label>
                 <input
                   type="text"
@@ -382,7 +444,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[4]}
           onClick={() => setActiveStep(5)}
-          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
+          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
             activeStep === 5 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -390,20 +452,32 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 05
             </span>
-            {isSection5Complete && (
+            {isSection5Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
               </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             5. Anticipating Friction & Building Supports
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Recognise potential internal or external hurdles, and name the resources or habits that will support you.
           </p>
+
+          {/* Concrete Example Box (Item 8 Guidance) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+              <p>Obstacles: <em>"Evening exhaustion, tendency to say yes to extra demands."</em> | Supports: <em>"Pre-booking focus blocks in my calendar, asking my partner to hold me accountable."</em></p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#FEFFF7] p-4 rounded-2xl border border-[#34D399]/20">
+            <div className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
               <label className="block text-sm font-bold text-[#0D2E24] mb-2">Potential Obstacles & Triggers</label>
               <textarea
                 className="w-full p-3 rounded-xl border border-[#34D399]/30 focus:outline-none focus:ring-2 focus:ring-[#34D399] bg-white text-[#0D2E24] resize-y min-h-[90px] text-sm font-medium"
@@ -412,7 +486,7 @@ export function LifeCompassClient() {
                 placeholder="e.g. fatigue after long meetings, tendency to overcommit..."
               />
             </div>
-            <div className="bg-[#FEFFF7] p-4 rounded-2xl border border-[#34D399]/20">
+            <div className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
               <label className="block text-sm font-bold text-[#0D2E24] mb-2">Support Systems & Coping Anchors</label>
               <textarea
                 className="w-full p-3 rounded-xl border border-[#34D399]/30 focus:outline-none focus:ring-2 focus:ring-[#34D399] bg-white text-[#0D2E24] resize-y min-h-[90px] text-sm font-medium"
@@ -428,7 +502,7 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[5]}
           onClick={() => setActiveStep(6)}
-          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border-2 border-[#34D399]/35 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
+          className={`relative -mt-6 sm:-mt-8 bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-8px_25px_-5px_rgba(13,46,36,0.12)] transition-all ${
             activeStep === 6 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
@@ -436,19 +510,31 @@ export function LifeCompassClient() {
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
               Step 06
             </span>
-            {isSection6Complete && (
+            {isSection6Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
               </span>
+            ) : (
+              <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
             6. Personal Anchor Statement
           </h2>
-          <p className="text-sm text-[#0D2E24]/75 mb-6 font-medium">
+          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Formulate a clear statement that grounds you when daily demands test your boundaries.
           </p>
-          <div className="bg-[#FEFFF7] p-5 rounded-2xl border border-[#34D399]/20">
+
+          {/* Concrete Example Box (Item 8 Guidance) */}
+          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+              <p><em>"I choose intentional clarity over reactive busyness."</em></p>
+            </div>
+          </div>
+
+          <div className="bg-[#F9FBF9] p-5 rounded-2xl border border-[#34D399]/20">
             <input
               type="text"
               className="w-full p-4 rounded-xl border border-[#34D399]/40 focus:outline-none focus:ring-2 focus:ring-[#34D399] bg-white text-[#0D2E24] font-extrabold text-base sm:text-lg"
