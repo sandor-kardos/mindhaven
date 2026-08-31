@@ -75,7 +75,7 @@ const resources: ResourceItem[] = [
     subcategory: "Relational patterns",
     author: "Susan E. Schwartz",
     excerpt:
-      "A Jungian exploration of how a father's absence, physical or emotional, shapes a daughter's sense of her own worth, and how that pattern moves toward repair.",
+      "An exploration of how a father's absence, physical or emotional, shapes a daughter's sense of her own worth, and how that pattern can move toward repair.",
     description:
       "This book stayed with me for how gently it treats something that's often dismissed as 'not a big deal.' An absent father doesn't have to mean a father who left. Sometimes it's a father who was there in the room but never quite present, and the daughter learns to read that absence as something about her own worth. What I appreciated most is that the book doesn't stop at naming the wound. It follows daughters toward repair, toward becoming someone who isn't still waiting to be chosen. If this resonates with you, it might be worth exploring in a session, not because you need to read the book first, but because the pattern it describes is one I see often, and it rarely needs a name to be worth talking about.",
   },
