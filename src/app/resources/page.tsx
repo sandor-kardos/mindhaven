@@ -24,6 +24,8 @@ interface ResourceItem {
   cta?: string;
   // Reading only
   author?: string;
+  excerpt?: string; // short preview shown on the card
+  cover?: string;  // real cover image — only shown when expanded, never fabricated
 }
 
 const resources: ResourceItem[] = [
@@ -72,6 +74,8 @@ const resources: ResourceItem[] = [
     title: "The Absent Father Effect on Daughters",
     subcategory: "Relational patterns",
     author: "Susan E. Schwartz",
+    excerpt:
+      "A Jungian exploration of how a father's absence, physical or emotional, shapes a daughter's sense of her own worth, and how that pattern moves toward repair.",
     description:
       "This book stayed with me for how gently it treats something that's often dismissed as 'not a big deal.' An absent father doesn't have to mean a father who left. Sometimes it's a father who was there in the room but never quite present, and the daughter learns to read that absence as something about her own worth. What I appreciated most is that the book doesn't stop at naming the wound. It follows daughters toward repair, toward becoming someone who isn't still waiting to be chosen. If this resonates with you, it might be worth exploring in a session, not because you need to read the book first, but because the pattern it describes is one I see often, and it rarely needs a name to be worth talking about.",
   },
@@ -81,6 +85,8 @@ const resources: ResourceItem[] = [
     title: "Inherited Fate: Family Trauma and the Ways of Healing",
     subcategory: "Intergenerational trauma",
     author: "Noémi Orvos-Tóth",
+    excerpt:
+      "An accessible guide to how unprocessed family losses and secrets can shape our anxieties and patterns in relationships, and what it means to begin doing things differently.",
     description:
       "Our families shape who we are, often in ways we don't consciously choose. This book traces how the things we struggle with, our anxieties, our repeated patterns in relationships, sometimes even physical symptoms, can trace back further than our own lives: to a parent's or grandparent's unprocessed loss, a family secret that was never named. What I find most useful about this way of thinking is how much lighter it makes self-understanding feel. Not 'what's wrong with me,' but 'what did I inherit, and what can I now do differently.' That reframing alone is often the beginning of real change, and it's exactly the kind of exploration counselling can hold space for.",
   },
@@ -142,9 +148,23 @@ function ToolCard({ item }: { item: ResourceItem }) {
 }
 
 function ReadingCard({ item }: { item: ResourceItem }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#34D399]/30 shadow-xl flex flex-col h-full">
+    <div
+      className={`bg-white p-6 sm:p-8 rounded-3xl border-2 transition-all duration-300 shadow-xl flex flex-col h-full cursor-pointer ${
+        expanded
+          ? "border-[#34D399] shadow-2xl"
+          : "border-[#34D399]/30 hover:border-[#34D399] hover:shadow-2xl"
+      }`}
+      onClick={() => setExpanded((v) => !v)}
+      role="button"
+      aria-expanded={expanded}
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setExpanded((v) => !v); }}
+    >
       <div className="space-y-4 flex-1">
+        {/* Badge row */}
         <div className="flex items-start justify-between min-h-[44px]">
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
             {item.subcategory}
@@ -154,6 +174,7 @@ function ReadingCard({ item }: { item: ResourceItem }) {
           </div>
         </div>
 
+        {/* Title + author */}
         <div>
           <h2 className="text-xl font-bold font-heading text-[#0D2E24] leading-snug">
             {item.title}
@@ -163,9 +184,34 @@ function ReadingCard({ item }: { item: ResourceItem }) {
           </p>
         </div>
 
+        {/* Excerpt (always visible) */}
         <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed">
-          {item.description}
+          {item.excerpt}
         </p>
+
+        {/* Full review (expanded only) */}
+        {expanded && (
+          <div className="pt-2 border-t border-[#34D399]/20 space-y-3">
+            <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed italic">
+              {item.description}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Expand / collapse indicator */}
+      <div className="mt-6 pt-4 border-t border-[#34D399]/20 flex items-center justify-between">
+        <span className="text-xs font-bold text-[#0D2E24]/50 uppercase tracking-wider">
+          Erika&apos;s note
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#059669] transition-colors">
+          {expanded ? "Close" : "Read note"}
+          <ArrowRight
+            className={`w-3.5 h-3.5 text-[#34D399] transition-transform duration-200 ${
+              expanded ? "rotate-90" : ""
+            }`}
+          />
+        </span>
       </div>
     </div>
   );
