@@ -5,7 +5,7 @@ import { ShieldCheck, Award, GraduationCap, ArrowRight, Heart, Brain, User, Acti
 export const metadata = {
   title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
   alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
-  description: "Learn more about Erika Martin, an accredited psychotherapeutic counsellor specialising in stress, burnout, and personal growth in Edinburgh.",
+  description: "Erika Martin is an MNCPS accredited counsellor in Edinburgh with a person-centred, evidence-based therapeutic approach. Specialising in stress, burnout, and personal resilience.",
 };
 
 export default function AboutErikaMartin() {
@@ -65,7 +65,7 @@ export default function AboutErikaMartin() {
                 Many of the people I work with have been coping for a long time, managing high expectations at work, supporting others, or carrying worries they have never quite had space to address. Sometimes it takes a small thing to tip the balance, and you suddenly notice how exhausted, anxious, or disconnected you have become.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. I draw on a range of therapeutic approaches, tailoring each session to what will be most useful for you.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. For many people, that process also means rebuilding personal resilience in a way that actually holds. I draw on a range of therapeutic approaches, tailoring each session to what will be most useful for you.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

@@ -110,7 +110,10 @@ import {
   ChevronDown
 } from "lucide-react";
 
-export const metadata = { alternates: { canonical: "https://mindhaven.uk" } };
+export const metadata = {
+  alternates: { canonical: "https://mindhaven.uk" },
+  description: "Confidential counselling and therapy in Edinburgh, Dalkeith, and online across the UK. Erika Martin is an MNCPS accredited counsellor specialising in stress, burnout, and anxiety.",
+};
 
 export default function Home() {
   return (
@@ -297,7 +300,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Exhaustion that rest does not fix</h3>
                 </div>
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
-                  Persistent tiredness that sleep doesn't fix, Sunday dread, and a braced nervous system unable to down-regulate after high-stakes meetings.
+                  Persistent tiredness that sleep doesn&apos;t fix, Sunday dread, and a sense that exhaustion recovery feels out of reach no matter how much you rest.
                 </p>
               </div>
             </div>
@@ -344,7 +347,7 @@ export default function Home() {
           </div>
 
           <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed text-left">
-            Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. If you are not sure whether counselling is right for you, a free 15-minute call is available with no obligation to proceed.
+            Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. This is often the kind of work that counselling and therapy can support, whether that is burnout counselling, counselling for work stress, or simply finding space to think. If you are not sure whether this is right for you, a free 15-minute call is available with no obligation to proceed.
           </p>
 
           <div>
@@ -382,7 +385,7 @@ export default function Home() {
                   An Evidence-Based Therapeutic Approach
                 </h2>
                 <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-                  Erika Martin combines Cognitive Behavioural Therapy (CBT), Psychodynamic Psychotherapy, Solution-Focused Brief Therapy, and Somatic/Nervous System Regulation.
+                  Erika Martin draws on Cognitive Behavioural Therapy (CBT), Psychodynamic Psychotherapy, Solution-Focused Brief Therapy, and body-based approaches, adapted to each person. As an MNCPS accredited counsellor offering psychotherapy in the UK, she tailors the work to what you actually need.
                 </p>
               </div>
               

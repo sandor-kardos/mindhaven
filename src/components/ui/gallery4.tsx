@@ -79,7 +79,7 @@ const mindhavenArticles: Gallery4Item[] = [
 
 const Gallery4 = ({
   title = "Insights on Resilience & Clarity",
-  description = "Evidence-based perspectives on burnout, stress, and nervous system resilience by Erika Martin.",
+  description = "Evidence-based perspectives on burnout, stress, and building personal resilience, by Erika Martin.",
   items = mindhavenArticles,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
