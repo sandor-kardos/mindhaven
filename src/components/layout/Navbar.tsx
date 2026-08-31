@@ -46,8 +46,8 @@ export function Navbar() {
               <Link href="/blog" className="text-xs lg:text-sm font-semibold text-[#0D2E24] hover:text-[#059669] transition-colors whitespace-nowrap">
                 Blog
               </Link>
-              <Link href="/tools" className="text-xs lg:text-sm font-semibold text-[#0D2E24] hover:text-[#059669] transition-colors whitespace-nowrap">
-                Tools
+              <Link href="/resources" className="text-xs lg:text-sm font-semibold text-[#0D2E24] hover:text-[#059669] transition-colors whitespace-nowrap">
+                Resources
               </Link>
               <Link href="/#faq" className="text-xs lg:text-sm font-semibold text-[#0D2E24] hover:text-[#059669] transition-colors whitespace-nowrap">
                 FAQs
@@ -120,9 +120,9 @@ export function Navbar() {
               <BookOpen className="w-4 h-4 text-[#059669]" />
               <span>Blog</span>
             </Link>
-            <Link href="/tools" onClick={() => setIsOpen(false)} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-white shadow-sm rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">
+            <Link href="/resources" onClick={() => setIsOpen(false)} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-white shadow-sm rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">
               <Sparkles className="w-4 h-4 text-[#059669]" />
-              <span>Tools</span>
+              <span>Resources</span>
             </Link>
             <Link href="/#faq" onClick={() => setIsOpen(false)} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-white shadow-sm rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">
               <HelpCircle className="w-4 h-4 text-[#059669]" />

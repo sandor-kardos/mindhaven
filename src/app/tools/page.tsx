@@ -113,7 +113,7 @@ export default function ToolsIndexPage() {
                     </div>
 
                     {/* Interactive App Preview Image */}
-                    <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#34D399]/25 shadow-sm bg-[#0D2E24]/5 group-hover:border-[#34D399]/50 transition-colors">
+                    <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-[#0D2E24]/5">
                       <Image
                         src={tool.image}
                         alt={`${tool.title} interactive tool preview`}

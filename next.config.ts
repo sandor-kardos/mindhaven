@@ -47,6 +47,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/tools",
+        destination: "/resources",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

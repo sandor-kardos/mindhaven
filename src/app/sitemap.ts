@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogEntries,
     {
-      url: "https://mindhaven.uk/tools",
+      url: "https://mindhaven.uk/resources",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
