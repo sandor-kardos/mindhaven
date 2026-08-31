@@ -60,7 +60,7 @@ export function BookingForm() {
           </p>
         </div>
 
-        <div className="p-4 bg-[#FEFFF7] rounded-2xl border border-[#34D399]/30 text-xs text-[#0D2E24]/80 font-semibold space-y-1">
+        <div className="p-4 bg-slate-50 rounded-2xl border border-[#34D399]/30 text-xs text-[#0D2E24]/80 font-semibold space-y-1">
           <div className="flex items-center justify-center gap-2 text-[#059669] font-bold">
             <Clock className="w-4 h-4" />
             <span>Erika replies the same day</span>
@@ -103,7 +103,7 @@ export function BookingForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-[#FEFFF7] text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all"
             placeholder="e.g. Alex Morgan"
           />
         </div>
@@ -119,7 +119,7 @@ export function BookingForm() {
               required
               value={contactMethod}
               onChange={(e) => setContactMethod(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-[#FEFFF7] text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all cursor-pointer"
             >
               <option value="Email">Email</option>
               <option value="WhatsApp">WhatsApp</option>
@@ -137,7 +137,7 @@ export function BookingForm() {
               required
               value={contactDetail}
               onChange={(e) => setContactDetail(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-[#FEFFF7] text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all"
               placeholder="Email address or phone..."
             />
           </div>
@@ -153,7 +153,7 @@ export function BookingForm() {
             required
             value={objective}
             onChange={(e) => setObjective(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-[#FEFFF7] text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all cursor-pointer"
+            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all cursor-pointer"
           >
             <option value="" disabled>Select primary focus...</option>
             <option value="burnout">Burnout Recovery & Stress</option>
@@ -174,7 +174,7 @@ export function BookingForm() {
             rows={4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-[#FEFFF7] text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all resize-y"
+            className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all resize-y"
             placeholder="Share anything you feel comfortable noting here..."
           />
         </div>
@@ -184,9 +184,9 @@ export function BookingForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg hover:-translate-y-0.5 border border-[#34D399]/30 disabled:opacity-60 cursor-pointer group"
+            className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-extrabold text-white hover:text-[#0D2E24] bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg hover:-translate-y-0.5 border border-[#34D399]/30 disabled:opacity-60 cursor-pointer group"
           >
-            <Send className="w-4 h-4 text-[#34D399] group-hover:text-white transition-colors" />
+            <Send className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
             <span>{status === "loading" ? "Sending Message..." : "Send Message to Erika"}</span>
           </button>
 

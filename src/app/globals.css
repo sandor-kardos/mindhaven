@@ -3,7 +3,7 @@
 @theme {
   --color-brand-evergreen: #0D2E24;
   --color-brand-emerald: #34D399;
-  --color-brand-ivory: #FEFFF7;
+  --color-brand-ivory: #FFFFFF;
   --color-lime-cream: #F6FFA2;
 
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
@@ -12,7 +12,7 @@
 
 @layer base {
   html, body {
-    @apply bg-[#FEFFF7] text-[#0D2E24] font-sans antialiased tracking-tight leading-relaxed;
+    @apply bg-[#FFFFFF] text-[#0D2E24] font-sans antialiased tracking-tight leading-relaxed;
   }
   
   h1, h2, h3, h4, h5, h6 {

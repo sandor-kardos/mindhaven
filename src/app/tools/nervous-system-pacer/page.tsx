@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function NervousSystemPacerPage() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       {/* Hero Header */}
       <section className="pt-16 pb-20 px-4 bg-[#0D2E24] text-white border-b border-[#34D399]/30 relative overflow-hidden">
         <div className="container mx-auto max-w-4xl relative z-10 space-y-6 text-center">
@@ -60,7 +60,7 @@ export default function NervousSystemPacerPage() {
       </section>
 
       {/* Main Interactive Tool Section */}
-      <section className="py-16 px-4 bg-[#FEFFF7]">
+      <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-3xl space-y-12">
           
           {/* Interactive Breathing Card Container */}
@@ -91,21 +91,21 @@ export default function NervousSystemPacerPage() {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-              <div className="p-5 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-[#34D399]/20 space-y-2">
                 <span className="text-xl font-extrabold text-[#059669] font-heading">01. Breathe In</span>
                 <p className="text-xs text-[#0D2E24]/85 font-medium leading-relaxed">
                   Inhale quietly through your nose for <strong>4 seconds</strong>, letting your chest and belly expand softly.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-[#34D399]/20 space-y-2">
                 <span className="text-xl font-extrabold text-[#059669] font-heading">02. Hold</span>
                 <p className="text-xs text-[#0D2E24]/85 font-medium leading-relaxed">
                   Hold your breath gently for <strong>7 seconds</strong> without strain or pressure.
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FEFFF7] border border-[#34D399]/20 space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-[#34D399]/20 space-y-2">
                 <span className="text-xl font-extrabold text-[#059669] font-heading">03. Breathe Out</span>
                 <p className="text-xs text-[#0D2E24]/85 font-medium leading-relaxed">
                   Exhale slowly through your mouth for <strong>8 seconds</strong> until your lungs feel empty.

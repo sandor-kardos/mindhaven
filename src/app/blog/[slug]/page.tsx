@@ -95,7 +95,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <blockquote
           key={index}
-          className="my-6 px-6 py-5 bg-[#FEFFF7] border-l-4 border-[#34D399] rounded-r-2xl"
+          className="my-6 px-6 py-5 bg-slate-50 border-l-4 border-[#34D399] rounded-r-2xl"
         >
           <p className="text-[#0D2E24] font-semibold leading-relaxed italic">
             {block.text}
@@ -153,14 +153,14 @@ const articleTldrs: Record<string, string> = {
     'rounded-br-[4rem] rounded-tl-[4rem] rounded-tr-xl rounded-bl-xl rotate-1';
 
   return (
-    <article className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
+    <article className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
       />
 
       {/* Header & Image Flex Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] border-b border-[#34D399]/20 relative overflow-hidden">
+      <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-white to-white border-b border-[#34D399]/20 relative overflow-hidden">
         
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
@@ -194,7 +194,7 @@ const articleTldrs: Record<string, string> = {
 
               {/* The "TLDR" summary box without using the word TLDR */}
               <div className="p-6 mt-8 bg-white border border-[#34D399]/30 rounded-2xl shadow-sm relative">
-                <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#FEFFF7] px-3 py-0.5 rounded-full border border-[#34D399]/30 text-[10px] font-extrabold text-[#34D399] uppercase tracking-widest shadow-sm">
+                <div className="absolute top-0 left-6 -translate-y-1/2 bg-slate-100 px-3 py-0.5 rounded-full border border-[#34D399]/30 text-[10px] font-extrabold text-[#059669] uppercase tracking-widest shadow-sm">
                   In a Nutshell
                 </div>
                 <p className="text-[#0D2E24]/85 font-semibold leading-relaxed">
@@ -240,7 +240,7 @@ const articleTldrs: Record<string, string> = {
       </section>
 
       {/* Post Navigation */}
-      <section className="py-12 px-4 bg-[#FEFFF7] border-t border-[#34D399]/10">
+      <section className="py-12 px-4 bg-white border-t border-[#34D399]/10">
         <div className="container mx-auto max-w-3xl flex flex-col sm:flex-row justify-between items-stretch gap-6">
           {prevArticle ? (
             <Link href={`/blog/${prevArticle.slug}`} className="flex-1 p-6 rounded-2xl bg-white border border-[#34D399]/20 hover:border-[#34D399] transition-all group flex flex-col items-start text-left">
@@ -263,7 +263,7 @@ const articleTldrs: Record<string, string> = {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-16 px-4 bg-[#FEFFF7] border-t border-[#34D399]/20">
+      <section className="py-16 px-4 bg-white border-t border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl text-center space-y-4">
           <h2 className="text-2xl font-extrabold text-[#0D2E24] font-heading">
             Recognise Something in This?
@@ -274,7 +274,7 @@ const articleTldrs: Record<string, string> = {
           </p>
           <Link
             href="/contact#book"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#34D399] transition-all shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white hover:bg-[#34D399] hover:text-[#0D2E24] font-bold text-base rounded-full transition-all shadow-md"
           >
             Book a Free Introductory Call
           </Link>

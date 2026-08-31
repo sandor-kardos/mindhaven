@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function AboutErikaMartin() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24]">
 
       {/* Hero: Portrait with name overlay + bio - Rich Evergreen Theme */}
       <section className="py-16 lg:py-24 px-4 bg-[#0D2E24] text-white border-b border-[#34D399]/30">
@@ -42,7 +42,7 @@ export default function AboutErikaMartin() {
                   />
                 </div>
                 {/* Name overlay floating in front - Slim & Sleek */}
-                <div className="absolute -bottom-4 sm:-bottom-5 left-3 right-3 sm:left-4 sm:right-4 bg-[#FEFFF7] text-[#0D2E24] rounded-xl shadow-lg p-2.5 sm:p-4 z-10 border border-[#34D399]/40 text-center">
+                <div className="absolute -bottom-4 sm:-bottom-5 left-3 right-3 sm:left-4 sm:right-4 bg-white text-[#0D2E24] rounded-xl shadow-lg p-2.5 sm:p-4 z-10 border border-[#34D399]/40 text-center">
                   <h1 className="text-lg sm:text-2xl font-extrabold text-[#0D2E24] font-heading leading-tight">
                     Erika Martin
                   </h1>
@@ -130,7 +130,7 @@ export default function AboutErikaMartin() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="p-6 bg-white rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center border border-[#34D399]/30">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-[#34D399]/30">
                 <User className="w-5 h-5 text-[#34D399]" />
               </div>
               <p className="font-bold text-base text-[#0D2E24] font-heading">Person-Centred</p>
@@ -138,7 +138,7 @@ export default function AboutErikaMartin() {
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center border border-[#34D399]/30">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-[#34D399]/30">
                 <Brain className="w-5 h-5 text-[#34D399]" />
               </div>
               <p className="font-bold text-base text-[#0D2E24] font-heading">CBT &amp; Psychodynamic</p>
@@ -146,7 +146,7 @@ export default function AboutErikaMartin() {
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] flex items-center justify-center border border-[#34D399]/30">
+              <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center border border-[#34D399]/30">
                 <Heart className="w-5 h-5 text-[#34D399]" />
               </div>
               <p className="font-bold text-base text-[#0D2E24] font-heading">Solution-Focused</p>
@@ -157,7 +157,7 @@ export default function AboutErikaMartin() {
       </section>
 
       {/* Professional Standards - Evergreen Box */}
-      <section className="py-20 px-4 bg-[#FEFFF7] border-b border-[#34D399]/10">
+      <section className="py-20 px-4 bg-white border-b border-[#34D399]/10">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-[#0D2E24] text-white rounded-3xl border border-[#34D399]/30 shadow-xl p-8 md:p-12 space-y-8 card-flow-effect">
             <div className="flex items-start gap-4">

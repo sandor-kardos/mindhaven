@@ -34,7 +34,7 @@ const MATURE_PEOPLE_IMAGES = [
 
 export const MindhavenGalleryCta = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white via-[#FEFFF7]/40 to-[#FEFFF7] border-y border-[#34D399]/15 overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-b from-white via-emerald-50/20 to-white border-y border-[#34D399]/15 overflow-hidden">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 md:grid-cols-2">
         
         {/* Animated Content Column */}
@@ -55,11 +55,11 @@ export const MindhavenGalleryCta = () => {
           </ContainerAnimated>
 
           <ContainerAnimated className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#34D399] text-white font-extrabold px-8 shadow-lg shadow-[#0D2E24]/15 group cursor-pointer">
+            <Button asChild size="lg" className="rounded-full bg-[#0D2E24] hover:bg-[#34D399] text-white hover:text-[#0D2E24] font-extrabold px-8 shadow-lg shadow-[#0D2E24]/15 group cursor-pointer">
               <Link href="/fees-and-booking" className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-[#34D399]" />
+                <Calendar className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                 <span>Book Discovery Call</span>
-                <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
               </Link>
             </Button>
             

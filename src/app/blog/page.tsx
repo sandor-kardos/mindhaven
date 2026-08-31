@@ -32,8 +32,8 @@ export default function BlogIndex() {
   const posts = getAllArticles();
 
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
-      <section className="relative pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20 overflow-hidden">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
+      <section className="relative pt-20 pb-16 px-4 bg-gradient-to-b from-white to-white text-center border-b border-[#34D399]/20 overflow-hidden">
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
         

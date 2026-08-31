@@ -42,7 +42,7 @@ export function Logo({ variant = "light", className = "" }: LogoProps) {
       <div className="flex flex-col justify-center">
         <div className="flex items-baseline transition-transform duration-300 group-hover:translate-x-0.5">
           <span className="font-heading text-xl sm:text-[21px] font-extrabold tracking-[-0.05em] leading-[0.85]">
-            <span className={isDarkBg ? "text-[#FEFFF7]" : "text-[#0D2E24]"}>Mind</span>
+            <span className={isDarkBg ? "text-white" : "text-[#0D2E24]"}>Mind</span>
             <span className={isDarkBg ? "text-[#34D399]" : "text-[#10B981]"}>Haven</span>
           </span>
           <span className="text-[#10B981] text-xl sm:text-[21px] font-black leading-[0.85] ml-0.5 group-hover:text-[#0D2E24] transition-colors">.</span>

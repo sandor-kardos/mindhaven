@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Save, Trash2, Download, Share2, CheckCircle2, RotateCcw } from "lucide-react";
+import { Save, Trash2, Download, Share2, CheckCircle2, RotateCcw, HelpCircle, Info } from "lucide-react";
 
 const CATEGORIES = [
   "Career",
@@ -50,6 +50,7 @@ export function WheelOfLifeClient() {
   const [hoveredCell, setHoveredCell] = useState<{ category: string; level: number } | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [canShareNative, setCanShareNative] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -162,9 +163,20 @@ export function WheelOfLifeClient() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">Interactive Assessment</span>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-[#0D2E24] font-heading">
-              Your Life Balance Overview
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-[#0D2E24] font-heading flex items-center gap-2">
+                <span>Your Life Balance Overview</span>
+                <button
+                  type="button"
+                  onClick={() => setShowHelp(!showHelp)}
+                  className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                  title="Toggle guidance & tips"
+                  aria-label="Toggle guidance & tips"
+                >
+                  <HelpCircle className="w-5 h-5 text-[#059669]" />
+                </button>
+              </h2>
+            </div>
             <p className="text-xs sm:text-sm text-[#0D2E24]/75 font-medium mt-0.5">
               Click or tap any ring segment inside the wheel or adjust the category scales below to reflect your current satisfaction.
             </p>
@@ -186,6 +198,19 @@ export function WheelOfLifeClient() {
             </button>
           </div>
         </div>
+
+        {/* Interactive Guidance Drawer */}
+        {showHelp && (
+          <div className="p-3.5 bg-white rounded-2xl border border-[#34D399]/30 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium shadow-xs animate-fadeIn">
+            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">How to Rating Each Area (1 to 10):</strong>
+              <p><strong>1–3:</strong> Significant imbalance or dissatisfaction requiring immediate care.<br />
+              <strong>4–6:</strong> Moderate satisfaction, baseline routine, room for alignment.<br />
+              <strong>7–10:</strong> Strong fulfillment, flow, and daily harmony.</p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Main Wheel Card (Export Target) */}

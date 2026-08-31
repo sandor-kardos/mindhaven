@@ -37,14 +37,14 @@ const serviceSchema = {
 
 export default function BurnoutTherapistEdinburgh() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-white to-white text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-4xl space-y-4">
           <Badge variant="white">
             <MapPin className="w-4 h-4 text-[#34D399]" />
@@ -92,22 +92,22 @@ export default function BurnoutTherapistEdinburgh() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH1 · City Centre</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH2 · West End</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH3 · New Town</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH12 · Parkgrove</span>
-              <span className="px-4 py-2 rounded-full bg-[#FEFFF7] text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH22 · Dalkeith</span>
+              <span className="px-4 py-2 rounded-full bg-slate-100 text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH1 · City Centre</span>
+              <span className="px-4 py-2 rounded-full bg-slate-100 text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH2 · West End</span>
+              <span className="px-4 py-2 rounded-full bg-slate-100 text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH3 · New Town</span>
+              <span className="px-4 py-2 rounded-full bg-slate-100 text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH12 · Parkgrove</span>
+              <span className="px-4 py-2 rounded-full bg-slate-100 text-[#0D2E24] text-xs font-bold border border-[#34D399]/30">EH22 · Dalkeith</span>
             </div>
           </div>
 
           <div className="text-center pt-4">
             <Link 
               href="/contact#book"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] text-white font-bold text-base rounded-full hover:bg-[#34D399] transition-all shadow-md"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] text-white hover:bg-[#34D399] hover:text-[#0D2E24] font-bold text-base rounded-full transition-all shadow-md group"
             >
-              <Calendar className="w-5 h-5 text-[#34D399]" />
+              <Calendar className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
               <span>Book a Free Introductory Call</span>
-              <ArrowRight className="w-5 h-5 text-[#34D399]" />
+              <ArrowRight className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
             </Link>
           </div>
 

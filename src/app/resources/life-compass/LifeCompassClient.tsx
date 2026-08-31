@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Save, Trash2, Download, CheckCircle2, Info } from "lucide-react";
+import { Save, Trash2, Download, CheckCircle2, Info, HelpCircle } from "lucide-react";
 
 // Radar chart geometry for 5 axes
 const RADAR_SIZE = 300;
@@ -37,7 +37,12 @@ export function LifeCompassClient() {
   const [data, setData] = useState<CompassData>(DEFAULT_DATA);
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeStep, setActiveStep] = useState<number>(1);
+  const [openHelp, setOpenHelp] = useState<Record<number, boolean>>({});
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const toggleHelp = (secNum: number) => {
+    setOpenHelp(prev => ({ ...prev, [secNum]: !prev[secNum] }));
+  };
   const stepRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -211,21 +216,37 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            1. Core Values – What matters most?
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>1. Core Values – What matters most?</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(1);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & examples"
+                aria-label="Toggle guidance & examples"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Identify 2 to 4 words or principles that represent what you value in each domain of your life.
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Guidance & Examples:</strong>
-              <p>Relationships: <em>"mutual trust, unhurried presence, warmth"</em> | Work: <em>"autonomy, creative impact, fair compensation"</em> | Health: <em>"vitality, restful sleep, physical resilience"</em>.</p>
+          {/* Interactive Guidance Box */}
+          {openHelp[1] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Guidance & Examples:</strong>
+                <p>Relationships: <em>"mutual trust, unhurried presence, warmth"</em> | Work: <em>"autonomy, creative impact, fair compensation"</em> | Health: <em>"vitality, restful sleep, physical resilience"</em>.</p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {LABELS.map((label, i) => (
@@ -262,23 +283,39 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Move sliders to set score</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            2. Current Alignment – Where are you now?
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>2. Current Alignment – Where are you now?</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(2);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & scale meaning"
+                aria-label="Toggle guidance & scale meaning"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             On a scale from 1 to 10, rate how closely your current daily reality reflects these values.
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance for Sliders) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Scale Guidance & Practical Meaning:</strong>
-              <p><strong>1–3 (Low Alignment):</strong> Chronic tension or neglect (e.g. severe Health neglect, skipped meals, burnout).<br />
-              <strong>4–6 (Moderate):</strong> Functional but routine or uninspired.<br />
-              <strong>7–10 (High Alignment):</strong> Deep fulfillment, flow, and daily living in sync with your values.</p>
+          {/* Interactive Guidance Box */}
+          {openHelp[2] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Scale Guidance & Practical Meaning:</strong>
+                <p><strong>1–3 (Low Alignment):</strong> Chronic tension or neglect (e.g. severe Health neglect, skipped meals, burnout).<br />
+                <strong>4–6 (Moderate):</strong> Functional but routine or uninspired.<br />
+                <strong>7–10 (High Alignment):</strong> Deep fulfillment, flow, and daily living in sync with your values.</p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start bg-[#F9FBF9] p-6 rounded-2xl border border-[#34D399]/20">
             <div className="flex-1 w-full space-y-5">
@@ -356,21 +393,37 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            3. Future Intentions – What would alignment look like?
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>3. Future Intentions – What would alignment look like?</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(3);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & examples"
+                aria-label="Toggle guidance & examples"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Describe in 1 sentence for each area: "If I lived fully by my values here, my daily experience would look like..."
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
-              <p><em>"If I lived by my values in Health, I would step away from my desk for a 20-minute walk every lunch hour and protect 8 hours of sleep."</em></p>
+          {/* Interactive Guidance Box */}
+          {openHelp[3] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+                <p><em>"If I lived by my values in Health, I would step away from my desk for a 20-minute walk every lunch hour and protect 8 hours of sleep."</em></p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="space-y-4">
             {LABELS.map((label, i) => (
@@ -408,21 +461,37 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            4. Practical Micro-Steps – Small, doable shifts
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>4. Practical Micro-Steps – Small, doable shifts</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(4);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & examples"
+                aria-label="Toggle guidance & examples"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Commit to one realistic action for each area that takes less than 15 minutes to initiate.
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
-              <p><em>"For Relationships: Send a message to a friend right now to confirm a catch-up coffee this Thursday."</em></p>
+          {/* Interactive Guidance Box */}
+          {openHelp[4] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+                <p><em>"For Relationships: Send a message to a friend right now to confirm a catch-up coffee this Thursday."</em></p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="space-y-4">
             {LABELS.map((label, i) => (
@@ -460,21 +529,37 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            5. Anticipating Friction & Building Supports
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>5. Anticipating Friction & Building Supports</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(5);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & examples"
+                aria-label="Toggle guidance & examples"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Recognise potential internal or external hurdles, and name the resources or habits that will support you.
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
-              <p>Obstacles: <em>"Evening exhaustion, tendency to say yes to extra demands."</em> | Supports: <em>"Pre-booking focus blocks in my calendar, asking my partner to hold me accountable."</em></p>
+          {/* Interactive Guidance Box */}
+          {openHelp[5] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+                <p>Obstacles: <em>"Evening exhaustion, tendency to say yes to extra demands."</em> | Supports: <em>"Pre-booking focus blocks in my calendar, asking my partner to hold me accountable."</em></p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#F9FBF9] p-4 rounded-2xl border border-[#34D399]/20">
@@ -518,21 +603,37 @@ export function LifeCompassClient() {
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] mb-2">
-            6. Personal Anchor Statement
-          </h2>
-          <p className="text-sm text-[#0D2E24]/80 mb-4 font-medium">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+              <span>6. Personal Anchor Statement</span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHelp(6);
+                }}
+                className="p-1 rounded-full text-[#059669] hover:bg-[#ECFDF5] transition-colors shrink-0"
+                title="Toggle guidance & examples"
+                aria-label="Toggle guidance & examples"
+              >
+                <HelpCircle className="w-5 h-5 text-[#059669]" />
+              </button>
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#0D2E24]/80 mb-4 font-medium">
             Formulate a clear statement that grounds you when daily demands test your boundaries.
           </p>
 
-          {/* Concrete Example Box (Item 8 Guidance) */}
-          <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium">
-            <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
-            <div>
-              <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
-              <p><em>"I choose intentional clarity over reactive busyness."</em></p>
+          {/* Interactive Guidance Box */}
+          {openHelp[6] && (
+            <div className="mb-6 p-3.5 bg-[#F0F5F2] rounded-2xl border border-[#34D399]/25 flex items-start gap-2.5 text-xs text-[#0D2E24]/85 leading-relaxed font-medium transition-all">
+              <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Concrete Example:</strong>
+                <p><em>"I choose intentional clarity over reactive busyness."</em></p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="bg-[#F9FBF9] p-5 rounded-2xl border border-[#34D399]/20">
             <input

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sparkles, BookOpen, Clock, Tag } from "lucide-react";
@@ -26,8 +26,29 @@ export function Gallery4({
   description = "Evidence-based perspectives on burnout, stress, and nervous system resilience by Erika\u00A0Martin.",
 }: Gallery4Props) {
   const [activeSlug, setActiveSlug] = useState<string>(articles[0]?.slug || "");
+  const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const activeArticle = articles.find((a) => a.slug === activeSlug) || articles[0];
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollPosition = container.scrollLeft;
+    const cardWidth = container.firstElementChild ? (container.firstElementChild as HTMLElement).offsetWidth + 20 : 300;
+    const index = Math.round(scrollPosition / cardWidth);
+    setActiveMobileIndex(Math.min(Math.max(index, 0), articles.length - 1));
+  };
+
+  const scrollToMobileCard = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const child = container.children[index] as HTMLElement;
+    if (child) {
+      child.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+      setActiveMobileIndex(index);
+    }
+  };
 
   return (
     <section className="py-16 sm:py-20 bg-[#0D2E24] text-white relative overflow-hidden border-y border-[#34D399]/30">
@@ -89,7 +110,7 @@ export function Gallery4({
 
           {/* Right Column: Single Large AI Image + Excerpt Preview Card */}
           <div className="col-span-6">
-            <div className="bg-[#FEFFF7] text-[#0D2E24] p-6 sm:p-8 rounded-3xl border border-[#34D399]/40 shadow-2xl space-y-6 transition-all duration-300">
+            <div className="bg-white text-[#0D2E24] p-6 sm:p-8 rounded-3xl border border-[#34D399]/40 shadow-2xl space-y-6 transition-all duration-300">
               
               {/* Category & Read time */}
               <div className="flex items-center justify-between gap-2">
@@ -133,22 +154,45 @@ export function Gallery4({
                 >
                   <BookOpen className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                   <span>Read Article</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
                 </Link>
               </div>
 
+            </div>
+
+            {/* Interactive Pagination Dots for Desktop Preview */}
+            <div className="flex items-center justify-center gap-2 pt-5">
+              {articles.map((article, idx) => {
+                const isActive = article.slug === activeArticle.slug;
+                return (
+                  <button
+                    key={article.slug}
+                    onClick={() => setActiveSlug(article.slug)}
+                    className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#34D399] ${
+                      isActive
+                        ? "w-6 h-2.5 bg-[#34D399] shadow-xs"
+                        : "w-2.5 h-2.5 bg-white/30 hover:bg-white/60"
+                    }`}
+                    aria-label={`Select article ${idx + 1}: ${article.title}`}
+                  />
+                );
+              })}
             </div>
           </div>
 
         </div>
 
-        {/* MOBILE & TABLET LAYOUT: Swipeable Carousel with 10% Peeking Next Card */}
+        {/* MOBILE & TABLET LAYOUT: Swipeable Carousel with Right Side Spacing */}
         <div className="lg:hidden">
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 scrollbar-none -mx-4 px-4">
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-5 pb-6 px-5 sm:px-8 scroll-px-5 scrollbar-none"
+          >
             {articles.map((article) => (
               <div
                 key={article.slug}
-                className="w-[85vw] sm:w-[380px] shrink-0 snap-start bg-[#FEFFF7] text-[#0D2E24] p-5 sm:p-6 rounded-3xl border border-[#34D399]/40 shadow-xl flex flex-col justify-between space-y-4"
+                className="w-[78vw] max-w-[340px] shrink-0 snap-center bg-white text-[#0D2E24] p-5 sm:p-6 rounded-3xl border border-[#34D399]/40 shadow-xl flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-4">
                   {/* Category & Read time */}
@@ -195,6 +239,24 @@ export function Gallery4({
                   </Link>
                 </div>
               </div>
+            ))}
+            {/* Trailing Right-Side Spacer to prevent cards touching right screen edge */}
+            <div className="w-3 sm:w-6 shrink-0" aria-hidden="true" />
+          </div>
+
+          {/* Interactive Pagination Dots */}
+          <div className="flex items-center justify-center gap-2 pt-2">
+            {articles.map((article, idx) => (
+              <button
+                key={article.slug}
+                onClick={() => scrollToMobileCard(idx)}
+                className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#34D399] ${
+                  activeMobileIndex === idx
+                    ? "w-6 h-2.5 bg-[#34D399] shadow-xs"
+                    : "w-2.5 h-2.5 bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Go to article slide ${idx + 1}: ${article.title}`}
+              />
             ))}
           </div>
         </div>

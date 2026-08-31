@@ -28,7 +28,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#FEFFF7]/90 backdrop-blur-md border-b border-[#34D399]/20 transition-all">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#34D399]/20 transition-all">
         <div className="container mx-auto px-4 sm:px-6 py-3.5">
           <div className="flex items-center justify-between">
 
@@ -85,8 +85,9 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setIsContactModalOpen(true)}
-                className="group inline-flex items-center gap-2 px-5 py-2 text-sm font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md cursor-pointer"
+                className="group inline-flex items-center gap-2 px-5 py-2 text-sm font-bold text-white hover:text-[#0D2E24] bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-md cursor-pointer"
               >
+                <MessageCircle className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                 Message Me
               </button>
             </div>
@@ -94,7 +95,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-xl text-[#0D2E24] hover:bg-[#FEFFF7] transition-colors"
+              className="md:hidden p-2 rounded-xl text-[#0D2E24] hover:bg-slate-100 transition-colors"
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
             >
@@ -106,7 +107,7 @@ export function Navbar() {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden bg-[#FEFFF7] border-b border-[#34D399]/20 px-4 pt-4 pb-6 space-y-2 shadow-2xl absolute w-full max-h-[calc(100vh-5rem)] overflow-y-auto z-40">
+          <div className="md:hidden bg-white border-b border-[#34D399]/20 px-4 pt-4 pb-6 space-y-2 shadow-2xl absolute w-full max-h-[calc(100vh-5rem)] overflow-y-auto z-40">
             <Link href="/contact" onClick={() => setIsOpen(false)} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-white shadow-sm rounded-xl text-sm font-extrabold text-[#0D2E24] transition-all border border-[#34D399]/15">
               <Mail className="w-4 h-4 text-[#059669]" />
               <span>Contact</span>
@@ -139,9 +140,9 @@ export function Navbar() {
                   setIsOpen(false);
                   setIsContactModalOpen(true);
                 }}
-                className="group w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-extrabold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-colors cursor-pointer shadow-md"
+                className="group w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-extrabold text-white hover:text-[#0D2E24] bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-colors cursor-pointer shadow-md"
               >
-                <MessageCircle className="w-4 h-4 text-[#34D399] group-hover:text-white transition-colors" />
+                <MessageCircle className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                 <span>Message Me</span>
               </button>
               <p className="text-[11px] text-center text-[#0D2E24]/60 font-semibold mt-2">
@@ -164,7 +165,7 @@ export function Navbar() {
                 setIsContactModalOpen(false);
                 setModalView('options');
               }}
-              className="absolute top-5 right-5 p-2 rounded-full text-[#0D2E24]/60 hover:text-[#0D2E24] hover:bg-[#FEFFF7] transition-colors"
+              className="absolute top-5 right-5 p-2 rounded-full text-[#0D2E24]/60 hover:text-[#0D2E24] hover:bg-slate-100 transition-colors"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -174,7 +175,7 @@ export function Navbar() {
               <>
                 {/* Modal Title & Reassurance Note */}
                 <div className="space-y-2 pr-8">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEFFF7] border border-[#34D399]/30 text-xs font-bold text-[#059669]">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-[#34D399]/30 text-xs font-bold text-[#059669]">
                     <Clock className="w-3.5 h-3.5" />
                     <span>Erika replies the same day.</span>
                   </div>
@@ -199,7 +200,7 @@ export function Navbar() {
                       setIsContactModalOpen(false);
                       setModalView('options');
                     }}
-                    className="group flex items-center justify-between p-4 bg-[#FEFFF7] hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                    className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
@@ -217,7 +218,7 @@ export function Navbar() {
                   <button
                     type="button"
                     onClick={() => setModalView('form')}
-                    className="w-full text-left group flex items-center justify-between p-4 bg-[#FEFFF7] hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
+                    className="w-full text-left group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center text-[#059669]">
@@ -240,7 +241,7 @@ export function Navbar() {
                       setIsContactModalOpen(false);
                       setModalView('options');
                     }}
-                    className="group flex items-center justify-between p-4 bg-[#FEFFF7] hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                    className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2]">

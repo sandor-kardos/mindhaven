@@ -126,11 +126,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] overflow-hidden relative">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24] overflow-hidden relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* HERO SECTION */}
-      <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FEFFF7] via-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] overflow-hidden border-b border-[#34D399]/20 ">
+      <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-white to-white text-[#0D2E24] overflow-hidden border-b border-[#34D399]/20 ">
         
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
@@ -152,7 +152,7 @@ export default function Home() {
                     href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FEFFF7] hover:bg-[#34D399] text-[#0D2E24] hover:text-white border border-[#34D399]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-[#34D399] text-[#0D2E24] hover:text-white border border-[#34D399]/30 shadow-xs text-xs font-extrabold uppercase tracking-wider transition-colors group cursor-pointer"
                     title="Verify Erika Martin's Official NCPS Accreditation"
                   >
                     <span>MNCPS Accredited · PSA Registered</span>
@@ -177,11 +177,10 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
                     href="/contact"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group text-center"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white hover:text-[#0D2E24] bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group text-center"
                   >
-                    <MessageCircle className="w-5 h-5 text-[#34D399]" />
+                    <MessageCircle className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
                     <span>Message Me</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
                   </Link>
 
                   <a
@@ -350,7 +349,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 & 5: Modalities, Calm Pacer Widget & Credentials */}
-      <section id="approach" className="py-24 bg-[#FEFFF7] px-4 relative overflow-hidden">
+      <section id="approach" className="py-24 bg-white px-4 relative overflow-hidden">
         <div className="container mx-auto max-w-6xl relative z-10">
           <HalftonePattern color="#34D399" className="-bottom-8 left-0 w-[380px] h-[380px]" opacity={0.20} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -471,7 +470,7 @@ export default function Home() {
       </section>
 
       {/* SECTION: FAQ */}
-      <section id="faq" className="py-24 bg-[#FEFFF7] px-4 border-t border-[#34D399]/15">
+      <section id="faq" className="py-24 bg-white px-4 border-t border-[#34D399]/15">
         <div className="container mx-auto max-w-3xl space-y-10">
           <div className="text-center space-y-4">
             <Badge variant="white" className="font-extrabold">

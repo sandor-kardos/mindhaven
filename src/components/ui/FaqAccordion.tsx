@@ -42,7 +42,7 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
                 {faq.question}
               </h3>
               <div className={`p-1.5 rounded-full transition-transform duration-300 shrink-0 ${
-                isOpen ? "bg-[#34D399] text-white rotate-180" : "bg-[#FEFFF7] text-[#0D2E24]"
+                isOpen ? "bg-[#34D399] text-white rotate-180" : "bg-slate-100 text-[#0D2E24]"
               }`}>
                 <ChevronDown className="w-4 h-4" />
               </div>

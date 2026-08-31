@@ -31,6 +31,8 @@ yarn-error.log*
 .pnpm-debug.log*
 issues.md
 before_audit.md
+after_audit.md
+final_audit.md
 
 # env files (can opt-in for committing if needed)
 .env*

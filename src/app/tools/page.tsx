@@ -62,7 +62,7 @@ export default function ToolsIndexPage() {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24] min-h-screen">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       {/* Page Hero Header */}
       <section className="pt-20 pb-20 px-4 bg-[#0D2E24] text-white border-b border-[#34D399]/30 relative overflow-hidden">
         <div className="container mx-auto max-w-4xl relative z-10 space-y-6 text-center">
@@ -89,7 +89,7 @@ export default function ToolsIndexPage() {
       </section>
 
       {/* Tools Grid Section */}
-      <section className="py-20 px-4 bg-[#FEFFF7]">
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl space-y-12">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
@@ -110,7 +110,7 @@ export default function ToolsIndexPage() {
                       >
                         {tool.category}
                       </span>
-                      <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
+                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
                         <Icon className="w-5 h-5 text-[#34D399]" />
                       </div>
                     </div>
@@ -159,10 +159,10 @@ export default function ToolsIndexPage() {
             <div className="pt-4">
               <Link
                 href="/contact#book"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] hover:bg-[#34D399] text-white font-bold text-sm rounded-full transition-all shadow-md group"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] hover:bg-[#34D399] text-white hover:text-[#0D2E24] font-bold text-sm rounded-full transition-all shadow-md group"
               >
                 <span>Book a Free Introductory Call</span>
-                <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
               </Link>
             </div>
           </div>

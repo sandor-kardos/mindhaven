@@ -20,8 +20,8 @@ export const metadata = {
 
 export default function TermsOfService() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-[#0D2E24] text-center border-b border-[#34D399]/20">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24]">
+      <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-white to-white text-[#0D2E24] text-center border-b border-[#34D399]/20">
         <div className="container mx-auto max-w-3xl space-y-4">
           <Badge variant="white">
             <ShieldCheck className="w-4 h-4 text-[#34D399]" />

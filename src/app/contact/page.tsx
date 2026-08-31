@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="flex flex-col w-full bg-[#FEFFF7] text-[#0D2E24]">
+    <div className="flex flex-col w-full bg-white text-[#0D2E24]">
 
       {/* Header - Compact to ensure Form header is visible above the fold */}
-      <section className="relative pt-10 pb-6 sm:pt-16 sm:pb-8 px-4 bg-gradient-to-b from-[#FEFFF7] to-[#FEFFF7] text-center border-b border-[#34D399]/20 overflow-hidden">
+      <section className="relative pt-10 pb-6 sm:pt-16 sm:pb-8 px-4 bg-gradient-to-b from-white to-white text-center border-b border-[#34D399]/20 overflow-hidden">
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
         
@@ -97,7 +97,7 @@ export default function Contact() {
       </section>
 
       {/* Other Ways & Location Info */}
-      <section className="py-16 px-4 bg-[#FEFFF7]">
+      <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-5xl space-y-12">
 
           <div className="text-center space-y-2 max-w-xl mx-auto">
@@ -113,7 +113,7 @@ export default function Contact() {
               className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/20 flex items-center justify-center mb-4">
                   <Mail className="w-5 h-5 text-[#059669]" />
                 </div>
                 <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">Direct Email</h4>
@@ -130,7 +130,7 @@ export default function Contact() {
               className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/20 flex items-center justify-center mb-4">
                   <Phone className="w-5 h-5 text-[#059669]" />
                 </div>
                 <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">Phone</h4>
@@ -144,7 +144,7 @@ export default function Contact() {
             {/* In Person Location */}
             <div className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-[#FEFFF7] border border-[#34D399]/20 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/20 flex items-center justify-center mb-4">
                   <MapPin className="w-5 h-5 text-[#059669]" />
                 </div>
                 <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">In Person</h4>
@@ -161,7 +161,7 @@ export default function Contact() {
       </section>
 
       {/* Footer reassurance */}
-      <section className="py-8 px-4 bg-[#FEFFF7] border-t border-[#34D399]/10">
+      <section className="py-8 px-4 bg-white border-t border-[#34D399]/10">
         <div className="container mx-auto max-w-3xl text-center space-y-2">
           <div className="flex items-center justify-center gap-2 text-xs text-[#0D2E24]/60 font-medium">
             <ShieldCheck className="w-4 h-4 text-[#059669]" />
