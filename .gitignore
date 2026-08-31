@@ -40,3 +40,9 @@ issues.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# audit files
+before_audit.md
+after_audit.md
+final_audit.md
+
