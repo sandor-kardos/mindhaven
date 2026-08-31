@@ -90,7 +90,6 @@ const faqSchema = {
 
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { HalftonePattern } from "@/components/ui/HalftonePattern";
-import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
 import { Gallery4 } from "@/components/ui/gallery4";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { Badge } from "@/components/ui/Badge";
@@ -173,35 +172,28 @@ export default function Home() {
 
               </div>
               
-              {/* Action Buttons (Aligned to bottom) */}
-              <div className="mt-10 md:mt-auto space-y-4">
-                <div className="flex flex-row items-center gap-2 sm:gap-4">
+              {/* Action Button: 1 Clean Message Me Button on Mobile */}
+              <div className="mt-8 md:mt-auto">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
-                    href="/contact#book"
-                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
+                    href="/contact"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-lg shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group text-center"
                   >
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#34D399]" />
-                    <span className="sm:hidden">Book Free Call</span>
-                    <span className="hidden sm:inline">Book Free Introductory Call</span>
-                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+                    <MessageCircle className="w-5 h-5 text-[#34D399]" />
+                    <span>Message Me</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#34D399]" />
                   </Link>
 
                   <a
-                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823"}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about a free introductory call.")}`}
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823"}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about counselling.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Message Erika on WhatsApp"
-                    className="inline-flex items-center justify-center gap-3 px-4 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-[#0D2E24] bg-white hover:bg-[#FEFFF7] border border-[#34D399]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
+                    className="hidden sm:inline-flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold text-[#0D2E24] bg-white hover:bg-[#FEFFF7] border border-[#34D399]/30 rounded-full shadow-md transition-all hover:-translate-y-0.5 group"
                   >
-                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#34D399]" />
-                    <span>Message Me</span>
+                    <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                    <span>WhatsApp</span>
                   </a>
-                </div>
-                <div className="pt-2 flex justify-center sm:justify-start pl-0 sm:pl-4">
-                  <Link href="#approach" className="inline-flex items-center gap-2 text-sm text-[#0D2E24]/60 hover:text-[#0D2E24] font-bold transition-colors group">
-                    <span className="underline underline-offset-4">Explore the approach</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
                 </div>
               </div>
               
@@ -211,8 +203,8 @@ export default function Home() {
             <div className="md:col-span-5 relative flex items-center justify-center">
               <div className="relative w-full max-w-xl mt-10 md:mt-0">
                 
-                {/* Image Container Card */}
-                <div className="relative animate-blob overflow-hidden border-4 border-white bg-white shadow-2xl">
+                {/* Image Container Card - Reverted from blob to clean rounded square frame with calm floating effect */}
+                <div className="relative rounded-3xl overflow-hidden border-4 border-white bg-white shadow-2xl animate-portrait-float">
                   <Image 
                     src="/images/erika-portrait.png"
                     alt="Erika Martin - MNCPS Accredited Psychotherapeutic Counsellor"
@@ -249,34 +241,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Full Width Key Bullet Highlights */}
-          <div className="mt-16 sm:mt-24 w-full">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#34D399]" />
-                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Confidential & Secure</span>
-              </div>
-              
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#34D399]/30"></div>
-              
-              <div className="flex items-center gap-3">
-                <Video className="w-5 h-5 text-[#34D399]" />
-                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Encrypted Video</span>
-              </div>
-              
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#34D399]/30"></div>
-              
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-[#34D399]" />
-                <span className="font-extrabold text-[#0D2E24] text-sm sm:text-base">Edinburgh & Dalkeith</span>
-              </div>
-            </div>
-            
-            <div className="mt-12 flex justify-center">
-              <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#0D2E24]/40 hover:text-[#0D2E24] transition-colors animate-calm-arrow cursor-pointer">
-                <ChevronDown className="w-8 h-8" strokeWidth={1.5} />
-              </Link>
-            </div>
+          {/* Scroll Down Indicator */}
+          <div className="mt-8 flex justify-center">
+            <Link href="#approach" aria-label="Scroll to approach section" className="p-3 text-[#0D2E24]/60 hover:text-[#0D2E24] transition-colors animate-calm-arrow cursor-pointer">
+              <ChevronDown className="w-8 h-8 text-[#34D399]" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
@@ -284,55 +253,55 @@ export default function Home() {
       {/* SECTION 1.5: Clinical Insights Articles Carousel (Placed right after Hero) */}
       <Gallery4 />
 
-      {/* SECTION 2: Problem Validation - Perfectly Aligned Flow Cards */}
-      <section className="py-24 bg-white px-4 border-b border-[#34D399]/15 relative overflow-hidden">
+      {/* SECTION 2: Problem Validation - Rich Evergreen Background */}
+      <section className="py-24 bg-[#0D2E24] text-white px-4 border-b border-[#34D399]/30 relative overflow-hidden">
         <div className="container mx-auto max-w-7xl relative z-10">
-          <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.20} />
+          <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.15} />
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <Badge>
+            <Badge variant="white" className="bg-white/10 text-[#34D399] border-[#34D399]/40">
               When work takes its toll
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading">
               Burnout is more than feeling exhausted.
             </h2>
-            <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
+            <p className="text-slate-200 text-lg font-medium leading-relaxed">
               Burnout affects how you think, how you feel about your work, and how much energy you have left for anything else. The three patterns I see most often are:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             
-            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-[#34D399]/30 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Activity className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Exhaustion that rest does not fix</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Exhaustion that rest does not fix</h3>
                 </div>
-                <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
+                <p className="text-slate-200 text-sm font-medium leading-relaxed">
                   Persistent tiredness that sleep doesn't fix, Sunday dread, and a braced nervous system unable to down-regulate after high-stakes meetings.
                 </p>
               </div>
             </div>
             
-            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-[#34D399]/30 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Brain className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Disconnection from work you once valued</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Disconnection from work you once valued</h3>
                 </div>
-                <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
+                <p className="text-slate-200 text-sm font-medium leading-relaxed">
                   Mental detachment from roles once enjoyed, rising cynicism, irritability with colleagues, and a loss of strategic clarity.
                 </p>
               </div>
             </div>
             
-            <div className="bg-[#FEFFF7] p-8 rounded-3xl border border-[#34D399]/20 card-flow-effect flex flex-col justify-between h-full group">
+            <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-[#34D399]/30 card-flow-effect flex flex-col justify-between h-full group">
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Clock className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-[#0D2E24] font-heading md:mb-3">Doubting your own effectiveness</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Doubting your own effectiveness</h3>
                 </div>
-                <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed">
+                <p className="text-slate-200 text-sm font-medium leading-relaxed">
                   Rising imposter anxiety, decision fatigue, and over-working to overcompensate for diminished focus and emotional bandwidth.
                 </p>
               </div>
@@ -342,12 +311,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: When counselling helps */}
-      <section id="comparison" className="py-24 bg-[#FEFFF7] text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#34D399]/20">
+      {/* SECTION 3: When counselling helps - Emerald Tinted Background */}
+      <section id="comparison" className="py-24 bg-[#34D399]/10 text-[#0D2E24] px-4 relative overflow-hidden border-b border-[#34D399]/30">
         <div className="container mx-auto max-w-3xl relative z-10 text-center space-y-8">
 
           <div className="space-y-4">
-            <Badge variant="white" className="font-extrabold shadow-xs">
+            <Badge variant="white" className="font-extrabold shadow-xs bg-white text-[#0D2E24] border-[#34D399]/40">
               When counselling helps
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
@@ -355,7 +324,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed text-left">
+          <p className="text-[#0D2E24]/90 text-lg font-medium leading-relaxed text-left">
             Talking to someone you trust is genuinely valuable, and professional counselling does not replace those relationships. What it offers is something different: a consistent, confidential space dedicated entirely to you, with a trained practitioner who has no stake in the outcome and no existing relationship to protect. That structure tends to matter most when the same patterns keep recurring, when what you are carrying has been there a long time, or when the people around you are too close to the situation to see it clearly. If you are not sure whether counselling is right for you, a free 15-minute call is available with no obligation to proceed.
           </p>
 
@@ -379,7 +348,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4 & 5: Modalities, Calm Pacer Widget & Credentials - Perfectly Aligned Grids */}
+      {/* SECTION 4 & 5: Modalities, Calm Pacer Widget & Credentials */}
       <section id="approach" className="py-24 bg-[#FEFFF7] px-4 relative overflow-hidden">
         <div className="container mx-auto max-w-6xl relative z-10">
           <HalftonePattern color="#34D399" className="-bottom-8 left-0 w-[380px] h-[380px]" opacity={0.20} />
@@ -395,38 +364,25 @@ export default function Home() {
                   An Evidence-Based Therapeutic Approach
                 </h2>
                 <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-                  Erika Martin combines Cognitive Behavioural Therapy (CBT), Psychodynamic Psychotherapy, Solution-Focused Brief Therapy, and Somatic/Nervous System Regulation.
+                  Erika Martin combines Cognitive Behavioural Therapy (CBT), Psychodynamic Psychotherapy, and Solution-Focused Brief Therapy to help you manage stress and build sustainable clarity.
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
-                <div className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
+              <div className="grid grid-cols-1 gap-4 items-stretch">
+                <div className="p-6 bg-white rounded-2xl border-2 border-[#34D399]/40 shadow-md card-flow-effect flex flex-col justify-between h-full">
                   <div>
-                    <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
-                      <Zap className="w-8 h-8 text-[#34D399] shrink-0 sm:mb-3" />
-                      <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">CBT & Psychodynamic</h4>
+                    <div className="flex items-center gap-3 mb-2">
+                      <Zap className="w-8 h-8 text-[#34D399] shrink-0" />
+                      <h4 className="font-bold text-lg text-[#0D2E24] font-heading">CBT & Psychodynamic</h4>
                     </div>
-                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Exploring thought patterns and their deeper roots to create meaningful, lasting change.</p>
-                  </div>
-                </div>
-                
-                <div className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm card-flow-effect flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2 sm:block sm:mb-0">
-                      <Activity className="w-8 h-8 text-[#34D399] shrink-0 sm:mb-3" />
-                      <h4 className="font-bold text-[#0D2E24] font-heading sm:mb-2">Somatic Regulation</h4>
-                    </div>
-                    <p className="text-[#0D2E24]/80 text-xs font-medium leading-relaxed">Bringing greater calm and steadiness to an overactivated nervous system.</p>
+                    <p className="text-[#0D2E24]/85 text-sm font-medium leading-relaxed mt-2">Exploring thought patterns, emotional triggers, and their deeper roots to create meaningful, lasting change.</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Right: Calm Pacer & Credentials */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-              
-              {/* Calm Pacer Widget */}
-              <CalmBreathingWidget />
+            {/* Right: Credentials */}
+            <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
 
               {/* Bio & Credentials Box */}
               <div className="bg-white p-6 rounded-3xl shadow-xl border border-[#34D399]/20 space-y-4 card-flow-effect">
@@ -462,66 +418,63 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* SECTION 6: Consultation CTA & Process - Perfectly Aligned Flow Cards */}
-      <section className="py-24 bg-[#FEFFF7] px-4 border-t border-[#34D399]/15 text-center relative overflow-hidden">
+      {/* SECTION 6: Consultation CTA & Process - Evergreen Background */}
+      <section className="py-24 bg-[#0D2E24] text-white px-4 border-t border-[#34D399]/30 text-center relative overflow-hidden">
         <div className="container mx-auto max-w-4xl space-y-12 relative z-10">
-          {/* Emerald Green Micro-Noise Grain Patches - Positioned close to cards */}
           <HalftonePattern 
             color="#34D399" 
             className="-top-10 -left-6 w-[350px] h-[350px]" 
-            opacity={0.20} 
+            opacity={0.15} 
           />
           <HalftonePattern 
             color="#059669" 
             className="-bottom-12 -right-6 w-[320px] h-[320px]" 
-            opacity={0.20} 
+            opacity={0.15} 
           />
           
           <div className="space-y-4">
-            <Badge>
+            <Badge variant="white" className="bg-white/10 text-[#34D399] border-[#34D399]/40">
               Simple 3-Step Process
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0D2E24] font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading">
               A simple, structured start
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left items-stretch">
-            <div className="bg-[#FEFFF7] p-6 rounded-2xl border border-[#34D399]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 flex flex-col justify-between h-full">
               <div>
-                <span className="text-2xl font-black text-[#0D2E24] font-heading">01</span>
-                <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Free 15-Min Intro Call</h4>
-                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">A free, informal call to talk about what's brought you here and whether working together feels right.</p>
+                <span className="text-2xl font-black text-[#34D399] font-heading">01</span>
+                <h4 className="font-bold text-white font-heading mt-1">Free 20-Min Initial Call</h4>
+                <p className="text-xs text-slate-200 font-medium leading-relaxed mt-2">A free, informal 20-minute call to talk about what's brought you here and whether working together feels right.</p>
               </div>
             </div>
             
-            <div className="bg-[#FEFFF7] p-6 rounded-2xl border border-[#34D399]/20 card-flow-effect space-y-3 flex flex-col justify-between h-full">
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 flex flex-col justify-between h-full">
               <div>
-                <span className="text-2xl font-black text-[#0D2E24] font-heading">02</span>
-                <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Initial Session (75 mins)</h4>
-                <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed mt-2">An in-depth first session to explore your situation together and agree the best approach for you.</p>
+                <span className="text-2xl font-black text-[#34D399] font-heading">02</span>
+                <h4 className="font-bold text-white font-heading mt-1">First Session (60 mins)</h4>
+                <p className="text-xs text-slate-200 font-medium leading-relaxed mt-2">An in-depth first session to explore your situation together and establish the best way forward.</p>
               </div>
             </div>
             
-            <div className="bg-[#0D2E24] text-white p-6 rounded-2xl border border-[#34D399]/30 card-flow-effect space-y-3 shadow-md flex flex-col justify-between h-full">
+            <div className="bg-[#34D399] text-[#0D2E24] p-6 rounded-2xl border border-[#34D399] card-flow-effect space-y-3 shadow-md flex flex-col justify-between h-full">
               <div>
-                <span className="text-2xl font-black text-[#34D399] font-heading">03</span>
-                <h4 className="font-bold text-white font-heading mt-1">6-Session Programme</h4>
-                <p className="text-xs text-slate-200 leading-relaxed font-normal mt-2">A structured series of sessions, tailored to your individual needs and goals.</p>
+                <span className="text-2xl font-black text-[#0D2E24] font-heading">03</span>
+                <h4 className="font-bold text-[#0D2E24] font-heading mt-1">Flexible & Prepaid Options</h4>
+                <p className="text-xs text-[#0D2E24]/90 leading-relaxed font-semibold mt-2">Pay £60 per session as you go, or choose the £300 prepaid 6-session committed loyalty package (saving £60 upfront).</p>
               </div>
             </div>
           </div>
           
           <div className="pt-4">
             <Link
-              href="/contact#book"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold text-white bg-[#0D2E24] hover:bg-[#34D399] rounded-full transition-all shadow-xl shadow-[#0D2E24]/15 hover:-translate-y-0.5 border border-[#34D399]/30 group"
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold text-[#0D2E24] bg-[#34D399] hover:bg-white rounded-full transition-all shadow-xl shadow-black/20 hover:-translate-y-0.5 border border-[#34D399] group"
             >
-              <Calendar className="w-5 h-5 text-[#34D399]" />
-              <span>Book a Free Introductory Call</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#34D399]" />
+              <MessageCircle className="w-5 h-5 text-[#0D2E24]" />
+              <span>Send Erika a Message</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-[#0D2E24]" />
             </Link>
           </div>
 
@@ -544,7 +497,7 @@ export default function Home() {
             faqs={[
               {
                 question: "Can I try a free consultation before committing?",
-                answer: "You can book an initial consultation to discuss your needs and see if we are a good fit before committing to a broader course of therapy."
+                answer: "Yes, you can start with a Free 20-Minute Initial Call to discuss your needs and see if we are a good fit before deciding to move forward."
               },
               {
                 question: "How does online counselling work (video/phone)?",
@@ -567,12 +520,12 @@ export default function Home() {
                 answer: "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken, for example if there is a serious risk of harm to yourself or others, and this would always be discussed with you first where possible."
               },
               {
-                question: "How many sessions will I need?",
-                answer: "The number of sessions depends on your individual circumstances. Some clients find the structure of the 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
+                question: "How much does counselling cost and what options are available?",
+                answer: "Single sessions are £60 per 50-minute session (pay as you go). Alternatively, a 6-session package paid in advance is available for £300 total — saving £60 (the cost of one full session) compared to paying £60 x 6 = £360 individually. Please note that the discount applies exclusively when the 6 sessions are paid upfront as a package."
               },
               {
                 question: "How do I book a session?",
-                answer: "You can book a session by visiting the Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
+                answer: "You can get in touch by clicking 'Message Me' or submitting the contact form on the Contact page. Erika replies personally the same day to arrange your free 20-minute initial call."
               },
               {
                 question: "Do you see clients in person in Edinburgh?",

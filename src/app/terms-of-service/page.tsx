@@ -53,17 +53,17 @@ export default function TermsOfService() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">2. Sessions</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Standard sessions are 50 minutes in duration. The initial session is 75 minutes to allow time for a fuller exploration of your situation and to agree how to work together. Sessions are available in person in Edinburgh and Dalkeith, or online via secure video. Session frequency and overall duration are agreed collaboratively and reviewed regularly.
+              Standard sessions are 50 minutes in duration. The initial session is 60 minutes to allow time for a fuller exploration of your situation and to agree how to work together. Sessions are available in person in Edinburgh and Dalkeith, or online via secure video. Session frequency and overall duration are open-ended, agreed collaboratively, and reviewed regularly.
             </p>
           </div>
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">3. Fees & Payment</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Current fees are £85 per 50-minute individual session, or £480 for the 6-session Growth Package (£80 per session). Fees are subject to review and any changes will be communicated with at least four weeks' notice.
+              Current fees are £60 per 50-minute individual session (pay as you go). A committed loyalty discount package is available: 6 sessions paid in advance for £300 total (saving £60, the cost of one session, compared to paying £60 individually per session). This discount applies exclusively when the 6 sessions are paid upfront as a package. Fees are subject to review and any changes will be communicated with at least four weeks' notice.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Payment is due before or at the time of each session. Acceptable payment methods will be confirmed at the point of booking. The Growth Package fee is paid in advance and is non-refundable for sessions already attended.
+              Payment is due before or at the time of each session. For the committed loyalty discount package, full payment of £300 is required upfront in advance.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Mindhaven does not currently process payment online through this website. Payment details will be provided directly.

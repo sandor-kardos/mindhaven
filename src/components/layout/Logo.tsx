@@ -9,7 +9,7 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({ variant = "light", variantMark = "lineM", className = "" }: LogoProps) {
+export function Logo({ variant = "light", className = "" }: LogoProps) {
   const isDarkBg = variant === "dark";
 
   return (
@@ -18,43 +18,22 @@ export function Logo({ variant = "light", variantMark = "lineM", className = "" 
       className={`inline-flex items-center gap-3 group ${className}`} 
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
-      {/* Original High-End Mindhaven Sanctuary Arch & Botanical Leaf Crest */}
+      {/* Sleek Minimalist M Monogram */}
       <div className="relative shrink-0 flex items-center justify-center">
         <svg 
           viewBox="0 0 100 100" 
-          width="37" 
-          height="37" 
+          width="32" 
+          height="32" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
           className="transition-transform duration-300 group-hover:scale-105 shrink-0"
         >
-          {/* Sanctuary Outer Arch */}
           <path 
-            d="M 22 76 V 44 C 22 28.536 34.536 16 50 16 C 65.464 16 78 28.536 78 44 V 76" 
+            d="M 22 76 V 24 L 50 56 L 78 24 V 76" 
             stroke={isDarkBg ? "#34D399" : "#0D2E24"} 
-            strokeWidth="6" 
+            strokeWidth="8" 
             strokeLinecap="round" 
-          />
-          {/* Inner Botanical Pillar */}
-          <path 
-            d="M 50 30 V 76" 
-            stroke={isDarkBg ? "#34D399" : "#10B981"} 
-            strokeWidth="5" 
-            strokeLinecap="round" 
-          />
-          {/* Left Leaf Curve - Brighter Green */}
-          <path 
-            d="M 50 54 C 36 54 30 42 30 42" 
-            stroke={isDarkBg ? "#34D399" : "#10B981"} 
-            strokeWidth="5" 
-            strokeLinecap="round" 
-          />
-          {/* Right Leaf Curve - Brighter Green */}
-          <path 
-            d="M 50 44 C 64 44 70 32 70 32" 
-            stroke={isDarkBg ? "#34D399" : "#10B981"} 
-            strokeWidth="5" 
-            strokeLinecap="round" 
+            strokeLinejoin="round" 
           />
         </svg>
       </div>

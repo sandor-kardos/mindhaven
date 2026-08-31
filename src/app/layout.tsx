@@ -45,7 +45,7 @@ const jsonLd = {
       url: "https://mindhaven.uk",
       telephone: "+447516785823",
       email: "mindhavenuk@gmail.com",
-      priceRange: "£80 - £85",
+      priceRange: "£60",
       image: "https://mindhaven.uk/assets/erika-martin.jpg",
       description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
       sameAs: [
