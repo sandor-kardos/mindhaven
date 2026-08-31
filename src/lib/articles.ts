@@ -174,15 +174,15 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "Stress doesn't only live in thoughts and emotions — it also shows up in the body. Paying attention to physical sensations alongside thoughts can help release stored tension and interrupt the cycle of chronic stress.",
+        text: "Stress doesn't only live in thoughts and emotions. It also shows up in the body. Paying attention to physical sensations alongside thoughts can help release stored tension and interrupt the cycle of chronic stress.",
       },
       {
         type: "paragraph",
-        text: "In practice, this means learning to notice where tension gathers in the body — a clenched jaw, a tight chest, a shallow breath — and using that awareness as an early signal rather than waiting for depletion. Like a ripple expanding from a single point of contact, one small moment of recognition can shift your entire physiological state.",
+        text: "In practice, this means learning to notice where tension gathers in the body: a clenched jaw, a tight chest, a shallow breath. Using that awareness as an early signal rather than waiting for depletion. Like a ripple expanding from a single point of contact, one small moment of recognition can shift your entire physiological state.",
       },
       {
         type: "callout",
-        text: "Counselling that attends to both mind and body works with what you think and what you carry physically — because lasting calm often begins not in analysis, but in the breath, the posture, the quiet signals you have learned to ignore.",
+        text: "Counselling that attends to both mind and body works with what you think and what you carry physically. Lasting calm often begins not in analysis, but in the breath, the posture, the quiet signals you have learned to ignore.",
       },
     ],
   },
