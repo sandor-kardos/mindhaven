@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldCheck, Lock, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+import { ShieldCheck, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 
 export function Footer() {
@@ -74,10 +74,6 @@ export function Footer() {
               <li><Link href="/privacy-and-gdpr" className="hover:text-[#34D399] transition-colors">Privacy & GDPR Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-[#34D399] transition-colors">Terms of Service</Link></li>
               <li><Link href="/legal-notice" className="hover:text-[#34D399] transition-colors">Legal Notice</Link></li>
-              <li className="flex items-center gap-1.5 text-slate-200 pt-1">
-                <Lock className="w-3.5 h-3.5 text-[#34D399] shrink-0" />
-                <span>Confidential & Discreet</span>
-              </li>
             </ul>
           </div>
 

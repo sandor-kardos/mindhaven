@@ -110,22 +110,10 @@ export function Gallery4({
 
           {/* Right Column: Single Large AI Image + Excerpt Preview Card */}
           <div className="col-span-6">
-            <div className="bg-white text-[#0D2E24] p-6 sm:p-8 rounded-3xl border border-[#34D399]/40 shadow-2xl space-y-6 transition-all duration-300">
+            <div className="bg-white text-[#0D2E24] rounded-3xl border border-[#34D399]/40 shadow-2xl overflow-hidden transition-all duration-300">
               
-              {/* Category & Read time */}
-              <div className="flex items-center justify-between gap-2">
-                <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal shadow-xs">
-                  <Tag className="w-3.5 h-3.5 mr-1" />
-                  {activeArticle.category}
-                </Badge>
-                <span className="inline-flex items-center gap-1.5 text-xs text-[#0D2E24]/70 font-bold">
-                  <Clock className="w-3.5 h-3.5 text-[#34D399]" />
-                  {activeArticle.readTime}
-                </span>
-              </div>
-
-              {/* Large Image Container */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md border border-[#34D399]/20 bg-slate-100">
+              {/* Full-bleed Header Image */}
+              <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
                 <Image
                   key={activeArticle.slug}
                   src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
@@ -136,50 +124,65 @@ export function Gallery4({
                 />
               </div>
 
-              {/* Title & Short Excerpt */}
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-[#0D2E24] leading-tight">
-                  {activeArticle.title}
-                </h3>
-                <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed line-clamp-2">
-                  {activeArticle.excerpt}
-                </p>
+              {/* Padded Body */}
+              <div className="p-6 sm:p-8 space-y-5">
+                {/* Category & Read time */}
+                <div className="flex items-center justify-between gap-2">
+                  <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal shadow-xs">
+                    <Tag className="w-3.5 h-3.5 mr-1" />
+                    {activeArticle.category}
+                  </Badge>
+                  <span className="inline-flex items-center gap-1.5 text-xs text-[#0D2E24]/70 font-bold">
+                    <Clock className="w-3.5 h-3.5 text-[#34D399]" />
+                    {activeArticle.readTime}
+                  </span>
+                </div>
+
+                {/* Title & Short Excerpt */}
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-[#0D2E24] leading-tight">
+                    {activeArticle.title}
+                  </h3>
+                  <p className="text-sm text-[#0D2E24]/85 font-medium leading-relaxed line-clamp-2">
+                    {activeArticle.excerpt}
+                  </p>
+                </div>
+
+                {/* Read Article Button */}
+                <div className="pt-2">
+                  <Link
+                    href={`/blog/${activeArticle.slug}`}
+                    className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#0D2E24] text-white font-bold text-sm hover:bg-[#34D399] hover:text-[#0D2E24] transition-all shadow-md group"
+                  >
+                    <BookOpen className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
+                    <span>Read Article</span>
+                    <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
+                  </Link>
+                </div>
               </div>
 
-              {/* Read Article Button */}
-              <div className="pt-2">
-                <Link
-                  href={`/blog/${activeArticle.slug}`}
-                  className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#0D2E24] text-white font-bold text-sm hover:bg-[#34D399] hover:text-[#0D2E24] transition-all shadow-md group"
-                >
-                  <BookOpen className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
-                  <span>Read Article</span>
-                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
-                </Link>
-              </div>
-
-            </div>
-
-            {/* Interactive Pagination Dots for Desktop Preview */}
-            <div className="flex items-center justify-center gap-2 pt-5">
-              {articles.map((article, idx) => {
-                const isActive = article.slug === activeArticle.slug;
-                return (
-                  <button
-                    key={article.slug}
-                    onClick={() => setActiveSlug(article.slug)}
-                    className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#34D399] ${
-                      isActive
-                        ? "w-6 h-2.5 bg-[#34D399] shadow-xs"
-                        : "w-2.5 h-2.5 bg-white/30 hover:bg-white/60"
-                    }`}
-                    aria-label={`Select article ${idx + 1}: ${article.title}`}
-                  />
-                );
-              })}
             </div>
           </div>
 
+        </div>
+
+        {/* Interactive Pagination Dots Centered for Desktop View */}
+        <div className="hidden lg:flex items-center justify-center gap-2 pt-8">
+          {articles.map((article, idx) => {
+            const isActive = article.slug === activeArticle.slug;
+            return (
+              <button
+                key={article.slug}
+                onClick={() => setActiveSlug(article.slug)}
+                className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#34D399] ${
+                  isActive
+                    ? "w-6 h-2.5 bg-[#34D399] shadow-xs"
+                    : "w-2.5 h-2.5 bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Select article ${idx + 1}: ${article.title}`}
+              />
+            );
+          })}
         </div>
 
         {/* MOBILE & TABLET LAYOUT: Swipeable Carousel with Right Side Spacing */}
@@ -192,51 +195,54 @@ export function Gallery4({
             {articles.map((article) => (
               <div
                 key={article.slug}
-                className="w-[78vw] max-w-[340px] shrink-0 snap-center bg-white text-[#0D2E24] p-5 sm:p-6 rounded-3xl border border-[#34D399]/40 shadow-xl flex flex-col justify-between space-y-4"
+                className="w-[78vw] max-w-[340px] shrink-0 snap-center bg-white text-[#0D2E24] rounded-3xl border border-[#34D399]/40 shadow-xl overflow-hidden flex flex-col justify-between"
               >
-                <div className="space-y-4">
-                  {/* Category & Read time */}
-                  <div className="flex items-center justify-between gap-2">
-                    <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal text-xs">
-                      <Tag className="w-3 h-3 mr-1" />
-                      {article.category}
-                    </Badge>
-                    <span className="inline-flex items-center gap-1 text-xs text-[#0D2E24]/70 font-bold">
-                      <Clock className="w-3 h-3 text-[#34D399]" />
-                      {article.readTime}
-                    </span>
-                  </div>
-
-                  {/* AI Article Header Image */}
-                  <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xs border border-[#34D399]/20 bg-slate-100">
-                    <Image
-                      src={articleImages[article.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
-                      alt={article.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Title & Short Excerpt */}
-                  <div className="space-y-1.5">
-                    <h3 className="text-lg font-extrabold font-heading text-[#0D2E24] leading-snug line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed line-clamp-2">
-                      {article.excerpt}
-                    </p>
-                  </div>
+                {/* Full-bleed Top Image */}
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
+                  <Image
+                    src={articleImages[article.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
-                {/* Read Article Link */}
-                <div className="pt-2 border-t border-[#34D399]/20">
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0D2E24] hover:text-[#059669] transition-colors group"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                {/* Padded Body */}
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
+                  <div className="space-y-3">
+                    {/* Category & Read time */}
+                    <div className="flex items-center justify-between gap-2">
+                      <Badge className="px-3 py-1 bg-[#34D399] text-white border-none normal-case tracking-normal text-xs">
+                        <Tag className="w-3 h-3 mr-1" />
+                        {article.category}
+                      </Badge>
+                      <span className="inline-flex items-center gap-1 text-xs text-[#0D2E24]/70 font-bold">
+                        <Clock className="w-3 h-3 text-[#34D399]" />
+                        {article.readTime}
+                      </span>
+                    </div>
+
+                    {/* Title & Short Excerpt */}
+                    <div className="space-y-1.5">
+                      <h3 className="text-lg font-extrabold font-heading text-[#0D2E24] leading-snug line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-xs text-[#0D2E24]/80 font-medium leading-relaxed line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Read Article Link */}
+                  <div className="pt-2 border-t border-[#34D399]/20">
+                    <Link
+                      href={`/blog/${article.slug}`}
+                      className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0D2E24] hover:text-[#059669] transition-colors group"
+                    >
+                      <span>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

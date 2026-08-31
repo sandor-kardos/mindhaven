@@ -133,7 +133,8 @@ export default function Home() {
       <section className="relative pt-6 pb-20 sm:pt-12 lg:pt-20 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-white to-white text-[#0D2E24] overflow-hidden border-b border-[#34D399]/20 ">
         
         {/* Ambient Floating Orbs */}
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#34D399]/22 rounded-full blur-[150px] animate-aura-drift pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#059669]/15 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
         
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-stretch">
@@ -219,23 +220,23 @@ export default function Home() {
                   href="https://www.search-ncps.com/search/FindaTherapist/NCS16-03808"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute -bottom-6 left-4 right-4 sm:-bottom-8 sm:left-8 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border-2 border-[#34D399]/60 shadow-[0_20px_40px_-10px_rgba(13,46,36,0.25)] flex items-center justify-between group hover:border-[#34D399] hover:scale-[1.02] transition-all cursor-pointer z-20"
+                  className="absolute -bottom-6 left-2 right-2 sm:-bottom-8 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 md:p-3 lg:p-5 border-2 border-[#34D399]/60 shadow-[0_20px_40px_-10px_rgba(13,46,36,0.25)] flex items-center justify-between group hover:border-[#34D399] hover:scale-[1.02] transition-all cursor-pointer z-20"
                   title="Verify Erika Martin's Official NCPS Register Listing"
                 >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-11 h-11 rounded-xl bg-[#ECFDF5] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/40 group-hover:scale-110 transition-transform">
-                      <ShieldCheck className="w-6 h-6 text-[#34D399]" />
+                  <div className="flex items-center gap-2.5 sm:gap-3.5">
+                    <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-[#ECFDF5] flex items-center justify-center text-[#0D2E24] shrink-0 border border-[#34D399]/40 group-hover:scale-110 transition-transform">
+                      <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#34D399]" />
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-sm sm:text-base text-[#0D2E24] font-heading">
+                      <h4 className="font-extrabold text-xs sm:text-base text-[#0D2E24] font-heading">
                         Erika Martin 
                       </h4>
-                      <div className="text-xs text-[#059669] font-extrabold mt-0.5">
+                      <div className="text-[10px] sm:text-xs text-[#059669] font-extrabold mt-0.5 whitespace-nowrap">
                         <span>Accredited Counsellor (MNCPS Acc.)</span>
                       </div>
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform shrink-0 ml-2" />
+                  <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform shrink-0 ml-1 sm:ml-2" />
                 </a>
               </div>
             </div>
