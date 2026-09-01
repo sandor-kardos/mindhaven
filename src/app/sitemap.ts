@@ -4,11 +4,11 @@ import { getAllArticles } from "@/lib/articles";
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles();
 
-  const blogEntries: MetadataRoute.Sitemap = articles.map((article) => ({
+  const blogEntries: MetadataRoute.Sitemap = articles.map((article, index) => ({
     url: `https://mindhaven.uk/blog/${article.slug}`,
     lastModified: new Date(article.date),
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: index < 3 ? 0.75 : 0.7,
   }));
 
   return [

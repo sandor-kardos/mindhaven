@@ -54,6 +54,11 @@ const nextConfig: NextConfig = {
         destination: "/resources",
         permanent: true,
       },
+      {
+        source: "/blog/somatic-therapy-explained",
+        destination: "/blog/working-with-the-body-stress-recovery",
+        permanent: true,
+      },
     ];
   },
 };

@@ -9,7 +9,7 @@ const articleImages: Record<string, string> = {
   "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "somatic-therapy-explained": "/images/blog/somatic-therapy-explained.webp",
+  "working-with-the-body-stress-recovery": "/images/blog/working-with-the-body-stress-recovery.webp",
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 

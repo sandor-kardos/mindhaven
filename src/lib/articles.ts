@@ -160,7 +160,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "somatic-therapy-explained",
+    slug: "working-with-the-body-stress-recovery",
     title: "Working With the Body: How Physical Awareness Supports Stress Recovery",
     excerpt:
       "Stress lives in the body as well as the mind. Learning to notice physical tension is a powerful part of recovery.",
