@@ -127,7 +127,7 @@ export default function FeesAndBooking() {
           
           <div className="pt-4">
             <Link href="/resources/life-compass" className="text-sm font-bold text-[#0D2E24] hover:text-[#34D399] underline underline-offset-4 transition-colors">
-              Try the free Life Compass Tool
+              Try the free Life Compass
             </Link>
           </div>
         </div>

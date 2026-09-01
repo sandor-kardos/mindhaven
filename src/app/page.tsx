@@ -58,7 +58,7 @@ const faqSchema = {
       "name": "How many sessions will I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The number of sessions depends on your individual circumstances. Some clients find the structure of the 6-session Growth Package (£480) sufficient, while others prefer ongoing individual sessions (£85 per session) for long-term well-being."
+        "text": "The number of sessions depends on your individual goals and preferences. Sessions are open-ended without a forced cap. You can pay £60 per session as you go, or choose a prepaid 6-session loyalty package (£300) for upfront savings."
       }
     },
     {
@@ -66,7 +66,7 @@ const faqSchema = {
       "name": "How do I book a session?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can book a session by visiting the Fees & Booking page, where you can select between an individual session or a Growth Package and contact us directly to schedule your appointment."
+        "text": "You can get in touch by clicking 'Message Me' or submitting the form on the Contact page. Erika replies personally the same day to arrange your free 20-minute initial call."
       }
     },
     {

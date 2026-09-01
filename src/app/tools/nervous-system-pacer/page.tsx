@@ -33,11 +33,11 @@ export default function NervousSystemPacerPage() {
           
           <div className="flex justify-center">
             <Link
-              href="/tools"
+              href="/resources"
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-[#34D399] border border-[#34D399]/40 text-xs font-bold transition-all"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Tools</span>
+              <span>Back to Resources</span>
             </Link>
           </div>
 
@@ -133,15 +133,15 @@ export default function NervousSystemPacerPage() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#34D399] text-[#0D2E24] font-extrabold text-sm hover:bg-white transition-all shadow-md"
               >
                 <Calendar className="w-4 h-4 text-[#0D2E24]" />
-                <span>Book a Free 15-Minute Intro Call</span>
+                <span>Book a Free 20-Minute Initial Call</span>
                 <ArrowRight className="w-4 h-4 text-[#0D2E24]" />
               </Link>
               
               <Link
-                href="/tools"
+                href="/resources"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 text-white font-bold text-sm border border-[#34D399]/40 hover:bg-white/20 transition-all"
               >
-                <span>View All Tools</span>
+                <span>View All Resources</span>
               </Link>
             </div>
           </div>

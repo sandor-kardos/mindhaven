@@ -106,7 +106,7 @@ export default function BurnoutTherapistEdinburgh() {
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] text-white hover:bg-[#34D399] hover:text-[#0D2E24] font-bold text-base rounded-full transition-all shadow-md group"
             >
               <Calendar className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] transition-colors" />
-              <span>Book a Free Introductory Call</span>
+              <span>Book a Free 20-Minute Initial Call</span>
               <ArrowRight className="w-5 h-5 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
             </Link>
           </div>

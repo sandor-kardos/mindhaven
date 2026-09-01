@@ -121,7 +121,7 @@ function ToolCard({ item }: { item: ToolResourceItem }) {
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#059669]">
             {item.subcategory}
           </span>
-          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-xl bg-white border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
             <Icon className="w-5 h-5 text-[#34D399]" />
           </div>
         </div>
@@ -176,7 +176,7 @@ function ReadingCard({ item }: { item: ReadingResourceItem }) {
           <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
             {item.subcategory}
           </span>
-          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/30 flex items-center justify-center shrink-0 ml-2">
+          <div className="w-10 h-10 rounded-xl bg-white border border-[#34D399]/30 flex items-center justify-center shrink-0 ml-2">
             <BookOpen className="w-5 h-5 text-[#34D399]" />
           </div>
         </div>
@@ -274,7 +274,7 @@ export default function ResourcesPage() {
                   className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 border focus:outline-none focus:ring-2 focus:ring-[#34D399] focus:ring-offset-2 ${
                     isActive
                       ? "bg-[#0D2E24] text-white border-[#0D2E24] shadow-md"
-                      : "bg-white text-[#0D2E24] border-[#34D399]/40 hover:border-[#34D399] hover:bg-[#E6F2ED]"
+                      : "bg-white text-[#0D2E24] border-[#34D399]/40 hover:border-[#34D399] hover:bg-[#34D399]/10"
                   }`}
                   aria-pressed={isActive}
                 >
@@ -308,7 +308,7 @@ export default function ResourcesPage() {
                 href="/contact#book"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#0D2E24] hover:bg-[#34D399] text-white hover:text-[#0D2E24] font-bold text-sm rounded-full transition-all shadow-md group"
               >
-                <span>Book a Free Introductory Call</span>
+                <span>Book a Free 20-Minute Initial Call</span>
                 <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:text-[#0D2E24] group-hover:translate-x-1 transition-all" />
               </Link>
             </div>

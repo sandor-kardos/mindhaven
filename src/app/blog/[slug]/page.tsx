@@ -267,13 +267,13 @@ const articleTldrs: Record<string, string> = {
           </h2>
           <p className="text-[#0D2E24]/80 font-medium leading-relaxed max-w-xl mx-auto">
             If you would like to explore what counselling might offer you, a free
-            15-minute introductory call is a good place to start, with no obligation to proceed.
+            20-minute initial call is a good place to start, with no obligation to proceed.
           </p>
           <Link
             href="/contact#book"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#0D2E24] text-white hover:bg-[#34D399] hover:text-[#0D2E24] font-bold text-base rounded-full transition-all shadow-md"
           >
-            Book a Free Introductory Call
+            Book a Free 20-Minute Initial Call
           </Link>
         </div>
       </section>
