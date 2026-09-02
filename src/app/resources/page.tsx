@@ -170,7 +170,7 @@ function CarouselRow({ children, count }: { children: React.ReactNode; count: nu
               aria-label={`Go to item ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 activeIndex === i
-                  ? "w-6 h-2 bg-[#047857]"
+                  ? "w-6 h-2 bg-[#34D399]"
                   : "w-2 h-2 bg-[#34D399]/40 hover:bg-[#34D399]/70"
               }`}
             />
@@ -192,7 +192,7 @@ function ToolCard({ item }: { item: ToolResourceItem }) {
     >
       <div className="space-y-4">
         <div className="flex items-center justify-between min-h-[40px]">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#059669]">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#0D2E24]">
             {item.subcategory}
           </span>
           <div className="w-10 h-10 rounded-xl bg-white border border-[#34D399]/30 flex items-center justify-center text-[#34D399] group-hover:scale-110 transition-transform">
@@ -210,7 +210,7 @@ function ToolCard({ item }: { item: ToolResourceItem }) {
         </div>
 
         <div className="min-h-[32px] flex items-center">
-          <h2 className="text-2xl font-bold font-heading text-[#0D2E24] group-hover:text-[#059669] transition-colors">
+          <h2 className="text-2xl font-bold font-heading text-[#0D2E24] group-hover:text-[#34D399] transition-colors">
             {item.title}
           </h2>
         </div>
@@ -221,7 +221,7 @@ function ToolCard({ item }: { item: ToolResourceItem }) {
       </div>
 
       <div className="mt-6 pt-5 border-t border-[#34D399]/20 flex items-center justify-between">
-        <span className="inline-flex items-center gap-2 text-sm font-extrabold text-[#0D2E24] group-hover:text-[#059669] transition-colors">
+        <span className="inline-flex items-center gap-2 text-sm font-extrabold text-[#0D2E24] group-hover:text-[#34D399] transition-colors">
           <span>{item.cta}</span>
           <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1.5 transition-transform" />
         </span>
@@ -262,7 +262,7 @@ function BookModal({
 
         {/* Badge & Category */}
         <div className="flex items-center gap-3">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#0D2E24]">
             {item.subcategory}
           </span>
           <span className="text-xs font-bold text-[#0D2E24]/50 uppercase tracking-wider">
@@ -275,7 +275,7 @@ function BookModal({
           <h2 id="book-modal-title" className="text-2xl font-bold font-heading text-[#0D2E24] leading-snug">
             {item.title}
           </h2>
-          <p className="text-sm font-bold text-[#059669] uppercase tracking-wider">
+          <p className="text-sm font-bold text-[#34D399] uppercase tracking-wider">
             By {item.author}
           </p>
         </div>
@@ -297,7 +297,7 @@ function BookModal({
               href={item.publisherUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D2E24] hover:bg-[#047857] text-white text-xs font-bold rounded-full transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D2E24] hover:bg-[#34D399] text-white text-xs font-bold rounded-full transition-colors shadow-sm"
             >
               <span>View Publisher Page</span>
               <ExternalLink className="w-3.5 h-3.5 text-[#34D399]" />
@@ -336,7 +336,7 @@ function ReadingCard({
       <div className="space-y-4 flex-1">
         {/* Badge row */}
         <div className="flex items-center justify-between min-h-[40px]">
-          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#047857]">
+          <span className="inline-block px-3.5 py-1 rounded-full text-xs font-extrabold text-white uppercase tracking-wider bg-[#0D2E24]">
             {item.subcategory}
           </span>
           <div className="w-10 h-10 rounded-xl bg-white border border-[#34D399]/30 flex items-center justify-center shrink-0 ml-2 group-hover:scale-110 transition-transform">
@@ -346,7 +346,7 @@ function ReadingCard({
 
         {/* Title + author (Author line pinned to bottom for horizontal alignment) */}
         <div className="min-h-[84px] flex flex-col justify-between">
-          <h2 className="text-xl font-bold font-heading text-[#0D2E24] leading-snug group-hover:text-[#059669] transition-colors">
+          <h2 className="text-xl font-bold font-heading text-[#0D2E24] leading-snug group-hover:text-[#34D399] transition-colors">
             {item.title}
           </h2>
           <p className="text-xs font-bold text-[#0D2E24]/60 mt-1 uppercase tracking-wider">
@@ -365,7 +365,7 @@ function ReadingCard({
         <span className="text-xs font-bold text-[#0D2E24]/50 uppercase tracking-wider">
           Erika&apos;s note
         </span>
-        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#059669] group-hover:underline">
+        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#34D399] group-hover:underline">
           <span>Read note</span>
           <ArrowRight className="w-3.5 h-3.5 text-[#34D399] group-hover:translate-x-1 transition-transform" />
         </span>

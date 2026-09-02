@@ -58,7 +58,7 @@ export function Gallery4({
         <Image
           key={activeArticle.slug}
           src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
-          alt=""
+          alt={`${activeArticle.title} decorative background`}
           fill
           className="object-cover opacity-[0.18] blur-sm scale-110 transition-all duration-700"
           priority

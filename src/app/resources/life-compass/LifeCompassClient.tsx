@@ -33,6 +33,8 @@ const DEFAULT_DATA: CompassData = {
   hasSliderInteracted: false,
 };
 
+const STEP_LABELS = ["Values", "Alignment", "Intentions", "Actions", "Friction", "Anchor"];
+
 export function LifeCompassClient() {
   const [data, setData] = useState<CompassData>(DEFAULT_DATA);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -147,46 +149,45 @@ export function LifeCompassClient() {
 
   return (
     <div className="space-y-10">
-      {/* Sticky Progress Bar & Section Navigator (Crisp Mint-Grey Background) */}
-      <div className="sticky top-20 z-30 bg-[#F4F7F6]/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#0D2E24]/12 shadow-lg shadow-[#0D2E24]/5 space-y-3">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">Self-Reflection Progress</span>
-            <h3 className="text-base font-extrabold text-[#0D2E24] font-heading">
-              {completedCount} of 6 Sections Explored
-            </h3>
+      {/* Sticky Progress Bar & Section Navigator (Ultra Compact Bar) */}
+      <div className="sticky top-20 z-30 bg-[#F4F7F6]/95 backdrop-blur-md p-2 sm:p-2.5 rounded-xl border border-[#0D2E24]/12 shadow-sm space-y-1.5">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] font-extrabold text-[#0D2E24] font-heading">Progress:</span>
+            <span className="text-[11px] font-bold text-[#059669]">{completedCount} / 6 Sections</span>
           </div>
-          <span className="text-sm font-black text-[#0D2E24] bg-white px-3.5 py-1.5 rounded-full border border-[#34D399]/40 shadow-xs self-start sm:self-auto">
+          <span className="text-[10px] font-black text-[#0D2E24] bg-white px-2 py-0.5 rounded-full border border-[#34D399]/40 shadow-2xs">
             {progressPercentage}% Completed
           </span>
         </div>
 
-        {/* Smooth Emerald Progress Bar */}
-        <div className="w-full bg-white h-2.5 rounded-full overflow-hidden border border-[#34D399]/30">
+        {/* Thin Emerald Progress Bar */}
+        <div className="w-full bg-white h-1.5 rounded-full overflow-hidden border border-[#34D399]/30">
           <div
             className="bg-[#34D399] h-full transition-all duration-500 rounded-full"
             style={{ width: `${progressPercentage}%` }}
           />
         </div>
 
-        {/* Interactive Step Navigator */}
-        <div className="grid grid-cols-6 gap-1.5 pt-1">
-          {[1, 2, 3, 4, 5, 6].map((stepNum, idx) => {
+        {/* Interactive Step Navigator with Small Descriptive Labels */}
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-1 pt-0.5">
+          {STEP_LABELS.map((label, idx) => {
+            const stepNum = idx + 1;
             const isDone = sectionCompletions[idx];
             return (
               <button
-                key={stepNum}
+                key={label}
                 onClick={() => scrollToSection(idx)}
-                className={`py-1.5 px-1 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1 transition-all border ${
+                className={`py-0.5 px-1 rounded-md text-[10px] sm:text-[11px] font-semibold flex items-center justify-center gap-1 transition-all border ${
                   activeStep === stepNum
-                    ? "bg-[#0D2E24] text-white border-[#0D2E24] shadow-xs"
+                    ? "bg-[#0D2E24] text-white border-[#0D2E24] shadow-2xs"
                     : isDone
                     ? "bg-white text-[#0D2E24] border-[#34D399]/60 shadow-2xs"
-                    : "bg-white/60 text-[#0D2E24]/50 border-slate-200 hover:border-[#34D399]/40"
+                    : "bg-white/60 text-[#0D2E24]/60 border-slate-200 hover:border-[#34D399]/40"
                 }`}
               >
-                <span>Step {stepNum}</span>
-                {isDone && <CheckCircle2 className="w-3 h-3 text-[#059669] shrink-0 hidden sm:inline" />}
+                <span className="truncate">{label}</span>
+                {isDone && <CheckCircle2 className="w-2.5 h-2.5 text-[#059669] shrink-0" />}
               </button>
             );
           })}
@@ -200,24 +201,24 @@ export function LifeCompassClient() {
         <div
           ref={stepRefs[0]}
           onClick={() => setActiveStep(1)}
-          className={`relative bg-white p-6 md:p-9 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-6px_22px_-4px_rgba(13,46,36,0.08)] transition-all ${
+          className={`relative bg-white p-5 md:p-8 rounded-3xl border border-[#0D2E24]/12 shadow-[0_-6px_22px_-4px_rgba(13,46,36,0.08)] transition-all ${
             activeStep === 1 ? "ring-2 ring-[#34D399] z-20" : "z-10"
           }`}
         >
-          <div className="flex items-center justify-between mb-4">
-            <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 01
+          <div className="flex items-center justify-between mb-3">
+            <span className="px-2.5 py-0.5 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-[10px] sm:text-xs rounded-full border border-[#34D399]/40">
+              Values
             </span>
             {isSection1Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
-                <CheckCircle2 className="w-4 h-4 text-[#34D399]" /> Completed
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#34D399]" /> Completed
               </span>
             ) : (
               <span className="text-xs font-semibold text-slate-400">Incomplete</span>
             )}
           </div>
-          <div className="flex items-center justify-between gap-2 mb-2">
-            <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <h2 className="text-lg sm:text-2xl font-extrabold font-heading text-[#0D2E24] flex items-center gap-2">
               <span>1. Core Values – What matters most?</span>
               <button
                 type="button"
@@ -263,7 +264,7 @@ export function LifeCompassClient() {
           </div>
         </div>
 
-        {/* CARD 2: Current Situation (Overlapping Card) */}
+        {/* CARD 2: Current Situation (Overlapping Card - Half/Half Layout & Reduced Size Sliders) */}
         <div
           ref={stepRefs[1]}
           onClick={() => setActiveStep(2)}
@@ -273,7 +274,7 @@ export function LifeCompassClient() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 02
+              Alignment
             </span>
             {isSection2Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
@@ -310,37 +311,40 @@ export function LifeCompassClient() {
               <Info className="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
               <div>
                 <strong className="font-extrabold text-[#0D2E24] block mb-0.5">Scale Guidance & Practical Meaning:</strong>
-                <p><strong>1–3 (Low Alignment):</strong> Chronic tension or neglect (e.g. severe Health neglect, skipped meals, burnout).<br />
+                <p><strong>1–3 (Low Alignment):</strong> Chronic tension or neglect.<br />
                 <strong>4–6 (Moderate):</strong> Functional but routine or uninspired.<br />
-                <strong>7–10 (High Alignment):</strong> Deep fulfillment, flow, and daily living in sync with your values.</p>
+                <strong>7–10 (High Alignment):</strong> Deep fulfillment and daily living in sync with values.</p>
               </div>
             </div>
           )}
 
-          <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start bg-[#F9FBF9] p-6 rounded-2xl border border-[#34D399]/20">
-            <div className="flex-1 w-full space-y-5">
+          {/* Half / Half Layout for Sliders (50%) & Net Diagram (50%) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center bg-[#F9FBF9] p-4 sm:p-6 rounded-2xl border border-[#34D399]/20">
+            {/* Left 50%: Compact Single-Row Inline Sliders */}
+            <div className="space-y-2.5">
               {LABELS.map((label, i) => (
-                <div key={label} className="bg-white p-3.5 rounded-xl border border-[#34D399]/25 shadow-xs">
-                  <div className="flex justify-between mb-1.5">
-                    <label className="text-sm font-bold text-[#0D2E24]">{label}</label>
-                    <span className="text-sm font-extrabold text-[#059669] bg-[#ECFDF5] px-2.5 py-0.5 rounded-md border border-[#34D399]/30">
-                      {data.scores[i]} / 10
-                    </span>
-                  </div>
+                <div key={label} className="bg-white p-2.5 sm:p-3 rounded-xl border border-[#34D399]/25 shadow-2xs flex items-center gap-3">
+                  <label className="w-24 sm:w-28 text-xs sm:text-sm font-bold text-[#0D2E24] shrink-0 truncate">
+                    {label}
+                  </label>
                   <input
                     type="range"
                     min="1"
                     max="10"
                     value={data.scores[i]}
                     onChange={e => updateSlider(i, parseInt(e.target.value))}
-                    className="w-full accent-[#34D399] cursor-pointer"
+                    className="flex-1 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#34D399]"
                   />
+                  <span className="text-xs font-extrabold text-[#059669] bg-[#ECFDF5] px-2 py-0.5 rounded-md border border-[#34D399]/30 shrink-0 min-w-[48px] text-center">
+                    {data.scores[i]} / 10
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="w-[300px] h-[300px] relative flex-shrink-0 bg-white p-4 rounded-2xl border border-[#34D399]/25 flex items-center justify-center">
-              <svg width={RADAR_SIZE} height={RADAR_SIZE} className="overflow-visible">
+            {/* Right 50%: Net Diagram Radar Chart (Enlarged) */}
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#34D399]/25 flex items-center justify-center h-full min-h-[320px] sm:min-h-[360px]">
+              <svg viewBox={`0 0 ${RADAR_SIZE} ${RADAR_SIZE}`} className="w-full max-w-[340px] sm:max-w-[390px] lg:max-w-[440px] h-auto overflow-visible">
                 {[2, 4, 6, 8, 10].map(level => {
                   const r = (level / 10) * MAX_RADIUS;
                   const pts = ANGLES.map(a => `${CENTER + r * Math.sin(a)},${CENTER - r * Math.cos(a)}`).join(" ");
@@ -383,7 +387,7 @@ export function LifeCompassClient() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 03
+              Intentions
             </span>
             {isSection3Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
@@ -451,7 +455,7 @@ export function LifeCompassClient() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 04
+              Actions
             </span>
             {isSection4Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
@@ -519,7 +523,7 @@ export function LifeCompassClient() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 05
+              Friction
             </span>
             {isSection5Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
@@ -593,7 +597,7 @@ export function LifeCompassClient() {
         >
           <div className="flex items-center justify-between mb-4">
             <span className="px-3 py-1 bg-[#ECFDF5] text-[#0D2E24] font-extrabold text-xs rounded-full border border-[#34D399]/40">
-              Step 06
+              Anchor
             </span>
             {isSection6Complete ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-[#059669]">
