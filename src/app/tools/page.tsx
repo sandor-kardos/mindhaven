@@ -61,25 +61,25 @@ export default function ToolsIndexPage() {
   return (
     <div className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       {/* Page Hero Header */}
-      <section className="pt-20 pb-20 px-4 bg-[#0D2E24] text-white border-b border-[#34D399]/30 relative overflow-hidden">
-        <div className="container mx-auto max-w-4xl relative z-10 space-y-6 text-center">
+      <section className="pt-8 pb-8 sm:pt-10 sm:pb-10 px-4 bg-[#0D2E24] text-white border-b border-[#34D399]/30 relative overflow-hidden text-center">
+        <div className="container mx-auto max-w-3xl relative z-10 space-y-3">
           
           <Badge variant="white" className="bg-white/10 text-[#34D399] border-[#34D399]/40 gap-2">
-            <Sparkles className="w-4 h-4 text-[#34D399]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#34D399]" />
             <span>Interactive Wellbeing Suite</span>
           </Badge>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold font-heading text-white tracking-tight">
             Interactive Tools
           </h1>
 
-          <p className="text-slate-200 text-lg sm:text-xl font-medium max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-slate-200 text-xs sm:text-sm font-medium max-w-xl mx-auto leading-relaxed">
             Free, client-side tools designed to help you regulate stress, assess values alignment, and gain clarity in demanding professional environments.
           </p>
 
-          <div className="pt-2 flex items-center justify-center gap-2 text-xs font-semibold text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#34D399]" />
-            <span>100% Private & Client-Side: No Personal Data Recorded</span>
+          <div className="pt-1 flex items-center justify-center gap-1.5 text-[11px] font-semibold text-slate-300">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#34D399]" />
+            <span>100% Private &amp; Client-Side: No Personal Data Recorded</span>
           </div>
 
         </div>

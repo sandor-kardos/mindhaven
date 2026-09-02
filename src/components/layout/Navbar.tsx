@@ -199,82 +199,96 @@ export function Navbar() {
                     </p>
                   </div>
 
-                  {/* 3 Contact Options Grid */}
-                  <div className="space-y-3">
-                    {/* Option 1: WhatsApp */}
-                    <a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        setIsContactModalOpen(false);
-                        setModalView('options');
-                      }}
-                      className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
-                          <MessageCircle className="w-5 h-5" />
+                    {/* 3 Contact Options Grid */}
+                    <div className="space-y-3">
+                      {/* Option 1: WhatsApp */}
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof window !== "undefined") {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ event: "contact_method_selected", method: "whatsapp" });
+                          }
+                          setIsContactModalOpen(false);
+                          setModalView('options');
+                        }}
+                        className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+                            <MessageCircle className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">WhatsApp</h4>
+                            <p className="text-[11px] text-[#0D2E24]/70 font-medium">Quick, informal messaging</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">WhatsApp</h4>
-                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Quick, informal messaging</p>
-                        </div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                    </a>
+                        <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                      </a>
 
-                    {/* Option 2: Email Form Option */}
-                    <button
-                      type="button"
-                      onClick={() => setModalView('form')}
-                      className="w-full text-left group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center text-[#059669]">
-                          <Mail className="w-5 h-5" />
+                      {/* Option 2: Email Form Option */}
+                      <button
+                        type="button"
+                        onClick={() => setModalView('form')}
+                        className="w-full text-left group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all cursor-pointer"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center text-[#059669]">
+                            <Mail className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Email Form</h4>
+                            <p className="text-[11px] text-[#0D2E24]/70 font-medium">Send a quick note with your details</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Email Form</h4>
-                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Send a quick note with your details</p>
-                        </div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                    </button>
+                        <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                      </button>
 
-                    {/* Option 3: Messenger */}
-                    <a
-                      href={MESSENGER_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => {
-                        setIsContactModalOpen(false);
-                        setModalView('options');
-                      }}
-                      className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2]">
-                          <Send className="w-5 h-5" />
+                      {/* Option 3: Messenger */}
+                      <a
+                        href={MESSENGER_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (typeof window !== "undefined") {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ event: "contact_method_selected", method: "messenger" });
+                          }
+                          setIsContactModalOpen(false);
+                          setModalView('options');
+                        }}
+                        className="group flex items-center justify-between p-4 bg-slate-50 hover:bg-white rounded-2xl border border-[#34D399]/30 hover:border-[#34D399] shadow-sm hover:shadow-md transition-all"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2]">
+                            <Send className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Messenger</h4>
+                            <p className="text-[11px] text-[#0D2E24]/70 font-medium">Facebook Messenger</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-extrabold text-sm text-[#0D2E24] font-heading">Messenger</h4>
-                          <p className="text-[11px] text-[#0D2E24]/70 font-medium">Facebook Messenger</p>
-                        </div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
+                        <ArrowRight className="w-4 h-4 text-[#34D399] group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
 
-                  {/* Direct Link to Email client */}
-                  <div className="pt-2 text-center border-t border-[#34D399]/20">
-                    <a
-                      href="mailto:mindhavenuk@gmail.com"
-                      className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
-                    >
-                      Or open email app directly (mindhavenuk@gmail.com) &rarr;
-                    </a>
-                  </div>
+                    {/* Direct Link to Email client */}
+                    <div className="pt-2 text-center border-t border-[#34D399]/20">
+                      <a
+                        href="mailto:mindhavenuk@gmail.com"
+                        onClick={() => {
+                          if (typeof window !== "undefined") {
+                            window.dataLayer = window.dataLayer || [];
+                            window.dataLayer.push({ event: "contact_method_selected", method: "email" });
+                          }
+                        }}
+                        className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
+                      >
+                        Or open email app directly (mindhavenuk@gmail.com) &rarr;
+                      </a>
+                    </div>
                 </>
               ) : (
                 <div>

@@ -74,7 +74,7 @@ export function CalmBreathingWidget() {
 
   if (reducedMotion) {
     return (
-      <div className="bg-white border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
+      <div className="text-center space-y-4 relative">
         <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
           <Wind className="w-4 h-4 text-[#34D399]" />
           <span>Nervous System Pacer</span>
@@ -104,7 +104,7 @@ export function CalmBreathingWidget() {
   }
 
   return (
-    <div className="bg-white border border-[#34D399]/30 rounded-3xl p-6 shadow-lg text-center space-y-4 relative overflow-hidden card-flow-glow">
+    <div className="text-center space-y-4 relative">
       <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
         <Wind className="w-4 h-4 text-[#34D399]" />
         <span>Nervous System Pacer</span>

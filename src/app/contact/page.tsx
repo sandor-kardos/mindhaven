@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Mail, Phone, MapPin, MessageCircle, Clock, ShieldCheck, Video, ChevronDown } from "lucide-react";
+import { Phone, MapPin, ShieldCheck } from "lucide-react";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { Badge } from "@/components/ui/Badge";
-
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about counselling.")}`;
-const MESSENGER_URL = "https://m.me/ErikaMartinCounselling";
+import { InstantMessagingButtons, DirectEmailCardLink } from "@/components/contact/ContactMethodButtons";
 
 export const metadata: Metadata = {
   title: "Contact & Book | Mindhaven",
@@ -27,7 +23,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col w-full bg-white text-[#0D2E24]">
 
-      {/* Header - Compact to ensure Form header is visible above the fold */}
+      {/* Header & Consolidate Intro */}
       <section className="relative pt-10 pb-6 sm:pt-16 sm:pb-8 px-4 bg-gradient-to-b from-white to-white text-center border-b border-[#34D399]/20 overflow-hidden">
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
@@ -40,58 +36,20 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-sm sm:text-base text-[#0D2E24]/85 font-medium leading-relaxed max-w-xl mx-auto">
-            Choose instant messaging via WhatsApp or Messenger below, or fill in the direct contact form to send a message.
+            Choose instant messaging via WhatsApp or Messenger below, or fill in the direct contact form to ask a question or arrange your free 20-minute initial call. Share as little or as much as you like.
           </p>
 
           {/* Instant Messaging Buttons Side-by-Side (WhatsApp & Messenger) */}
-          <div className="pt-4 max-w-md mx-auto">
-            <div className="grid grid-cols-2 gap-3">
-              {/* WhatsApp Button */}
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Message Erika on WhatsApp"
-                className="flex items-center justify-center gap-2 p-3.5 bg-white hover:bg-[#ECFDF5] rounded-2xl border border-[#34D399]/30 hover:border-[#25D366] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-[#0D2E24] font-extrabold text-sm group"
-              >
-                <MessageCircle className="w-5 h-5 text-[#25D366] shrink-0 group-hover:scale-110 transition-transform" />
-                <span>WhatsApp</span>
-              </a>
-
-              {/* Messenger Button */}
-              <a
-                href={MESSENGER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Message Erika on Messenger"
-                className="flex items-center justify-center gap-2 p-3.5 bg-white hover:bg-[#F0F7FF] rounded-2xl border border-[#34D399]/30 hover:border-[#0084FF] shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-[#0D2E24] font-extrabold text-sm group"
-              >
-                <MessageCircle className="w-5 h-5 text-[#0084FF] shrink-0 group-hover:scale-110 transition-transform" />
-                <span>Messenger</span>
-              </a>
-            </div>
-          </div>
+          <InstantMessagingButtons />
         </div>
       </section>
 
-      {/* Direct Contact Form Section (Visible Above the Fold) */}
+      {/* Direct Contact Form Section */}
       <section id="book" className="relative py-12 sm:py-16 px-4 bg-white border-b border-[#34D399]/15 overflow-hidden">
         {/* Ambient Floating Orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#34D399]/12 rounded-full blur-[140px] animate-aura-drift pointer-events-none" />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="text-center mb-8 space-y-2">
-            <Badge>
-              Direct Contact Form
-            </Badge>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0D2E24] font-heading">
-              Send a Message to Erika
-            </h2>
-            <p className="text-[#0D2E24]/80 max-w-xl mx-auto text-xs sm:text-sm font-medium leading-relaxed">
-              Fill in your details below to ask a question or arrange your free 20-minute initial call. Erika replies personally the same day.
-            </p>
-          </div>
-          
           <BookingForm />
         </div>
       </section>
@@ -108,21 +66,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Email */}
-            <a
-              href="mailto:mindhavenuk@gmail.com"
-              className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/20 flex items-center justify-center mb-4">
-                  <Mail className="w-5 h-5 text-[#059669]" />
-                </div>
-                <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">Direct Email</h4>
-                <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed mb-3">
-                  Send an email directly to Erika at your convenience.
-                </p>
-              </div>
-              <span className="text-xs font-bold text-[#059669] underline">mindhavenuk@gmail.com</span>
-            </a>
+            <DirectEmailCardLink />
 
             {/* Phone */}
             <a
@@ -173,3 +117,4 @@ export default function Contact() {
     </div>
   );
 }
+

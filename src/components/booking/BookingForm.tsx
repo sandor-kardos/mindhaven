@@ -76,20 +76,6 @@ export function BookingForm() {
   return (
     <div className="bg-white rounded-3xl border-2 border-[#34D399]/30 overflow-hidden shadow-2xl shadow-[#0D2E24]/10 card-flow-effect p-4 sm:p-8 max-w-2xl mx-auto relative z-10">
       
-      {/* Header Info */}
-      <div className="mb-5 space-y-2 text-center sm:text-left">
-        <h3 className="text-xl sm:text-2xl font-extrabold text-[#0D2E24] font-heading">
-          Message Erika
-        </h3>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#ECFDF5] border border-[#34D399]/40 text-[#059669] text-xs font-bold">
-          <Clock className="w-3.5 h-3.5" />
-          <span>Erika replies the same day, usually within a few hours</span>
-        </div>
-        <p className="text-xs text-[#0D2E24]/60 font-medium pt-1">
-          Share as little or as much as you like.
-        </p>
-      </div>
-
       <form className="space-y-6" onSubmit={handleSubmit}>
         
         {/* Full Name */}
@@ -192,7 +178,7 @@ export function BookingForm() {
 
           <div className="flex items-center justify-center gap-2 text-xs font-semibold text-[#0D2E24]/60 pt-1">
             <ShieldCheck className="w-3.5 h-3.5 text-[#34D399]" />
-            <span>Strictly Confidential · Erika replies the same day</span>
+            <span>Strictly Confidential · Free Initial Call</span>
           </div>
         </div>
 
