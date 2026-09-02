@@ -49,3 +49,6 @@ before_audit.md
 after_audit.md
 final_audit.md
 
+# secrets & credentials
+.secrets/
+*-account*.json
