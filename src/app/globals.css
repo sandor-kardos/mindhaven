@@ -138,6 +138,15 @@
   border-color: rgba(52, 211, 153, 0.35);
   box-shadow: 0 10px 25px -5px rgba(13, 46, 36, 0.08);
 }
+/* --- HIDE CAROUSEL SCROLLBAR --- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-breathe,
   .animate-aura-drift,
