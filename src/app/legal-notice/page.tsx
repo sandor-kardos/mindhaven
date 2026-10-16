@@ -1,3 +1,4 @@
+import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
 import { ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -46,7 +47,7 @@ export default function LegalNotice() {
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               <strong>Practice address:</strong> 6 Newmills Rd, Dalkeith EH22 2LE, Scotland<br />
               <strong>Email:</strong>{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a><br />
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink><br />
               <strong>Telephone:</strong>{" "}
               <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>
             </p>
@@ -88,7 +89,7 @@ export default function LegalNotice() {
               If you have a concern about the services provided by Mindhaven, please contact Erika Martin directly in the first instance:
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink>
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If the matter is not resolved to your satisfaction, you may escalate your complaint to the National Counselling and Psychotherapy Society (NCPS) at <strong>ncps.com/complaints</strong>, or to the Professional Standards Authority (PSA) at <strong>professionalstandards.org.uk</strong>.

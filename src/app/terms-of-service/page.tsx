@@ -1,3 +1,4 @@
+import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
 import { ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -136,7 +137,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">10. Complaints</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If you have a concern or complaint about the service you have received, please contact Erika Martin in the first instance at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>. If you are not satisfied with the outcome, you may refer your complaint to the NCPS, whose contact details are available at <strong>ncps.com/complaints</strong>.
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink>. If you are not satisfied with the outcome, you may refer your complaint to the NCPS, whose contact details are available at <strong>ncps.com/complaints</strong>.
             </p>
           </div>
 

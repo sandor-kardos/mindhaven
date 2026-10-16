@@ -1,5 +1,7 @@
 "use client";
 
+import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle, Mail, Clock, Send, ShieldCheck, ArrowRight, User, BookOpen, Sparkles, HelpCircle, CreditCard } from "lucide-react";
@@ -276,8 +278,7 @@ export function Navbar() {
 
                     {/* Direct Link to Email client */}
                     <div className="pt-2 text-center border-t border-[#34D399]/20">
-                      <a
-                        href="mailto:mindhavenuk@gmail.com"
+                      <EmailLink
                         onClick={() => {
                           if (typeof window !== "undefined") {
                             window.dataLayer = window.dataLayer || [];
@@ -286,8 +287,8 @@ export function Navbar() {
                         }}
                         className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
                       >
-                        Or open email app directly (mindhavenuk@gmail.com) &rarr;
-                      </a>
+                        Or open email app directly (<EmailAddress fallback="email" />) &rarr;
+                      </EmailLink>
                     </div>
                 </>
               ) : (

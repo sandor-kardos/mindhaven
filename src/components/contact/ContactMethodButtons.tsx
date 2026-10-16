@@ -1,5 +1,7 @@
 "use client";
 
+import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
+
 import { MessageCircle, Mail } from "lucide-react";
 
 declare global {
@@ -55,8 +57,7 @@ export function InstantMessagingButtons() {
 
 export function DirectEmailCardLink() {
   return (
-    <a
-      href="mailto:mindhavenuk@gmail.com"
+    <EmailLink
       onClick={() => trackContactMethod("email")}
       className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
     >
@@ -69,7 +70,7 @@ export function DirectEmailCardLink() {
           Send an email directly to Erika at your convenience.
         </p>
       </div>
-      <span className="text-xs font-bold text-[#059669] underline">mindhavenuk@gmail.com</span>
-    </a>
+      <span className="text-xs font-bold text-[#059669] underline"><EmailAddress /></span>
+    </EmailLink>
   );
 }

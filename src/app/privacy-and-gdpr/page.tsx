@@ -1,3 +1,4 @@
+import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
 import { ShieldCheck, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -44,7 +45,7 @@ export default function PrivacyAndGDPR() {
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. Who We Are</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Erika Martin is the sole Data Controller for Mindhaven, operating as a sole trader from 6 Newmills Rd, Dalkeith EH22 2LE. You can contact her with any data-related query at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a> or by calling{" "}
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink> or by calling{" "}
               <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
@@ -141,7 +142,7 @@ export default function PrivacyAndGDPR() {
             </ul>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               To exercise any of these rights, please contact Erika Martin at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>. We will respond within one month.
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink>. We will respond within one month.
             </p>
           </div>
 
@@ -155,7 +156,7 @@ export default function PrivacyAndGDPR() {
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               We would, however, always welcome the chance to resolve any concern directly. Please contact us first at{" "}
-              <a href="mailto:mindhavenuk@gmail.com" className="text-[#0D2E24] underline underline-offset-2">mindhavenuk@gmail.com</a>.
+              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink>.
             </p>
           </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MessageCircle, CheckCircle2, ShieldCheck, Send, Clock } from "lucide-react";
 
 type Status = "idle" | "loading" | "submitted" | "error";
@@ -12,6 +12,8 @@ export function BookingForm() {
   const [objective, setObjective] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [website, setWebsite] = useState(""); // honeypot, hidden from people
+  const startedAt = useRef<number>(Date.now());
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,6 +29,8 @@ export function BookingForm() {
           contactDetail,
           objective,
           message,
+          website,
+          startedAt: startedAt.current,
         }),
       });
 
@@ -39,8 +43,8 @@ export function BookingForm() {
 
       setStatus("submitted");
     } catch {
-      // Graceful fallback so user is always reassured
-      setStatus("submitted");
+      // Tell the visitor honestly, so no enquiry is silently lost
+      setStatus("error");
     }
   }
 
@@ -77,6 +81,20 @@ export function BookingForm() {
     <div className="bg-white rounded-3xl border-2 border-[#34D399]/30 overflow-hidden shadow-2xl shadow-[#0D2E24]/10 card-flow-effect p-4 sm:p-8 max-w-2xl mx-auto relative z-10">
       
       <form className="space-y-6" onSubmit={handleSubmit}>
+
+        {/* Honeypot: invisible to people and screen readers, bots fill it */}
+        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+          <label htmlFor="website">Leave this empty</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </div>
         
         {/* Full Name */}
         <div>
@@ -164,6 +182,16 @@ export function BookingForm() {
             placeholder="Share anything you feel comfortable noting here..."
           />
         </div>
+
+        {status === "error" && (
+          <div role="alert" className="p-4 rounded-2xl border border-red-200 bg-red-50 text-sm text-red-900 font-medium">
+            Sorry, your message could not be sent. Please{" "}
+            <a href="https://wa.me/447516785823" className="underline font-bold" target="_blank" rel="noopener noreferrer">
+              message Erika on WhatsApp
+            </a>{" "}
+            or call <a href="tel:+447516785823" className="underline font-bold">07516 785823</a>.
+          </div>
+        )}
 
         {/* Submit Button & Reassurance */}
         <div className="space-y-3 pt-2">
