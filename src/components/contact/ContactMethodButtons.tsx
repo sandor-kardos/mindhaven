@@ -1,8 +1,6 @@
 "use client";
 
-import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
-
-import { MessageCircle, Mail } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 
 declare global {
   interface Window {
@@ -14,7 +12,7 @@ const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "447516785823
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Erika, I'd like to enquire about counselling.")}`;
 const MESSENGER_URL = "https://m.me/ErikaMartinCounselling";
 
-function trackContactMethod(method: "whatsapp" | "messenger" | "email") {
+function trackContactMethod(method: "whatsapp" | "messenger" | "form") {
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "contact_method_selected", method });
@@ -55,22 +53,23 @@ export function InstantMessagingButtons() {
   );
 }
 
-export function DirectEmailCardLink() {
+export function MessageFormCardLink() {
   return (
-    <EmailLink
-      onClick={() => trackContactMethod("email")}
+    <a
+      href="#book"
+      onClick={() => trackContactMethod("form")}
       className="p-6 bg-white rounded-2xl border border-[#34D399]/20 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
     >
       <div>
         <div className="w-10 h-10 rounded-xl bg-slate-50 border border-[#34D399]/20 flex items-center justify-center mb-4">
-          <Mail className="w-5 h-5 text-[#059669]" />
+          <Send className="w-5 h-5 text-[#059669]" />
         </div>
-        <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">Direct Email</h4>
+        <h4 className="font-extrabold text-base text-[#0D2E24] font-heading mb-1">Send a Message</h4>
         <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed mb-3">
-          Send an email directly to Erika at your convenience.
+          Use the secure form and Erika will reply personally, usually the same day.
         </p>
       </div>
-      <span className="text-xs font-bold text-[#059669] underline"><EmailAddress /></span>
-    </EmailLink>
+      <span className="text-xs font-bold text-[#059669] underline">Open the form</span>
+    </a>
   );
 }

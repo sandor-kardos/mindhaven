@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Phone, MapPin, ShieldCheck } from "lucide-react";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { Badge } from "@/components/ui/Badge";
-import { InstantMessagingButtons, DirectEmailCardLink } from "@/components/contact/ContactMethodButtons";
+import { InstantMessagingButtons, MessageFormCardLink } from "@/components/contact/ContactMethodButtons";
 
 export const metadata: Metadata = {
   title: "Contact & Book | Mindhaven",
@@ -65,8 +65,8 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* Email */}
-            <DirectEmailCardLink />
+            {/* Message form */}
+            <MessageFormCardLink />
 
             {/* Phone */}
             <a

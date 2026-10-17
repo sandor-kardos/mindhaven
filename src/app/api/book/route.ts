@@ -85,6 +85,9 @@ export async function POST(request: Request) {
   const linkCount = (message.match(/https?:\/\/|www\./gi) || []).length;
   if (linkCount > 2) return silentOk();
 
+  // If the visitor left an email address, replies go straight to them
+  const replyTo = /^[^\s@<>"]+@[^\s@<>"]+\.[a-z]{2,}$/i.test(contactDetail) ? contactDetail : undefined;
+
   const e = escapeHtml;
   const subject = `New enquiry from ${name.replace(/[\r\n]+/g, " ")}`;
   const html = `
@@ -121,12 +124,13 @@ export async function POST(request: Request) {
           subject,
           html,
           text,
+          ...(replyTo ? { reply_to: replyTo } : {}),
         }),
       });
       if (!res.ok) throw new Error(`Resend ${res.status}: ${await res.text()}`);
     } else if (gmailUser && gmailPass) {
       const transporter = nodemailer.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
-      await transporter.sendMail({ from: `"Mindhaven Contact" <${gmailUser}>`, to: RECIPIENT, subject, html, text });
+      await transporter.sendMail({ from: `"Mindhaven Contact" <${gmailUser}>`, to: RECIPIENT, subject, html, text, replyTo });
     } else {
       console.log("Local dev enquiry (not emailed):", { name, contactMethod, objective });
     }

@@ -1,4 +1,3 @@
-import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
 import Link from "next/link";
 import { ShieldCheck, MapPin, Mail, Phone, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
@@ -99,7 +98,7 @@ export function Footer() {
               </p>
               <p className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#34D399] shrink-0" />
-                <EmailLink className="text-slate-100 hover:text-[#34D399] transition-colors font-medium"><EmailAddress /></EmailLink>
+                <Link href="/contact#book" className="text-slate-100 hover:text-[#34D399] transition-colors font-medium">Send a message</Link>
               </p>
               <p className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#34D399] shrink-0" />

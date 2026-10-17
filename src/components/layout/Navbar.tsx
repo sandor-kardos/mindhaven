@@ -1,6 +1,5 @@
 "use client";
 
-import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -276,20 +275,6 @@ export function Navbar() {
                       </a>
                     </div>
 
-                    {/* Direct Link to Email client */}
-                    <div className="pt-2 text-center border-t border-[#34D399]/20">
-                      <EmailLink
-                        onClick={() => {
-                          if (typeof window !== "undefined") {
-                            window.dataLayer = window.dataLayer || [];
-                            window.dataLayer.push({ event: "contact_method_selected", method: "email" });
-                          }
-                        }}
-                        className="text-xs font-bold text-[#0D2E24]/70 hover:text-[#059669] underline underline-offset-4 transition-colors"
-                      >
-                        Or open email app directly (<EmailAddress fallback="email" />) &rarr;
-                      </EmailLink>
-                    </div>
                 </>
               ) : (
                 <div>

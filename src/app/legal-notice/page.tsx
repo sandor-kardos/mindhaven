@@ -1,4 +1,5 @@
 import { EmailLink, EmailAddress } from "@/components/ui/ProtectedEmail";
+import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
@@ -89,7 +90,7 @@ export default function LegalNotice() {
               If you have a concern about the services provided by Mindhaven, please contact Erika Martin directly in the first instance:
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink>
+              Via <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by phone on <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If the matter is not resolved to your satisfaction, you may escalate your complaint to the National Counselling and Psychotherapy Society (NCPS) at <strong>ncps.com/complaints</strong>, or to the Professional Standards Authority (PSA) at <strong>professionalstandards.org.uk</strong>.
