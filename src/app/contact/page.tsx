@@ -9,11 +9,14 @@ export const metadata: Metadata = {
   description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
   alternates: { canonical: "https://mindhaven.uk/contact" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Contact & Book | Mindhaven",
     description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
     url: "https://mindhaven.uk/contact",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Contact & Book | Mindhaven",
     description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
   }

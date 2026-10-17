@@ -69,10 +69,10 @@ const jsonLd = {
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "6 Newmills Rd",
+        streetAddress: "6a Newmills Rd",
         addressLocality: "Dalkeith",
         addressRegion: "Midlothian",
-        postalCode: "EH22 2LE",
+        postalCode: "EH22 1DU",
         addressCountry: "GB"
       },
       areaServed: [

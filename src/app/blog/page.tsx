@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
 
 const articleImages: Record<string, string> = {
-  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.webp",
+  "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
   "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
@@ -19,11 +19,14 @@ export const metadata = {
   description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
   alternates: { canonical: "https://mindhaven.uk/blog" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Blog | Mindhaven",
     description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
     url: "https://mindhaven.uk/blog",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Blog | Mindhaven",
     description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
   }

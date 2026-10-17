@@ -7,11 +7,14 @@ export const metadata = {
   description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
   alternates: { canonical: "https://mindhaven.uk/burnout-therapist-edinburgh" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Burnout Therapist Edinburgh | Stress Counselling",
     description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
     url: "https://mindhaven.uk/burnout-therapist-edinburgh",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Burnout Therapist Edinburgh | Stress Counselling",
     description: "Private counselling for stress and burnout, online and in-person in Edinburgh.",
   }

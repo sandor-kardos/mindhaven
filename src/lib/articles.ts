@@ -44,7 +44,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "burnout-therapist-edinburgh",
+    slug: "high-functioning-burnout",
     title: "High-Functioning Burnout: The Cost of Looking Fine",
     excerpt:
       "High-functioning burnout is easy to miss because you keep performing on the outside while depleting quietly on the inside.",

@@ -7,11 +7,14 @@ export const metadata = {
   description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
   alternates: { canonical: "https://mindhaven.uk/fees-and-booking" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Fees & Pricing | Mindhaven",
     description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
     url: "https://mindhaven.uk/fees-and-booking",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Fees & Pricing | Mindhaven",
     description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
   }

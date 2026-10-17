@@ -11,7 +11,7 @@ type Props = {
 };
 
 const articleImages: Record<string, string> = {
-  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.webp",
+  "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
   "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
@@ -133,7 +133,7 @@ export default async function BlogPost({ params }: Props) {
   };
 
 const articleTldrs: Record<string, string> = {
-  "burnout-therapist-edinburgh": "Burnout isn't just stress: it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
+  "high-functioning-burnout": "Burnout isn't just stress: it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
   "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
   "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
   "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",

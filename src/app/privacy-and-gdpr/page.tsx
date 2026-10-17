@@ -9,11 +9,14 @@ export const metadata = {
     canonical: "https://mindhaven.uk/privacy-and-gdpr",
   },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Privacy Policy & GDPR | Mindhaven",
     description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
     url: "https://mindhaven.uk/privacy-and-gdpr",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Privacy Policy & GDPR | Mindhaven",
     description: "How Mindhaven collects, uses, and protects your personal data. UK GDPR compliant.",
   }
@@ -44,7 +47,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. Who We Are</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Erika Martin is the sole Data Controller for Mindhaven, operating as a sole trader from 6 Newmills Rd, Dalkeith EH22 2LE. You can contact her with any data-related query at{" "}
+              Erika Martin is the sole Data Controller for Mindhaven, operating as a sole trader from 6a Newmills Rd, Dalkeith EH22 1DU. You can contact her with any data-related query at{" "}
               <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by calling{" "}
               <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>.
             </p>

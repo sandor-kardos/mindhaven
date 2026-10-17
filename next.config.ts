@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/blog/burnout-therapist-edinburgh",
+        destination: "/blog/high-functioning-burnout",
+        permanent: true,
+      },
+      {
         source: "/blog/somatic-therapy-explained",
         destination: "/blog/working-with-the-body-stress-recovery",
         permanent: true,

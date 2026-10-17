@@ -8,11 +8,14 @@ export const metadata = {
   description: "Statutory and regulatory information for Mindhaven, operated by Erika Martin.",
   alternates: { canonical: "https://mindhaven.uk/legal-notice" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Legal Notice | Mindhaven",
     description: "Statutory and regulatory information for Mindhaven, operated by Erika Martin.",
     url: "https://mindhaven.uk/legal-notice",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Legal Notice | Mindhaven",
     description: "Statutory and regulatory information for Mindhaven, operated by Erika Martin.",
   }
@@ -46,7 +49,7 @@ export default function LegalNotice() {
               Mindhaven is operated by Erika Martin, trading as a sole trader.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              <strong>Practice address:</strong> 6 Newmills Rd, Dalkeith EH22 2LE, Scotland<br />
+              <strong>Practice address:</strong> 6a Newmills Rd, Dalkeith EH22 1DU, Scotland<br />
               <strong>Email:</strong>{" "}
               <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink><br />
               <strong>Telephone:</strong>{" "}

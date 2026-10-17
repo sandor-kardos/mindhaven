@@ -115,10 +115,13 @@ export const metadata = {
   description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
   alternates: { canonical: "https://mindhaven.uk" },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Mindhaven | Personal Counselling for Stress & Burnout",
     description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Mindhaven | Personal Counselling for Stress & Burnout",
     description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
   }

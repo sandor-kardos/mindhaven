@@ -9,7 +9,7 @@ import { articles } from "@/lib/articles";
 
 const articleImages: Record<string, string> = {
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
-  "burnout-therapist-edinburgh": "/images/blog/burnout-therapist-edinburgh.webp",
+  "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
   "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",

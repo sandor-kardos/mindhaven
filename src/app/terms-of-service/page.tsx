@@ -9,11 +9,14 @@ export const metadata = {
     canonical: "https://mindhaven.uk/terms-of-service",
   },
   openGraph: {
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Terms of Service | Mindhaven",
     description: "Practice agreement, cancellation policy, and session terms for Mindhaven counselling.",
     url: "https://mindhaven.uk/terms-of-service",
   },
   twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Terms of Service | Mindhaven",
     description: "Practice agreement, cancellation policy, and session terms for Mindhaven counselling.",
   }
