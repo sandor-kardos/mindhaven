@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { RelatedReading } from "@/components/ui/RelatedReading";
 import { LifeCompassClient } from "./LifeCompassClient";
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default function LifeCompassPage() {
           <LifeCompassClient />
         </div>
       </section>
+      <RelatedReading slugs={["why-the-same-patterns-keep-coming-back", "imposter-syndrome-in-professionals", "sustainable-boundaries"]} />
     </div>
   );
 }

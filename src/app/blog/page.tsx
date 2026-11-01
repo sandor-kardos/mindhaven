@@ -1,19 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
-import { getAllArticles } from "@/lib/articles";
+import { getAllArticles, articleImage } from "@/lib/articles";
 import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
-
-const articleImages: Record<string, string> = {
-  "high-functioning-burnout": "/images/blog/high-functioning-burnout.webp",
-  "breaking-the-stress-cycle": "/images/blog/breaking-the-stress-cycle.webp",
-  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
-  "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "why-the-same-patterns-keep-coming-back": "/images/blog/why-the-same-patterns-keep-coming-back.webp",
-  "coping-with-anxiety": "/images/blog/coping-with-anxiety.webp",
-  "living-with-grief": "/images/blog/living-with-grief.webp",
-  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
-};
 
 
 export const metadata = {
@@ -68,7 +57,7 @@ export default function BlogIndex() {
               {/* Bleeding Header Image (No inner frame/padding) */}
               <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#0D2E24]/5">
                 <Image 
-                  src={articleImages[post.slug] || "/images/blog/understanding-burnout-vs-stress.webp"}
+                  src={articleImage(post.slug)}
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

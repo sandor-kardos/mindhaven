@@ -5,18 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Sparkles, BookOpen, Clock, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { articles } from "@/lib/articles";
-
-const articleImages: Record<string, string> = {
-  "coping-with-anxiety": "/images/blog/coping-with-anxiety.webp",
-  "living-with-grief": "/images/blog/living-with-grief.webp",
-  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
-  "high-functioning-burnout": "/images/blog/high-functioning-burnout.webp",
-  "breaking-the-stress-cycle": "/images/blog/breaking-the-stress-cycle.webp",
-  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
-  "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "why-the-same-patterns-keep-coming-back": "/images/blog/why-the-same-patterns-keep-coming-back.webp",
-};
+import { articles, articleImage } from "@/lib/articles";
 
 
 export interface Gallery4Props {
@@ -59,7 +48,7 @@ export function Gallery4({
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <Image
           key={activeArticle.slug}
-          src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.webp"}
+          src={articleImage(activeArticle.slug)}
           alt={`${activeArticle.title} decorative background`}
           fill
           className="object-cover opacity-[0.18] blur-sm scale-110 transition-all duration-700"
@@ -130,7 +119,7 @@ export function Gallery4({
               <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
                 <Image
                   key={activeArticle.slug}
-                  src={articleImages[activeArticle.slug] || "/images/blog/understanding-burnout-vs-stress.webp"}
+                  src={articleImage(activeArticle.slug)}
                   alt={activeArticle.title}
                   fill
                   className="object-cover transition-all duration-500"
@@ -214,7 +203,7 @@ export function Gallery4({
                 {/* Full-bleed Top Image */}
                 <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
                   <Image
-                    src={articleImages[article.slug] || "/images/blog/understanding-burnout-vs-stress.webp"}
+                    src={articleImage(article.slug)}
                     alt={article.title}
                     fill
                     className="object-cover"

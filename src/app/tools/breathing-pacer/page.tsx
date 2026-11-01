@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { RelatedReading } from "@/components/ui/RelatedReading";
 import Link from "next/link";
 import { ArrowLeft, Wind, ShieldCheck, Calendar, ArrowRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
@@ -148,6 +149,7 @@ export default function BreathingPacerPage() {
 
         </div>
       </section>
+      <RelatedReading slugs={["coping-with-anxiety", "breaking-the-stress-cycle", "understanding-burnout-vs-stress"]} />
     </div>
   );
 }

@@ -12,6 +12,8 @@ export interface Article {
   date: string;
   category: string;
   readTime: string;
+  /** Short "in a nutshell" summary shown at the top of the article. */
+  summary?: string;
   content: ContentBlock[];
 }
 
@@ -27,6 +29,8 @@ export const articles: Article[] = [
     date: "2026-11-01",
     category: "Anxiety",
     readTime: "4 min read",
+    summary:
+      "Worry keeps going because it feels protective and because avoidance brings short-term relief. Naming worries, slowing down and talking to someone can loosen anxiety's grip.",
     content: [
       {
         type: "paragraph",
@@ -106,6 +110,8 @@ export const articles: Article[] = [
     date: "2026-11-01",
     category: "Grief & Loss",
     readTime: "4 min read",
+    summary:
+      "Grief rarely follows neat stages, and mixed feelings are normal. Counselling offers a place to grieve without a timetable or the need to stay strong for others.",
     content: [
       {
         type: "paragraph",
@@ -186,6 +192,8 @@ export const articles: Article[] = [
     date: "2026-08-01",
     category: "Stress & Burnout",
     readTime: "3 min read",
+    summary:
+      "Stress feels like too much; burnout feels like not enough. Rest usually eases stress, while burnout needs a closer look at what keeps the cycle going.",
     content: [
       {
         type: "paragraph",
@@ -232,7 +240,7 @@ export const articles: Article[] = [
       { type: "heading", text: "A starting point" },
       {
         type: "paragraph",
-        text: "If you are not sure which one you are experiencing, notice how you feel after real rest. If rest restores you, you are likely dealing with stress. If rest barely touches the tiredness, it may be worth taking it more seriously. You may also recognise yourself in [high-functioning burnout](/blog/high-functioning-burnout), where everything looks fine from the outside.",
+        text: "If you are not sure which one you are experiencing, notice how you feel after real rest. If rest restores you, you are likely dealing with stress. If rest barely touches the tiredness, it may be worth taking it more seriously. The [Wheel of Life](/tools/wheel-of-life) can also help you see which areas of life the pressure is coming from. You may also recognise yourself in [high-functioning burnout](/blog/high-functioning-burnout), where everything looks fine from the outside.",
       },
       { type: "heading", text: "Who is more likely to burn out" },
       { type: "paragraph", text: "Burnout can happen to anyone, but some situations make it more likely. People in caring roles, whether professional or at home, often give a great deal without much chance to recover. So do people who find it hard to say no, those who hold very high standards for themselves, and anyone dealing with long-term pressure they cannot easily change, such as money worries or a difficult home situation." },
@@ -251,6 +259,8 @@ export const articles: Article[] = [
     date: "2026-08-05",
     category: "Stress & Burnout",
     readTime: "3 min read",
+    summary:
+      "You can keep performing while running on empty. Noticing the gap between how things look and how they feel is the first step towards recovery.",
     content: [
       {
         type: "paragraph",
@@ -311,7 +321,7 @@ export const articles: Article[] = [
           "Am I still doing things only because I enjoy them?",
         ],
       },
-      { type: "paragraph", text: "There are no right or wrong answers. The point is to notice, without judging yourself, how things really are." },
+      { type: "paragraph", text: "There are no right or wrong answers. The point is to notice, without judging yourself, how things really are. If you prefer something visual, the [Wheel of Life](/tools/wheel-of-life) shows at a glance which parts of your life have shrunk." },
       {
         type: "callout",
         text: "You do not need to reach crisis before seeking support. Counselling offers a space to set down the effort of looking fine and to look honestly at what you are carrying. You can [get in touch here](/contact).",
@@ -326,6 +336,8 @@ export const articles: Article[] = [
     date: "2026-08-10",
     category: "Stress & Burnout",
     readTime: "3 min read",
+    summary:
+      "Stress is kept going by a loop of situations, thoughts, feelings and habits. Noticing the loop is the first step to interrupting it.",
     content: [
       {
         type: "paragraph",
@@ -367,7 +379,7 @@ export const articles: Article[] = [
           "Notice the thought and name it, rather than treating it as fact",
           "Ask what you would say to a friend in the same situation",
           "Look for the evidence for and against the worry",
-          "Change one small behaviour, such as taking the lunch break you usually skip",
+          "Change one small behaviour, such as taking the lunch break you usually skip, or a two-minute pause with the [breathing pacer](/tools/breathing-pacer)",
           "Ask what is already working, even a little, and do more of it",
         ],
       },
@@ -397,6 +409,8 @@ export const articles: Article[] = [
     date: "2026-08-12",
     category: "Self-Esteem",
     readTime: "3 min read",
+    summary:
+      "Imposter feelings reflect high standards and self-criticism, not a lack of ability. Understanding where they come from helps separate self-worth from performance.",
     content: [
       {
         type: "paragraph",
@@ -464,6 +478,8 @@ export const articles: Article[] = [
     date: "2026-08-18",
     category: "Relationships",
     readTime: "3 min read",
+    summary:
+      "Boundaries are clear choices about your time and energy, not walls. Guilt when you start setting them usually means you are doing something new, not something wrong.",
     content: [
       {
         type: "paragraph",
@@ -497,7 +513,7 @@ export const articles: Article[] = [
           "Use simple, clear language: \"I am not able to take this on this week.\"",
           "You do not need to over-explain or apologise repeatedly",
           "Expect some discomfort at first, and notice that it usually passes",
-          "Notice who respects your limits; that tells you something useful too",
+          "Notice who respects your limits; that tells you something useful too. The [Life Compass](/resources/life-compass) can help you get clearer on what matters most to protect",
         ],
       },
       { type: "heading", text: "About the guilt" },
@@ -541,6 +557,8 @@ export const articles: Article[] = [
     date: "2026-08-22",
     category: "Therapeutic Approach",
     readTime: "3 min read",
+    summary:
+      "Repeating patterns usually made sense once. Understanding where they come from, and practising something different, is what makes change possible.",
     content: [
       {
         type: "paragraph",
@@ -583,7 +601,7 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "Change rarely happens all at once. More often, you start to notice the pattern a little earlier each time, and gradually find that you have more choice in how you respond.",
+        text: "Change rarely happens all at once. More often, you start to notice the pattern a little earlier each time, and gradually find that you have more choice in how you respond. Reflecting on your values with the [Life Compass](/resources/life-compass) can be a gentle place to begin.",
       },
       { type: "heading", text: "What starting counselling looks like" },
       { type: "paragraph", text: "Many people are unsure what to expect before their first session. It usually begins with a free 20-minute call, simply to talk about what has brought you here and whether working together feels right. If you decide to go ahead, the first session is a chance to share as much or as little as you want about your situation, and to think together about what you would like to change." },
@@ -595,6 +613,11 @@ export const articles: Article[] = [
     ],
   },
 ];
+
+/** Header image for an article. Image files are named after the article slug. */
+export function articleImage(slug: string): string {
+  return `/images/blog/${slug}.webp`;
+}
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);

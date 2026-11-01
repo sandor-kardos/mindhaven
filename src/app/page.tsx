@@ -58,7 +58,6 @@ const faqSchema = {
   })),
 };
 
-import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
 import { HalftonePattern } from "@/components/ui/HalftonePattern";
 import { Gallery4 } from "@/components/ui/gallery4";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
@@ -70,13 +69,8 @@ import {
   Brain,
   Activity,
   Calendar,
-  Lock,
-  Compass,
-  Zap,
   ExternalLink,
   MessageCircle,
-  Video,
-  MapPin,
   ChevronDown
 } from "lucide-react";
 

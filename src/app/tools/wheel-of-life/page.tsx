@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { RelatedReading } from "@/components/ui/RelatedReading";
 import { WheelOfLifeClient } from "./WheelOfLifeClient";
 
 export const metadata: Metadata = {
@@ -40,6 +41,7 @@ export default function WheelOfLifePage() {
           <WheelOfLifeClient />
         </div>
       </section>
+      <RelatedReading slugs={["high-functioning-burnout", "understanding-burnout-vs-stress", "sustainable-boundaries"]} />
     </div>
   );
 }

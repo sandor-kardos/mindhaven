@@ -2,24 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, Tag } from "lucide-react";
-import { getArticle, getAllArticles, type ContentBlock } from "@/lib/articles";
+import { getArticle, getAllArticles, articleImage, type ContentBlock } from "@/lib/articles";
 import { Badge } from "@/components/ui/Badge";
 import type { Metadata } from "next";
 import type React from "react";
 
 type Props = {
   params: Promise<{ slug: string }>;
-};
-
-const articleImages: Record<string, string> = {
-  "high-functioning-burnout": "/images/blog/high-functioning-burnout.webp",
-  "breaking-the-stress-cycle": "/images/blog/breaking-the-stress-cycle.webp",
-  "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
-  "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "why-the-same-patterns-keep-coming-back": "/images/blog/why-the-same-patterns-keep-coming-back.webp",
-  "coping-with-anxiety": "/images/blog/coping-with-anxiety.webp",
-  "living-with-grief": "/images/blog/living-with-grief.webp",
-  "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 
 export async function generateStaticParams() {
@@ -30,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return { title: "Not Found | Mindhaven" };
-  const imageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.webp";
+  const imageUrl = articleImage(slug);
   return {
     title: `${article.title} | Mindhaven`,
     description: article.excerpt,
@@ -159,23 +148,14 @@ export default async function BlogPost({ params }: Props) {
     },
   };
 
-const articleTldrs: Record<string, string> = {
-  "coping-with-anxiety": "Worry keeps going because it feels protective and because avoidance brings short-term relief. Naming worries, slowing down and talking to someone can loosen anxiety's grip.",
-  "living-with-grief": "Grief rarely follows neat stages, and mixed feelings are normal. Counselling offers a place to grieve without a timetable or the need to stay strong for others.",
-  "understanding-burnout-vs-stress": "Stress feels like too much; burnout feels like not enough. Rest usually eases stress, while burnout needs a closer look at what keeps the cycle going.",
-  "high-functioning-burnout": "You can keep performing while running on empty. Noticing the gap between how things look and how they feel is the first step towards recovery.",
-  "breaking-the-stress-cycle": "Stress is kept going by a loop of situations, thoughts, feelings and habits. Noticing the loop is the first step to interrupting it.",
-  "imposter-syndrome-in-professionals": "Imposter feelings reflect high standards and self-criticism, not a lack of ability. Understanding where they come from helps separate self-worth from performance.",
-  "sustainable-boundaries": "Boundaries are clear choices about your time and energy, not walls. Guilt when you start setting them usually means you are doing something new, not something wrong.",
-  "why-the-same-patterns-keep-coming-back": "Repeating patterns usually made sense once. Understanding where they come from, and practising something different, is what makes change possible.",
-};
+
 
   const allArticles = getAllArticles();
   const currentIndex = allArticles.findIndex(a => a.slug === slug);
   const prevArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
   const nextArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
 
-  const headerImageUrl = articleImages[slug] || "/images/blog/understanding-burnout-vs-stress.webp";
+  const headerImageUrl = articleImage(slug);
 
   return (
     <article className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
@@ -237,7 +217,7 @@ const articleTldrs: Record<string, string> = {
                   In a Nutshell
                 </div>
                 <p className="text-[#0D2E24]/90 font-semibold text-sm sm:text-base leading-relaxed">
-                  {articleTldrs[slug] || article.excerpt}
+                  {article.summary ?? article.excerpt}
                 </p>
               </div>
 
