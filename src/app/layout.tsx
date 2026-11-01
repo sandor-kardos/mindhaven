@@ -128,6 +128,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TFD5W94G');`,
           }}
         />
+        <Script
+          id="umami-analytics"
+          src="https://stats.sandorkardos.com/script.js"
+          data-website-id="6f466353-0947-49b3-8213-92e9555fc51c"
+          data-domains="mindhaven.uk,www.mindhaven.uk"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-[#FFFFFF] text-[#0D2E24]">
         {/* Google Tag Manager (noscript) */}

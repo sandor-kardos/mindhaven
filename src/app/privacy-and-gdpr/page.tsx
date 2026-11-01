@@ -172,6 +172,9 @@ export default function PrivacyAndGDPR() {
               If you accept, we use <strong>Google Analytics</strong> (delivered via Google Tag Manager) to understand how visitors use this website  pages visited, session duration, and device type. No personal identifiers are collected. Data is processed by Google in accordance with their privacy policy and is used solely to improve this site; it is never shared for advertising or marketing purposes.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
+              We also use <strong>Umami</strong>, a privacy-friendly analytics tool hosted on our own server. Umami sets no cookies, stores nothing on your device, and does not collect IP addresses or any information that identifies you. It records only anonymous, aggregated figures such as page views, referring websites, and device type, so it runs without needing your consent. This data is never shared with third parties.
+            </p>
+            <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Your cookie preference is stored as a first-party cookie on your device for up to 12 months. You can withdraw consent at any time by clearing your browser cookies.
             </p>
           </div>
