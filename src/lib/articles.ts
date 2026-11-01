@@ -23,23 +23,52 @@ export const articles: Article[] = [
       "Stress is having too much to do; burnout is having nothing left to give. Recognising the difference helps you find appropriate support.",
     date: "2026-08-01",
     category: "Stress & Burnout",
-    readTime: "1 min read",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "Stress is typically a short-term response to pressing demands. Your heart rate rises, focus sharpens, and once the deadline passes, your body recovers. In brief periods, stress can even be functional.",
+        text: "Stress and burnout are often used as if they mean the same thing. They do not, and the difference matters, because what helps with one can make very little difference to the other.",
+      },
+      { type: "heading", text: "What stress looks like" },
+      {
+        type: "paragraph",
+        text: "Stress is usually a response to demands that feel bigger than the time or resources you have. Your heart rate rises, your focus narrows, and you push through. Once the deadline passes or the situation settles, you recover. In short bursts, stress can even be useful: it helps you prepare, act and perform.",
       },
       {
         type: "paragraph",
-        text: "Burnout is fundamentally different. It occurs when pressure continues for months without sufficient rest. Rather than feeling temporarily overwhelmed, burnout feels like emotional depletion, detachment, and persistent fatigue that a quick break cannot resolve.",
+        text: "A useful way to think about it: stress tends to feel like too much. Too many tasks, too many expectations, too many things happening at once.",
+      },
+      { type: "heading", text: "What burnout looks like" },
+      {
+        type: "paragraph",
+        text: "Burnout develops when pressure continues for months without enough recovery. Instead of feeling overwhelmed, people often describe feeling empty. Burnout tends to feel like not enough: not enough energy, not enough motivation, not enough of yourself left to give.",
+      },
+      {
+        type: "list",
+        items: [
+          "Exhaustion that a weekend or holiday does not fix",
+          "Growing distance or cynicism towards work you once cared about",
+          "A sense that your effort no longer makes a difference",
+          "Difficulty switching off, even when you finally have time",
+        ],
+      },
+      { type: "heading", text: "Why the difference matters" },
+      {
+        type: "paragraph",
+        text: "Stress often eases when the pressure eases. Burnout usually does not. Taking time off can help, but if you return to the same workload, the same expectations and the same habits, the exhaustion tends to come back.",
       },
       {
         type: "paragraph",
-        text: "Recovering from burnout requires looking beyond quick fixes to explore the workload, boundaries, and personal expectations driving your exhaustion.",
+        text: "Recovery from burnout usually means looking at what keeps the cycle going: how much you take on, how you respond to pressure, what you expect of yourself, and what you believe will happen if you slow down.",
+      },
+      { type: "heading", text: "A starting point" },
+      {
+        type: "paragraph",
+        text: "If you are not sure which one you are experiencing, notice how you feel after real rest. If rest restores you, you are likely dealing with stress. If rest barely touches the tiredness, it may be worth taking it more seriously.",
       },
       {
         type: "callout",
-        text: "Counselling provides a calm, reflective space to understand what is driving your fatigue and re-establish clarity.",
+        text: "Counselling offers a calm, confidential space to understand what is driving your exhaustion and to find a more sustainable way forward.",
       },
     ],
   },
@@ -50,58 +79,105 @@ export const articles: Article[] = [
       "High-functioning burnout is easy to miss because you keep performing on the outside while depleting quietly on the inside.",
     date: "2026-08-05",
     category: "Burnout Recovery",
-    readTime: "1 min read",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "High-functioning burnout is easy to overlook. Externally, you remain reliable, meet deadlines, and perform well. Internally, your energy is steadily draining, making daily responsibilities feel unusually heavy.",
+        text: "Some people burn out loudly. Others keep going. They still meet deadlines, answer messages and show up for everyone, while quietly running on empty. This is often called high-functioning burnout, and it is easy to miss, including for the person living it.",
+      },
+      { type: "heading", text: "Why it goes unnoticed" },
+      {
+        type: "paragraph",
+        text: "Because your output stays high, nobody around you sees a problem. Colleagues rely on you, your family sees you coping, and you may tell yourself that if you were really struggling, your work would show it. So you push a little harder.",
       },
       {
         type: "paragraph",
-        text: "Ambitious professionals often set demanding standards and view rest as something that must be earned. Signs include persistent anticipatory dread, emotional detachment from work, and rest that fails to restore you.",
+        text: "Many people who experience this hold high standards and see rest as something that has to be earned. Slowing down can feel like failure, even when the body and mind are asking for it.",
+      },
+      { type: "heading", text: "Common signs" },
+      {
+        type: "list",
+        items: [
+          "A sense of dread before the working week, even when things are going well",
+          "Feeling detached or flat about achievements that once mattered",
+          "Rest that does not feel restful",
+          "Irritability, poor sleep or constant mental replaying of work",
+          "Relying on routines, caffeine or sheer willpower just to keep functioning",
+        ],
+      },
+      { type: "heading", text: "The cost of looking fine" },
+      {
+        type: "paragraph",
+        text: "Keeping up appearances takes energy. Over time, the gap between how things look and how they feel can become its own source of strain. Many people only seek help when something finally gives: their health, a relationship, or their ability to cope at work.",
       },
       {
         type: "paragraph",
-        text: "Because output remains high, others rarely notice your struggle, making it easy to convince yourself to simply push harder.",
+        text: "You do not need to wait for that point. Noticing the pattern early is not weakness. It is information.",
+      },
+      { type: "heading", text: "What can help" },
+      {
+        type: "paragraph",
+        text: "Practical changes matter: realistic workloads, clearer boundaries, proper breaks. But it often also helps to look at the beliefs underneath, such as the idea that your worth depends on what you produce, or that asking for help means letting people down.",
       },
       {
         type: "callout",
-        text: "You do not need to reach crisis before seeking support. Counselling offers space to set down the performance mask and protect your health.",
+        text: "You do not need to reach crisis before seeking support. Counselling offers a space to set down the performance and look honestly at what you are carrying.",
       },
     ],
   },
   {
-    slug: "nervous-system-regulation",
-    title: "Regulating the Nervous System Under Pressure",
+    slug: "breaking-the-stress-cycle",
+    title: "Breaking the Stress Cycle: How Thoughts and Habits Keep Pressure Going",
     excerpt:
-      "Learn how your body responds to sustained pressure and practical ways to return to a steady baseline.",
+      "Stress is not only about what happens to you. The way you think and respond can keep the pressure going long after the trigger has passed.",
     date: "2026-08-10",
-    category: "Nervous System",
-    readTime: "1 min read",
+    category: "Stress & Burnout",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "Under high pressure, your nervous system shifts into alert mode, quickening heart rate and sharpening attention. While helpful in short bursts, staying in high alert for extended periods causes physical and mental fatigue.",
+        text: "When we are under pressure, we usually focus on the situation: the workload, the deadline, the difficult conversation. That makes sense. But stress is also shaped by what happens inside: the thoughts we have about the situation, and the habits we fall into to cope with it.",
+      },
+      { type: "heading", text: "How the cycle works" },
+      {
+        type: "paragraph",
+        text: "Cognitive Behavioural Therapy (CBT) describes this as a cycle linking situations, thoughts, feelings and behaviour. Each part affects the others. A demanding email arrives. The thought follows: \"I am going to fall behind and everyone will notice.\" Anxiety rises. You work late, skip lunch and cancel plans. You end up more tired, which makes the next email feel even bigger.",
       },
       {
         type: "paragraph",
-        text: "A dysregulated system can leave you feeling tense or unable to unwind. Simple grounding practices can signal safety back to the body:",
+        text: "None of these steps is unreasonable on its own. Together, they can keep you stuck in a loop where the pressure never quite lifts.",
       },
+      { type: "heading", text: "Thoughts that keep stress going" },
       {
         type: "list",
         items: [
-          "Slow exhalations with out-breaths longer than in-breaths",
-          "Sensory grounding by focusing on physical surroundings",
-          "Brief daily walks to release accumulated tension",
+          "All-or-nothing thinking: \"If it is not perfect, it is a failure.\"",
+          "Catastrophising: jumping straight to the worst outcome",
+          "Mind-reading: assuming you know what others think of you",
+          "\"Should\" statements: rigid rules about how you must behave",
         ],
       },
       {
         type: "paragraph",
-        text: "While quick techniques provide temporary ease, integrative counselling helps you explore the underlying habits keeping your system on edge.",
+        text: "These are not signs that something is wrong with you. They are common mental shortcuts, and most of us use them, especially when tired or under strain.",
+      },
+      { type: "heading", text: "Small ways to interrupt the loop" },
+      {
+        type: "list",
+        items: [
+          "Notice the thought and name it, rather than treating it as fact",
+          "Ask what you would say to a friend in the same situation",
+          "Look for the evidence for and against the worry",
+          "Change one small behaviour, such as taking the lunch break you usually skip",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "A solution-focused question can also help: what is already working, even a little? Building on what helps is often easier than trying to fix everything at once.",
       },
       {
         type: "callout",
-        text: "Counselling combines reflective dialogue with body awareness to support a calmer, more resilient baseline.",
+        text: "Counselling can help you recognise the patterns that keep stress going and practise new ways of responding, at a pace that feels manageable.",
       },
     ],
   },
@@ -112,23 +188,44 @@ export const articles: Article[] = [
       "Feeling like a fraud despite achievements is common. Understanding imposter feelings helps diminish their power.",
     date: "2026-08-12",
     category: "Mindset & Anxiety",
-    readTime: "1 min read",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "Worrying that your achievements stem from luck rather than capability is the hallmark of imposter syndrome. Paradoxically, these doubts often intensify as you step into more senior roles.",
+        text: "You get the promotion, finish the project or receive the praise, and instead of feeling proud, you feel exposed. As if it is only a matter of time before someone realises you do not really belong. This experience is often called imposter syndrome, and it is far more common than most people think.",
+      },
+      { type: "heading", text: "Why it shows up" },
+      {
+        type: "paragraph",
+        text: "Imposter feelings often grow from high standards, perfectionism or competitive environments. Many people notice that the feelings become stronger, not weaker, as they progress: a new role, new responsibilities and new people to compare yourself with.",
       },
       {
         type: "paragraph",
-        text: "Imposter feelings typically arise from perfectionism, high expectations, or competitive environments. Common patterns include overpreparing, dismissing praise, and fearing that mistakes will reveal inadequacy.",
+        text: "Sometimes the roots go further back: a family where achievement was the way to earn approval, or early experiences where mistakes felt dangerous. These patterns can carry into adult working life long after the original situation has changed.",
+      },
+      { type: "heading", text: "Common patterns" },
+      {
+        type: "list",
+        items: [
+          "Overpreparing for everything, just in case",
+          "Putting success down to luck, timing or other people",
+          "Brushing off praise, or feeling uncomfortable receiving it",
+          "Avoiding new opportunities in case you are found out",
+          "Fearing that one mistake will undo everything",
+        ],
+      },
+      { type: "heading", text: "What helps" },
+      {
+        type: "paragraph",
+        text: "Imposter feelings do not reflect your actual ability. They usually reflect high standards combined with a habit of self-criticism. Recognising that difference is an important first step.",
       },
       {
         type: "paragraph",
-        text: "Recognising these patterns is essential. Imposter anxiety does not reflect capability; it indicates high personal standards paired with self-critical habits.",
+        text: "It can help to keep a simple record of what you have done well and why, to talk about the feeling with someone you trust, and to notice how often the predicted disaster actually happens.",
       },
       {
         type: "callout",
-        text: "Counselling offers a private space to unpack self-doubt, internalise achievements, and cultivate grounded confidence.",
+        text: "Counselling offers a private space to explore where self-doubt comes from, recognise your achievements and build a steadier sense of confidence.",
       },
     ],
   },
@@ -139,50 +236,93 @@ export const articles: Article[] = [
       "Boundaries are not barriers; they are clear choices about how you protect your energy and time.",
     date: "2026-08-18",
     category: "Work-Life Balance",
-    readTime: "1 min read",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "Setting boundaries can feel difficult if you equate saying no with letting others down. Yet clear limits are necessary to protect your focus and prevent resentment.",
+        text: "Setting boundaries can feel uncomfortable, especially if you are used to being the reliable one. Saying no can feel like letting people down. Yet without clear limits, it becomes very hard to protect your time, your focus and your wellbeing.",
       },
+      { type: "heading", text: "What a boundary actually is" },
       {
         type: "paragraph",
-        text: "A boundary is simply a clear decision about your time and capacity. It requires no drama, just practical choices like stepping away from email after hours or declining non-essential tasks.",
+        text: "A boundary is not a wall or a punishment. It is a clear decision about what you can and cannot take on. It can be quiet and practical: not checking emails after a certain hour, declining an extra project, or asking for more notice before a deadline.",
       },
+      { type: "heading", text: "Why it feels so hard" },
+      {
+        type: "list",
+        items: [
+          "Worry about disappointing others or being seen as difficult",
+          "A belief that your value comes from always being available",
+          "Past experiences where saying no led to conflict",
+          "Simply never having practised it",
+        ],
+      },
+      { type: "heading", text: "Starting small" },
+      {
+        type: "list",
+        items: [
+          "Pick one area where you feel most stretched and set a single limit there",
+          "Use simple, clear language: \"I am not able to take this on this week.\"",
+          "You do not need to over-explain or apologise repeatedly",
+          "Expect some discomfort at first, and notice that it usually passes",
+        ],
+      },
+      { type: "heading", text: "About the guilt" },
       {
         type: "paragraph",
-        text: "Initial guilt is normal as you alter people-pleasing habits. Over time, establishing boundaries protects your health and improves workplace relationships.",
+        text: "Feeling guilty when you set a boundary does not mean you are doing something wrong. It often means you are doing something new. Over time, most people find that clear limits actually improve relationships, because others know where they stand and resentment has less room to build.",
       },
       {
         type: "callout",
-        text: "Counselling provides guidance to explore healthier limits and communicate them with clarity and calm.",
+        text: "Counselling can help you understand what makes boundaries difficult for you, and practise setting them with clarity and calm.",
       },
     ],
   },
   {
-    slug: "working-with-the-body-stress-recovery",
-    title: "Working With the Body: How Physical Awareness Supports Stress Recovery",
+    slug: "why-the-same-patterns-keep-coming-back",
+    title: "Why the Same Patterns Keep Coming Back",
     excerpt:
-      "Stress lives in the body as well as the mind. Learning to notice physical tension is a powerful part of recovery.",
+      "Different job, different relationship, same feeling. Understanding where repeating patterns come from is often the first step to changing them.",
     date: "2026-08-22",
-    category: "Therapeutic Methods",
-    readTime: "1 min read",
+    category: "Therapeutic Approach",
+    readTime: "4 min read",
     content: [
       {
         type: "paragraph",
-        text: "Talking therapy engages thoughts and emotions, but chronic stress also leaves a physical mark, manifesting as shoulder tightness, shallow breathing, or persistent restlessness.",
+        text: "Many people come to counselling with a familiar frustration: \"I keep ending up in the same place.\" A new job brings the same exhaustion. A new relationship brings the same arguments. You promise yourself things will be different, and somehow they are not.",
+      },
+      { type: "heading", text: "Patterns are not random" },
+      {
+        type: "paragraph",
+        text: "From a psychodynamic point of view, the ways we relate to work, to other people and to ourselves are often shaped by earlier experiences. If, growing up, being helpful was the way to feel valued, you may still take on too much without noticing. If conflict felt unsafe, you may still avoid difficult conversations, even when avoiding them costs you.",
       },
       {
         type: "paragraph",
-        text: "Stress doesn't only live in thoughts and emotions. It also shows up in the body. Paying attention to physical sensations alongside thoughts can help release stored tension and interrupt the cycle of chronic stress.",
+        text: "These patterns once made sense. They helped you cope with the situation you were in. The difficulty is that they can carry on long after that situation has changed.",
       },
+      { type: "heading", text: "Signs you may be repeating a pattern" },
+      {
+        type: "list",
+        items: [
+          "Similar problems appearing in different jobs or relationships",
+          "Reactions that feel bigger than the situation seems to warrant",
+          "Knowing what you \"should\" do, yet doing the opposite",
+          "A familiar feeling that you cannot quite explain",
+        ],
+      },
+      { type: "heading", text: "Why advice alone often does not stick" },
       {
         type: "paragraph",
-        text: "In practice, this means learning to notice where tension gathers in the body: a clenched jaw, a tight chest, a shallow breath. Using that awareness as an early signal rather than waiting for depletion. Like a ripple expanding from a single point of contact, one small moment of recognition can shift your entire physiological state.",
+        text: "Friends, family, articles and apps can all offer useful advice. But if a pattern is rooted deeply, knowing what to do is rarely the problem. Understanding why you do what you do is often what makes change possible.",
+      },
+      { type: "heading", text: "Bringing awareness and change together" },
+      {
+        type: "paragraph",
+        text: "Understanding where a pattern comes from is one part. Practising something different is the other. An integrative approach brings both together: exploring the roots, while also working on practical steps you can take now.",
       },
       {
         type: "callout",
-        text: "Counselling that attends to both mind and body works with what you think and what you carry physically. Lasting calm often begins not in analysis, but in the breath, the posture, the quiet signals you have learned to ignore.",
+        text: "Counselling offers a consistent, non-judgemental space to notice the patterns that keep returning and to find new ways of responding.",
       },
     ],
   },

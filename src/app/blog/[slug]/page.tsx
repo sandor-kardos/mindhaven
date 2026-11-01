@@ -12,10 +12,10 @@ type Props = {
 
 const articleImages: Record<string, string> = {
   "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
-  "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
+  "breaking-the-stress-cycle": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "working-with-the-body-stress-recovery": "/images/blog/working-with-the-body-stress-recovery.webp",
+  "why-the-same-patterns-keep-coming-back": "/images/blog/working-with-the-body-stress-recovery.webp",
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 
@@ -134,10 +134,10 @@ export default async function BlogPost({ params }: Props) {
 
 const articleTldrs: Record<string, string> = {
   "high-functioning-burnout": "Burnout isn't just stress: it's a systemic energy depletion. True recovery requires more than a holiday; it demands a fundamental shift in how you allocate your resources.",
-  "nervous-system-regulation": "Your nervous system dictates your stress response. Learning to regulate it isn't about eliminating stress, but expanding your capacity to handle it without getting stuck in fight-or-flight.",
+  "breaking-the-stress-cycle": "Stress is kept going by a loop of situations, thoughts, feelings and habits. Noticing the loop is the first step to interrupting it.",
   "imposter-syndrome-in-professionals": "Imposter syndrome thrives in isolation. By understanding its roots in perfectionism and societal expectations, you can untangle your self-worth from your achievements.",
   "sustainable-boundaries": "Boundaries aren't walls to keep people out; they're the parameters that allow you to stay in the relationship safely. Guilt is just the price of admission for self-advocacy.",
-  "working-with-the-body-stress-recovery": "Talk therapy engages the mind, but stress and tension also live in the body. Learning to notice and work with physical signals bridges that gap, offering a more complete path to recovery.",
+  "why-the-same-patterns-keep-coming-back": "Repeating patterns usually made sense once. Understanding where they come from, and practising something different, is what makes change possible.",
 };
 
   const allArticles = getAllArticles();

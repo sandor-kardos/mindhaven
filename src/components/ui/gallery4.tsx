@@ -10,10 +10,10 @@ import { articles } from "@/lib/articles";
 const articleImages: Record<string, string> = {
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
   "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
-  "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
+  "breaking-the-stress-cycle": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "working-with-the-body-stress-recovery": "/images/blog/working-with-the-body-stress-recovery.webp",
+  "why-the-same-patterns-keep-coming-back": "/images/blog/working-with-the-body-stress-recovery.webp",
 };
 
 
@@ -24,7 +24,7 @@ export interface Gallery4Props {
 
 export function Gallery4({
   title = "Insights on Resilience & Clarity",
-  description = "Evidence-based perspectives on burnout, stress, and nervous system resilience by Erika\u00A0Martin.",
+  description = "Evidence-based perspectives on burnout, stress, and the patterns that keep them going by Erika\u00A0Martin.",
 }: Gallery4Props) {
   const [activeSlug, setActiveSlug] = useState<string>(articles[0]?.slug || "");
   const [activeMobileIndex, setActiveMobileIndex] = useState<number>(0);

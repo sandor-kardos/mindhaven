@@ -6,10 +6,10 @@ import Image from "next/image";
 
 const articleImages: Record<string, string> = {
   "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
-  "nervous-system-regulation": "/images/blog/nervous-system-regulation.webp",
+  "breaking-the-stress-cycle": "/images/blog/nervous-system-regulation.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "working-with-the-body-stress-recovery": "/images/blog/working-with-the-body-stress-recovery.webp",
+  "why-the-same-patterns-keep-coming-back": "/images/blog/working-with-the-body-stress-recovery.webp",
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 

@@ -61,7 +61,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/blog/somatic-therapy-explained",
-        destination: "/blog/working-with-the-body-stress-recovery",
+        destination: "/blog/why-the-same-patterns-keep-coming-back",
+        permanent: true,
+      },
+      {
+        source: "/blog/working-with-the-body-stress-recovery",
+        destination: "/blog/why-the-same-patterns-keep-coming-back",
+        permanent: true,
+      },
+      {
+        source: "/blog/nervous-system-regulation",
+        destination: "/blog/breaking-the-stress-cycle",
         permanent: true,
       },
     ];
