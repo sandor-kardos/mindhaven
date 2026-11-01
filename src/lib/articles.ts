@@ -64,7 +64,7 @@ export const articles: Article[] = [
       { type: "heading", text: "A starting point" },
       {
         type: "paragraph",
-        text: "If you are not sure which one you are experiencing, notice how you feel after real rest. If rest restores you, you are likely dealing with stress. If rest barely touches the tiredness, it may be worth taking it more seriously.",
+        text: "If you are not sure which one you are experiencing, notice how you feel after real rest. If rest restores you, you are likely dealing with stress. If rest barely touches the tiredness, it may be worth taking it more seriously. You may also recognise yourself in [high-functioning burnout](/blog/high-functioning-burnout).",
       },
       {
         type: "callout",
@@ -117,7 +117,7 @@ export const articles: Article[] = [
       { type: "heading", text: "What can help" },
       {
         type: "paragraph",
-        text: "Practical changes matter: realistic workloads, clearer boundaries, proper breaks. But it often also helps to look at the beliefs underneath, such as the idea that your worth depends on what you produce, or that asking for help means letting people down.",
+        text: "Practical changes matter: realistic workloads, clearer boundaries, proper breaks. But it often also helps to look at the beliefs underneath, such as the idea that your worth depends on what you produce, or that asking for help means letting people down. Learning to [set boundaries without guilt](/blog/sustainable-boundaries) is often part of recovery.",
       },
       {
         type: "callout",
@@ -173,7 +173,7 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "A solution-focused question can also help: what is already working, even a little? Building on what helps is often easier than trying to fix everything at once.",
+        text: "A solution-focused question can also help: what is already working, even a little? Building on what helps is often easier than trying to fix everything at once. If the same loop keeps returning, it may help to look at [why patterns repeat](/blog/why-the-same-patterns-keep-coming-back).",
       },
       {
         type: "callout",
@@ -221,7 +221,7 @@ export const articles: Article[] = [
       },
       {
         type: "paragraph",
-        text: "It can help to keep a simple record of what you have done well and why, to talk about the feeling with someone you trust, and to notice how often the predicted disaster actually happens.",
+        text: "It can help to keep a simple record of what you have done well and why, to talk about the feeling with someone you trust, and to notice how often the predicted disaster actually happens. Many of these thoughts follow the same [stress cycle](/blog/breaking-the-stress-cycle) described elsewhere on this blog.",
       },
       {
         type: "callout",
@@ -270,7 +270,7 @@ export const articles: Article[] = [
       { type: "heading", text: "About the guilt" },
       {
         type: "paragraph",
-        text: "Feeling guilty when you set a boundary does not mean you are doing something wrong. It often means you are doing something new. Over time, most people find that clear limits actually improve relationships, because others know where they stand and resentment has less room to build.",
+        text: "Feeling guilty when you set a boundary does not mean you are doing something wrong. It often means you are doing something new. Over time, most people find that clear limits actually improve relationships, because others know where they stand and resentment has less room to build. Over-commitment is also a common route into [burnout](/blog/understanding-burnout-vs-stress).",
       },
       {
         type: "callout",
@@ -318,7 +318,7 @@ export const articles: Article[] = [
       { type: "heading", text: "Bringing awareness and change together" },
       {
         type: "paragraph",
-        text: "Understanding where a pattern comes from is one part. Practising something different is the other. An integrative approach brings both together: exploring the roots, while also working on practical steps you can take now.",
+        text: "Understanding where a pattern comes from is one part. Practising something different is the other. An integrative approach brings both together: exploring the roots, while also working on practical steps you can take now. If you would like to talk it through, you can [book a free 20-minute call](/contact).",
       },
       {
         type: "callout",

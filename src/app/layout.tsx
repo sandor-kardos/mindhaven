@@ -14,12 +14,12 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mindhaven.uk'),
-  title: "Mindhaven | Personal Counselling with Erika Martin",
+  title: "Counselling in Edinburgh & Online | Mindhaven",
   alternates: { canonical: "https://mindhaven.uk" },
   verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
   description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
   openGraph: {
-    title: "Mindhaven | Personal Counselling with Erika Martin",
+    title: "Counselling in Edinburgh & Online | Mindhaven",
     description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
     url: "https://mindhaven.uk",
     siteName: "Mindhaven",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mindhaven | Personal Counselling with Erika Martin",
+    title: "Counselling in Edinburgh & Online | Mindhaven",
     description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
     images: ["/og-image.png"],
   },

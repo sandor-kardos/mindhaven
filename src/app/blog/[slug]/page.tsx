@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Clock, Tag } from "lucide-react";
 import { getArticle, getAllArticles, type ContentBlock } from "@/lib/articles";
 import { Badge } from "@/components/ui/Badge";
 import type { Metadata } from "next";
+import type React from "react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -51,6 +52,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Renders inline markdown-style links: [text](/internal-path) or [text](https://external)
+function renderInline(text: string) {
+  const parts: React.ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    const [, label, href] = m;
+    const cls = "text-[#26433A] underline underline-offset-4 decoration-[#34D399] hover:text-[#0D2E24]";
+    parts.push(
+      href.startsWith("/") ? (
+        <Link key={i++} href={href} className={cls}>{label}</Link>
+      ) : (
+        <a key={i++} href={href} className={cls} target="_blank" rel="noopener noreferrer">{label}</a>
+      )
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
 function renderBlock(block: ContentBlock, index: number) {
   switch (block.type) {
     case "heading":
@@ -77,7 +102,7 @@ function renderBlock(block: ContentBlock, index: number) {
           key={index}
           className="text-[#0D2E24]/85 leading-relaxed font-medium mb-5"
         >
-          {block.text}
+          {renderInline(block.text)}
         </p>
       );
     case "list":
@@ -86,7 +111,7 @@ function renderBlock(block: ContentBlock, index: number) {
           {block.items.map((item, i) => (
             <li key={i} className="flex items-start gap-3 text-[#0D2E24]/85 font-medium leading-relaxed">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#34D399] shrink-0" />
-              <span>{item}</span>
+              <span>{renderInline(item)}</span>
             </li>
           ))}
         </ul>
@@ -98,7 +123,7 @@ function renderBlock(block: ContentBlock, index: number) {
           className="my-6 px-6 py-5 bg-slate-50 border-l-4 border-[#34D399] rounded-r-2xl"
         >
           <p className="text-[#0D2E24] font-semibold leading-relaxed italic">
-            {block.text}
+            {renderInline(block.text)}
           </p>
         </blockquote>
       );
