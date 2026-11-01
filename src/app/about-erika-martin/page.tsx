@@ -65,7 +65,7 @@ export default function AboutErikaMartin() {
                 Many of the people I work with have been coping for a long time: living with worry, grieving a loss, supporting others, or carrying something they have never quite had space to talk about. Sometimes it takes a small thing to tip the balance, and you suddenly notice how anxious, low, or disconnected you have become.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. I work as an integrative person-centred counsellor with adults of all ages, and I tailor each session to what will be most useful for you.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. I am a person-centred integrative counsellor. I also use the psychodynamic approach, and I am familiar with Cognitive Behavioural Therapy techniques. I work with adults who feel ready to tackle issues in their life and make positive changes, face to face in Dalkeith or remotely by Teams or phone.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -79,8 +79,8 @@ export default function AboutErikaMartin() {
                 <div className="p-4 bg-white rounded-2xl border border-[#155D49]/20 shadow-xs flex items-start gap-3">
                   <GraduationCap className="w-6 h-6 text-[#155D49] shrink-0 mt-1" />
                   <div>
-                    <p className="font-bold text-sm text-[#0D2E24] font-heading">Level 4 Diploma (2018)</p>
-                    <p className="text-xs text-[#0D2E24]/75 font-medium">Psychotherapeutic Counselling, Chrysalis Courses</p>
+                    <p className="font-bold text-sm text-[#0D2E24] font-heading">Advanced Diploma (Ad Dip PC)</p>
+                    <p className="text-xs text-[#0D2E24]/75 font-medium">Psychotherapeutic Counselling, Chrysalis Ltd, 2018</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function AboutErikaMartin() {
               How I Work
             </h2>
             <p className="text-[#0D2E24]/80 font-medium leading-relaxed">
-              Person-centred counselling is the foundation of my work. Alongside it, I draw on psychodynamic understanding and CBT tools when they suit you.
+              Person-centred counselling is the foundation of my work. Alongside it, I use the psychodynamic approach and CBT techniques when they suit you.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function AboutErikaMartin() {
               <div className="w-10 h-10 rounded-xl bg-[#34D399]/10 flex items-center justify-center">
                 <Brain className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">Psychodynamic Understanding</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">Psychodynamic Approach</p>
               <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Looking at how earlier experiences shape the way you feel and relate to others today.</p>
             </div>
 
@@ -136,8 +136,8 @@ export default function AboutErikaMartin() {
               <div className="w-10 h-10 rounded-xl bg-[#34D399]/10 flex items-center justify-center">
                 <Activity className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">CBT Tools</p>
-              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Practical ways to notice unhelpful thoughts and habits, used when they suit you after an initial assessment.</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">CBT Techniques</p>
+              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Practical ways to notice and change unhelpful thoughts and habits, used when they suit you.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#155D49]/15 card-flow-effect space-y-3">
@@ -148,6 +148,44 @@ export default function AboutErikaMartin() {
               <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">No fixed number of sessions. Some people come for a few weeks, others for longer, and we review together as we go.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Training */}
+      <section className="py-20 px-4 bg-white border-b border-[#155D49]/10">
+        <div className="container mx-auto max-w-4xl space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#155D49] bg-[#34D399]/10 border border-[#155D49]/30">
+              Training
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
+              Qualifications
+            </h2>
+            <p className="text-[#0D2E24]/80 font-medium leading-relaxed">
+              Advanced Diploma in Psychotherapeutic Counselling (Ad Dip PC), Chrysalis Ltd, accredited professional therapy training, completed November 2018. The course included:
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            {[
+              "The Humanistic Approach to Counselling",
+              "The Psychodynamic Approach to Counselling",
+              "Cognitive Behavioural Therapy and Integration",
+              "Stress, Anxiety and Self-Defeating Behaviours",
+              "Relationships, Bereavement and Loss",
+              "Understanding Depression and Human Relationships",
+              "Intimate Relationships, Sex and Reproduction",
+              "Abuse and Addiction",
+              "Working with a Client's Past, Present and Future",
+              "Development, Motivation and Creativity",
+              "Initial Consultation and Induction Techniques",
+              "Personal and Professional Development in Counselling",
+            ].map((m) => (
+              <li key={m} className="flex items-start gap-3 text-sm text-[#0D2E24]/85 font-medium leading-relaxed">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#34D399] shrink-0" />
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

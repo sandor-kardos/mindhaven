@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "What therapeutic approach do you use?",
-    answer: "I am an integrative person-centred counsellor. You set the pace and I offer a warm, non-judgemental space. I am also trained in the psychodynamic approach, which helps us understand where patterns come from, and I use CBT tools when they suit you after an initial assessment.",
+    answer: "I am an integrative person-centred counsellor. You set the pace and I offer a warm, non-judgemental space. I also use the psychodynamic approach, which helps us understand where patterns come from, and I am familiar with Cognitive Behavioural Therapy techniques, which I use when they suit you.",
   },
   {
     question: "How does online counselling work?",

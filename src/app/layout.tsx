@@ -46,7 +46,7 @@ const jsonLd = {
       priceRange: "£60",
       image: "https://mindhaven.uk/images/erika-portrait.png",
       description: "MNCPS Accredited integrative person-centred counsellor working with adults on anxiety, bereavement, low mood, relationships, self-esteem, stress and burnout. In person in Dalkeith near Edinburgh, and online across the UK.",
-      knowsAbout: ["Person-centred counselling", "Psychodynamic counselling", "Cognitive Behavioural Therapy", "Anxiety", "Bereavement", "Low mood", "Relationship difficulties", "Self-esteem", "Stress", "Burnout"],
+      knowsAbout: ["Person-centred counselling", "Humanistic counselling", "Psychodynamic counselling", "Cognitive Behavioural Therapy", "Depression", "Anxiety", "Bereavement", "Low mood", "Relationship difficulties", "Self-esteem", "Stress", "Burnout"],
       paymentAccepted: "Bank transfer, Bupa health insurance",
       currenciesAccepted: "GBP",
       sameAs: [
@@ -72,8 +72,9 @@ const jsonLd = {
         },
         {
           "@type": "EducationalOccupationalCredential",
-          credentialCategory: "Level 4 Diploma in Psychotherapeutic Counselling",
-          recognizedBy: { "@type": "Organization", name: "Chrysalis Courses" }
+          credentialCategory: "Advanced Diploma in Psychotherapeutic Counselling (Ad Dip PC)",
+          dateCreated: "2018-11",
+          recognizedBy: { "@type": "Organization", name: "Chrysalis Ltd" }
         }
       ],
       address: {
