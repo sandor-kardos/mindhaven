@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ShieldCheck, Award, GraduationCap, ArrowRight, Heart, Brain, User, Activity } from "lucide-react";
 
 export const metadata = {
-  title: "About Erika Martin | MNCPS Accredited Psychotherapeutic Counsellor",
+  title: "About Erika Martin | Accredited Counsellor, Edinburgh",
   alternates: { canonical: "https://mindhaven.uk/about-erika-martin" },
-  description: "Erika Martin is an MNCPS accredited counsellor in Edinburgh with a person-centred, evidence-based therapeutic approach. Specialising in stress, burnout, and personal resilience.",
+  description: "Erika Martin is an MNCPS Accredited integrative person-centred counsellor in Dalkeith near Edinburgh, working with anxiety, grief, stress and self-esteem.",
 };
 
 export default function AboutErikaMartin() {
@@ -62,10 +62,10 @@ export default function AboutErikaMartin() {
               </h2>
 
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                Many of the people I work with have been coping for a long time, managing high expectations at work, supporting others, or carrying worries they have never quite had space to address. Sometimes it takes a small thing to tip the balance, and you suddenly notice how exhausted, anxious, or disconnected you have become.
+                Many of the people I work with have been coping for a long time: living with worry, grieving a loss, supporting others, or carrying something they have never quite had space to talk about. Sometimes it takes a small thing to tip the balance, and you suddenly notice how anxious, low, or disconnected you have become.
               </p>
               <p className="text-[#0D2E24]/90 leading-relaxed font-medium">
-                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. For many people, that process also means rebuilding personal resilience in a way that actually holds. I draw on a range of therapeutic approaches, tailoring each session to what will be most useful for you.
+                As an MNCPS Accredited Psychotherapeutic Counsellor, I offer a confidential, non-judgemental space where you can slow down, make sense of what you are going through, and work towards feeling better. I work as an integrative person-centred counsellor with adults of all ages, and I tailor each session to what will be most useful for you.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -79,8 +79,8 @@ export default function AboutErikaMartin() {
                 <div className="p-4 bg-white rounded-2xl border border-[#155D49]/20 shadow-xs flex items-start gap-3">
                   <GraduationCap className="w-6 h-6 text-[#155D49] shrink-0 mt-1" />
                   <div>
-                    <p className="font-bold text-sm text-[#0D2E24] font-heading">Integrative Training</p>
-                    <p className="text-xs text-[#0D2E24]/75 font-medium">CBT, Psychodynamic, Person-centred & Body-aware approaches</p>
+                    <p className="font-bold text-sm text-[#0D2E24] font-heading">Level 4 Diploma (2018)</p>
+                    <p className="text-xs text-[#0D2E24]/75 font-medium">Psychotherapeutic Counselling, Chrysalis Courses</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function AboutErikaMartin() {
               How I Work
             </h2>
             <p className="text-[#0D2E24]/80 font-medium leading-relaxed">
-              No single model fits everyone. I draw on several established approaches and shape each session around what you need most.
+              Person-centred counselling is the foundation of my work. Alongside it, I draw on psychodynamic understanding and CBT tools when they suit you.
             </p>
           </div>
 
@@ -121,31 +121,31 @@ export default function AboutErikaMartin() {
                 <User className="w-5 h-5 text-[#155D49]" />
               </div>
               <p className="font-bold text-sm text-[#0D2E24] font-heading">Person-Centred</p>
-              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">You lead the pace and direction. I offer a consistent, accepting, and non-judgemental presence.</p>
+              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">You lead the pace and direction. I offer a warm, accepting and non-judgemental presence, so you can speak without filters.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#155D49]/15 card-flow-effect space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#34D399]/10 flex items-center justify-center">
                 <Brain className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">CBT &amp; Psychodynamic</p>
-              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Exploring thought patterns and their deeper roots to create meaningful, lasting change.</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">Psychodynamic Understanding</p>
+              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Looking at how earlier experiences shape the way you feel and relate to others today.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#155D49]/15 card-flow-effect space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#34D399]/10 flex items-center justify-center">
                 <Activity className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">Body-Aware &amp; Nervous System</p>
-              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Working with the body's signals and the nervous system to release accumulated stress.</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">CBT Tools</p>
+              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Practical ways to notice unhelpful thoughts and habits, used when they suit you after an initial assessment.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-[#155D49]/15 card-flow-effect space-y-3">
               <div className="w-10 h-10 rounded-xl bg-[#34D399]/10 flex items-center justify-center">
                 <Heart className="w-5 h-5 text-[#155D49]" />
               </div>
-              <p className="font-bold text-sm text-[#0D2E24] font-heading">Solution-Focused</p>
-              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">Identifying your strengths and what is already working, alongside what needs to shift.</p>
+              <p className="font-bold text-sm text-[#0D2E24] font-heading">At Your Pace</p>
+              <p className="text-xs text-[#0D2E24]/75 font-medium leading-relaxed">No fixed number of sessions. Some people come for a few weeks, others for longer, and we review together as we go.</p>
             </div>
           </div>
         </div>

@@ -1,91 +1,61 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const faqs = [
+  {
+    question: "Can I try a free consultation before committing?",
+    answer: "Yes. You can start with a free 20-minute initial call to talk about what has brought you here and whether working together feels right. There is no obligation to continue.",
+  },
+  {
+    question: "What do you help with?",
+    answer: "I work with adults on anxiety and worry, bereavement and loss, low mood, relationship difficulties, self-esteem, and stress or burnout. If what you are facing is not on this list, get in touch and we can talk about whether counselling with me is the right fit.",
+  },
+  {
+    question: "What therapeutic approach do you use?",
+    answer: "I am an integrative person-centred counsellor. You set the pace and I offer a warm, non-judgemental space. I am also trained in the psychodynamic approach, which helps us understand where patterns come from, and I use CBT tools when they suit you after an initial assessment.",
+  },
+  {
+    question: "How does online counselling work?",
+    answer: "Online sessions take place over Microsoft Teams video or by phone, so you can talk from a private space of your choice anywhere in the UK.",
+  },
+  {
+    question: "Is online counselling as effective as meeting in person?",
+    answer: "For many people, yes. Research suggests online counselling can be as helpful as face-to-face sessions, and many clients find it easier to fit around work and family. We can talk about which format suits you during the free call.",
+  },
+  {
+    question: "Do you offer in-person sessions?",
+    answer: "Yes. In-person sessions take place at Mysa Therapy Rooms in Dalkeith (EH22), easy to reach from south Edinburgh and Midlothian. Online sessions are available across the UK.",
+  },
+  {
+    question: "How much does counselling cost?",
+    answer: "Sessions are £60 each (50 minutes), paid as you go. Alternatively, a 6-session package paid in advance costs £300, saving the cost of one session. The discount applies only when the 6 sessions are paid upfront.",
+  },
+  {
+    question: "Do you accept health insurance?",
+    answer: "Yes, I work with Bupa. If you have health insurance, check your cover with your insurer first, as most require a referral before sessions start.",
+  },
+  {
+    question: "Do I need to be in crisis to seek counselling?",
+    answer: "No. Many people come to counselling while still managing day to day, but carrying something they have not had space to talk about. If something is getting in the way of how you want to feel or live, that is a reasonable place to start. Counselling is not an emergency service: if you are in crisis, call 999, NHS 24 on 111, or Samaritans on 116 123.",
+  },
+  {
+    question: "Are sessions confidential?",
+    answer: "Yes. I follow the NCPS Code of Ethics and UK GDPR. Confidentiality can only be broken in limited circumstances, for example a serious risk of harm to you or others, and I would always try to discuss this with you first.",
+  },
+  {
+    question: "How do I book a session?",
+    answer: "Click 'Message Me' or use the form on the Contact page. I reply personally the same day to arrange your free 20-minute initial call.",
+  },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I try a free consultation before committing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can book an initial consultation to discuss your needs and see if we are a good fit before committing to a broader course of therapy."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does online counselling work (video/phone)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Online sessions are conducted securely via encrypted video calls or over the phone, allowing you to engage in therapy from the comfort and privacy of your own space, anywhere in the UK."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is online counselling as effective as meeting in person?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you help with stress and anxiety specifically?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, as an MNCPS Accredited Psychotherapeutic Counsellor, I specialise in stress, burnout, and anxiety. I work with clients to better understand what's driving these difficulties and to develop more effective ways of managing them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to be in crisis to seek counselling?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Counselling is not only for acute crisis. Many of the people I work with are managing well by most measures, but carrying something they have not had space to address. If something is getting in the way of how you want to feel or function, that is a reasonable place to start."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are sessions confidential?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken, for example if there is a serious risk of harm to yourself or others, and this would always be discussed with you first where possible."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many sessions will I need?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The number of sessions depends on your individual goals and preferences. Sessions are open-ended without a forced cap. You can pay £60 per session as you go, or choose a prepaid 6-session loyalty package (£300) for upfront savings."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I book a session?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can get in touch by clicking 'Message Me' or submitting the form on the Contact page. Erika replies personally the same day to arrange your free 20-minute initial call."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you see clients in person in Edinburgh?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What therapeutic approach/methodology do you use?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside body-based and nervous system regulation techniques."
-      }
-    }
-  ]
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
 };
 
 import { BackgroundParticles } from "@/components/ui/BackgroundParticles";
@@ -112,18 +82,18 @@ import {
 
 export const metadata = { 
   title: "Counselling in Edinburgh & Online | Mindhaven",
-  description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+  description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
   alternates: { canonical: "https://mindhaven.uk" },
   openGraph: {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Counselling in Edinburgh & Online | Mindhaven",
-    description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+    description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
     title: "Counselling in Edinburgh & Online | Mindhaven",
-    description: "Evidence-based counselling for stress, burnout, and anxiety. Erika Martin provides a safe, private space in Edinburgh and online across the UK.",
+    description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
   }
 };
 
@@ -171,7 +141,7 @@ export default function Home() {
                 
                 {/* Subheadline */}
                 <p className="text-lg sm:text-xl lg:text-2xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                  Confidential counselling for stress, burnout, and the demands that ambitious lives bring. Available in Edinburgh, Dalkeith, and online across the UK.
+                  A warm, non-judgemental space for adults dealing with anxiety, loss, stress or self-doubt. In person in Dalkeith, near Edinburgh, and online across the UK.
                 </p>
 
               </div>
@@ -254,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 1.5: Clinical Insights Articles Carousel (Placed right after Hero) */}
+      {/* SECTION 1.5: Articles Articles Carousel (Placed right after Hero) */}
       <Gallery4 />
 
       {/* SECTION 2: Problem Validation - Pine Teal Background for Tonal Variation */}
@@ -263,13 +233,13 @@ export default function Home() {
           <HalftonePattern color="#34D399" className="-top-8 right-0 w-[380px] h-[380px]" opacity={0.15} />
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <Badge variant="white" className="bg-white/10 text-[#34D399] border-[#34D399]/40">
-              When work takes its toll
+              What people bring
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading">
-              Burnout is more than feeling exhausted.
+              You don&apos;t need to be in crisis to start.
             </h2>
             <p className="text-slate-200 text-lg font-medium leading-relaxed">
-              Burnout affects how you think, how you feel about your work, and your energy for everything else. The three patterns seen most often:
+              People come to counselling for many reasons. These are the ones I see most often:
             </p>
           </div>
 
@@ -279,10 +249,10 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Activity className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Exhaustion that rest does not fix</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Anxiety and worry</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Persistent tiredness that sleep doesn't resolve, paired with an inability to down-regulate and unwind.
+                  Racing thoughts, fear of what might happen, or a constant sense of unease that is hard to switch off.
                 </p>
               </div>
             </div>
@@ -291,10 +261,10 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Brain className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Disconnection from work you once valued</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Grief and loss</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Growing mental detachment from your role, rising cynicism, and a loss of strategic clarity.
+                  The death of someone close, the end of a relationship, or a change that has left you feeling lost.
                 </p>
               </div>
             </div>
@@ -303,10 +273,10 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-3 mb-3 md:block md:mb-0">
                   <Clock className="w-9 h-9 text-[#34D399] shrink-0 group-hover:scale-110 transition-transform md:mb-6" />
-                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Doubting your own effectiveness</h3>
+                  <h3 className="text-xl font-bold text-white font-heading md:mb-3">Stress, self-esteem and relationships</h3>
                 </div>
                 <p className="text-slate-200 text-sm font-medium leading-relaxed">
-                  Rising imposter anxiety and over-working to overcompensate for diminished focus.
+                  Pressure that has built up for too long, harsh self-criticism, or the same difficulties repeating with the people around you.
                 </p>
               </div>
             </div>
@@ -365,10 +335,10 @@ export default function Home() {
                   Therapeutic Approach
                 </Badge>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D2E24] font-heading">
-                  An Evidence-Based Therapeutic Approach
+                  An Integrative, Person-Centred Approach
                 </h2>
                 <p className="text-[#0D2E24]/85 text-lg font-medium leading-relaxed">
-                  Erika Martin combines Cognitive Behavioural Therapy (CBT), Psychodynamic Psychotherapy, and Solution-Focused Brief Therapy to help you manage stress and build sustainable clarity.
+                  Erika is an integrative person-centred counsellor. You set the pace, and she offers a warm, safe space without judgement. Where it helps, she draws on psychodynamic understanding to explore where patterns come from, and on CBT tools to work with thoughts and habits in the here and now.
                 </p>
               </div>
               
@@ -485,50 +455,7 @@ export default function Home() {
             </h2>
           </div>
           
-          <FaqAccordion 
-            faqs={[
-              {
-                question: "Can I try a free consultation before committing?",
-                answer: "Yes, you can start with a Free 20-Minute Initial Call to discuss your needs and see if we are a good fit before deciding to move forward."
-              },
-              {
-                question: "How does online counselling work (video/phone)?",
-                answer: "Online sessions are conducted securely via encrypted video calls or over the phone, allowing you to engage in therapy from the comfort and privacy of your own space, anywhere in the UK."
-              },
-              {
-                question: "Is online counselling as effective as meeting in person?",
-                answer: "Yes, evidence indicates that online counselling, whether by video or phone, is just as effective as face-to-face sessions, offering the same level of professional support, depth, and confidentiality."
-              },
-              {
-                question: "Do you help with stress and anxiety specifically?",
-                answer: "Yes, as an MNCPS Accredited Psychotherapeutic Counsellor, I specialise in stress, burnout, and anxiety. I work with clients to better understand what's driving these difficulties and to develop more effective ways of managing them."
-              },
-              {
-                question: "Do I need to be in crisis to seek counselling?",
-                answer: "No. Counselling is not only for acute crisis. Many of the people I work with are managing well by most measures, but carrying something they have not had space to address. If something is getting in the way of how you want to feel or function, that is a reasonable place to start."
-              },
-              {
-                question: "Are sessions confidential?",
-                answer: "Yes, all sessions are strictly confidential. I adhere to the NCPS Code of Ethics and the UK GDPR, ensuring your privacy and records are fully protected. There are limited circumstances where confidentiality may need to be broken, for example if there is a serious risk of harm to yourself or others, and this would always be discussed with you first where possible."
-              },
-              {
-                question: "How much does counselling cost and what options are available?",
-                answer: "Single sessions are £60 per 50-minute session (pay as you go). Alternatively, a 6-session package paid in advance is available for £300 total, saving £60 (the cost of one full session) compared to paying £60 x 6 = £360 individually. Please note that the discount applies exclusively when the 6 sessions are paid upfront as a package."
-              },
-              {
-                question: "How do I book a session?",
-                answer: "You can get in touch by clicking 'Message Me' or submitting the contact form on the Contact page. Erika replies personally the same day to arrange your free 20-minute initial call."
-              },
-              {
-                question: "Do you see clients in person in Edinburgh?",
-                answer: "Yes, in addition to online sessions across the UK, I see clients in person in Edinburgh and Dalkeith. Get in touch to arrange a suitable time and location."
-              },
-              {
-                question: "What therapeutic approach/methodology do you use?",
-                answer: "I use an integrative approach that includes person-centred therapy, Cognitive Behavioural Therapy (CBT), and mindfulness-based practices, alongside body-based and nervous system regulation techniques."
-              }
-            ]} 
-          />
+          <FaqAccordion faqs={faqs} />
         </div>
       </section>
 

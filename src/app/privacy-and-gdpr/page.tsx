@@ -37,7 +37,7 @@ export default function PrivacyAndGDPR() {
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
             How Mindhaven collects, uses, and protects your personal data.
           </p>
-          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: August 2025</p>
+          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: November 2026</p>
         </div>
       </section>
 
@@ -47,7 +47,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">1. Who We Are</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Erika Martin is the sole Data Controller for Mindhaven, operating as a sole trader from 6a Newmills Rd, Dalkeith EH22 1DU. You can contact her with any data-related query at{" "}
+              Erika Martin is the sole Data Controller for Mindhaven and works as a sole trader. In-person sessions take place at Mysa Therapy Rooms, 6a Newmills Rd, Dalkeith EH22 1DU. You can contact her with any data-related query at{" "}
               <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by calling{" "}
               <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>.
             </p>
@@ -63,9 +63,10 @@ export default function PrivacyAndGDPR() {
             </p>
             <ul className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium space-y-2 list-disc pl-5">
               <li><strong>Contact details:</strong> name, email address, phone number</li>
-              <li><strong>Booking information:</strong> preferred session times, how you heard about Mindhaven, and any brief description of what you are seeking support with</li>
+              <li><strong>Enquiry information:</strong> your preferred contact method, the main area you would like support with (selected on the contact form), and anything you choose to write in your message</li>
+              <li><strong>Insurer referral details:</strong> if you are referred by a health insurer such as Bupa, the referral information they share with Erika</li>
               <li><strong>Special category (health) data:</strong> session notes, information about your mental and physical health, and relevant personal history, collected only as part of the counselling relationship</li>
-              <li><strong>Technical data:</strong> anonymised website analytics (if applicable)</li>
+              <li><strong>Technical data:</strong> website usage data, as described in section 10</li>
             </ul>
           </div>
 
@@ -78,7 +79,7 @@ export default function PrivacyAndGDPR() {
               <li><strong>Contract:</strong> to deliver the counselling sessions you have booked and to manage your appointment</li>
               <li><strong>Legitimate interests:</strong> to respond to enquiries and to maintain accurate practice records</li>
               <li><strong>Legal obligation:</strong> where we are required by law to retain or share information (e.g. a court order or safeguarding duty)</li>
-              <li><strong>Special category health data</strong> is processed under Article 9(2)(h) of the UK GDPR (the provision of health or social care) and with your explicit consent where required</li>
+              <li><strong>Special category health data</strong> is processed under Article 9(2)(h) of the UK GDPR (the provision of health or social care). Information you choose to share through the contact form, such as the area you want support with, is processed with your explicit consent, which you give by submitting the form</li>
             </ul>
           </div>
 
@@ -101,7 +102,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">5. Data Retention</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Clinical records (session notes and related documents) are retained for a minimum of seven years following the end of the therapeutic relationship, in line with NCPS guidance. For clients who were minors, records are retained until seven years after their 18th birthday. After this period, records are securely and permanently destroyed.
+              Clinical records (session notes and related documents) are retained for a minimum of seven years following the end of the therapeutic relationship, in line with NCPS guidance. After this period, records are securely and permanently destroyed.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Enquiry and booking data from people who do not proceed to sessions is deleted within twelve months.
@@ -111,7 +112,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">6. Data Storage & Security</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              All data is stored on encrypted, password-protected platforms. Online sessions are conducted via secure, end-to-end encrypted video software. We do not use any platforms or tools that are not UK GDPR-compliant.
+              All data is stored on encrypted, password-protected platforms. Online sessions take place over Microsoft Teams, which encrypts calls in transit, or by phone. Erika only uses services that offer appropriate safeguards under UK GDPR.
             </p>
           </div>
 
@@ -121,11 +122,13 @@ export default function PrivacyAndGDPR() {
               We use a small number of third-party services to operate this website and manage communications. These providers are only given access to personal data where strictly necessary and are contractually required to process data in line with UK GDPR. This includes:
             </p>
             <ul className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium space-y-2 list-disc pl-5">
-              <li><strong>Email delivery provider:</strong> used to receive booking enquiries from this website</li>
-              <li><strong>Secure video platform:</strong> used to conduct online sessions</li>
+              <li><strong>Resend:</strong> email delivery, used to forward contact form enquiries to Erika</li>
+              <li><strong>Microsoft Teams:</strong> video platform used for online sessions</li>
+              <li><strong>Website hosting and security:</strong> a UK-based virtual server and Cloudflare, which protects the site and handles web traffic</li>
+              <li><strong>Google Analytics and Google Tag Manager:</strong> website analytics, only if you accept cookies</li>
             </ul>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              We do not sell or share your personal data with any third party for marketing purposes.
+              Some of these providers may process data outside the UK. Where they do, they rely on recognised safeguards such as the UK International Data Transfer Agreement or adequacy regulations. We do not sell or share your personal data with any third party for marketing purposes.
             </p>
           </div>
 
@@ -169,7 +172,7 @@ export default function PrivacyAndGDPR() {
               This website uses cookies only with your explicit consent, which is requested via a banner on your first visit. You may accept or decline analytics cookies at any time; declining does not affect your use of the site.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              If you accept, we use <strong>Google Analytics</strong> (delivered via Google Tag Manager) to understand how visitors use this website  pages visited, session duration, and device type. No personal identifiers are collected. Data is processed by Google in accordance with their privacy policy and is used solely to improve this site; it is never shared for advertising or marketing purposes.
+              If you accept, we use <strong>Google Analytics</strong> (delivered via Google Tag Manager) to understand how visitors use this website: pages visited, session duration, and device type. Google Analytics uses cookies with pseudonymous identifiers; we do not use it to identify you, and IP addresses are not stored in Google Analytics. Data is processed by Google in accordance with their privacy policy and is used solely to improve this site; it is never shared for advertising or marketing purposes.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               We also use <strong>Umami</strong>, a privacy-friendly analytics tool hosted on our own server. Umami sets no cookies, stores nothing on your device, and does not collect IP addresses or any information that identifies you. It records only anonymous, aggregated figures such as page views, referring websites, and device type, so it runs without needing your consent. This data is never shared with third parties.
@@ -182,7 +185,7 @@ export default function PrivacyAndGDPR() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">11. Changes to This Policy</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              This policy may be updated from time to time. The date of the most recent revision is shown at the top of this page. Continued use of this website after any changes constitutes acceptance of the updated policy.
+              This policy may be updated from time to time. The date of the most recent revision is shown at the top of this page. If a change significantly affects how your data is used, clients will be told directly.
             </p>
           </div>
 

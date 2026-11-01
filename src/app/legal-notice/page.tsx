@@ -36,7 +36,7 @@ export default function LegalNotice() {
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
             Statutory information regarding the operation of Mindhaven.
           </p>
-          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: August 2025</p>
+          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: November 2026</p>
         </div>
       </section>
 
@@ -49,7 +49,7 @@ export default function LegalNotice() {
               Mindhaven is operated by Erika Martin, trading as a sole trader.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              <strong>Practice address:</strong> 6a Newmills Rd, Dalkeith EH22 1DU, Scotland<br />
+              <strong>Practice address:</strong> Mysa Therapy Rooms, 6a Newmills Rd, Dalkeith EH22 1DU, Scotland<br />
               <strong>Email:</strong>{" "}
               <EmailLink className="text-[#0D2E24] underline underline-offset-2"><EmailAddress /></EmailLink><br />
               <strong>Telephone:</strong>{" "}
@@ -96,7 +96,7 @@ export default function LegalNotice() {
               Via <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by phone on <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              If the matter is not resolved to your satisfaction, you may escalate your complaint to the National Counselling and Psychotherapy Society (NCPS) at <strong>ncps.com/complaints</strong>, or to the Professional Standards Authority (PSA) at <strong>professionalstandards.org.uk</strong>.
+              If the matter is not resolved to your satisfaction, you may raise it with the National Counselling and Psychotherapy Society (NCPS) through its complaints procedure at <strong>ncps.com/complaints</strong>. The Professional Standards Authority (PSA) accredits the NCPS register but does not investigate complaints about individual practitioners; you can share feedback about the register with the PSA at <strong>professionalstandards.org.uk</strong>.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function LegalNotice() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">7. Governing Law</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              This legal notice and the operation of this website are governed by the laws of Scotland and England and Wales.
+              This legal notice and the operation of this website are governed by the law of Scotland.
             </p>
           </div>
 

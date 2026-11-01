@@ -5,30 +5,32 @@ import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
 
 const articleImages: Record<string, string> = {
-  "high-functioning-burnout": "/images/blog/burnout-therapist-edinburgh.webp",
-  "breaking-the-stress-cycle": "/images/blog/nervous-system-regulation.webp",
+  "high-functioning-burnout": "/images/blog/high-functioning-burnout.webp",
+  "breaking-the-stress-cycle": "/images/blog/breaking-the-stress-cycle.webp",
   "imposter-syndrome-in-professionals": "/images/blog/imposter-syndrome-in-professionals.webp",
   "sustainable-boundaries": "/images/blog/sustainable-boundaries.webp",
-  "why-the-same-patterns-keep-coming-back": "/images/blog/working-with-the-body-stress-recovery.webp",
+  "why-the-same-patterns-keep-coming-back": "/images/blog/why-the-same-patterns-keep-coming-back.webp",
+  "coping-with-anxiety": "/images/blog/coping-with-anxiety.webp",
+  "living-with-grief": "/images/blog/living-with-grief.webp",
   "understanding-burnout-vs-stress": "/images/blog/understanding-burnout-vs-stress.webp",
 };
 
 
 export const metadata = {
-  title: "Blog | Mindhaven",
-  description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
+  title: "Counselling Blog | Mindhaven",
+  description: "Articles on anxiety, grief, low mood, relationships, self-esteem and stress by Erika Martin, MNCPS Accredited counsellor in Dalkeith and online.",
   alternates: { canonical: "https://mindhaven.uk/blog" },
   openGraph: {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
-    title: "Blog | Mindhaven",
-    description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
+    title: "Counselling Blog | Mindhaven",
+    description: "Articles on anxiety, grief, low mood, relationships, self-esteem and stress by Erika Martin, MNCPS Accredited counsellor in Dalkeith and online.",
     url: "https://mindhaven.uk/blog",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
-    title: "Blog | Mindhaven",
-    description: "Articles on stress, burnout, anxiety, and emotional health, written by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor.",
+    title: "Counselling Blog | Mindhaven",
+    description: "Articles on anxiety, grief, low mood, relationships, self-esteem and stress by Erika Martin, MNCPS Accredited counsellor in Dalkeith and online.",
   }
 };
 
@@ -66,7 +68,7 @@ export default function BlogIndex() {
               {/* Bleeding Header Image (No inner frame/padding) */}
               <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#0D2E24]/5">
                 <Image 
-                  src={articleImages[post.slug] || "/images/blog/understanding-burnout-vs-stress.png"}
+                  src={articleImages[post.slug] || "/images/blog/understanding-burnout-vs-stress.webp"}
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

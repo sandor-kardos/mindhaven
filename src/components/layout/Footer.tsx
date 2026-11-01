@@ -61,7 +61,7 @@ export function Footer() {
             <ul className="space-y-2 text-xs sm:text-sm text-slate-200 font-medium">
               <li><Link href="/" className="hover:text-[#34D399] transition-colors">Home</Link></li>
               <li><Link href="/about-erika-martin" className="hover:text-[#34D399] transition-colors">About Erika Martin</Link></li>
-              <li><Link href="/burnout-therapist-edinburgh" className="hover:text-[#34D399] transition-colors">Edinburgh Practice</Link></li>
+              <li><Link href="/counselling-edinburgh" className="hover:text-[#34D399] transition-colors">Counselling in Edinburgh</Link></li>
               <li><Link href="/fees-and-booking" className="hover:text-[#34D399] transition-colors">Fees & Booking</Link></li>
               <li><Link href="/resources" className="hover:text-[#34D399] transition-colors">Resources</Link></li>
             </ul>

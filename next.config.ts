@@ -55,6 +55,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/burnout-therapist-edinburgh",
+        destination: "/counselling-edinburgh",
+        permanent: true,
+      },
+      {
+        source: "/tools/nervous-system-pacer",
+        destination: "/tools/breathing-pacer",
+        permanent: true,
+      },
+      {
         source: "/blog/burnout-therapist-edinburgh",
         destination: "/blog/high-functioning-burnout",
         permanent: true,

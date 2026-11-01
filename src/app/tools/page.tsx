@@ -6,11 +6,11 @@ import { Badge } from "@/components/ui/Badge";
 
 export const metadata: Metadata = {
   title: "Self-Reflection & Regulation Tools | Mindhaven",
-  description: "Explore free interactive wellness tools including the Nervous System Pacer, Life Compass assessment, and Wheel of Life balance tool. Private, client-side tools by MNCPS counsellor Erika Martin.",
+  description: "Explore free interactive wellness tools including the Breathing Pacer, Life Compass assessment, and Wheel of Life balance tool. Private, client-side tools by MNCPS counsellor Erika Martin.",
   alternates: { canonical: "https://mindhaven.uk/tools" },
   openGraph: {
     title: "Self-Reflection & Regulation Tools | Mindhaven",
-    description: "Explore free interactive wellness tools including the Nervous System Pacer, Life Compass, and Wheel of Life balance tool.",
+    description: "Explore free interactive wellness tools including the Breathing Pacer, Life Compass, and Wheel of Life balance tool.",
     url: "https://mindhaven.uk/tools",
     siteName: "Mindhaven Counselling",
     images: [{ url: "https://mindhaven.uk/images/og-image.png", width: 1200, height: 630, alt: "Mindhaven Interactive Tools" }],
@@ -37,13 +37,13 @@ export default function ToolsIndexPage() {
       badgeColor: "#059669",
     },
     {
-      slug: "nervous-system-pacer",
-      href: "/tools/nervous-system-pacer",
-      title: "Nervous System Pacer",
+      slug: "breathing-pacer",
+      href: "/tools/breathing-pacer",
+      title: "Breathing Pacer",
       category: "Interactive Breathing",
       icon: Wind,
       image: "/images/tools/pacer-preview.png",
-      description: "Down-regulate your nervous system in real-time with our guided 4-7-8 breathing rhythm. Helps slow elevated heart rates, reduce acute anxiety, and restore physiological calm during demanding workdays.",
+      description: "A simple guided 4-7-8 breathing exercise to help you slow down and feel steadier when worry or stress builds up. Free and private, nothing is stored.",
       badgeColor: "#059669",
     },
     {

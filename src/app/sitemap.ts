@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://mindhaven.uk/burnout-therapist-edinburgh",
+      url: "https://mindhaven.uk/counselling-edinburgh",
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://mindhaven.uk/tools/nervous-system-pacer",
+      url: "https://mindhaven.uk/tools/breathing-pacer",
       changeFrequency: "monthly",
       priority: 0.8,
     },

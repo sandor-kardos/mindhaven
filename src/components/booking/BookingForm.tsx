@@ -160,9 +160,11 @@ export function BookingForm() {
             className="w-full px-4 py-3 rounded-xl border border-[#34D399]/30 bg-slate-50 text-[#0D2E24] font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#34D399] transition-all cursor-pointer"
           >
             <option value="" disabled>Select primary focus...</option>
-            <option value="burnout">Burnout Recovery & Stress</option>
-            <option value="anxiety">Anxiety & Nervous System Calm</option>
-            <option value="career">Career & Personal Growth</option>
+            <option value="anxiety">Anxiety & Worry</option>
+            <option value="bereavement">Bereavement & Loss</option>
+            <option value="low-mood">Low Mood</option>
+            <option value="relationships">Relationships & Self-Esteem</option>
+            <option value="stress">Stress & Burnout</option>
             <option value="other">Other Enquiry</option>
           </select>
         </div>

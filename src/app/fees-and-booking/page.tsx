@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/Badge";
 
 export const metadata = {
   title: "Fees & Pricing | Mindhaven",
-  description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
+  description: "Counselling fees with Erika Martin: £60 per session, or £300 for six sessions paid in advance. In Dalkeith near Edinburgh and online UK. Bupa accepted.",
   alternates: { canonical: "https://mindhaven.uk/fees-and-booking" },
   openGraph: {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Fees & Pricing | Mindhaven",
-    description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
+    description: "Counselling fees with Erika Martin: £60 per session, or £300 for six sessions paid in advance. In Dalkeith near Edinburgh and online UK. Bupa accepted.",
     url: "https://mindhaven.uk/fees-and-booking",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
     title: "Fees & Pricing | Mindhaven",
-    description: "Transparent pricing for private counselling with Erika Martin in Edinburgh and online across the UK. £60 individual pay-as-you-go sessions or £300 prepaid 6-session committed loyalty package.",
+    description: "Counselling fees with Erika Martin: £60 per session, or £300 for six sessions paid in advance. In Dalkeith near Edinburgh and online UK. Bupa accepted.",
   }
 };
 
@@ -58,8 +58,8 @@ export default function FeesAndBooking() {
                 <p className="text-[#0D2E24]/80 text-sm font-medium leading-relaxed mb-6 min-h-[40px]">Flexible individual sessions tailored to your needs, paid per session.</p>
                 <ul className="space-y-3 mb-8 text-[#0D2E24]">
                   <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>£60 per 50-minute session</span></li>
-                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>Pay as you go after each session</span></li>
-                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>Online across the UK or in-person in Dalkeith/Edinburgh</span></li>
+                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>Pay per session, Bupa accepted</span></li>
+                  <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>Online across the UK or in person in Dalkeith, near Edinburgh</span></li>
                   <li className="flex items-start text-sm font-medium"><Check className="w-5 h-5 text-[#059669] mr-2.5 shrink-0 mt-0.5" /><span>No upfront contract or minimum commitment</span></li>
                 </ul>
               </div>

@@ -37,7 +37,7 @@ export default function TermsOfService() {
           <p className="text-lg text-[#0D2E24]/85 font-medium max-w-2xl mx-auto">
             Please read these terms carefully. They form part of the agreement between you and Mindhaven when you engage counselling services.
           </p>
-          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: August 2025</p>
+          <p className="text-sm text-[#0D2E24]/60 font-medium">Last updated: November 2026</p>
         </div>
       </section>
 
@@ -50,24 +50,24 @@ export default function TermsOfService() {
               Mindhaven provides individual counselling delivered by Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor. Counselling is a collaborative process: it is not a medical treatment or crisis intervention service. The therapeutic relationship is professional in nature and is bounded by the NCPS Code of Ethics.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Counselling at Mindhaven is suitable for adults (18+) experiencing stress, anxiety, burnout, relationship difficulties, or life challenges. It is not a substitute for emergency medical or psychiatric care.
+              Counselling at Mindhaven is for adults (18+), for example those experiencing anxiety, bereavement and loss, low mood, relationship difficulties, low self-esteem, stress or burnout. It is not a substitute for emergency medical or psychiatric care.
             </p>
           </div>
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">2. Sessions</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Standard sessions are 50 minutes in duration. The initial session is 60 minutes to allow time for a fuller exploration of your situation and to agree how to work together. Sessions are available in person in Edinburgh and Dalkeith, or online via secure video. Session frequency and overall duration are open-ended, agreed collaboratively, and reviewed regularly.
+              Standard sessions are 50 minutes in duration. The initial session is 60 minutes to allow time for a fuller exploration of your situation and to agree how to work together. Sessions are available in person at Mysa Therapy Rooms in Dalkeith, or online via Microsoft Teams video or phone. Session frequency and overall duration are open-ended, agreed collaboratively, and reviewed regularly.
             </p>
           </div>
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">3. Fees & Payment</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Current fees are £60 per 50-minute individual session (pay as you go). A committed loyalty discount package is available: 6 sessions paid in advance for £300 total (saving £60, the cost of one session, compared to paying £60 individually per session). This discount applies exclusively when the 6 sessions are paid upfront as a package. Fees are subject to review and any changes will be communicated with at least four weeks' notice.
+              Current fees are £60 per 50-minute individual session (pay as you go). A 6-session package is available for £300 when paid in advance, saving £60 (the cost of one session) compared to paying for each session separately. The discount applies only when the 6 sessions are paid upfront as a package. Fees are subject to review and any changes will be communicated with at least four weeks' notice.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Payment is due before or at the time of each session. For the committed loyalty discount package, full payment of £300 is required upfront in advance.
+              Payment is due before or at the time of each session. For the 6-session package, the full £300 is paid upfront. If your sessions are funded by a health insurer such as Bupa, your insurer's terms on fees and authorised sessions apply, and you are responsible for any amount your insurer does not cover.
             </p>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               Mindhaven does not currently process payment online through this website. Payment details will be provided directly.
@@ -132,7 +132,7 @@ export default function TermsOfService() {
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">9. Ethical Framework</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              Erika Martin practises in accordance with the Code of Ethics of the National Counselling and Psychotherapy Society (NCPS) and is registered with the Professional Standards Authority (PSA). A copy of the NCPS Code of Ethics is available at <strong>ncps.com</strong>.
+              Erika Martin practises in accordance with the Code of Ethics of the National Counselling and Psychotherapy Society (NCPS) and is registered with the Professional Standards Authority (PSA). A copy of the NCPS Code of Ethics is available at <strong>ncps.com/help/policy</strong>.
             </p>
           </div>
 
@@ -140,14 +140,14 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">10. Complaints</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
               If you have a concern or complaint about the service you have received, please contact Erika Martin in the first instance at{" "}
-              <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by phone on <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>. If you are not satisfied with the outcome, you may refer your complaint to the NCPS, whose contact details are available at <strong>ncps.com/complaints</strong>.
+              <Link href="/contact#book" className="text-[#0D2E24] underline underline-offset-2">the contact form</Link> or by phone on <a href="tel:+447516785823" className="text-[#0D2E24] underline underline-offset-2">+44 7516 785823</a>. If you are not satisfied with the outcome, you may raise it with the NCPS through its complaints procedure at <strong>ncps.com/complaints</strong>.
             </p>
           </div>
 
           <div className="space-y-3">
             <h2 className="text-2xl font-bold font-heading text-[#0D2E24]">11. Governing Law</h2>
             <p className="text-sm leading-relaxed text-[#0D2E24]/85 font-medium">
-              These terms are governed by the laws of Scotland and England and Wales, and any disputes will be subject to the jurisdiction of the courts of Scotland.
+              These terms are governed by the law of Scotland, and any disputes will be subject to the jurisdiction of the Scottish courts. Nothing in these terms affects your statutory rights as a consumer.
             </p>
           </div>
 

@@ -51,15 +51,15 @@ const resources: ResourceItem[] = [
     cta: "Try the Wheel of Life",
   },
   {
-    id: "nervous-system-pacer",
+    id: "breathing-pacer",
     category: "tools",
-    title: "Nervous System Pacer",
+    title: "Breathing Pacer",
     subcategory: "Interactive Breathing",
     icon: Wind,
     image: "/images/tools/pacer-preview.png",
     description:
-      "Down-regulate your nervous system in real-time with our guided 4-7-8 breathing rhythm. Helps slow elevated heart rates, reduce acute anxiety, and restore physiological calm during demanding workdays.",
-    href: "/tools/nervous-system-pacer",
+      "A simple guided 4-7-8 breathing exercise to help you slow down and feel steadier when worry or stress builds up. Free and private, nothing is stored.",
+    href: "/tools/breathing-pacer",
     cta: "Try the Pacer",
   },
   {

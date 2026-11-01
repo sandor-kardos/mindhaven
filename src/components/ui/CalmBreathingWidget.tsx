@@ -77,7 +77,7 @@ export function CalmBreathingWidget() {
       <div className="text-center space-y-4 relative">
         <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
           <Wind className="w-4 h-4 text-[#34D399]" />
-          <span>Nervous System Pacer</span>
+          <span>Breathing Pacer</span>
         </div>
         <div className="space-y-3 py-4">
           <p className="text-sm font-bold text-[#0D2E24] font-heading">4-7-8 Breathing</p>
@@ -107,7 +107,7 @@ export function CalmBreathingWidget() {
     <div className="text-center space-y-4 relative">
       <div className="flex items-center justify-center gap-2 text-[#0D2E24] font-bold text-xs uppercase tracking-wider font-heading">
         <Wind className="w-4 h-4 text-[#34D399]" />
-        <span>Nervous System Pacer</span>
+        <span>Breathing Pacer</span>
       </div>
 
       <div

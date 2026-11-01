@@ -15,12 +15,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mindhaven.uk'),
   title: "Counselling in Edinburgh & Online | Mindhaven",
-  alternates: { canonical: "https://mindhaven.uk" },
   verification: { google: "bD4QVDRsDfdhBFZ_owsWlvQOi96pAGKi-ue-Dou4D0g" },
-  description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
+  description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
   openGraph: {
     title: "Counselling in Edinburgh & Online | Mindhaven",
-    description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
+    description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
     url: "https://mindhaven.uk",
     siteName: "Mindhaven",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Counselling in Edinburgh & Online | Mindhaven",
-    description: "Personal counselling with Erika Martin, MNCPS Accredited Psychotherapeutic Counsellor based in Edinburgh and Dalkeith, supporting adults with stress, anxiety, and burnout across the UK.",
+    description: "Person-centred counselling for anxiety, grief, stress and self-esteem with Erika Martin, MNCPS Accredited. In Dalkeith near Edinburgh and online UK.",
     images: ["/og-image.png"],
   },
 };
@@ -45,8 +44,11 @@ const jsonLd = {
       url: "https://mindhaven.uk",
       telephone: "+447516785823",
       priceRange: "£60",
-      image: "https://mindhaven.uk/assets/erika-martin.jpg",
-      description: "Accredited Psychotherapeutic Counsellor specializing in stress, burnout, and personal growth in Edinburgh, Dalkeith, and Online UK.",
+      image: "https://mindhaven.uk/images/erika-portrait.png",
+      description: "MNCPS Accredited integrative person-centred counsellor working with adults on anxiety, bereavement, low mood, relationships, self-esteem, stress and burnout. In person in Dalkeith near Edinburgh, and online across the UK.",
+      knowsAbout: ["Person-centred counselling", "Psychodynamic counselling", "Cognitive Behavioural Therapy", "Anxiety", "Bereavement", "Low mood", "Relationship difficulties", "Self-esteem", "Stress", "Burnout"],
+      paymentAccepted: "Bank transfer, Bupa health insurance",
+      currenciesAccepted: "GBP",
       sameAs: [
         "https://www.search-ncps.com/search/FindaTherapist/NCS16-03808",
         "https://www.facebook.com/ErikaMartinCounselling",
@@ -56,17 +58,24 @@ const jsonLd = {
         "@type": "Organization",
         name: "National Counselling and Psychotherapy Society",
         alternateName: "NCPS",
-        url: "https://ncps.org.uk"
+        url: "https://ncps.com"
       },
-      hasCredential: {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "MNCPS Accredited Member",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "Professional Standards Authority",
-          alternateName: "PSA"
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Accredited Member (MNCPS Acc.)",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "National Counselling and Psychotherapy Society",
+            url: "https://ncps.com"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "Level 4 Diploma in Psychotherapeutic Counselling",
+          recognizedBy: { "@type": "Organization", name: "Chrysalis Courses" }
         }
-      },
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "6a Newmills Rd",

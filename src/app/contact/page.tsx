@@ -6,19 +6,19 @@ import { InstantMessagingButtons, MessageFormCardLink } from "@/components/conta
 
 export const metadata: Metadata = {
   title: "Contact & Book | Mindhaven",
-  description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+  description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. In person in Dalkeith, near Edinburgh, and online across the UK.",
   alternates: { canonical: "https://mindhaven.uk/contact" },
   openGraph: {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Mindhaven counselling with Erika Martin" }],
     title: "Contact & Book | Mindhaven",
-    description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+    description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. In person in Dalkeith, near Edinburgh, and online across the UK.",
     url: "https://mindhaven.uk/contact",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
     title: "Contact & Book | Mindhaven",
-    description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. Available in person in Edinburgh and Dalkeith, and online across the UK.",
+    description: "Get in touch with Erika Martin to book a free 20-minute initial call or send a message. In person in Dalkeith, near Edinburgh, and online across the UK.",
   }
 };
 
@@ -63,7 +63,7 @@ export default function Contact() {
 
           <div className="text-center space-y-2 max-w-xl mx-auto">
             <h3 className="text-xl font-bold text-[#0D2E24] font-heading">Practice Locations & Alternative Contact</h3>
-            <p className="text-xs text-[#0D2E24]/75 font-medium">In-person sessions in Dalkeith/Edinburgh or online across the UK.</p>
+            <p className="text-xs text-[#0D2E24]/75 font-medium">In-person sessions in Dalkeith, near Edinburgh, or online across the UK.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

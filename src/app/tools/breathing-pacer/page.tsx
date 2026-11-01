@@ -5,26 +5,26 @@ import { Badge } from "@/components/ui/Badge";
 import { CalmBreathingWidget } from "@/components/ui/CalmBreathingWidget";
 
 export const metadata: Metadata = {
-  title: "Nervous System Pacer: 4-7-8 Breathing Tool | Mindhaven",
+  title: "Breathing Pacer: 4-7-8 Breathing Tool | Mindhaven",
   description: "A simple 4-7-8 breathing exercise to help you slow down and feel steady when work or stress builds up. Free and private tool by MNCPS counsellor Erika Martin.",
-  alternates: { canonical: "https://mindhaven.uk/tools/nervous-system-pacer" },
+  alternates: { canonical: "https://mindhaven.uk/tools/breathing-pacer" },
   openGraph: {
-    title: "Nervous System Pacer: Guided 4-7-8 Breathing Tool",
+    title: "Breathing Pacer: Guided 4-7-8 Breathing Tool",
     description: "A simple 4-7-8 breathing exercise to help you slow down and feel steady when work or stress builds up.",
-    url: "https://mindhaven.uk/tools/nervous-system-pacer",
+    url: "https://mindhaven.uk/tools/breathing-pacer",
     siteName: "Mindhaven Counselling",
     images: [{ url: "https://mindhaven.uk/images/tools/pacer-preview.png", width: 1200, height: 630, alt: "Mindhaven Breathing Pacer Tool" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nervous System Pacer: Guided 4-7-8 Breathing Tool",
+    title: "Breathing Pacer: Guided 4-7-8 Breathing Tool",
     description: "A simple 4-7-8 breathing exercise to help you slow down and feel steady.",
     images: ["https://mindhaven.uk/images/tools/pacer-preview.png"],
   },
 };
 
-export default function NervousSystemPacerPage() {
+export default function BreathingPacerPage() {
   return (
     <div className="flex flex-col w-full bg-white text-[#0D2E24] min-h-screen">
       {/* Hero Header */}
@@ -48,7 +48,7 @@ export default function NervousSystemPacerPage() {
             </Badge>
 
             <h1 className="text-2xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
-              Nervous System Pacer
+              Breathing Pacer
             </h1>
 
             <p className="text-slate-200 text-xs sm:text-sm font-medium leading-relaxed max-w-xl mx-auto">

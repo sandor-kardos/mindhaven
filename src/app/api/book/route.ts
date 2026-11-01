@@ -17,7 +17,7 @@ const MIN_FILL_MS = 3000;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 const RATE_MAX = 5;
 const LIMITS = { name: 100, contactMethod: 30, contactDetail: 120, objective: 40, message: 3000 };
-const OBJECTIVES = ["burnout", "anxiety", "career", "other"];
+const OBJECTIVES = ["anxiety", "bereavement", "low-mood", "relationships", "stress", "other"];
 const METHODS = ["Email", "WhatsApp", "Messenger"];
 
 const hits = new Map<string, number[]>();
