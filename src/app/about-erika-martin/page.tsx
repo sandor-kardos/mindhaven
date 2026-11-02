@@ -186,6 +186,12 @@ export default function AboutErikaMartin() {
               </li>
             ))}
           </ul>
+          <div className="max-w-2xl mx-auto space-y-3 text-center">
+            <h3 className="text-xl font-extrabold text-[#0D2E24] font-heading">Experience</h3>
+            <p className="text-[#0D2E24]/80 font-medium leading-relaxed">
+              Two years volunteering at the Edinburgh Rape Crisis Centre (2017 to 2019) and two years as a Mental Health Support Worker (2019 to 2021). Safeguarding Adults and Children, Level 3 (2023).
+            </p>
+          </div>
         </div>
       </section>
 

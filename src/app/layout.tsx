@@ -46,11 +46,13 @@ const jsonLd = {
       priceRange: "£60",
       image: "https://mindhaven.uk/images/erika-portrait.png",
       description: "MNCPS Accredited integrative person-centred counsellor working with adults on anxiety, bereavement, low mood, relationships, self-esteem, stress and burnout. In person in Dalkeith near Edinburgh, and online across the UK.",
-      knowsAbout: ["Person-centred counselling", "Humanistic counselling", "Psychodynamic counselling", "Cognitive Behavioural Therapy", "Depression", "Anxiety", "Bereavement", "Low mood", "Relationship difficulties", "Self-esteem", "Stress", "Burnout"],
+      knowsAbout: ["Person-centred counselling", "Humanistic counselling", "Psychodynamic counselling", "Cognitive Behavioural Therapy", "Depression", "Anxiety", "Bereavement", "Low mood", "Relationship difficulties", "Self-esteem", "Stress", "Burnout", "Addiction", "Coping with illness", "Life changes"],
+      knowsLanguage: ["English", "Hungarian"],
       paymentAccepted: "Bank transfer, Bupa health insurance",
       currenciesAccepted: "GBP",
       sameAs: [
         "https://www.search-ncps.com/search/FindaTherapist/NCS16-03808",
+        "https://www.psychologytoday.com/gb/counselling/erika-martin-dalkeith/1716871",
         "https://www.facebook.com/ErikaMartinCounselling",
         "https://www.linkedin.com/in/erika-martin-counselling"
       ],

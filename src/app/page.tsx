@@ -8,11 +8,27 @@ const faqs = [
   },
   {
     question: "What do you help with?",
-    answer: "I work with adults on anxiety and worry, bereavement and loss, low mood, relationship difficulties, self-esteem, and stress or burnout. If what you are facing is not on this list, get in touch and we can talk about whether counselling with me is the right fit.",
+    answer: "I work with adults on anxiety and worry, bereavement and loss, low mood, relationship difficulties, self-esteem, stress or burnout, addiction (including support for family members and loved ones), and coming to terms with illness or big life changes. If what you are facing is not on this list, get in touch and we can talk about whether counselling with me is the right fit.",
   },
   {
     question: "What therapeutic approach do you use?",
     answer: "I am an integrative person-centred counsellor. You set the pace and I offer a warm, non-judgemental space. I also use the psychodynamic approach, which helps us understand where patterns come from, and I am familiar with Cognitive Behavioural Therapy techniques, which I use when they suit you.",
+  },
+  {
+    question: "Do you offer counselling in Hungarian?",
+    answer: "Yes. I offer sessions in English and in Hungarian, online or in person. Szívesen beszélgetek magyarul is.",
+  },
+  {
+    question: "Will you just give me advice?",
+    answer: "No. Counselling is not about being told what to do. We work together so you can explore your feelings, understand what is going on, and find your own way forward. I listen carefully, ask questions, and help you notice the strengths you already have.",
+  },
+  {
+    question: "Does counselling take years to work?",
+    answer: "Not necessarily. Some people find things shift within a few sessions, others prefer longer work. It depends on what you bring and what you want from it, and we review together as we go.",
+  },
+  {
+    question: "Can counselling fix me?",
+    answer: "Counselling is not a quick fix, and you are not broken. Change takes time and can feel uncomfortable at first. I am alongside you as a guide, but the change itself is yours, and that is what makes it last.",
   },
   {
     question: "How does online counselling work?",
@@ -135,7 +151,7 @@ export default function Home() {
                 
                 {/* Subheadline */}
                 <p className="text-lg sm:text-xl lg:text-2xl text-[#0D2E24]/90 font-medium leading-relaxed max-w-2xl">
-                  A warm, non-judgemental space for adults dealing with anxiety, loss, stress or self-doubt. In person in Dalkeith, near Edinburgh, and online across the UK.
+                  A warm, non-judgemental space for adults dealing with anxiety, loss, stress or self-doubt. In English or Hungarian, in person in Dalkeith near Edinburgh, and online across the UK.
                 </p>
 
               </div>
